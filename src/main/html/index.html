@@ -48,26 +48,38 @@
 </style>
 	</head>
 	<body style="background-color:gray;font-family: Sans-Serif;background-image:url('../img/cern.jpg');background-size: 1400px; background-repeat: no-repeat; background-position: left top;">
+	<!-- ClickTale Top part -->
+	<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+	</script>
+	<!-- ClickTale end of Top part -->
+
 		<div style="width:1350px;" id="wttestdiv">
 		<script type="text/javascript">
+			var medium = "";
 			(function(){
 				$(document).ready( function() {
-					$("#keypress div").ab({
-						testname: 'Sign-Up Text',
-						action_el: $('a')
-					});
+					if(medium.substring(0,1) != "m") {
+						$("#keypress div").ab({
+							testname: 'Sign-Up Text',
+							action_el: $('a')
+						});
+					} else {
+						$("div[id='keypress'] div").hide();
+						$("div[id='keypress'] div[id='"+ medium +"']").show();
+					}
 				});
 			})(jQuery);
 		</script>
 		<div style="margin-left: auto; margin-right: auto;">
-		<iframe src="http://player.vimeo.com/video/48590083?autoplay=1" width="396" height="300" style="float: left; margin: 58px 0px 0px 150px;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<iframe src="http://player.vimeo.com/video/48590083?autoplay=0" width="396" height="300" style="float: left; margin: 58px 0px 0px 150px;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		<div style="margin: 40px 100px 0px 0px; float: right; width: 600px;">
 		<div id="keypress">
 	
-			<div id='geen'>
+			<div id='mail1'>
 				<p>Goed dat je hier bent! In de komende maanden willen we voor en met jou een dienst ontwikkelen die de wereld gaat inspireren met al dat moois dat jij en andere Makers maken.</p><p>Wij zitten duidelijk in de testfase en we hopen dat jij wilt meedoen aan dit experiment. We hebben daarvoor wat informatie van je nodig. Tot snel.</p>
 			</div>
-			<div style='display: none;' id='boterham'>
+			<div style='display: none;' id='mail2'>
 				<p>Goed dat je hier bent! In de komende maanden willen we voor en met jou een dienst ontwikkelen die het mogelijk maakt om fans van jou en je werk te cre&euml;ren, en daar nog een aardige boterham aan over te houden. Zodat jij meer kan doen van dat waar jij gelukkig van wordt, je kunst.</p><p>Wij zitten duidelijk in de testfase en we hopen dat jij wilt meedoen aan dit experiment. We hebben daarvoor wat informatie van je nodig. Tot snel.</p></div>
 		</div>
 		<form action="https://docs.google.com/spreadsheet/formResponse?formkey=dFVZbjMwQlEzajZZTkh4cExoc2FWeXc6MA&amp;theme=0AX42CRMsmRFbUy1iY2E5ZGYyZi1iZTJhLTQ2ODUtYWZmNS04ZWFiZTRkNzk4NjA&amp;ifq" method="post" id="ss-form">
@@ -117,7 +129,9 @@
 			var vp = split[i].split('=');
 			if( vp[0] == 'utm_campaign') {
 				output = vp[1];
-				break;
+			}
+			if( vp[0] == 'utm_medium') {
+				medium = vp[1];
 			}
 		}
 		var formuri = "https://docs.google.com/spreadsheet/embeddedform?formkey=dGV4SDRZRHZtTE1aZTZKUTZpQUpGdnc6MQ&entry_3="+ output;
@@ -136,5 +150,16 @@
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ICanHaz.js/0.10/ICanHaz.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.ab.js"></script>
 		<div id="copyright">&#169; 2012 - <!--a href="http://specialbrands.net/">SpecialBrands</a-->. Image by Roosmarijn Pallandt - Cern, &#169; 2009	</div>
+		<!-- ClickTale Bottom part -->
+		<div id="ClickTaleDiv" style="display: none;"></div>
+		<script type="text/javascript">
+		if(document.location.protocol!='https:')
+		  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRd.js'%20type='text/javascript'%3E%3C/script%3E"));
+		  </script>
+		  <script type="text/javascript">
+		  if(typeof ClickTale=='function') ClickTale(51309,1,"www");
+		  </script>
+		  <!-- ClickTale end of Bottom part -->
+
 	</body>
 </html>
