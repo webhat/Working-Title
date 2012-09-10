@@ -1,0 +1,19 @@
+load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+require 'capistrano'
+require 'rubygems'
+require 'railsless-deploy'
+load    'config/deploy'
+
+set :user,		"ec2-user"
+set :stages,		%w[staging production]
+set :deploy_to,		"/usr/share/puppet/configuration"
+set :deploy_via,	:export
+set :application,	"Puppet Manifests"
+set :repository,	"git@github.com:webhat/Working-Title.git"
+set :scm,		:git
+set :default_stage,	"staging"
+set :use_sudo,		false
+set(:latest_release)	{ File.join( release_path, "src/main/puppet/") }
+
+require 'capistrano/ext/multistage'
+
