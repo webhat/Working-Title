@@ -25,6 +25,9 @@
 
 </script>
 <style type="text/css">
+	.ss-q-short {
+		width: 50%;
+	}
 	#copyright {
 		position : absolute;
 		text-align : center;
@@ -47,46 +50,60 @@
 	}
 </style>
 	</head>
-	<body style="font-family: Sans-Serif;background-image:url('../img/cern.jpg');background-size: 1400px; background-repeat: no-repeat; background-position: left top;">
+	<body style="background-color:gray;font-family: Sans-Serif;background-image:url('../img/cern2.jpg');background-size: 1400px; background-repeat: no-repeat; background-position: left top;">
+	<!-- ClickTale Top part -->
+	<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+	</script>
+	<!-- ClickTale end of Top part -->
+
 		<div style="width:1350px;" id="wttestdiv">
 		<script type="text/javascript">
+			var medium = "";
 			(function(){
 				$(document).ready( function() {
-					$("#keypress div").ab({
-						testname: 'Sign-Up Text',
-						action_el: $('a')
-					});
+					if(medium.substring(0,1) != "m") {
+						$("#keypress div").ab({
+							testname: 'Sign-Up Text',
+							action_el: $('a')
+						});
+					} else {
+						$("div[id='keypress'] div").hide();
+						$("div[id='keypress'] div[id='"+ medium +"']").show();
+					}
 				});
 			})(jQuery);
 		</script>
 		<div style="margin-left: auto; margin-right: auto;">
-		<iframe src="http://player.vimeo.com/video/48590083?autoplay=1" width="396" height="300" style="float: left; margin: 58px 0px 0px 150px;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<iframe src="http://player.vimeo.com/video/48590083?autoplay=0" width="566" height="425" style="float: left; margin: 10px 0px 0px 10px;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		<div style="margin: 40px 100px 0px 0px; float: right; width: 600px;">
-		<div id="keypress">
+		<div id="keypress" style="margin-bottom: 50px;">
 	
-			<div id='geen'>
-				<p>Goed dat je hier bent! In de komende maanden willen we voor en met jou een dienst ontwikkelen die de wereld gaat inspireren met al dat moois dat jij en andere Makers maken.</p><p>Wij zitten duidelijk in de testfase en we hopen dat jij wilt meedoen aan dit experiment. We hebben daarvoor wat informatie van je nodig. Tot snel.</p>
+			<div id='mail1'>
+				<p>Wij werken aan een dienst die de wereld gaat inspireren met al dat moois dat jij en andere Makers maken. We hopen dat jij meedoet aan dit experiment. Wil je meer weten, bekijk de video hiernaast en schrijf je direct in hieronder.</p>
 			</div>
-			<div style='display: none;' id='boterham'>
-				<p>Goed dat je hier bent! In de komende maanden willen we voor en met jou een dienst ontwikkelen die het mogelijk maakt om fans van jou en je werk te cre&euml;ren, en daar nog een aardige boterham aan over te houden. Zodat jij meer kan doen van dat waar jij gelukkig van wordt, je kunst.</p><p>Wij zitten duidelijk in de testfase en we hopen dat jij wilt meedoen aan dit experiment. We hebben daarvoor wat informatie van je nodig. Tot snel.</p></div>
+			<div style='display: none;' id='mail2'>
+				<p>Wij werken aan een dienst die het mogelijk maakt om fans van jou en je werk te cre&euml;ren. Zodat jij meer kan doen van dat waar jij gelukkig van wordt, je kunst. We hopen dat jij meedoet aan dit experiment. Wil je meer weten, bekijk de video hiernaast en schrijf je direct in hieronder.</p></div>
 		</div>
 		<form action="https://docs.google.com/spreadsheet/formResponse?formkey=dFVZbjMwQlEzajZZTkh4cExoc2FWeXc6MA&amp;theme=0AX42CRMsmRFbUy1iY2E5ZGYyZi1iZTJhLTQ2ODUtYWZmNS04ZWFiZTRkNzk4NjA&amp;ifq" method="post" id="ss-form">
 
 
+		<div class="ss-item ss-navigate">
+			<div class="ss-form-entry" style="float: right; margin-top: 15px;" >
+				<input type="image" src="../img/word-nu-lid.png" name="submit" value="Submit"/>
+			</div>
+		</div>
 		<div class="errorbox-good">
 		<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_8">Naam
 		</label><br />
-		<label class="ss-q-help" for="entry_8"></label>
 		<input type="text" name="entry.8.single" value="" class="ss-q-short" id="entry_8"/></div></div></div>
 		<div class="errorbox-good">
 		<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_0">Wat is je mailadres?
 		</label><br />
-		<label class="ss-q-help" for="entry_0"></label>
 		<input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"/></div></div></div>
 		<div class="errorbox-good">
-		<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_1">Geef een voorbeeld van je werk
+		<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_1">Geef een link naar je werk
 		</label>
-		<label class="ss-q-help" for="entry_1">(een link of website).</label><br />
 		<input type="text" name="entry.1.single" value="" class="ss-q-short" id="entry_1"/></div></div></div>
 		<div class="errorbox-good">
 		<div class="ss-item  ss-text"><div class="ss-form-entry">
@@ -97,8 +114,7 @@
 
 		</div>
 
-		<div class="ss-item ss-navigate"><div class="ss-form-entry">
-		<input type="submit" name="submit" value="Submit"/></div></div></form>
+		</form>
 		</div>
 
 		<p style="clear:both;float:right;display:none;">
@@ -117,7 +133,9 @@
 			var vp = split[i].split('=');
 			if( vp[0] == 'utm_campaign') {
 				output = vp[1];
-				break;
+			}
+			if( vp[0] == 'utm_medium') {
+				medium = vp[1];
 			}
 		}
 		var formuri = "https://docs.google.com/spreadsheet/embeddedform?formkey=dGV4SDRZRHZtTE1aZTZKUTZpQUpGdnc6MQ&entry_3="+ output;
@@ -136,5 +154,16 @@
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ICanHaz.js/0.10/ICanHaz.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.ab.js"></script>
 		<div id="copyright">&#169; 2012 - <!--a href="http://specialbrands.net/">SpecialBrands</a-->. Image by Roosmarijn Pallandt - Cern, &#169; 2009	</div>
+		<!-- ClickTale Bottom part -->
+		<div id="ClickTaleDiv" style="display: none;"></div>
+		<script type="text/javascript">
+		if(document.location.protocol!='https:')
+		  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRd.js'%20type='text/javascript'%3E%3C/script%3E"));
+		  </script>
+		  <script type="text/javascript">
+		  if(typeof ClickTale=='function') ClickTale(51309,1,"www");
+		  </script>
+		  <!-- ClickTale end of Bottom part -->
+
 	</body>
 </html>
