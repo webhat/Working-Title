@@ -10,3 +10,6 @@ Some resources were used from:
 * http://www.threedrunkensysadsonthe.net/2011/05/deploy-and-roll-back-system-configs-with-capistrano-mcollective-and-puppet/
 * http://www.go4expert.com/forums/showthread.php?t=2556
 
+bootstrap.php taken from:
+* https://github.com/travis-ci/travis-ci-php-example/
+
