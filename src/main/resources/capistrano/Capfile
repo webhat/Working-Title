@@ -13,7 +13,7 @@ set :repository,	"git@github.com:webhat/Working-Title.git"
 set :scm,		:git
 set :default_stage,	"staging"
 set :use_sudo,		false
-set(:latest_release)	{ File.join( release_path, "src/main/puppet/") }
+set(:latest_release)	{ File.join( release_path, "src/main/resources/puppet/") }
 
 require 'capistrano/ext/multistage'
 
