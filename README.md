@@ -2,6 +2,10 @@ Working-Title
 =============
 
 
+Status
+======
+[![Build Status](https://secure.travis-ci.org/webhat/Working-Title.png)](http://travis-ci.org/webhat/Working-Title)
+
 Attribution
 ===========
 Some resources were used from:
