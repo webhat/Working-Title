@@ -8,14 +8,11 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase {
 	public function tearDown() {
 	}
 
-    public function testHelloWorld()
-    {
-	    print(getcwd() . "\n");
-        $helloWorld = new HelloWorld();
+	public function testHelloWorld() {
+		$helloWorld = new HelloWorld();
 
-        $this->assertEquals('Hello World', $helloWorld->hello());
-    }
-
+		$this->assertEquals('Hello World', $helloWorld->hello());
+	}
 }
  
 ?>
