@@ -103,11 +103,12 @@
 		<input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"/></div></div></div>
 		<div class="errorbox-good">
 		<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_1">Geef een link naar je werk
-		</label>
+		</label><br />
 		<input type="text" name="entry.1.single" value="" class="ss-q-short" id="entry_1"/></div></div></div>
 		<div class="errorbox-good">
-		<div class="ss-item  ss-text"><div class="ss-form-entry">
-		<input type="hidden" name="entry.3.single" value="" class="ss-q-short" id="entry_3"/></div></div></div>
+		<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_3">Promo Code
+		</label><br />
+		<input type="text" name="entry.3.single" value="" class="ss-q-short" id="entry_3"/></div></div></div>
 		<div>
 		<input type="hidden" name="pageNumber" value="0"/>
 		<input type="hidden" name="backupCache" value=""/>
@@ -140,7 +141,7 @@
 		}
 		var formuri = "https://docs.google.com/spreadsheet/embeddedform?formkey=dGV4SDRZRHZtTE1aZTZKUTZpQUpGdnc6MQ&entry_3="+ output;
 		$(document).ready(function(){
-							$('#entry_3').attr('value', output);
+			//				$('#entry_3').attr('value', output);
 						});
 		//]]>
 		</script>
