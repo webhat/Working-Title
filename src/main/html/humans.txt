@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Karim Maarek - Founder - @karim_maarek
+    Daniël W. Crompton - Developer - @webhat
+
+# THANKS
+
+    Bart van der Hart, Jan Mulder
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
+    Smarty
