@@ -11,7 +11,8 @@ before_script:
   - pecl -q install mongo && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
   - sudo touch /usr/local/bin/cap
   - sudo chmod +x /usr/local/bin/cap
-  - /etc/init.d/mongodb start
+
+services: mongodb
 
 notifications:
   webhooks: http://requestb.in/1inunuo1
