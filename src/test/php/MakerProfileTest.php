@@ -113,11 +113,11 @@ class MakerProfileTest extends PHPUnit_Framework_TestCase {
 
 		$makerProfile->addCreation( $expected);
 
-		$epoch = time();
+		$size = 0;
 
 		$actual = $makerProfile->getProperty( 'creations');
 #print $epoch . "\n";
-		$this->assertEquals( $expected, $actual[$epoch]);
+		$this->assertEquals( $expected, $actual[$size]);
 	}
 }
  

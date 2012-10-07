@@ -41,7 +41,17 @@ class ProfileMongo {
 
 	public function reset() {
 		$profiles = $this->db->profiles;
-		$this->profile = $profiles->findOne( array('username' => $this->getRealUser()));
+		$user = $this->getRealUser();
+
+		if( $user == "") {
+			$user = $this->getUser();
+		}
+
+		$search = array('username' => $user);
+
+		$this->profile = $profiles->findOne( $search);
+		if( is_null($this->profile))
+			$this->profile = array('username' => $user);
 
 		return $this->profile;
 	}
