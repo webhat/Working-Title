@@ -62,7 +62,7 @@ class ProfileMongo {
 	}
 
 	public function getProperty( $key) {
-		if( array_key_exists( $key, $this->profile)) {
+		if( !is_null($this->profile) && (array_key_exists( $key, $this->profile))) {
 			return $this->profile[$key];
 		} else
 			return null;

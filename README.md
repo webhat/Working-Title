@@ -14,6 +14,9 @@ Some resources were used from:
 * http://www.threedrunkensysadsonthe.net/2011/05/deploy-and-roll-back-system-configs-with-capistrano-mcollective-and-puppet/
 * http://www.go4expert.com/forums/showthread.php?t=2556
 * https://github.com/h5bp/html5-boilerplate
+* http://www.htmlremix.com
+* http://stackoverflow.com/questions/2441565/how-do-i-make-a-div-element-editable-like-a-textarea-when-i-click-it
+* http://papermashup.com/read-url-get-variables-withjavascript/
 
 bootstrap.php taken from:
 * https://github.com/travis-ci/travis-ci-php-example/

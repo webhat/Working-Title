@@ -1,0 +1,5 @@
+<?php
+
+$loggedinas = "redhat";
+
+?>

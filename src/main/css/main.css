@@ -93,10 +93,81 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.box {
+	position:absolute;
+	margin: 10px;
+	background-repeat:no-repeat;
+}
 
+.boxmargin {
+	text-align:justify;
+	margin: 10px;
+}
 
+.headline {
+	margin-top: 40px;
+}
 
+#header {
+	top: 0px;
+	left:230px;
+	width: 1000px;
+	height: 80px;
+	background-size:1000px 70px;
+}
 
+#profile {
+	top: 90px;
+	left:1000px;
+	width: 230px;
+	height: 400px;
+	background-size:230px 400px;
+}
+
+#who {
+	top: 500px;
+	left:1000px;
+	width: 230px;
+	height: 400px;
+	background-size:230px 400px;
+}
+
+#what {
+}
+
+#why {
+	top: 910px;
+	left:1000px;
+	width: 230px;
+	height: 400px;
+	background-size:230px 400px;
+}
+
+#mywork {
+	top: 90px;
+	left:230px;
+	width: 750px;
+	height: 1000px;
+	background-size:750px 1000px;
+	z-index: -1;
+}
+
+.rounded-corners {
+	background-color:#21ab01;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	behavior:url(/css/border-radius.htc);
+	border-radius: 20px;
+}
+
+#upload {
+position: absolute;
+	display: none;
+	top: 190px;
+	left:400px;
+	z-index: 10;
+}
 
 
 
@@ -296,3 +367,5 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+

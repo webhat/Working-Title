@@ -8,7 +8,7 @@ class MakerProfile extends ProfileMongo {
 			throw new MakerException("Cannot create user without a username");
 		}
 		$this->setUser( $user);
-		$this->store();
+		$this->reset();
 	}
 
 	public function setMakerWhoAmI( $whoami) {
@@ -40,8 +40,8 @@ class MakerProfile extends ProfileMongo {
 		if( is_null($creations))
 			$creations = array();
 
-		$epoch = time();
-		$creations[$epoch] = $creation;
+		$size = count($creations);
+		$creations[$size] = $creation;
 #print "\n". $epoch . "\n";
 
 		$this->setProperty( 'creations', $creations);
