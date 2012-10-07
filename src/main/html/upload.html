@@ -10,6 +10,7 @@
 			window.google_analytics_uacct = "UA-4980002-2";
 		</script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -24,19 +25,29 @@
   })();
 
 </script>
-<script type="text/css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#upload").attr('action',"/upload.php?id="+ getUrlVars()['id']);
+	});
+</script>
+<style type="text/css">
 	#box {
 		position : absolute;
 		text-align : center;
 	}
-</script>
+</style>
 	</head>
 	<body>
 		<div style="width:1350px;left:30px;top:50px;" id="wttestdiv">
-			<form action="../php/upload.php" method="post" enctype="multipart/form-data">
+			<form id="upload" action="/upload.php" method="post" enctype="multipart/form-data">
 			<p>
-				<label for="mail">Mail adres:</label>
-				<input type="text" name="mail" id="mail" /> 
+				<label>Type:</label>
+				<select name="type">
+				  <option value="audio">Audio</option>
+					<option value="video">Video</option>
+					<option value="text">Text</option>
+					<option value="image">Image</option>
+				</select>
 				<br />
 				<label for="file">Filename:</label>
 				<input type="file" name="file" id="file" /> 

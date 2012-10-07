@@ -43,7 +43,7 @@ $smtp->to($wt_mail);
 
 $smtp->data();
 
-open FILE, "message2.txt" or die "Couldn't open file: $!";
+open FILE, "remind.txt" or die "Couldn't open file: $!";
 while(<FILE>) {
 	$message .= $_;
 }

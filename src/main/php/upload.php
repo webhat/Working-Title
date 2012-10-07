@@ -1,5 +1,20 @@
 <?php
 
+require('bootstrap.php');
+require('loggedinas.php');
+
+$maker = 'Unknown';
+if(array_key_exists( 'id', $_GET))
+	$maker = (string) $_GET['id'];
+
+	if($maker != $loggedinas) {
+		print "You are not logged in as this user";
+		exit();
+	}
+
+$p = new MakerProfile( $maker);
+$p->reset();
+
 function mail_attachment($filename, $path, $mailto, $from_mail, $from_name, $replyto, $subject, $message) {
 	$file = $path.$filename;
 	$file_size = filesize($file);
@@ -34,12 +49,13 @@ function mail_attachment($filename, $path, $mailto, $from_mail, $from_name, $rep
 $mail = filter_input(INPUT_POST,'mail', FILTER_SANITIZE_EMAIL);
 
 $allowedExts = array("jpg", "jpeg", "gif", "png");
-$extension = end(explode(".", $_FILES["file"]["name"]));
+		$filename = explode(".", $_FILES["file"]["name"]);
+$extension = end( $filename);
 if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
 	|| ($_FILES["file"]["type"] == "image/png")
 	|| ($_FILES["file"]["type"] == "image/pjpeg"))
-	&& ($_FILES["file"]["size"] < 200000)
+	&& ($_FILES["file"]["size"] < 20000000)
 	&& in_array($extension, $allowedExts)) {
   if ($_FILES["file"]["error"] > 0) {
 			echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
@@ -53,10 +69,13 @@ if ((($_FILES["file"]["type"] == "image/gif")
 				echo $_FILES["file"]["name"] . " already exists. ";
 			} else {
 				move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
+				$uploadType = (string)$_POST['type'];
+				$p->addCreation(array( "type" => $uploadType, "content" => "/upload/" . $_FILES["file"]["name"]));
+				$p->store();
 				echo "Stored in: "  . getcwd() . "/upload/" . $_FILES["file"]["name"];
 			}
     }
-	mail_attachment($_FILES["file"]["name"], getcwd() . "/upload/", "daniel.crompton@gmail.com", "daniel.crompton@gmail.com", "Working Title", "daniel.crompton@gmail.com", "Image From '$mail'", "");
+	//mail_attachment($_FILES["file"]["name"], getcwd() . "/upload/", "daniel.crompton@gmail.com", "daniel.crompton@gmail.com", "Working Title", "daniel.crompton@gmail.com", "Image From '$mail'", "");
 
   } else {
 		echo "Invalid file";
