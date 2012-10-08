@@ -3,10 +3,10 @@
 class UserLoginTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp() {
-		$user = "webhat"
+		$user = "webhat";
 		$uL = new UserLogin( $user);
 
-		$uL->setProperty('firstname', 'Daniël');
+		$uL->setProperty('firstname', 'Daniel');
 
 		$uL->store();
 	}
