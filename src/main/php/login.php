@@ -29,5 +29,4 @@ if( $ul->passwordCheck( $pass)) {
 } else
 	print $fail;
 
-
 ?>

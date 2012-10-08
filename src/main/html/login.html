@@ -1,7 +1,7 @@
 <div style="position:absolute; float:right;top:0;right:300px;margin:0 5px 0 5px">
 	<div id="extloginbox" style="display:none;width:200px;margin:0 5px 0 5px;background-color:blue;">
 		<form id="login" action="login.php" style="margin:0px 5px 5px 5px;" method="POST" target="logincheck">
-			<span><label>Username:</label><input type="text" name="user" /></span>
+			<span><label>Username:</label><input id="user" type="text" name="user" /></span>
 			<span><label>Password:</label><input type="text" name="pass" /></span>
 			<span><input type="submit" /></span>
 		</form>
@@ -9,5 +9,5 @@
 	<div id="extloginpd" style="background-color:blue;width:50px;float:right;margin: 0 5px 5px 5px;">
 		<a href="#" id="loginlink" style="margin:5px 5px 5px 5px;">Login</a>
 	</div>
-	<iframe id="logincheck"></iframe>
+	<iframe id="logincheck" style="display:none"></iframe>
 </div>

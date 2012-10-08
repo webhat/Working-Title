@@ -154,7 +154,7 @@
 		</script>
 		<script>
 			$(document).ready( function() {
-				$("#loginbox").load('login.html', function() {
+				$("#loginbox").load('userbar.php', function() {
 					console.log('a');
 					$('#loginlink').click( function() {
 						$('#extloginbox').animate({
@@ -162,6 +162,7 @@
 							width: 200
 						}, 500, function() {
 							console.log('login');
+							$("#user").focus();
 						}).toggle();
 					});
 				});
