@@ -45,6 +45,7 @@ class MakerProfile extends ProfileMongo {
 #print "\n". $epoch . "\n";
 
 		$this->setProperty( 'creations', $creations);
+		$this->store();
 	}
 }
  

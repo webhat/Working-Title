@@ -68,7 +68,10 @@ class ProfileMongo {
 	}
 
 	public function setProperty( $key, $value) {
-		$this->profile[$key] = $value;
+		if(is_string($value))
+			$this->profile[$key] = (string)$value;
+		else if(is_array($value))
+			$this->profile[$key] = (array)$value;
 	}
 
 	public function getProperty( $key) {

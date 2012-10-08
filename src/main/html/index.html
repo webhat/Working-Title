@@ -152,9 +152,25 @@
 					});
 		//]]>
 		</script>
+		<script>
+			$(document).ready( function() {
+				$("#loginbox").load('login.html', function() {
+					console.log('a');
+					$('#loginlink').click( function() {
+						$('#extloginbox').animate({
+							height: 100,
+							width: 200
+						}, 500, function() {
+							console.log('login');
+						}).toggle();
+					});
+				});
+		});
+		</script>
+		<div id="loginbox" />
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ICanHaz.js/0.10/ICanHaz.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.ab.js"></script>
-		<div id="copyright">&#169; 2012 - <!--a href="http://specialbrands.net/">SpecialBrands</a-->. Image by Roosmarijn Pallandt - Cern, &#169; 2009	</div>
+		<div id="copyright">&#169; 2012 - <a href="http://specialbrands.net/" style="display:none;">SpecialBrands</a>. Image by Roosmarijn Pallandt - Cern, &#169; 2009	</div>
 		<!-- ClickTale Bottom part -->
 		<div id="ClickTaleDiv" style="display: none;"></div>
 		<script type="text/javascript">
