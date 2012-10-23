@@ -19,6 +19,7 @@ textarea {
 }
 
 body {
+		background: #ecece2 url(http://static.tumblr.com/ro5gmuq/ZSSkkujk0/ko3lqkpvh62h949njlofkumx_400.jpg) top repeat-x;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -97,6 +98,16 @@ textarea {
 	position:absolute;
 	margin: 10px;
 	background-repeat:no-repeat;
+	box-shadow: -5px 5px 5px #888888;
+}
+
+#blackbar {
+	position:absolute;
+	height: 400px;
+	width:100%;
+	background-color:black;
+	top: 1200px;
+	z-index:-1;
 }
 
 .boxmargin {
@@ -114,31 +125,40 @@ textarea {
 	width: 1000px;
 	height: 80px;
 	background-size:1000px 70px;
+	z-index:1;
 }
 
 #profile {
 	top: 90px;
 	left:1000px;
 	width: 230px;
-	height: 400px;
+	height: 490px;
 	background-size:230px 400px;
+	z-index:1;
 }
 
-#who {
-	top: 500px;
+#whoami {
+	top: 590px;
 	left:1000px;
 	width: 230px;
-	height: 400px;
+	height: 500px;
 	background-size:230px 400px;
+	z-index:1;
 }
 
-#what {
+#whatdoido {
+	top: 1100px;
+	left:230px;
+	width: 495px;
+	height: 400px;
+	background-size:750px 1000px;
+	z-index:1;
 }
 
-#why {
-	top: 910px;
-	left:1000px;
-	width: 230px;
+#whydoidothis {
+	top:1100px;
+	left:735px;
+	width: 495px;
 	height: 400px;
 	background-size:230px 400px;
 }
@@ -149,16 +169,16 @@ textarea {
 	width: 750px;
 	height: 1000px;
 	background-size:750px 1000px;
-	z-index: -1;
+	z-index: 1;
 }
 
 .rounded-corners {
-	background-color:#21ab01;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	-khtml-border-radius: 20px;
+	background-color:white;
+	-moz-border-radius: 0px 0px 0px 20px;
+	-webkit-border-radius: 0px 0px 0px 20px;
+	-khtml-border-radius: 0px 0px 0px 20px;
 	behavior:url(/css/border-radius.htc);
-	border-radius: 20px;
+	border-radius: 0px 0px 0px 20px;
 }
 
 #upload {

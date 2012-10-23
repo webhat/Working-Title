@@ -14,15 +14,15 @@
 			<div class="upload">upload</div>
 			<div class="boxmargin headline">{$WORK}</div>
 		</div>
-		<div id="who" class="box rounded-corners">
+		<div id="whoami" class="box rounded-corners">
 			<div class="edit">edit</div>
 			<div class="boxmargin headline">{$WHO}</div>
 		</div>
-		<div id=what"" class="box rounded-corners">
+		<div id="whatdoido" class="box rounded-corners">
 			<div class="edit">edit</div>
 			<div class="boxmargin headline">{$WHAT}</div>
 		</div>
-		<div id="why" class="box rounded-corners">
+		<div id="whydoidothis" class="box rounded-corners">
 			<div class="edit">edit</div>
 			<div class="boxmargin headline">{$WHY}</div>
 		</div>
@@ -31,5 +31,6 @@
 			<div class="boxmargin headline">{$PROFILE}</div>
 		</div>
 	</div>
+	<div id="blackbar"></div>
 
 {include file="smarty/footer.tpl"}

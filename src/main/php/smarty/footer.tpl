@@ -20,7 +20,7 @@
 									$(".edit").bind( 'click', function(o) {
 											var elem = $(this).siblings()[0];
 
-											console.log(elem.id +" fired");
+											console.log($(this).parent().attr('id') +" fired");
 
 											var divHtml = $(elem).html(); // notice "this" instead of a specific #myDiv
 											var editableText = $("<textarea />");
@@ -32,6 +32,10 @@
 											editableText.focus();
 											editableText.blur( function editableTextBlurred() {
 													var html = $(this).val();
+													var par = $(this).parent().attr('id');
+													var json = {};
+													json[par] = html;
+													$.post( '/store.php', json, {contentType: 'application/json'} );
 													$(elem).html(html);
 													$(this).replaceWith(elem);
 											});

@@ -3,6 +3,7 @@
 date_default_timezone_set("UTC");
 
 require('bootstrap.php');
+require('loggedinas.php');
 
 $maker = 'Unknown';
 if(array_key_exists( 'id', $_GET))
@@ -22,12 +23,11 @@ $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->debugging = false;
 
-$loggedin = TRUE;
 
-if( !$loggedin) {
-	$smarty->assign( 'EDIT', 'display:none');
+if( $loggedinas != $maker) {
+	$smarty->assign( 'EDIT', 'display:none;');
 } else {
-	$smarty->assign( 'EDIT', 'display:inline');
+	$smarty->assign( 'EDIT', 'display:inline;');
 }
 
 $smarty->assign( 'USER', $p->getUser());
@@ -36,7 +36,7 @@ $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'WHO', ''. $p->getProperty('whoami'));
 $smarty->assign( 'WHAT', ''. $p->getProperty('whatdoido'));
 $smarty->assign( 'WHY', ''. $p->getProperty('whydoidothis'));
-$smarty->assign( 'WORK', ''. $p->getProperty('whoami'));
+$smarty->assign( 'WORK', ''. $p->getProperty('work'));
 
 $smarty->display( 'smarty/index.tpl');
 

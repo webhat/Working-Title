@@ -18,7 +18,7 @@ if( $user == "" || $pass == "") {
 	exit();
 }
 
-$ul = new UserLogin('redhat');
+$ul = new UserLogin($user);
 #$ul->setPassword('redhat');
 #$ul->store();
 if( $ul->passwordCheck( $pass)) {
@@ -26,8 +26,13 @@ if( $ul->passwordCheck( $pass)) {
 	setcookie("hash", $ul->generateCookie(), time()+3600);
 
 	print $success;
-} else
+} else {
 	print $fail;
+	exit();
+}
 
 
 ?>
+<script>
+	top.location = "/profile.php?id=<?php print $user; ?>";
+</script>
