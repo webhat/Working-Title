@@ -38,4 +38,3 @@ function getUrlVars() {
 	});
 	return vars;
 }
-

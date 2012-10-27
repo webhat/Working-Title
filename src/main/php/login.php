@@ -31,7 +31,6 @@ if( $ul->passwordCheck( $pass)) {
 	exit();
 }
 
-
 ?>
 <script>
 	top.location = "/profile.php?id=<?php print $user; ?>";

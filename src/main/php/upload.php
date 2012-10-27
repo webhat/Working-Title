@@ -49,7 +49,7 @@ function mail_attachment($filename, $path, $mailto, $from_mail, $from_name, $rep
 $mail = filter_input(INPUT_POST,'mail', FILTER_SANITIZE_EMAIL);
 
 $allowedExts = array("jpg", "jpeg", "gif", "png");
-		$filename = explode(".", $_FILES["file"]["name"]);
+$filename = explode(".", $_FILES["file"]["name"]);
 $extension = end( $filename);
 if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
