@@ -29,6 +29,14 @@
 		<div id="profile" class="box rounded-corners">
 			<div class="edit">edit</div>
 			<div class="boxmargin headline">{$PROFILE}</div>
+			<div>
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="7C7AX3LU3J4FS">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
 		</div>
 	</div>
 
