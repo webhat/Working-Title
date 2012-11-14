@@ -50,6 +50,26 @@
         </script>
         <script src="http://demo.workingtitle365.com/creations.php?id={$USER}&callback=creations">
 				</script>
+        <script src="/js/vendor/jquery.ba-hashchange.min.js">
+				</script>
+				<script>
+					var prev = "#";
+					var next = "#";
+					function setupHash() {
+							$(".work").hide();
+							var page = $(".work").length-1;
+							if(document.location.hash != "") {
+								page =  + document.location.hash.toString().substr(6);
+							}
+							$("#work"+ page).show();
+							$("#next").attr("href", "#page-" + (page+1));
+							$("#prev").attr("href", "#page-" + (page-1));
+					}
+					$(function(){
+							  $(window).hashchange(setupHash);
+								$(window).hashchange();
+					});
+				</script>
 				<div id="upload">
 					<iframe id="uploadwin" width="400" height="400">
 				</div>

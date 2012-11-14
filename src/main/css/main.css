@@ -110,6 +110,11 @@ textarea {
 	z-index:-1;
 }
 
+a {
+	color:#000000;
+	text-decoration:none;
+}  
+
 .boxmargin {
 	text-align:justify;
 	margin: 10px;
@@ -172,6 +177,22 @@ textarea {
 	z-index: 1;
 }
 
+.nav a {
+	margin: 20px;
+}
+
+.work {
+	margin:20px
+}
+
+#fullwidth {
+	top: 90px;
+	left:230px;
+	width: 1000px;
+	height: 80px;
+	background-size:1000px 70px;
+	z-index:1;
+}
 .rounded-corners {
 	background-color:white;
 	-moz-border-radius: 0px 0px 0px 20px;

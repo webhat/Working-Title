@@ -27,3 +27,4 @@
 				</style>
     </head>
     <body>
+		<div id="loginbox" ></div>

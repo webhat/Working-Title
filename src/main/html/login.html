@@ -1,13 +1,17 @@
-<div style="position:absolute; float:right;top:0;right:300px;margin:0 5px 0 5px">
-	<div id="extloginbox" style="display:none;width:200px;margin:0 5px 0 5px;background-color:blue;" class="rounded-corners">
+<div style="position:absolute; float:right;top:0;right:300px;margin:0 5px 0 5px;z-index:20;">
+	<div id="extloginbox" style="{$LOGIN};display:none;width:200px;margin:0 5px 0 5px;background-color:white;" class="rounded-corners">
 		<form id="login" action="login.php" style="margin:0px 5px 5px 5px;" method="POST" target="logincheck">
 			<span><label>Username:</label><input type="text" name="user" style="width:150px" /></span>
 			<span><label>Password:</label><input type="text" name="pass" style="width:150px" /></span>
 			<span><input type="submit" style="float:right;margin-top:4px;"/></span>
 		</form>
 	</div>
-	<div id="extloginpd" style="background-color:blue;width:50px;float:right;margin: 0 5px 5px 5px;" class="rounded-corners">
+	<div id="extloginpd" style="{$LOGIN};background-color:white;width:50px;float:right;margin: 0 5px 5px 5px;" class="rounded-corners">
 		<a href="#" id="loginlink" style="margin:5px 5px 5px 5px;">Login</a>
+	</div>
+	<div style="{$LOGOUT};" class="rounded-corners">
+		<a href="/profile.php?id={$USER}" style="margin:5px 5px 5px 5px;">{$USER}</a> |
+		<a href="/logout.php" style="margin:5px 5px 5px 5px;">Logout</a>
 	</div>
 	<iframe id="logincheck" style="display:none"></iframe>
 </div>

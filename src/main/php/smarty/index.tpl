@@ -13,6 +13,7 @@
 		<div id="mywork" class="box rounded-corners">
 			<div class="upload">upload</div>
 			<div class="boxmargin headline">{$WORK}</div>
+			<div class="nav"><a id="prev" href="#" style="float:left;">prev</a><a id="next" href="#" style="float:right;">next</a></div>
 		</div>
 		<div id="whoami" class="box rounded-corners">
 			<div class="edit">edit</div>

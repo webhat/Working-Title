@@ -1,7 +1,7 @@
 function creations(json) {
 	$.each(json, function( i, item) {
 			var type = item.type;
-			$("#mywork").append($("<div id='work"+ i +"' class='work "+ type +"' />"));
+			$("#mywork").append($("<center><div id='work"+ i +"' class='work "+ type +"' /></center>"));
 
 			var myelem;
 			switch( type) {
@@ -27,7 +27,7 @@ function creations(json) {
 					break;
 				default:
 			}
-			$("#work"+ i).append(myelem);
+			$("#work"+ i).prepend(myelem);
 	});
 }
 
@@ -38,3 +38,18 @@ function getUrlVars() {
 	});
 	return vars;
 }
+
+$(document).ready( function() {
+	$("#loginbox").load('userbar.php', function() {
+		console.log('a');
+		$('#loginlink').click( function() {
+			$('#extloginbox').animate({
+				height: 120,
+				width: 200
+			}, 500, function() {
+				console.log('login');
+				$("#user").focus();
+			}).toggle();
+		});
+	});
+});

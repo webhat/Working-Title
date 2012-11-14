@@ -1,6 +1,7 @@
 <?php
 
 require_once('bootstrap.php');
+require_once('onetime.php');
 
 $user = "";
 $pass = "";
@@ -22,8 +23,8 @@ $ul = new UserLogin($user);
 #$ul->setPassword('redhat');
 #$ul->store();
 if( $ul->passwordCheck( $pass)) {
-	setcookie("user", $user, time()+2592000);
-	setcookie("hash", $ul->generateCookie(), time()+3600);
+	setcookie("user", $user, time()+5184000);
+	setcookie("hash", $ul->generateCookie(), time()+2592000);
 
 	print $success;
 } else {
