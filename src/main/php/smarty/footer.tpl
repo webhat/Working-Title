@@ -69,6 +69,10 @@
 								$(window).hashchange();
 					});
 				</script>
+				<script>
+					var ref = $(document)[0].referrer;
+					console.log(ref);
+				</script>
 				<div id="upload">
 					<iframe id="uploadwin" width="400" height="400">
 				</div>

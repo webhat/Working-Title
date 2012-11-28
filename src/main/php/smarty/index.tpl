@@ -17,6 +17,7 @@
 			<div id="profile" class="box rounded-corners">
 				<div class="edit">edit</div>
 				<div><img src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
+				<div class="site headline"><br /><br /><a href="{$SITE}">Mijn website</a></div>
 				<div class="boxmargin headline">{$PROFILE}</div>
 				<div id="becomefan">
 					<a href="/payments.php?id={$USER}">

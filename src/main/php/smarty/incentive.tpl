@@ -21,8 +21,8 @@
 			<div id="fullwidth" class="box rounded-corners" style="top:30px;height:300px;">
 				<form style="margin:10px;margin-left:10%;margin-right:33%;" id="incform">
 					<div id="indentform">
-						<div id="errormsg"></div>
 						<br />
+						<div id="errormsg"></div>
 						<br />
 						<label>Bedrag: &euro;</label>
 						<input type="text" value="" id="amount"/>
@@ -39,7 +39,9 @@
 		</div>
 	</div>
 
-	<div id="blackbar"></div>
+		<div id="blackbar">
+	{include file="smarty/blackbar.tpl"}
+		</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -58,7 +60,8 @@
 				}).done(function() { 
 					  $(this).addClass("done");
 				});
-			//$("#incform")[0].reset();
+			$("#incform")[0].reset();
+			//location.reload(true);
 			return false;
 	});
 	    {/literal}

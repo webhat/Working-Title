@@ -9,19 +9,24 @@
 
 	<div>
 		<div id="header" class="box rounded-corners">
-			<div class="boxmargin">{$WT}</div>
+			<div class="boxmargin">
+				<h1>{$WT}</h1>
+				<p class="category">FIXME: category here</p>
+			</div>
 		</div>
-		<div id="fullwidth" class="box rounded-corners" style="height: 600px;">
-			<div id="errormsg" > </div>
-			<form style="margin:10px;margin-left:10%;margin-right:33%;">
-				<input id="user" type="hidden" value="{$USER}" />
-				<label style="display:inline">Bedrag: &euro;</label>
-				<input id="amount" type="text" value="36.50" style="display:inline" />
-				<div id="incentives">
-					<input type="radio" name="incentive" checked value="0" style="display:inline;margin-right:10px;">Ik wil niets terug</input>
-				</div>
-				<button id="submit">Pay</button>
-			</form>
+		<div id="boxy">
+			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;">
+				<div id="errormsg" > </div>
+				<form style="margin:10px;margin-left:10%;margin-right:33%;">
+					<input id="user" type="hidden" value="{$USER}" />
+					<label style="display:inline">Bedrag: &euro;</label>
+					<input id="amount" type="text" value="36.50" style="display:inline" />
+					<div id="incentives">
+						<input type="radio" name="incentive" checked value="0" style="display:inline;margin-right:10px;">Ik wil niets terug</input>
+					</div>
+					<button id="submit">Pay</button>
+				</form>
+			</div>
 		</div>
 	</div>
 

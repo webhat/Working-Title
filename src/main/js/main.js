@@ -54,6 +54,7 @@ $(document).ready( function() {
 });
 
 function incentives( json) {
+	//$("#pincentives").empty();
 	$.each(json, function( i, item) {
 			var incen = $("<br /><input type='radio' name='incentive' value='"+ item.amount +"' style='display:inline;margin-right:10px;' id='"+item.code+"'>&euro;"+ item.amount +" - "+ item.title +"</input>");
 			var profile = $("<div class='incentive'><span class='price'>&euro;"+ item.amount +"</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");

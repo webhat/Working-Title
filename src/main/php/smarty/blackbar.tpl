@@ -4,4 +4,9 @@
 		<input type="hidden" id="idstamp" name="idstamp" value="jeAx6MCW2VgxvwkqA1YS3mHMQOthv6xnSX96qDlzC7E=" />
 		<input type="image" src="/img/fan.png" value="Submit" tabindex="2">
 	</form>
+	<div>
+		<a style="color:white" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use">Gebruikersvoorwaarden</a> | 
+		<a style="color:white" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy">Privacy Policy</a> | 
+		<a style="color:white" href="http://workingtitle365.uservoice.com/knowledgebase/articles/142371">Cookies</a>
+	</div>
 </div>

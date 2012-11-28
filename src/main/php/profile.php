@@ -31,8 +31,9 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
-$smarty->assign( 'WT', ''. $p->getUser());
+$smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
+$smarty->assign( 'SITE', ''. $p->getProperty('site'));
 $smarty->assign( 'PIMG', ''. md5(strtolower(trim($p->getProperty('mail')))));
 $smarty->assign( 'WHO', ''. $p->getProperty('whoami'));
 $smarty->assign( 'WHAT', ''. $p->getProperty('whatdoido'));

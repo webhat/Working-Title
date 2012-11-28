@@ -15,9 +15,16 @@ $user = (string) $loggedinas;
 
 $fp = new FanProfile($user);
 
-$fp->addPayment( $json);
+$payments = $fp->getProperty( "payments");
+
+$amount = 10000;
+foreach( $payments as $payment) {
+	if( $payment['code'] == $json->transx) {
+		$amount = $payment['amount'];
+	}
+}
 
 $fp->store();
 
-echo "{ \"transaction\":\"". $json->code ."\"}";
+echo "{ \"transaction\":\"". $json->code ."\", \"amount\":\"$amount\"}";
 ?>

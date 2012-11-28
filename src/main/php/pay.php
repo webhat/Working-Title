@@ -37,7 +37,7 @@ if( $loggedinas != $maker) {
 
 $smarty->assign( 'USER', $p->getUser());
 $smarty->assign( 'TRANSX', $transx);
-$smarty->assign( 'WT', 'Working Title 365 - '. $p->getUser());
+$smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'MAIL', ''. $p->getProperty('mail'));
 
