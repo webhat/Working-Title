@@ -6,37 +6,20 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-	<style type="text/css">
-		label {
-			float: left;
-			width: 120px;
-			font-weight: bold;
-		}
-
-		input, textarea {
-			width: 180px;
-			margin-bottom: 5px;
-		}
-
-		textarea {
-			width: 250px;
-			height: 150px;
-		}
-	</style>
 
 	<div>
 		<div id="header" class="box rounded-corners">
 			<div class="boxmargin">{$WT}</div>
 		</div>
-		<div id="fullwidth" class="box rounded-corners">
-			<form>
+		<div id="fullwidth" class="box rounded-corners" style="height: 600px;">
+			<form style="margin:10px;margin-left:33%;margin-right:33%;">
 				<label>Username:</label>
 				<input id="username" type="text" value="{$USER}" />
 				<label>Password:</label>
 				<input id="passwd" type="password" value="" />
 				<label>Email:</label>
 				<input id="mail" type="text" value="{$MAIL}" />
-				<button id="submit">Store</button>
+				<button id="submit" style="float:right;">Create User</button>
 			</form>
 		</div>
 	</div>

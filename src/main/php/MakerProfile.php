@@ -42,9 +42,20 @@ class MakerProfile extends ProfileMongo {
 
 		$size = count($creations);
 		$creations[$size] = $creation;
-#print "\n". $epoch . "\n";
 
 		$this->setProperty( 'creations', $creations);
+		$this->store();
+	}
+
+	public function addIncentive( $incentive) {
+		$incentives = $this->getProperty( 'incentives');
+		if( is_null($incentives))
+			$incentives = array();
+
+		$size = count($incentives);
+		$incentives[$size] = $incentive;
+
+		$this->setProperty( 'incentives', $incentives);
 		$this->store();
 	}
 }

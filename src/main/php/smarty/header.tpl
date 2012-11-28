@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 				<style type="text/css">
-					.edit, .upload {
+					.edit, .upload, .addinc {
 						{$EDIT};
 						color: red;
 						float:right;

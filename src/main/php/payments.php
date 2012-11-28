@@ -11,6 +11,7 @@ if(array_key_exists( 'id', $_GET))
 
 $smarty = new Smarty;
 
+
 $p = new MakerProfile( $maker);
 $p->reset();
 
@@ -31,14 +32,10 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
-$smarty->assign( 'WT', ''. $p->getUser());
+$smarty->assign( 'WT', 'Working Title 365 - '. $p->getUser());
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
-$smarty->assign( 'PIMG', ''. md5(strtolower(trim($p->getProperty('mail')))));
-$smarty->assign( 'WHO', ''. $p->getProperty('whoami'));
-$smarty->assign( 'WHAT', ''. $p->getProperty('whatdoido'));
-$smarty->assign( 'WHY', ''. $p->getProperty('whydoidothis'));
-$smarty->assign( 'WORK', ''. $p->getProperty('work'));
+$smarty->assign( 'MAIL', ''. $p->getProperty('mail'));
 
-$smarty->display( 'smarty/index.tpl');
+$smarty->display( 'smarty/payments.tpl');
 
 ?>

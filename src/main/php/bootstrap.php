@@ -11,3 +11,13 @@ function loader($class) {
 }
 
 spl_autoload_register('loader');
+
+foreach($_POST  as $key => $value) {
+	$_POST[$key] = strip_tags($value);
+}
+
+foreach($_GET  as $key => $value) {
+	$_GET[$key] = strip_tags($value);
+}
+
+

@@ -18,8 +18,7 @@
 						$(document).ready(function() {
 									// edit textboxes
 									$(".edit").bind( 'click', function(o) {
-											var elem = $(this).siblings()[0];
-
+											var elem = $(this).siblings(".boxmargin")[0];
 											console.log($(this).parent().attr('id') +" fired");
 
 											var divHtml = $(elem).html(); // notice "this" instead of a specific #myDiv
@@ -48,10 +47,10 @@
 							});
 	    {/literal}
         </script>
-        <script src="http://demo.workingtitle365.com/creations.php?id={$USER}&callback=creations">
-				</script>
-        <script src="/js/vendor/jquery.ba-hashchange.min.js">
-				</script>
+        <script src="http://demo.workingtitle365.com/creations.php?id={$USER}&callback=creations"> </script>
+				<script src="incentive.json.php?id={$USER}&callback=incentives"></script>
+        <script src="/js/abtests.js"> </script>
+        <script src="/js/vendor/jquery.ba-hashchange.min.js"> </script>
 				<script>
 					var prev = "#";
 					var next = "#";
