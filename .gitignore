@@ -1,0 +1,6 @@
+*.sw*
+*.DS_store
+*.lock*
+*.out
+*.log
+ext

@@ -9,7 +9,10 @@
 		<script type="text/javascript">
 			window.google_analytics_uacct = "UA-4980002-2";
 		</script>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -24,25 +27,54 @@
   })();
 
 </script>
-<script type="text/css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#uploadfile").attr('action',"/upload.php?id="+ getUrlVars()['id']);
+		$("#errormsg").text(getUrlVars()['msg']);
+	});
+</script>
+<style type="text/css">
 	#box {
 		position : absolute;
 		text-align : center;
 	}
-</script>
+	#formup {
+		margin: 10px;
+	}
+
+	label {
+		display:block;
+margin-left:10px;
+	}
+	input, select {
+		display:block;
+		margin-left:10px;
+	}
+</style>
 	</head>
-	<body>
-		<div style="width:1350px;left:30px;top:50px;" id="wttestdiv">
-			<form action="../php/upload.php" method="post" enctype="multipart/form-data">
-			<p>
-				<label for="mail">Mail adres:</label>
-				<input type="text" name="mail" id="mail" /> 
-				<br />
+	<body style="background-image:url(http://static.tumblr.com/ro5gmuq/ZSSkkujk0/ko3lqkpvh62h949njlofkumx_400.jpg)">
+		<div style="width:350px;left:30px;top:50px;" id="formup">
+			<span id="errormsg"></span>
+			<form id="uploadfile" action="/upload.php" method="post" enctype="multipart/form-data">
+			<div>
+				<label>Title:</label>
+				<input type="text" name="title" />
+				<label>Description:</label>
+				<!--
+				<input type="text" name="desc" />
+				<label>Type:</label>
+				-->
+				<select name="type">
+				  <option value="audio">Audio</option>
+					<option value="video">Video</option>
+					<option value="text">Text</option>
+					<option value="image">Image</option>
+				</select>
 				<label for="file">Filename:</label>
-				<input type="file" name="file" id="file" /> 
-				<br />
-				<input type="submit" name="submit" value="Submit" />
-				</p>
+				<input type="file" name="file" id="file" /> <br />
+				<p>Het uploaden duurt enige tijd, even geduld aub.</p>
+				<input type="submit" name="submit" value="Submit" style="float:right;" />
+				</div>
 			</form>
 		</div>
 	</body>
