@@ -20,7 +20,7 @@
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
 					<label style="display:inline">Bedrag: &euro;</label>
-					<input id="amount" type="text" value="36.50" style="display:inline" disabled />
+					<input id="amount" type="text" value="" style="display:inline" disabled />
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;">PayPal</input><br />
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;">iDeal</input><br />

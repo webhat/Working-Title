@@ -23,7 +23,7 @@
 						<br />
 						<label>Gebruikersnaam:</label>
 						<input id="username" type="text" value="{$USER}" />
-						<label>Profiel Naam:</label>
+						<label>Profiel Naam: (max. 45 tekens)</label>
 						<input id="profilename" type="text" value="" />
 						<label>Wachtwoord:</label>
 						<input id="passwd" type="password" value="" />
@@ -31,6 +31,7 @@
 						<input id="mail" type="text" value="" />
 						<label>Website:</label>
 						<input id="site" type="text" value="" />
+						<!--
 						<label>Korte beschrijving:</label>
 						<input id="profile" style="position:static;width:210px;" type="text" value="" />
 						<br />
@@ -58,8 +59,9 @@
 						<input id="pay_bankaccount" type="text" value="" />
 						<label>PayPal:</label>
 						<input id="pay_paypal" type="text" value="" />
+						-->
 						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use">Gebruikersvoorwaarden</a></label>
-						<input type="checkbox" id"terms"/>
+						<input type="checkbox" id="terms"/>
 						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy">Privacy Policy</a></label>
 						<input type="checkbox" id="privacy" />
 						<button style="float:right;">Create User</button>
@@ -77,24 +79,39 @@
 	<script type="text/javascript">
 	    {literal}
 	$("button").click( function() {
-			var json = {};
-			$("#indentform input").each(function(i, val) {
-				json[val.id] = $("#"+ val.id).val();
-			});
+		var json = {};
+		var err = true;
+		$("#indentform input[type=checkbox]").each(function(i, val) {
+			if($(val).is(':checked')) {
+			} else {
+				if(err)
+					$("#errormsg").append("Alles moet worden ingevuld.");
+				err = false;
+			}
+			json[val.id] = $(val).is(':checked');
+		});
+		$("#indentform input").each(function(i, val) {
+			if($("#"+ val.id).val() == "") {
+				if(err)
+					$("#errormsg").append("Alles moet worden ingevuld.");
+				err = false;
+			}
+			json[val.id] = $("#"+ val.id).val();
+		});
+		if(err)
 			$.ajax( {
 				type:"POST",
 				url:'/adduser.php',
 				data: {"json":JSON.stringify(json)},
 				dataType: 'json'
-				}).always(function(ret) { 
-					if(ret && ret.error)
-						$("#errormsg").append(ret.error);
-				}).done(function(ret) {
-					console.log(ret);
-					top.location = "/profile.php?id="+ json["username"];
-				});
-			return false;
-		});
+			}).fail(function(ret) { 
+					$("#errormsg").append(JSON.parse(ret.responseText).error);
+			}).done(function(ret) {
+				console.log(ret);
+				top.location = "/makerrules.html?id="+ json["username"];
+			});
+		return false;
+	});
 	    {/literal}
 		
 	</script>

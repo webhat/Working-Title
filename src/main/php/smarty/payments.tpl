@@ -20,7 +20,7 @@
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
 					<label style="display:inline">Bedrag: &euro;</label>
-					<input id="amount" type="text" value="36.50" style="display:inline" />
+					<input id="amount" type="text" value="" style="display:inline" />
 					<div id="incentives">
 						<input type="radio" name="incentive" checked value="0" style="display:inline;margin-right:10px;">Ik wil niets terug</input>
 					</div>
@@ -30,7 +30,9 @@
 		</div>
 	</div>
 
-	<div id="blackbar"></div>
+		<div id="blackbar">
+	{include file="smarty/blackbar.tpl"}
+		</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">

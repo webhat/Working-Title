@@ -24,12 +24,12 @@
 						<br />
 						<div id="errormsg"></div>
 						<br />
-						<label>Bedrag: &euro;</label>
+						<label>Bedrag: (cent per dag)</label>
 						<input type="text" value="" id="amount"/>
 						<label>Titel</label>
 						<input type="text" value="" id="title" />
 						<label>Korte beschrijving</label>
-						<input type="text" value="" id="desc" />
+						<textarea id="desc" style="margin-left:10px;width:204px;"></textarea>
 						<br />
 						<button style="float:right">Voeg toe</button>
 						<br />
@@ -47,7 +47,7 @@
 	<script type="text/javascript">
 	    {literal}
 	$("button").click( function() {
-			$(this).attr("disabled", "disabled");
+			//$(this).attr("disabled", "disabled");
 			var json = {};
 			json['amount'] = $("#amount").val();
 			json['title'] = $("#title").val();
@@ -57,11 +57,15 @@
 				url:'/addincentive.php',
 				data: {"json":JSON.stringify(json)},
 				dataType: 'json'
-				}).done(function() { 
-					  $(this).addClass("done");
-				});
+			}).done(function() { 
+					{/literal}
+						$.getJSON("incentive.json.php?id={$USER}&callback=?", function(data) {
+							incentives(data);
+					{literal}
+			});
 			$("#incform")[0].reset();
 			//location.reload(true);
+						})
 			return false;
 	});
 	    {/literal}

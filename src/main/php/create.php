@@ -8,7 +8,7 @@ setcookie("hash", "", time()+5184000);
 require('bootstrap.php');
 require('loggedinas.php');
 
-$maker = 'Unknown';
+$maker = '';
 if(array_key_exists( 'id', $_GET))
 	$maker = (string) $_GET['id'];
 
@@ -34,7 +34,7 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
-$smarty->assign( 'WT', 'Profiel Title Komt Hier');
+$smarty->assign( 'WT', 'Profiel Naam Komt Hier');
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'MAIL', ''. $p->getProperty('mail'));
 

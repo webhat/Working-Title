@@ -30,10 +30,17 @@ if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:inline;');
 }
 
+function addhttp($url) {
+	    if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+				        $url = "http://" . $url;
+								    }
+			    return $url;
+}
+
 $smarty->assign( 'USER', $p->getUser());
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
-$smarty->assign( 'SITE', ''. $p->getProperty('site'));
+$smarty->assign( 'SITE', ''. addhttp($p->getProperty('site')));
 $smarty->assign( 'PIMG', ''. md5(strtolower(trim($p->getProperty('mail')))));
 $smarty->assign( 'WHO', ''. $p->getProperty('whoami'));
 $smarty->assign( 'WHAT', ''. $p->getProperty('whatdoido'));

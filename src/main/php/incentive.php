@@ -5,9 +5,7 @@ date_default_timezone_set("UTC");
 require('bootstrap.php');
 require('loggedinas.php');
 
-$maker = 'Unknown';
-if(array_key_exists( 'id', $_GET))
-	$maker = (string) $_GET['id'];
+$maker = $loggedinas;
 
 $smarty = new Smarty;
 

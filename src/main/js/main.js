@@ -10,11 +10,11 @@ function creations(json) {
 					$(myelem).html("<a href='"+ item.content +"' rel='nofollow'>download '"+ item.title +"'</a>");
 					break;
 				case 'image':
-					myelem = $('<img style="max-width:500px;margin: 0 auto;" />');
+					myelem = $('<img style="max-width:700px;margin: 0 auto;" />');
 					$(myelem).attr('src', item.content);
 					break;
 				case 'video':
-					myelem = $('<video controls="controls" width="320" height="240" />');
+					myelem = $('<video controls="controls" style="max-width:700px;margin: 0 auto;" />');
 					var source = $('<source type="video/mp4"/>Your browser does not support the video tag.');
 					$(myelem).attr('src', item.content);
 					$(myelem).html(source);
@@ -54,10 +54,10 @@ $(document).ready( function() {
 });
 
 function incentives( json) {
-	//$("#pincentives").empty();
+	$("#pincentives .incentive").remove();
 	$.each(json, function( i, item) {
-			var incen = $("<br /><input type='radio' name='incentive' value='"+ item.amount +"' style='display:inline;margin-right:10px;' id='"+item.code+"'>&euro;"+ item.amount +" - "+ item.title +"</input>");
-			var profile = $("<div class='incentive'><span class='price'>&euro;"+ item.amount +"</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");
+			var incen = $("<br /><input type='radio' name='incentive' value='"+ (+item.amount)*365/100 +"' style='display:inline;margin-right:10px;' id='"+item.code+"'>"+ item.amount +" cent per dag / &euro;"+ (+item.amount)*365/100 +" per jaar  - "+ item.title +"</input>");
+			var profile = $("<div class='incentive'><span class='price'>"+ item.amount +" cent per dag</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");
 			$("#incentives").append(incen);
 			$("#pincentives").append(profile);
 			$(".incentive:first").css("border-top-style","none");
