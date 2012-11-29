@@ -21,3 +21,4 @@ Some resources were used from:
 bootstrap.php taken from:
 * https://github.com/travis-ci/travis-ci-php-example/
 
+Appologies to all the [stackoverflow](http://stackoverflow.com/) members for not naming you personally. You are truly Gods!
