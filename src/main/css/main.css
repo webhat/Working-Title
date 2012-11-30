@@ -107,7 +107,7 @@ textarea {
 	height: 200px;
 	width:100%;
 	background-color:#222;
-	bottom:-1800px;
+	bottom:-2500px;
 	z-index:-1;
 }
 
@@ -115,7 +115,7 @@ textarea {
 	position:relative;
 	z-index: 30;
 	left:30%;
-	width:400px;
+	width:700px;
 }
 
 a#loginlink {
