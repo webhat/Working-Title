@@ -21,7 +21,6 @@ class UserLogin extends ProfileMongo {
 	}
 
 	private function generatePassword( $passwd) {
-		$this->salt = md5(time());
 		return hash('sha512', $passwd . $this->salt);
 	}
 
