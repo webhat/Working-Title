@@ -16,7 +16,7 @@ class UserLoginTest extends PHPUnit_Framework_TestCase {
 		$mongo = new Mongo(); // connect
 		$config = new WTConfig();
 		$db = $mongo->selectDB($config->wtdatabase);
-		$db->profiles->drop();
+//		$db->profiles->drop();
 	}
 
 	public function testSetPassword() {
