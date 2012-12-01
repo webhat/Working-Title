@@ -7,8 +7,14 @@ class ProfileMongo {
 	private $dirty = FALSE;
 
 	public function __construct( $user = null) {
-		$this->mongo = new Mongo(); // connect
-		$this->db = $this->mongo->selectDB("wt365");
+		try {
+			$this->mongo = new Mongo(); // connect
+		} catch (Exception $e) {
+			print("ERROR: Database unreachable");
+			exit(-1);
+		}
+		$config = new WTConfig();
+		$this->db = $this->mongo->selectDB($config->wtdatabase);
 
 		if( is_string( $user))
 			$this->setUser( $user);

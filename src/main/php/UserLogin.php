@@ -5,6 +5,7 @@ class UserLogin extends ProfileMongo {
 	private $salt = "salty";
 
 	public function setPassword( $passwd) {
+		$this->setProperty( 'salt', $this->salt);
 		$this->setProperty( 'passwd', $this->generatePassword( $passwd));
 	}
 
@@ -20,6 +21,7 @@ class UserLogin extends ProfileMongo {
 	}
 
 	private function generatePassword( $passwd) {
+		$this->salt = md5(time());
 		return hash('sha512', $passwd . $this->salt);
 	}
 

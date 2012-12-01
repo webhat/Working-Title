@@ -10,7 +10,16 @@ function loader($class) {
 	}
 }
 
+function loadera($class)
+{
+    $file = "src/main/php/". $class . '.php';
+    if (file_exists($file)) {
+        require $file;
+    }
+}
+
 spl_autoload_register('loader');
+spl_autoload_register('loadera');
 
 foreach($_POST  as $key => $value) {
 	$_POST[$key] = strip_tags($value);

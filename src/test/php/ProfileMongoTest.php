@@ -6,7 +6,8 @@ class ProfileMongoTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp() {
 		$this->mongo = new Mongo(); // connect
-		$this->db = $this->mongo->selectDB("wt365");
+		$config = new WTConfig();
+		$this->db = $this->mongo->selectDB($config->wtdatabase);
 		$this->profileMongo = new ProfileMongo();
 	}
 

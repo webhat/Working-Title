@@ -14,13 +14,14 @@ class UserLoginTest extends PHPUnit_Framework_TestCase {
 
 	public function tearDown() {
 		$mongo = new Mongo(); // connect
-		$db = $mongo->selectDB("wt365");
+		$config = new WTConfig();
+		$db = $mongo->selectDB($config->wtdatabase);
 		$db->profiles->drop();
 	}
 
 	public function testSetPassword() {
 		$passwd = "webhat1";
-		$expected = hash('sha512', $passwd . "salty");
+		$expected = hash('sha512', $passwd . md5(time()));
 
 		$user = "webhat";
 		$uL = new UserLogin( $user);
@@ -44,7 +45,7 @@ class UserLoginTest extends PHPUnit_Framework_TestCase {
 
 	public function testGeneratePassward() {
 		$passwd = "webhat";
-		$expected = hash('sha512', $passwd . "salty");
+		$expected = hash('sha512', $passwd . md5(time()));
 
 		$user = "webhat";
 		$uL = new UserLogin( $user);

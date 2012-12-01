@@ -13,7 +13,8 @@ class MakerProfileTest extends PHPUnit_Framework_TestCase {
 
 	public function tearDown() {
 		$mongo = new Mongo(); // connect
-		$db = $mongo->selectDB("wt365");
+		$config = new WTConfig();
+		$db = $mongo->selectDB($config->wtdatabase);
 		$db->profiles->drop();
 	}
 
