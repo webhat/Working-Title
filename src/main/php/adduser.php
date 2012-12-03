@@ -17,7 +17,6 @@ if($ul->getCookie() != "") {
 }
 
 
-
 foreach( $json as $prop => $val) {
 	$storedprop = preg_replace("[^A-Za-z0-9]", "", (string) $prop);
 	$storedval = preg_replace("[:/^A-Za-z0-9._@+-]", "", (string) $val);
@@ -29,6 +28,8 @@ foreach( $json as $prop => $val) {
 		case "passwd": 
 			$ul->setPassword( (string)$val);
 			break;
+		case "mail":
+			$ul->subscribe($storeval);
 		default:
 			$ul->setProperty($storedprop, $storedval);
 	}

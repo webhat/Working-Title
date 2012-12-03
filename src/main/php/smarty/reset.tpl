@@ -22,49 +22,10 @@
 						<div id="errormsg">&nbsp;</div>
 						<br />
 						<label>Gebruikersnaam:</label>
-						<input id="username" type="text" value="{$USER}" />
-						<label>Profiel Naam: (max. 45 tekens)</label>
-						<input id="profilename" type="text" value="{$PROFILENAME}" />
-						<label>Wachtwoord:</label>
-						<input id="passwd" type="password" value="" />
-						<label>Email:</label>
-						<input id="mail" type="text" value="{$MAIL}" />
-						<label>Website:</label>
-						<input id="site" type="text" value="{$SITE}" />
-						<!--
-						<label>Korte beschrijving:</label>
-						<input id="profile" style="position:static;width:210px;" type="text" value="" />
-						<br />
-						<label>Voornaam:</label>
-						<input id="fname" type="text" value="" />
-						<label>Achternaam:</label>
-						<input id="lname" type="text" value="" />
-						<label>Geslacht:</label>
-						<input id="sex" type="text" value="" />
-						<br />
-						<label>Straat:</label>
-						<input id="adr_street" type="text" value="" />
-						<label>Huisnummer:</label>
-						<input id="adr_nr" type="text" value="" />
-						<label>Toevoeging:</label>
-						<input id="adr_code" type="text" value="" />
-						<label>Woonplaats:</label>
-						<input id="adr_city" type="text" value="" />
-						<label>Postcode:</label>
-						<input id="adr_zip" type="text" value="" />
-						<label>Land:</label>
-						<input id="adr_country" type="text" value="" />
-						<br />
-						<label>Bankrekening:</label>
-						<input id="pay_bankaccount" type="text" value="" />
-						<label>PayPal:</label>
-						<input id="pay_paypal" type="text" value="" />
-						-->
-						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use">Gebruikersvoorwaarden</a></label>
-						<input type="checkbox" id="terms"/>
-						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy">Privacy Policy</a></label>
-						<input type="checkbox" id="privacy" />
-						<button style="float:right;">Create User</button>
+						<input id="username" type="text" value="" />
+						<label>Mail:</label>
+						<input id="mail" type="text" value="" />
+						<button style="float:right;">Reset</button>
 					</div>
 				</form>
 			</div>
@@ -101,14 +62,14 @@
 		if(err)
 			$.ajax( {
 				type:"POST",
-				url:'/adduser.php',
+				url:'/sendreset.php',
 				data: {"json":JSON.stringify(json)},
 				dataType: 'json'
 			}).fail(function(ret) { 
 					$("#errormsg").append(JSON.parse(ret.responseText).error);
 			}).done(function(ret) {
 				console.log(ret);
-				top.location = "/makerrules.html?id="+ json["username"];
+					$("#errormsg").append(JSON.parse(ret.responseText).success);
 			});
 		return false;
 	});

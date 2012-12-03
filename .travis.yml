@@ -11,6 +11,10 @@ before_script:
   - pecl -q install mongo && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
   - sudo touch /usr/local/bin/cap
   - sudo chmod +x /usr/local/bin/cap
+  - chmod src/main/sh/installsmarty.sh
+  - ./src/main/sh/installsmarty.sh
+  - chmod src/main/sh/installmailchimp.sh
+  - ./src/main/sh/installmailchimp.sh
 
 services: mongodb
 

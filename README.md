@@ -21,4 +21,8 @@ Some resources were used from:
 bootstrap.php taken from:
 * https://github.com/travis-ci/travis-ci-php-example/
 
+Mail Service and Code generously supplied by:
+* [Mandrill](http://www.mandrill.com/)
+* [MailChimp](http://mailchimp.com/)
+
 Appologies to all the [stackoverflow](http://stackoverflow.com/) members for not naming you personally. You are truly Gods!
