@@ -23,7 +23,7 @@ $mail = $ul->getProperty("mail");
 if($mail == $json->mail) {
 	header("HTTP/1.1 201 Reset");
 	$ul->mailReset();
-	echo "{ \"success\": \"Gebruiker word reset, kijk in je mailbox for een link.\"}";
+	echo "{ \"success\": \"Gebruiker wordt reset, kijk in je mailbox for een link.\"}";
 	return;
 }
 

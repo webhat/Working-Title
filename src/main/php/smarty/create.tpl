@@ -80,6 +80,8 @@
 	    {literal}
 	$("button").click( function() {
 		var json = {};
+		if(getUrlVars()['hash'])
+			json['hash'] = getUrlVars()['hash'];
 		var err = true;
 		$("#indentform input[type=checkbox]").each(function(i, val) {
 			if($(val).is(':checked')) {
