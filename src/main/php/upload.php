@@ -78,14 +78,14 @@ if (
 			if (file_exists("upload/" . $realfilename)) {
 				echo $filename . " already exists. ";
 			} else {
-				move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $realfilename);
+				move_uploaded_file($_FILES["file"]["tmp_name"], "../../../ext/upload/" . $realfilename);
 				$uploadType = (string)$_POST['type'];
 				$p->addCreation(array( "type" => $uploadType, "content" => "/upload/" . $realfilename, "title" => $crTitle, "description" => $crDesc));
 				$p->store();
 				echo "Stored in: "  . getcwd() . "/upload/" . $realfilename;
 ?>
 <script>
-	top.location = "/profile.php?id=<?php print $user; ?>";
+	//top.location = "/profile.php?id=<?php print $user; ?>";
 </script>
 <?php
 
