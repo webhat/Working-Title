@@ -10,7 +10,7 @@ if($json == "") return;
 
 $ul = new UserLogin($json->username);
 $ul->reset();
-if($ul->getCookie() != "") {
+if($ul->getCookie() != "" && $ul->getCookie() != $json->hash) {
 	header("HTTP/1.1 403 User Exists");
 	echo "{ \"error\": \"Gebruiker bestaat al\"}";
 	return;
@@ -28,8 +28,10 @@ foreach( $json as $prop => $val) {
 		case "passwd": 
 			$ul->setPassword( (string)$val);
 			break;
+		case "hash": 
+			break;
 		case "mail":
-			$ul->subscribe($storeval);
+			$ul->subscribe($storedval);
 		default:
 			$ul->setProperty($storedprop, $storedval);
 	}

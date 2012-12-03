@@ -34,8 +34,8 @@ if( $loggedinas != $maker) {
 }
 
 $mail = $p->getProperty('mail');
-$profilename = $p->getProperty('profilename')
-$site = $p->getProperty('site')
+$profilename = $p->getProperty('profilename');
+$site = $p->getProperty('site');
 
 $smarty->assign( 'USER', $p->getUser());
 $smarty->assign( 'WT', 'Profiel Naam Komt Hier');

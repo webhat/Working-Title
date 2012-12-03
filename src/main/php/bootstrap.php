@@ -7,7 +7,11 @@ function loader($class) {
 	} else if(file_exists("../../../ext/php/libs/" . $class .".class.php")) {
 		$file = "../../../ext/php/libs/" . $class .".class.php";
 		require $file;
+	} else if(file_exists("../../../ext/php/lib/classes/" . $class .".class.php")) {
+		$file = "../../../ext/php/lib/classes/" . $class .".class.php";
+		require $file;
 	}
+
 }
 
 function loadera($class) {

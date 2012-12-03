@@ -4,6 +4,7 @@ if(file_exists("../../../ext/php/lib/swift_required.php"))
 	include_once "../../../ext/php/lib/swift_required.php";
 if(file_exists("ext/php/lib/swift_required.php"))
 	include_once "ext/php/lib/swift_required.php";
+include_once "bootstrap.php";
 
 class Mail {
 	function send( $u) {
@@ -24,6 +25,16 @@ class Mail {
 		$html = "<em>". $c->service["name"] ."speaks <strong>HTML</strong></em>";
 		$subject = $c->service["name"] .": Wachtwoord Reset";
 
+		$arr = array(
+				"FNAME" => $fname,
+				"UNAME" => $uname,
+				"LNAME" => $lname,
+				"_rcpt" => $u->getProperty('mail'),
+				"RESET" => "http://demo.workingtitle365.com/create.php?id=". $uname ."&hash=". $u->generateCookie()
+				);
+
+		$json = json_encode($arr);
+
 		$transport = Swift_SmtpTransport::newInstance(
 				$c->mandrill['host'],
 				$c->mandrill['port']
@@ -36,7 +47,10 @@ class Mail {
 		$message->setFrom($from);
 		$message->setBody($html, 'text/html');
 		$message->setTo($to);
-		$message->addPart($text, 'text/plain');
+		//$message->addPart($text, 'text/plain');
+		$headers = $message->getHeaders();
+		$headers->addTextHeader('X-MC-MergeVars', $json);
+		$headers->addTextHeader('X-MC-Template', "password reset");
 
 		if ($recipients = $swift->send($message, $failures)) {
 			return true;
