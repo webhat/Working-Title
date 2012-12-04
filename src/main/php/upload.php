@@ -85,7 +85,7 @@ if (
 				echo "Stored in: "  . getcwd() . "/upload/" . $realfilename;
 ?>
 <script>
-	//top.location = "/profile.php?id=<?php print $user; ?>";
+	top.location = "/profile.php?id=<?php print $user; ?>";
 </script>
 <?php
 
