@@ -17,7 +17,7 @@ before_script:
   - ./src/main/sh/installmailchimp.sh
   - sudo chmod +x src/main/sh/installswift.sh
   - ./src/main/sh/installswift.sh
-  - mv ./src/main/WTConfig.config.php ./src/main/WTConfig.php
+  - mv ./src/main/php/WTConfig.config.php ./src/main/php/WTConfig.php
 
 services: mongodb
 
