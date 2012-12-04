@@ -30,7 +30,7 @@ class Mail {
 				"UNAME" => $uname,
 				"LNAME" => $lname,
 				"_rcpt" => $u->getProperty('mail'),
-				"RESET" => "http://demo.workingtitle365.com/create.php?id=". $uname ."&hash=". $u->generateCookie()
+				"RESET" => "http://workingtitle365.com/create.php?id=". $uname ."&hash=". $u->generateCookie()
 				);
 
 		$json = json_encode($arr);

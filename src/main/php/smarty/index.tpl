@@ -105,6 +105,6 @@
 							});
 	    {/literal}
 	</script>
-	<script src="http://demo.workingtitle365.com/creations.php?id={$USER}&callback=creations"> </script>
+	<script src="/creations.php?id={$USER}&callback=creations"> </script>
 	<script src="incentive.json.php?id={$USER}&callback=incentives"></script>
 {include file="smarty/footer.tpl"}
