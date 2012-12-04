@@ -25,4 +25,5 @@ Mail Service and Code generously supplied by:
 * [Mandrill](http://www.mandrill.com/)
 * [MailChimp](http://mailchimp.com/)
 
-Appologies to all the [stackoverflow](http://stackoverflow.com/) members for not naming you personally. You are truly Gods!
+Apologies to all the [stackoverflow](http://stackoverflow.com/) members for not naming you personally. You are truly all Gods!
+
