@@ -38,11 +38,11 @@ $profilename = $p->getProperty('profilename');
 $site = $p->getProperty('site');
 
 $smarty->assign( 'USER', $p->getUser());
-$smarty->assign( 'WT', 'Profiel Naam Komt Hier');
+$smarty->assign( 'WT', $profilename);
 $smarty->assign( 'MAIL', ''. $mail);
 $smarty->assign( 'SITE', ''. $site);
 $smarty->assign( 'PROFILENAME', ''. $profilename);
 
-$smarty->display( 'smarty/create.tpl');
+$smarty->display( 'smarty/reset.tpl');
 
 ?>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="./src/test/php/bootstrap.php" colors="true">
+<phpunit bootstrap="./src/main/php/bootstrap.php" colors="true">
     <php>
         <var name="db_dsn" value="mysql:dbname=hello_world_test;host=localhost"/>
         <var name="db_username" value="root"/>
@@ -14,11 +14,23 @@
     </testsuites>
 
     <filter>
-        <whitelist>
-            <directory>./src/main/php/</directory>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/main/php/</directory>
             <exclude>
                 <directory>./src/test/</directory>
+                <directory>./src/main/smarty/</directory>
             </exclude>
         </whitelist>
     </filter>
+
+		<logging>
+				<log type="coverage-html" target="./ext/output/report" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70"/>
+				<log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
+				<log type="coverage-clover" target="./ext/output/coverage.xml"/>
+				<log type="json" target="./ext/output/logfile.json"/>
+				<!--log type="tap" target="./ext/output/logfile.tap"/-->
+				<log type="junit" target="./ext/output/logfile.xml" logIncompleteSkipped="false"/>
+				<log type="testdox-html" target="./ext/output/testdox.html"/>
+				<log type="testdox-text" target="./ext/output/testdox.txt"/>
+		</logging>
 </phpunit>

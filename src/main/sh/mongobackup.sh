@@ -28,7 +28,7 @@
 
 # Username to access the mongo server e.g. dbuser
 # Unnecessary if authentication is off
-# USERNAME=XXX
+# USERNAME=
 
 # Username to access the mongo server e.g. password
 # Unnecessary if authentication is off
@@ -174,7 +174,8 @@ OPT=""			# OPT string for use with mongodump
 # Do we need to use a username/password?
 if [ -z "$USERNAME" ]
   then 
-  OPT="$OPT --username=$USERNAME --password=$PASSWORD"
+  #OPT="$OPT --username=$USERNAME --password=$PASSWORD"
+  OPT="$OPT"
 fi
 
 # Create required directories
@@ -336,7 +337,7 @@ fi
 
 # Clean up Logfile
 eval rm -f "$LOGFILE"
-eval rm -f "$LOGERR"
+#eval rm -f "$LOGERR"
 
 exit $STATUS
 

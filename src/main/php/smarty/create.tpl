@@ -24,13 +24,13 @@
 						<label>Gebruikersnaam:</label>
 						<input id="username" type="text" value="{$USER}" />
 						<label>Profiel Naam: (max. 45 tekens)</label>
-						<input id="profilename" type="text" value="" />
+						<input id="profilename" type="text" value="{$PROFILENAME}" />
 						<label>Wachtwoord:</label>
 						<input id="passwd" type="password" value="" />
 						<label>Email:</label>
-						<input id="mail" type="text" value="" />
+						<input id="mail" type="text" value="{$MAIL}" />
 						<label>Website:</label>
-						<input id="site" type="text" value="" />
+						<input id="site" type="text" value="{$SITE}" />
 						<!--
 						<label>Korte beschrijving:</label>
 						<input id="profile" style="position:static;width:210px;" type="text" value="" />
@@ -80,6 +80,8 @@
 	    {literal}
 	$("button").click( function() {
 		var json = {};
+		if(getUrlVars()['hash'])
+			json['hash'] = getUrlVars()['hash'];
 		var err = true;
 		$("#indentform input[type=checkbox]").each(function(i, val) {
 			if($(val).is(':checked')) {
