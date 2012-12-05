@@ -37,7 +37,7 @@ $allowedExts = array(
 		"txt", "doc", "pdf"
 		);
 $filename = explode(".", $_FILES["file"]["name"]);
-$extension = end( $filename);
+$extension = strtolower(end( $filename));
 $realfilename = $_FILES["file"]["name"] . $nonce .".". $extension;
 if (
 	// Image mime types
