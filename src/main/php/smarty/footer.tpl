@@ -25,8 +25,19 @@
 								page =  + document.location.hash.toString().substr(6);
 							}
 							$("#work"+ page).show();
-							$("#next").attr("href", "#page-" + (page+1));
-							$("#prev").attr("href", "#page-" + (page-1));
+							if($("#work"+ (page+1)).size()) {
+								$("#next").attr("href", "#page-" + (page+1));
+								$("#next").show();
+							} else {
+								$("#next").hide();
+							}
+							if($("#work"+ (page-1)).size()) {
+								$("#prev").attr("href", "#page-" + (page-1));
+								$("#prev").show();
+							} else {
+								$("#prev").hide();
+							}
+
 					}
 					$(function(){
 							  $(window).hashchange(setupHash);
