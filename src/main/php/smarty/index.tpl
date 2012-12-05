@@ -50,6 +50,7 @@
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload">upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
+				<div id="delete">delete</div>
 				<div class="nav"><a id="prev" href="#" style="float:left;">prev</a><a id="next" href="#" style="float:right;">next</a></div>
 				<div style="clear:both;"></div>
 			</div>
@@ -104,6 +105,26 @@
 									$("#uploadwin").attr('src',"upload.html?id="+ getUrlVars()['id']);
 							});
 	    {/literal}
+	</script>
+	<script>
+			$("#mywork #delete").click(function() {
+				var filename = $($("#mywork .work:visible").children()[0]).attr("src");
+					{literal}
+			var json = {};
+			json['filename'] = filename;
+			if(confirm("Wil je het bestand echt verwijderen?"))
+			$.ajax( {
+				type:"POST",
+				url:'/delcreation.php',
+				data: {"json":JSON.stringify(json)},
+				dataType: 'json'
+			}).done(function() { 
+					{/literal}
+					top.location = document.location.href;
+					{literal}
+			});
+					{/literal}
+			});
 	</script>
 	<script src="/creations.php?id={$USER}&callback=creations"> </script>
 	<script src="/incentive.json.php?id={$USER}&callback=incentives"></script>
