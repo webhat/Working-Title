@@ -109,21 +109,25 @@
 	<script>
 			$("#mywork #delete").click(function() {
 				var filename = $($("#mywork .work:visible").children()[0]).attr("src");
-					{literal}
-			var json = {};
-			json['filename'] = filename;
-			if(confirm("Wil je het bestand echt verwijderen?"))
-			$.ajax( {
-				type:"POST",
-				url:'/delcreation.php',
-				data: {"json":JSON.stringify(json)},
-				dataType: 'json'
-			}).done(function() { 
-					{/literal}
-					top.location = document.location.href;
-					{literal}
-			});
-					{/literal}
+						{literal}
+				var json = {};
+				json['filename'] = filename;
+				if(confirm("Wil je het bestand echt verwijderen?"))
+				$.ajax( {
+					type:"POST",
+					url:'/delcreation.php',
+					data: {"json":JSON.stringify(json)},
+					dataType: 'json'
+				}).always(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				}).done(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				});
+						{/literal}
 			});
 	</script>
 	<script src="/creations.php?id={$USER}&callback=creations"> </script>
