@@ -20,7 +20,7 @@
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
 					<label style="display:inline">Bedrag: &euro;</label>
-					<input id="amount" type="text" value="" style="display:inline" />
+					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event)" />
 					<div id="incentives">
 						<input type="radio" name="incentive" checked value="0" style="display:inline;margin-right:10px;">Ik wil niets terug</input>
 					</div>

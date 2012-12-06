@@ -24,8 +24,8 @@
 						<br />
 						<div id="errormsg"></div>
 						<br />
-						<label>Bedrag: (cent per dag)</label>
-						<input type="text" value="" id="amount"/>
+						<label>Bedrag: (cent per dag in cijfers)</label>
+						<input type="text" value="" id="amount" onkeypress="return isNumberKey(event)"/>
 						<label>Titel</label>
 						<input type="text" value="" id="title" />
 						<label>Korte beschrijving</label>
@@ -77,7 +77,6 @@
 			return false;
 	});
 	    {/literal}
-		
 	</script>
 	<script src="incentive.json.php?id={$USER}&callback=incentives"></script>
 
