@@ -216,7 +216,7 @@ a {
 	margin-top: 40px;
 }
 
-#header {
+#header, #profilename {
 	text-align:center;
 	top: 74px;
 	left:190px;
@@ -224,6 +224,11 @@ a {
 	height: 150px;
 	background-size:1000px 70px;
 	z-index:1;
+}
+
+#profilename .boxmargin {
+    font-size: 2em;
+    margin: 0.67em 0;
 }
 
 .site {
