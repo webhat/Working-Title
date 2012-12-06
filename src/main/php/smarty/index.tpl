@@ -20,6 +20,12 @@
 			<div class="boxmargin">
 				<p class="category">FIXME: category here</p>
 			</div>
+			<div class="information" style="{$EDIT}">
+				<div>Hoe?</div>
+				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina">Maak je een mooie pagina</a></div>
+				<div>Zie ook:</div>
+				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139132-cre%C3%ABer-een-doel">Cre&euml;er een doel</a></div>
+			</div>
 		</div>
 		<div style="position:absolute">
 			<div id="profile" class="box rounded-corners">
