@@ -109,6 +109,8 @@
 	<script>
 			$("#mywork #delete").click(function() {
 				var filename = $($("#mywork .work:visible").children()[0]).attr("src");
+				if(filename == "" || filename == undefined)
+					filename = $("#mywork .work:visible a").attr("href");
 						{literal}
 				var json = {};
 				json['filename'] = filename;
