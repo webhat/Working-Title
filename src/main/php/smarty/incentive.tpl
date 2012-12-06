@@ -54,6 +54,12 @@
 			json['amount'] = $("#amount").val();
 			json['title'] = $("#title").val();
 			json['desc'] = $("#desc").val();
+			if( json['amount'] =="" || json['title'] == "") {
+				$("#errormsg").text("Alle velden invullen");
+				return false;
+			}
+			$("#errormsg").text("");
+
 			$.ajax( {
 				type:"POST",
 				url:'/addincentive.php',
