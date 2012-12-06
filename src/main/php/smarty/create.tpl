@@ -100,6 +100,7 @@
 			$.ajax( {
 				type:"POST",
 				url:'/adduser.php',
+				async:false,
 				data: {"json":JSON.stringify(json)},
 				dataType: 'json'
 			}).fail(function(ret) { 
