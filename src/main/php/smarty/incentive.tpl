@@ -12,6 +12,10 @@
 			<div class="boxmargin">
 				<h1>{$WT}</h1>
 				<p class="category">FIXME: category here</p>
+			<div class="information" style="{$EDIT}">
+				<div>Hoe?</div>
+				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">Cre&euml;er je beloningen<br />voor je Fans</a></div>
+			</div>
 			</div>
 		</div>
 		<div style="position:absolute">

@@ -236,6 +236,22 @@ a {
 	height:0px;
 }
 
+.information {
+	position:relative;
+	top: -50px;
+left: -60px;
+	float: right;
+}
+
+.information div {
+	text-align: left;
+}
+
+.information div a {
+	color: blue;
+	text-decoration:underline;
+}
+
 #profile {
 	position:relative;
 	text-align:justify !important;

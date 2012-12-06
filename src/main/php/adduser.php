@@ -31,7 +31,7 @@ foreach( $json as $prop => $val) {
 		case "hash": 
 			break;
 		case "mail":
-			$ul->subscribe($storedval);
+			$ret = $ul->subscribe($storedval);
 		default:
 			$ul->setProperty($storedprop, $storedval);
 	}
