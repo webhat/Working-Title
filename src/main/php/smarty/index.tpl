@@ -1,5 +1,6 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
+{assign var='WT' value=$WT|default:"Geef een naam aan je profiel"}
 {assign var='WHO' value=$WHO|default:"<span style='$EDIT;'><strong>Wie ben ik?</strong><br/>Jou als Maker: Vertel meer over jezelf in ongeveer 100 woorden (langer mag maar lange teksten worden slecht gelezen). Dit stukje is belangrijk om het vertrouwen van je Fans te winnen. Wie ben je en hoe ben je gekomen waar je nu bent? Ben je professioneel bezig of ambieer je een carriere? Wat is je opleiding? Waar ben je nog meer te zien?</span>"}
 {assign var='WHAT' value=$WHAT|default:"<span style='$EDIT;'><strong>Wat maak ik?</strong><br/>Jouw Werk: jouw beschrijving van je werk staat hier centraal. Gebruik er gerust 200 woorden voor maar wees bewust dat lange(re) teksten slecht worden gelezen.  Wat kenmerkt je werk, wat is er uniek aan? Waar moet men op letten? Wat zijn reacties van huidige bewonderaars?</span>"}
 {assign var='WHY' value=$WHY|default:"<span style='$EDIT;'><strong>Waarom doe ik dit?</strong><br/>Jouw reden voor deelname aan WorkingTitle365.com: Na het bekijken/beluisteren van je werk kunnen Fans een idee krijgen wat jij beoogt. Geef kort weer (200 woorden moet genoeg zijn) wat je motivatie is voor deelname aan dit platform. En wat is je doel? Zo kunnen Fans ook je doel willen ondersteunen.</span>"}
@@ -13,9 +14,10 @@
 
         <!-- Add your site or application content here -->
 	<div>
-		<div id="header" class="box rounded-corners">
+		<div id="profilename" class="box rounded-corners">
+			<div class="edit">edit</div>
+			<div class="boxmargin">{$WT}</div>
 			<div class="boxmargin">
-				<h1>{$WT}</h1>
 				<p class="category">FIXME: category here</p>
 			</div>
 		</div>
@@ -50,6 +52,7 @@
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload">upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
+				<div id="delete">delete</div>
 				<div class="nav"><a id="prev" href="#" style="float:left;">prev</a><a id="next" href="#" style="float:right;">next</a></div>
 				<div style="clear:both;"></div>
 			</div>
@@ -104,6 +107,32 @@
 									$("#uploadwin").attr('src',"upload.html?id="+ getUrlVars()['id']);
 							});
 	    {/literal}
+	</script>
+	<script>
+			$("#mywork #delete").click(function() {
+				var filename = $($("#mywork .work:visible").children()[0]).attr("src");
+				if(filename == "" || filename == undefined)
+					filename = $("#mywork .work:visible a").attr("href");
+						{literal}
+				var json = {};
+				json['filename'] = filename;
+				if(confirm("Wil je het bestand echt verwijderen?"))
+				$.ajax( {
+					type:"POST",
+					url:'/delcreation.php',
+					data: {"json":JSON.stringify(json)},
+					dataType: 'json'
+				}).always(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				}).done(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				});
+						{/literal}
+			});
 	</script>
 	<script src="/creations.php?id={$USER}&callback=creations"> </script>
 	<script src="/incentive.json.php?id={$USER}&callback=incentives"></script>

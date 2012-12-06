@@ -114,11 +114,25 @@ class MakerProfileTest extends PHPUnit_Framework_TestCase {
 
 		$makerProfile->addCreation( $expected);
 
-		$size = 0;
+		$actual = $makerProfile->getProperty( 'creations');
+		$this->assertEquals( $expected, $actual[0]);
+	}
+
+	public function testRemoveCreation() {
+		$user = 'webhat';
+		$makerProfile = new MakerProfile( $user);
+
+		$expected = array( "content" => "YYYYYYYYYYXXXY");
+		$other = array( "content" => "XXYYYYYYYYXXXY");
+
+		$makerProfile->addCreation( $other);
+		$makerProfile->addCreation( $expected);
+		$makerProfile->removeCreation( $other["content"]);
 
 		$actual = $makerProfile->getProperty( 'creations');
-#print $epoch . "\n";
-		$this->assertEquals( $expected, $actual[$size]);
+
+
+		$this->assertEquals( $expected, $actual[0]);
 	}
 }
  

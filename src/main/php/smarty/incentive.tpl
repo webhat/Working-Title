@@ -24,8 +24,8 @@
 						<br />
 						<div id="errormsg"></div>
 						<br />
-						<label>Bedrag: (cent per dag)</label>
-						<input type="text" value="" id="amount"/>
+						<label>Bedrag: (cent per dag in cijfers)</label>
+						<input type="text" value="" id="amount" onkeypress="return isNumberKey(event)"/>
 						<label>Titel</label>
 						<input type="text" value="" id="title" />
 						<label>Korte beschrijving</label>
@@ -54,6 +54,12 @@
 			json['amount'] = $("#amount").val();
 			json['title'] = $("#title").val();
 			json['desc'] = $("#desc").val();
+			if( json['amount'] =="" || json['title'] == "") {
+				$("#errormsg").text("Alle velden invullen");
+				return false;
+			}
+			$("#errormsg").text("");
+
 			$.ajax( {
 				type:"POST",
 				url:'/addincentive.php',
@@ -71,7 +77,6 @@
 			return false;
 	});
 	    {/literal}
-		
 	</script>
 	<script src="incentive.json.php?id={$USER}&callback=incentives"></script>
 

@@ -58,6 +58,24 @@ class MakerProfile extends ProfileMongo {
 		$this->setProperty( 'incentives', $incentives);
 		$this->store();
 	}
+
+	public function removeCreation( $filename) {
+		$creations = $this->getProperty( 'creations');
+		if( is_null($creations))
+			$creations = array();
+		$creations_out = array();
+
+		$size = count($creations);
+		for($i = 0; $i < $size; $i++) {
+			if($creations[$i]["content"] == $filename) {
+				continue;
+			}
+			array_push($creations_out, $creations[$i]);
+		}
+
+		$this->setProperty( 'creations', $creations_out);
+		$this->store();
+	}
 }
  
 ?>

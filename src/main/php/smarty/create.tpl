@@ -23,8 +23,6 @@
 						<br />
 						<label>Gebruikersnaam:</label>
 						<input id="username" type="text" value="{$USER}" />
-						<label>Profiel Naam: (max. 45 tekens)</label>
-						<input id="profilename" type="text" value="{$PROFILENAME}" />
 						<label>Wachtwoord:</label>
 						<input id="passwd" type="password" value="" />
 						<label>Email:</label>
@@ -60,10 +58,8 @@
 						<label>PayPal:</label>
 						<input id="pay_paypal" type="text" value="" />
 						-->
-						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use">Gebruikersvoorwaarden</a></label>
+						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use">Gebruikersvoorwaarden</a> en <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy">Privacy Policy</a></label>
 						<input type="checkbox" id="terms"/>
-						<label>Ik ga akkoord met de <a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy">Privacy Policy</a></label>
-						<input type="checkbox" id="privacy" />
 						<button style="float:right;">Create User</button>
 					</div>
 				</form>

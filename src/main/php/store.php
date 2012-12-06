@@ -1,8 +1,9 @@
 <?php
 
+$POST = $_POST;
 require_once 'loggedinas.php';
 
-foreach( $_POST as $prop => $val) {
+foreach( $POST as $prop => $val) {
 	$storedprop = (string) $prop;
 	$storedval = (string) $val;
 	$doc = new DOMDocument();

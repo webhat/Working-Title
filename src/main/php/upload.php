@@ -79,7 +79,7 @@ if (
 				echo $filename . " already exists. ";
 			} else {
 				move_uploaded_file($_FILES["file"]["tmp_name"], "../../../ext/upload/" . $realfilename);
-				$uploadType = (string)$_POST['type'];
+				$uploadType = (string) UploadHelper::UploadType($_FILES["file"]["type"]);
 				$p->addCreation(array( "type" => $uploadType, "content" => "/upload/" . $realfilename, "title" => $crTitle, "description" => $crDesc));
 				$p->store();
 				echo "Stored in: "  . getcwd() . "/upload/" . $realfilename;
