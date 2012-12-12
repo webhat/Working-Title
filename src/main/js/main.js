@@ -28,7 +28,7 @@ function creations(json) {
 					break;
 				default:
 			}
-			$("#work"+ i).prepend(myelem);
+			$("#work"+ i).append(myelem);
 	});
 }
 
