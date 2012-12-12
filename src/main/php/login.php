@@ -26,8 +26,10 @@ if( $ul->passwordCheck( $pass)) {
 	setcookie("user", $user, time()+5184000);
 	setcookie("hash", $ul->generateCookie(), time()+2592000);
 
+	error_log("SUCCESS");
 	print $success;
 } else {
+	error_log("FAIL");
 	print $fail;
 	exit();
 }

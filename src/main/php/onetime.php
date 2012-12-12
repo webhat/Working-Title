@@ -17,7 +17,7 @@ $dbcookie = $ul->getCookie();
 
 $loggedinas = "";
 
-if( $hash == $dbcookie) {
+if( $hash == $dbcookie && $user != "") {
 		$ul->setProperty( 'cookie', "");
 		$ul->store();
 ?>
