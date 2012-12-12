@@ -22,15 +22,22 @@ if( $user == "" || $pass == "") {
 $ul = new UserLogin($user);
 #$ul->setPassword('redhat');
 #$ul->store();
+
 if( $ul->passwordCheck( $pass)) {
+	$user = $ul->getUser();
+	$ul = new UserLogin($user);
+	$ul->reset();
 	setcookie("user", $user, time()+5184000);
 	setcookie("hash", $ul->generateCookie(), time()+2592000);
 
+	error_log("SUCCESS");
 	print $success;
 } else {
+	error_log("FAIL");
 	print $fail;
 	exit();
 }
+
 
 ?>
 <script>

@@ -1,12 +1,12 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
 {assign var='WT' value=$WT|default:"Geef een naam aan je profiel"}
-{assign var='WHO' value=$WHO|default:"<span style='$EDIT;'><strong>Wie ben ik?</strong><br/>Jou als Maker: Vertel meer over jezelf in ongeveer 100 woorden (langer mag maar lange teksten worden slecht gelezen). Dit stukje is belangrijk om het vertrouwen van je Fans te winnen. Wie ben je en hoe ben je gekomen waar je nu bent? Ben je professioneel bezig of ambieer je een carriere? Wat is je opleiding? Waar ben je nog meer te zien?</span>"}
-{assign var='WHAT' value=$WHAT|default:"<span style='$EDIT;'><strong>Wat maak ik?</strong><br/>Jouw Werk: jouw beschrijving van je werk staat hier centraal. Gebruik er gerust 200 woorden voor maar wees bewust dat lange(re) teksten slecht worden gelezen.  Wat kenmerkt je werk, wat is er uniek aan? Waar moet men op letten? Wat zijn reacties van huidige bewonderaars?</span>"}
-{assign var='WHY' value=$WHY|default:"<span style='$EDIT;'><strong>Waarom doe ik dit?</strong><br/>Jouw reden voor deelname aan WorkingTitle365.com: Na het bekijken/beluisteren van je werk kunnen Fans een idee krijgen wat jij beoogt. Geef kort weer (200 woorden moet genoeg zijn) wat je motivatie is voor deelname aan dit platform. En wat is je doel? Zo kunnen Fans ook je doel willen ondersteunen.</span>"}
-{assign var='WANT' value=$WANT|default:"<span style='$EDIT;'><strong>Wat wil ik en wat bied ik?</strong><br/>Jouw oproep en wat je te bieden hebt: Hier maak je kenbaar in wederom ongeveer 100 woorden wat je verlangt van je Fans en wat jij ze daarvoor biedt. Beoog je een intensieve contact met je Fans? Wil je van hun inbreng gebruik gaan maken? Hoop je dat ze jouw werk zoveel mogelijk delen op sociale media? Wat je ze biedt zijn natuurlijk de beloningen maar ook een inkijk en misschien wel deelname aan je creatief proces. Een te lange tekst hier leidt af van de beloningen die eronder komen te staan.</span>"}
+{assign var='WHO' value=$WHO|default:"<span style='$EDIT;'><strong>Wie ben ik?</strong><br/>Jou als Maker: Dit stukje is belangrijk om het vertrouwen van je Fans te winnen. Wie ben je en hoe ben je gekomen waar je nu bent? Ben je professioneel bezig of ambieer je een carrière? Wat is je opleiding? Waar ben je nog meer te zien?</span>"}
+{assign var='WHAT' value=$WHAT|default:"<span style='$EDIT;'><strong>Wat maak ik?</strong><br/>Jouw Werk: Gebruik gerust 200 woorden voor het beschrijven van je werk maar wees bewust dat lange(re) teksten slecht worden gelezen. Wat kenmerkt je werk? Wat is er uniek aan? Wat vinden huidige bewonderaars ervan?</span>"}
+{assign var='WHY' value=$WHY|default:"<span style='$EDIT;'><strong>Waarom doe ik dit?</strong><br/>Jouw reden voor deelname aan WorkingTitle365.com: Geef kort weer wat je motivatie is voor deelname aan dit platform en wat je doel is. Fans kunnen ook je doel willen ondersteunen.</span>"}
+{assign var='WANT' value=$WANT|default:"<span style='$EDIT;'><strong>Wat wil ik en wat bied ik?</strong><br/>Jouw oproep en wat je te bieden hebt: Maak duidelijk wat je verlangt van je Fans en wat jij ze biedt. Beoog je een intensieve contact? Wil je hun inbreng of feedback? Wil je dat ze jouw werk zoveel mogelijk delen op sociale media? Je biedt ze natuurlijk de beloningen maar ook een inkijk en misschien wel deelname aan je creatief proces.</span>"}
 {assign var='PROFILE' value=$PROFILE|default:"<span style='$EDIT;'>Je korte omschrijving: Beschrijf je werk in max. 133 tekens zoals een tweet op Twitter. Zo is in een oogopslag helder wat jij doet.</span>"}
-{assign var='WORK' value=$WORK|default:"<span style='$EDIT;'><strong>Jouw Werk uploaden</strong><br/>Je kan hier zoveel werken kwijt als je wilt. MAAR ons advies is: maak hier niet je portfolio van, daar heb je andere plekken voor. Juist een beperkt aantal werken maakt nieuwsgierig en verleidt mensen ertoe Fan van je te worden. Het laatste werk dat je toevoegt is als eerste zichtbaar. Voor alle Makers raden we aan dat het laatste wat je upload een foto/video is. Zie voor meer info: <a href='http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina#upload'>Uploaden van je werk</a>.</span>"}
+{assign var='WORK' value=$WORK|default:"<span style='$EDIT;'><strong>Jouw Werk uploaden</strong><br/>Je kan zoveel werken kwijt als je wilt. MAAR wij adviseren hier niet je complete portfolio te plaatsen, daar zijn andere plekken voor. Een beperkt aantal werken maakt nieuwsgierig en verleidt om Fan van je te worden. Het laatste werk dat je toevoegt is als eerste zichtbaar; dit kan het beste een foto/video zijn. Je kan werken tot 20 MB uploaden. Zie voor meer info: <a href='http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina#upload'>Uploaden van je werk</a>.</span>"}
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -30,7 +30,7 @@
 		<div style="position:absolute">
 			<div id="profile" class="box rounded-corners">
 				<div class="edit">edit</div>
-				<div><img src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
+				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">Mijn website</a></div>
 				<div class="boxmargin headline" style="clear:both;">{$PROFILE}</div>
 				<div id="becomefan">
@@ -42,14 +42,6 @@
 				</div>
 				<div id="social"></div>
 			</div>
-			<div id="whoami" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WHO}</div>
-			</div>
-			<div id="whatdoiwant" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WANT}</div>
-			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
 				<div class="addinc"><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
 			</div>
@@ -58,21 +50,8 @@
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload">upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
-				<div id="delete">delete</div>
-				<div class="nav"><a id="prev" href="#" style="float:left;">prev</a><a id="next" href="#" style="float:right;">next</a></div>
 				<div style="clear:both;"></div>
 			</div>
-			<div id="whatdoido" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WHAT}</div>
-			</div>
-			<div id="whydoidothis" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WHY}</div>
-			</div>
-		</div>
-		<div id="blackbar">
-	{include file="smarty/blackbar.tpl"}
 		</div>
 	</div>
 
@@ -115,13 +94,17 @@
 	    {/literal}
 	</script>
 	<script>
-			$("#mywork #delete").click(function() {
-				var filename = $($("#mywork .work:visible").children()[0]).attr("src");
+		$(document).ready(function() {
+			$("center .delete").click(function(event) {
+				console.log("Delete Creation Fired");
+				var filename = $($($(event.target).siblings()[0]).children()[0]).attr("src");
 				if(filename == "" || filename == undefined)
-					filename = $("#mywork .work:visible a").attr("href");
+					filename = $("a", $(event.target).parent()).attr("href");
 						{literal}
+				console.log("Delete Fired for: "+ filename);
 				var json = {};
 				json['filename'] = filename;
+				json['creation'] = true;
 				if(confirm("Wil je het bestand echt verwijderen?"))
 				$.ajax( {
 					type:"POST",
@@ -139,6 +122,32 @@
 				});
 						{/literal}
 			});
+			$(".incentive .delete").click(function(event) {
+				console.log("Delete Incentive Fired");
+				var code = $($(event.target).parent()).attr("id");
+						{literal}
+				console.log("Delete Fired for: "+ code);
+				var json = {};
+				json['code'] = code;
+				json['incentive'] = true;
+				if(confirm("Wil je het bestand echt verwijderen?"))
+				$.ajax( {
+					type:"POST",
+					url:'/delcreation.php',
+					data: {"json":JSON.stringify(json)},
+					dataType: 'json'
+				}).always(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				}).done(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				});
+						{/literal}
+			});
+		});
 	</script>
 	<script src="/creations.php?id={$USER}&callback=creations"> </script>
 	<script src="/incentive.json.php?id={$USER}&callback=incentives"></script>

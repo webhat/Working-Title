@@ -2,27 +2,28 @@
 
 require_once('bootstrap.php');
 
-$user = "";
+$huser = "";
 $hash = "";
 
 if(array_key_exists( 'hash', $_GET))
 	$hash = (string) $_GET['hash'];
 if(array_key_exists( 'user', $_GET))
-	$user = (string) $_GET['user'];
+	$huser = (string) $_GET['user'];
 
-$ul = new UserLogin($user);
+$ul = new UserLogin($huser);
 $ul->reset();
 
 $dbcookie = $ul->getCookie();
 
 $loggedinas = "";
 
-if( $hash == $dbcookie) {
+if( $hash == $dbcookie && $huser != "") {
 		$ul->setProperty( 'cookie', "");
 		$ul->store();
 ?>
 <script>
-	top.location = "/create.php?id=<?php print $user; ?>";
+alert("X");
+	top.location = "/create.php?id=<?php print $huser; ?>";
 </script>
 <?php
 }

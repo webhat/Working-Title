@@ -13,7 +13,12 @@ $user = (string) $loggedinas;
 $ul = new MakerProfile($user);
 $ul->reset();
 
-$ul->removeCreation( $json->filename);
+if($json->creation)
+	$ul->removeCreation( $json->filename);
+
+if($json->incentive)
+	$ul->removeIncentive( $json->code);
+
 
 $ul->store();
 

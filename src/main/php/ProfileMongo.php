@@ -56,8 +56,16 @@ class ProfileMongo {
 		$search = array('username' => $user);
 
 		$this->profile = $profiles->findOne( $search);
-		if( is_null($this->profile))
-			$this->profile = array('username' => $user);
+		if( is_null($this->profile)) {
+			$search = array('mail' => $user);
+
+			$this->profile = $profiles->findOne( $search);
+			if( is_null($this->profile)) {
+				$this->profile = array('username' => $user);
+			}
+		}
+
+		//error_log(var_export($this, true));
 
 		return $this->profile;
 	}

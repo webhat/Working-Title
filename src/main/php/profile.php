@@ -45,6 +45,7 @@ $smarty->assign( 'PIMG', ''. md5(strtolower(trim($p->getProperty('mail')))));
 $smarty->assign( 'WHO', ''. $p->getProperty('whoami'));
 $smarty->assign( 'WHAT', ''. $p->getProperty('whatdoido'));
 $smarty->assign( 'WHY', ''. $p->getProperty('whydoidothis'));
+$smarty->assign( 'WANT', ''. $p->getProperty('whatdoiwant'));
 $smarty->assign( 'WORK', ''. $p->getProperty('work'));
 
 $smarty->display( 'smarty/index.tpl');
