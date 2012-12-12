@@ -1,8 +1,9 @@
 function creations(json) {
 	$.each(json, function( i, item) {
 			var type = item.type;
-			$("#mywork").append($("<center><div id='work"+ i +"' class='work "+ type +"' ><h2>"+ item.title +"</h2></div></center>"));
+			$("#mywork").append($("<center><div class='delete'>delete</div><div id='work"+ i +"' class='work "+ type +"' ><h2>"+ item.title +"</h2></div></center>"));
 
+				
 			var myelem;
 			switch( type) {
 				case 'text':
@@ -57,7 +58,7 @@ function incentives( json) {
 	$("#pincentives .incentive").remove();
 	$.each(json, function( i, item) {
 			var incen = $("<br /><input type='radio' name='incentive' value='"+ (+item.amount)*365/100 +"' style='display:inline;margin-right:10px;' id='"+item.code+"'>"+ item.amount +" cent per dag / &euro;"+ (+item.amount)*365/100 +" per jaar  - "+ item.title +"</input>");
-			var profile = $("<div class='incentive'><span class='price'>"+ item.amount +" cent per dag</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");
+			var profile = $("<div class='incentive' id='"+ item.code +"'><div class='delete'>delete</div><span class='price'>"+ item.amount +" cent per dag</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");
 			$("#incentives").append(incen);
 			$("#pincentives").append(profile);
 			$(".incentive:first").css("border-top-style","none");
@@ -67,7 +68,7 @@ function incentives( json) {
 		
 function isNumberKey(evt) {
 	var charCode = (evt.which) ? evt.which : event.keyCode;
-	if (charCode != 46 && charCode > 31 
+	if (charCode > 31 
 	&& (charCode < 48 || charCode > 57))
 		return false;
 

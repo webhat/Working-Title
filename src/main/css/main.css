@@ -316,7 +316,7 @@ left: -60px;
 
 #pincentives {
 	position:relative;
-	top:190px;
+	top:210px;
 	left:960px;
 	width: 282px;
 	height: auto;
@@ -353,6 +353,7 @@ left: -60px;
 	position:relative;
 	width: 750px;
 	z-index: 1;
+	min-height:300px;
 }
 
 #boxy {
@@ -372,7 +373,11 @@ left: -60px;
 }
 
 .work {
-	margin:20px
+	margin:20px;
+}
+#mywork center {
+	border: dotted 1px;
+	margin:10px;
 }
 
 .rounded-corners {

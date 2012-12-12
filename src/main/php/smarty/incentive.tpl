@@ -43,10 +43,6 @@
 		</div>
 	</div>
 
-		<div id="blackbar">
-	{include file="smarty/blackbar.tpl"}
-		</div>
-
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 	<script src="js/main.js"></script>
@@ -81,6 +77,33 @@
 			return false;
 	});
 	    {/literal}
+			$(document).ready( function() {
+			$(".incentive .delete").click(function(event) {
+				console.log("Delete Incentive Fired");
+				var code = $($(event.target).parent()).attr("id");
+						{literal}
+				console.log("Delete Fired for: "+ code);
+				var json = {};
+				json['code'] = code;
+				json['incentive'] = true;
+				if(confirm("Wil je het bestand echt verwijderen?"))
+				$.ajax( {
+					type:"POST",
+					url:'/delcreation.php',
+					data: {"json":JSON.stringify(json)},
+					dataType: 'json'
+				}).always(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				}).done(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				});
+						{/literal}
+			});
+					});
 	</script>
 	<script src="incentive.json.php?id={$USER}&callback=incentives"></script>
 

@@ -30,7 +30,7 @@
 		<div style="position:absolute">
 			<div id="profile" class="box rounded-corners">
 				<div class="edit">edit</div>
-				<div><img src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
+				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">Mijn website</a></div>
 				<div class="boxmargin headline" style="clear:both;">{$PROFILE}</div>
 				<div id="becomefan">
@@ -42,14 +42,6 @@
 				</div>
 				<div id="social"></div>
 			</div>
-			<div id="whoami" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WHO}</div>
-			</div>
-			<div id="whatdoiwant" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WANT}</div>
-			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
 				<div class="addinc"><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
 			</div>
@@ -58,21 +50,8 @@
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload">upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
-				<div id="delete">delete</div>
-				<div class="nav"><a id="prev" href="#" style="float:left;">prev</a><a id="next" href="#" style="float:right;">next</a></div>
 				<div style="clear:both;"></div>
 			</div>
-			<div id="whatdoido" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WHAT}</div>
-			</div>
-			<div id="whydoidothis" class="box rounded-corners">
-				<div class="edit">edit</div>
-				<div class="boxmargin headline">{$WHY}</div>
-			</div>
-		</div>
-		<div id="blackbar">
-	{include file="smarty/blackbar.tpl"}
 		</div>
 	</div>
 
@@ -115,13 +94,17 @@
 	    {/literal}
 	</script>
 	<script>
-			$("#mywork #delete").click(function() {
-				var filename = $($("#mywork .work:visible").children()[0]).attr("src");
+		$(document).ready(function() {
+			$("center .delete").click(function(event) {
+				console.log("Delete Creation Fired");
+				var filename = $($($(event.target).siblings()[0]).children()[0]).attr("src");
 				if(filename == "" || filename == undefined)
-					filename = $("#mywork .work:visible a").attr("href");
+					filename = $("a", $(event.target).parent()).attr("href");
 						{literal}
+				console.log("Delete Fired for: "+ filename);
 				var json = {};
 				json['filename'] = filename;
+				json['creation'] = true;
 				if(confirm("Wil je het bestand echt verwijderen?"))
 				$.ajax( {
 					type:"POST",
@@ -139,6 +122,32 @@
 				});
 						{/literal}
 			});
+			$(".incentive .delete").click(function(event) {
+				console.log("Delete Incentive Fired");
+				var code = $($(event.target).parent()).attr("id");
+						{literal}
+				console.log("Delete Fired for: "+ code);
+				var json = {};
+				json['code'] = code;
+				json['incentive'] = true;
+				if(confirm("Wil je het bestand echt verwijderen?"))
+				$.ajax( {
+					type:"POST",
+					url:'/delcreation.php',
+					data: {"json":JSON.stringify(json)},
+					dataType: 'json'
+				}).always(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				}).done(function() { 
+						{/literal}
+						top.location = document.location.pathname + location.search;
+						{literal}
+				});
+						{/literal}
+			});
+		});
 	</script>
 	<script src="/creations.php?id={$USER}&callback=creations"> </script>
 	<script src="/incentive.json.php?id={$USER}&callback=incentives"></script>

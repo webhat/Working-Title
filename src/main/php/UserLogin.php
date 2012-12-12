@@ -30,10 +30,13 @@ class UserLogin extends ProfileMongo {
 		$cookie = "";
 		$user = $this->getUser();
 
+
 		$cookie = $this->generatePassword( "". time() ."-". $user ."". mt_rand());
+
 
 		$this->setProperty( 'cookie', $cookie);
 		$this->store();
+
 		return $cookie;
 	}
 
@@ -41,14 +44,7 @@ class UserLogin extends ProfileMongo {
 		$cookie = $this->getProperty( 'cookie');
 		return $cookie;
 	}
-	/*
-	$data = "hello"; 
 
-	foreach (hash_algos() as $v) { 
-		$r = hash($v, $data, false); 
-		printf("%-12s %3d %s\n", $v, strlen($r), $r); 
-	} 
-	*/
 	public function subscribe() {
 		$c = new WTConfig();
 		$api = new MCAPI($c->mailchimp["apikey"]);

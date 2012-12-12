@@ -15,39 +15,6 @@
         </script>
         <script src="/js/abtests.js"> </script>
         <script src="/js/vendor/jquery.ba-hashchange.min.js"> </script>
-				<script>
-					var prev = "#";
-					var next = "#";
-					function setupHash() {
-							$(".work").hide();
-							var page = $(".work").length-1;
-							if(document.location.hash != "") {
-								page =  + document.location.hash.toString().substr(6);
-							}
-							$("#work"+ page).show();
-							if($("#work"+ (page+1)).size()) {
-								$("#next").attr("href", "#page-" + (page+1));
-								$("#next").show();
-							} else {
-								$("#next").hide();
-							}
-							if($("#work"+ (page-1)).size()) {
-								$("#prev").attr("href", "#page-" + (page-1));
-								$("#prev").show();
-							} else {
-								$("#prev").hide();
-							}
-
-					}
-					$(function(){
-							  $(window).hashchange(setupHash);
-								$(window).hashchange();
-					});
-				</script>
-				<script>
-					var ref = $(document)[0].referrer;
-					console.log(ref);
-				</script>
 				<div id="upload">
 					<iframe id="uploadwin" width="400" height="400">
 				</div>

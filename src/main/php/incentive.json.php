@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 function array_sort($array, $on) {
 	$new_array = array();
