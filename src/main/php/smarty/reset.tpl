@@ -69,7 +69,8 @@
 					$("#errormsg").append(JSON.parse(ret.responseText).error);
 			}).done(function(ret) {
 				console.log(ret);
-					$("#errormsg").append(JSON.parse(ret.responseText).success);
+					$("#errormsg").append(ret.success);
+					//$("#errormsg").append(JSON.parse(ret.responseText).success);
 			});
 		return false;
 	});
