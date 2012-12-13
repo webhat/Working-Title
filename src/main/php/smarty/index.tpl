@@ -6,7 +6,7 @@
 {assign var='WHY' value=$WHY|default:"<span style='$EDIT;'><strong>Waarom doe ik dit?</strong><br/>Jouw reden voor deelname aan WorkingTitle365.com: Geef kort weer wat je motivatie is voor deelname aan dit platform en wat je doel is. Fans kunnen ook je doel willen ondersteunen.</span>"}
 {assign var='WANT' value=$WANT|default:"<span style='$EDIT;'><strong>Wat wil ik en wat bied ik?</strong><br/>Jouw oproep en wat je te bieden hebt: Maak duidelijk wat je verlangt van je Fans en wat jij ze biedt. Beoog je een intensieve contact? Wil je hun inbreng of feedback? Wil je dat ze jouw werk zoveel mogelijk delen op sociale media? Je biedt ze natuurlijk de beloningen maar ook een inkijk en misschien wel deelname aan je creatief proces.</span>"}
 {assign var='PROFILE' value=$PROFILE|default:"<span style='$EDIT;'>Je korte omschrijving: Beschrijf je werk in max. 133 tekens zoals een tweet op Twitter. Zo is in een oogopslag helder wat jij doet.</span>"}
-{assign var='WORK' value=$WORK|default:"<span style='$EDIT;'><strong>Jouw Werk uploaden</strong><br/>Je kan zoveel werken kwijt als je wilt. MAAR wij adviseren hier niet je complete portfolio te plaatsen, daar zijn andere plekken voor. Een beperkt aantal werken maakt nieuwsgierig en verleidt om Fan van je te worden. Het laatste werk dat je toevoegt is als eerste zichtbaar; dit kan het beste een foto/video zijn. Je kan werken tot 20 MB uploaden. Zie voor meer info: <a href='http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina#upload'>Uploaden van je werk</a>.</span>"}
+{assign var='WORK' value=$WORK|default:"<span style='$EDIT;'><strong>Jouw Werk uploaden</strong><br/>Je kan zoveel werken kwijt als je wilt. MAAR wij adviseren hier niet je complete portfolio te plaatsen, daar zijn andere plekken voor. Een beperkt aantal werken maakt nieuwsgierig en verleidt om Fan van je te worden. Je werk komt in volgorde van uploaden onder elkaar. Het eerste werk dat je toevoegt is dus ook als eerste zichtbaar; dit kan het beste een foto/video zijn. Je kan spelen met de volgorde door te deleten, functies waarmee je de volgorde kan aanpassen worden later toegevoegd. Je kan werken tot 20 MB uploaden. Zie voor meer info: <a href='http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina#upload'>Uploaden van je werk</a>.</span>"}
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -88,8 +88,8 @@
 									// upload
 									$(".upload").bind( 'click', function(o) {
 											$("#upload").toggle();
+											$("#uploadwin").attr('src',"upload.html?id="+ getUrlVars()['id']);
 									});
-									$("#uploadwin").attr('src',"upload.html?id="+ getUrlVars()['id']);
 							});
 	    {/literal}
 	</script>

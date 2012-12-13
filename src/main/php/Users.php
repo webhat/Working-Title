@@ -1,6 +1,6 @@
 <?php
 
-class Users {
+class Users implements Countable {
 	private $db;
 	private $results;
 	public function __construct() {
@@ -22,6 +22,11 @@ class Users {
 			array_push($users, $user['username']);
 		}
 		return $users;
+	}
+
+	public function count() {
+		$this->results = $this->db->profiles->find();
+		return $this->results->count();
 	}
 }
 
