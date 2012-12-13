@@ -66,11 +66,6 @@
 			</div>
 		</div>
 	</div>
-
-		<div id="blackbar">
-	{include file="smarty/blackbar.tpl"}
-		</div>
-
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
 	    {literal}
