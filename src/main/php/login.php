@@ -14,6 +14,7 @@ if(array_key_exists( 'user', $_POST))
 if(array_key_exists( 'pass', $_POST))
 	$pass = (string) $_POST['pass'];
 
+
 if( $user == "" || $pass == "") {
 	print $fail;
 	exit();
