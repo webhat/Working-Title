@@ -88,8 +88,8 @@
 									// upload
 									$(".upload").bind( 'click', function(o) {
 											$("#upload").toggle();
+											$("#uploadwin").attr('src',"upload.html?id="+ getUrlVars()['id']);
 									});
-									$("#uploadwin").attr('src',"upload.html?id="+ getUrlVars()['id']);
 							});
 	    {/literal}
 	</script>

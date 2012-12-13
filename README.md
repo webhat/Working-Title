@@ -17,6 +17,7 @@ Some resources were used from:
 * http://www.htmlremix.com
 * http://stackoverflow.com/questions/2441565/how-do-i-make-a-div-element-editable-like-a-textarea-when-i-click-it
 * http://papermashup.com/read-url-get-variables-withjavascript/
+* http://www.clker.com/clipart-3584.html (red cross image)
 
 bootstrap.php taken from:
 * https://github.com/travis-ci/travis-ci-php-example/
