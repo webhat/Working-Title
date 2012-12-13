@@ -22,7 +22,7 @@ foreach( $POST as $prop => $val) {
 	}
 
 	// get the HTML string back
-	$no_script_html_string = $doc->saveHTML();
+	$no_script_html_string = preg_replace('~<(?:!DOCTYPE|/?(?:html|body))[^>]*>\s*~i', '', $doc->saveHTML());
 	$ul->setProperty($storedprop, $no_script_html_string);
 }
 $ul->store();
