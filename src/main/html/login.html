@@ -3,13 +3,14 @@
 		<form id="login" action="login.php" style="margin:0px 5px 5px 5px;" method="POST" target="logincheck">
 			<span><label>Username/Email:</label><input type="text" name="user" style="width:150px" /></span>
 			<span><label>Password:</label><input type="password" name="pass" style="width:150px" /></span>
+			<span><a href="/reset.php" id="reset" style="margin:5px 5px 5px 5px;color:#fff">Reset</a></span>
 			<span><input type="submit" style="float:right;margin-top:4px;" value="Login" /></span>
 		</form>
 	</div>
 	<div id="extloginpd" style="{$LOGIN};" class="rounded-corners">
+		<span><a href="/create.php" id="faq">SignUp</a></span> |
 		<span><a href="http://workingtitle365.uservoice.com/" id="faq">FAQ</a></span> |
-		<span><a href="#" id="loginlink" style="margin:5px 5px 5px 5px;">Login</a></span> |
-		<span><a href="/reset.php" id="reset" style="margin:5px 5px 5px 5px;">Reset</a></span>
+		<span><a href="#" id="loginlink" style="margin:5px 5px 5px 5px;">Login</a></span>
 	</div>
 	<div style="{$LOGOUT};" id="logout" class="rounded-corners">
 		<span><a href="http://workingtitle365.uservoice.com/">FAQ</a></span> |
@@ -18,4 +19,5 @@
 	</div>
 	<iframe id="logincheck" style="display:none"></iframe>
 	<a href="/"><div id="logo"><div id="alpha">alpha</div></div></a>
+	<a href="http://workingtitle365.uservoice.com/knowledgebase" target="_blank" style="position:relative;top:15px;left:600px;color:#fff;font-size:9pt;line-height:4pt;">What is<br />WorkingTitle365?</a>
 </div>

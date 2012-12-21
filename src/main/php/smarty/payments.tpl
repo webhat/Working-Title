@@ -19,10 +19,10 @@
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">Bedrag: &euro;</label>
+					<label style="display:inline">Mijn bedrag is/My pledge is: &euro;</label>
 					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event)" />
 					<div id="incentives">
-						<input type="radio" name="incentive" checked value="0" style="display:inline;margin-right:10px;">Ik wil niets terug</input>
+						<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">Ik wil niets terug / Nothing in return</input>
 					</div>
 					<button id="submit">Pay</button>
 				</form>
@@ -30,9 +30,6 @@
 		</div>
 	</div>
 
-		<div id="blackbar">
-	{include file="smarty/blackbar.tpl"}
-		</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
@@ -49,8 +46,8 @@
 	    {literal}
 			json['amount'] = $("#amount").val();
 			console.log(json['price'] +"-"+json['amount']);
-			if( (+json['amount']) < (+json['price'])) {
-				$("#errormsg").text("De incentive matched niet met je bedrag.");
+			if( (+json['amount']) < (+json['price']) || json['amount'] == "") {
+				$("#errormsg").text("De gekozen incentive matched niet met je bedrag.");
 				$(this).removeAttr("disabled");
 				return false;
 			}

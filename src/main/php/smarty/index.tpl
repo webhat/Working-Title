@@ -15,7 +15,7 @@
         <!-- Add your site or application content here -->
 	<div>
 		<div id="profilename" class="box rounded-corners">
-			<div class="edit">edit</div>
+			<div class="edit"><br />edit</div>
 			<div class="boxmargin">{$WT}</div>
 			<div class="boxmargin">
 				<p class="category">FIXME: category here</p>
@@ -29,7 +29,7 @@
 		</div>
 		<div style="position:absolute">
 			<div id="profile" class="box rounded-corners">
-				<div class="edit">edit</div>
+				<div class="edit"><br />edit</div>
 				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">Mijn website</a></div>
 				<div class="boxmargin headline" style="clear:both;">{$PROFILE}</div>
@@ -43,12 +43,12 @@
 				<div id="social"></div>
 			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
-				<div class="addinc"><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
+				<div class="addinc"><br /><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
 			</div>
 		</div>
 		<div id="boxy">
 			<div id="mywork" class="box rounded-corners">
-				<div class="upload">upload</div>
+				<div class="upload"><br />upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
 				<div style="clear:both;"></div>
 			</div>

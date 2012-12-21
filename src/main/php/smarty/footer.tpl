@@ -17,7 +17,7 @@
         <script src="/js/vendor/jquery.ba-hashchange.min.js"> </script>
 				<div id="upload">
 					<div><img width="20" height="20" src="/img/redcross.png" class="upload" style="position:relative;left:20px;top:10px;" /></div>
-					<iframe id="uploadwin" width="400" height="400">
+					<iframe id="uploadwin" width="400" height="400"></iframe>
 				</div>
 		<!-- ClickTale Bottom part -->
 		<div id="ClickTaleDiv" style="display: none;"></div>
