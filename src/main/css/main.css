@@ -274,12 +274,11 @@ left: -60px;
 
 #profile #social {
 	clear:both;
-	background: #FFF url(/img/social.png) no-repeat top center;
+	//background: #FFF url(/img/social.png) no-repeat top center;
 	width:262px;
 	height:59px;
 	text-align:center;
 	margin:10px;
-	display:none;
 }
 
 #profile #becomefan a {
@@ -321,7 +320,7 @@ left: -60px;
 	width: 282px;
 	height: auto;
 	background-size:230px 400px;
-	z-index:1;
+	z-index:-1;
 }
 
 .incentivedesc {
