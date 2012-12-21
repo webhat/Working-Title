@@ -274,12 +274,11 @@ left: -60px;
 
 #profile #social {
 	clear:both;
-	background: #FFF url(/img/social.png) no-repeat top center;
+	//background: #FFF url(/img/social.png) no-repeat top center;
 	width:262px;
 	height:59px;
 	text-align:center;
 	margin:10px;
-	display:none;
 }
 
 #profile #becomefan a {
@@ -321,7 +320,12 @@ left: -60px;
 	width: 282px;
 	height: auto;
 	background-size:230px 400px;
-	z-index:1;
+	z-index:-1;
+}
+
+.incentivedesc {
+position:relative;
+left:35px;
 }
 
 #indentform {
@@ -402,6 +406,40 @@ position: absolute;
 	font-weight:bold;
 }
 
+/* COUNT */
+#profilename .edit {
+	background: url(/img/wt365-count.png) 42px 0;
+	background-repeat:repeat-x;
+	width:22px;
+	height:40px;
+}
+
+#mywork .upload {
+	background: url(/img/wt365-count.png) 1px 0;
+	background-repeat:repeat-x;
+	width:22px;
+	width:22px;
+	height:40px;
+	margin-left: 40px;
+	position: relative;
+	right: 30px;
+}
+
+#pincentives .addinc {
+	background: url(/img/wt365-count.png) 84px 0;
+	background-repeat:repeat-x;
+	width:22px;
+	width:22px;
+	height:40px;
+}
+
+#profile .edit {
+	background: url(/img/wt365-count.png) 63px 0;
+	background-repeat:repeat-x;
+	width:22px;
+	width:22px;
+	height:40px;
+}
 
 label {
 	display:block;
@@ -441,10 +479,55 @@ input, select {
 	background-color:#ADD8E6;
 }
 
+/* PAPER DRAGON */
+
+.overview {
+	border: solid 1px #e3e2e2;
+	width: 330px;
+	margin: 13px;
+	position:relative;
+}
+
+.artexample {
+	margin:10px;
+	min-height: 150px;
+	width:100%;
+}
+
+.artexample a img {
+	max-width:93%;
+}
+
+.makername {
+	position:relative;
+	font-size:9pt;
+	display:inline;
+	margin:10px;
+	margin-left:20px;
+	width:150px;
+	bottom:5px;
+}
+
+.fanbutton {
+	position:relative;
+	display:inline;
+	margin:10px;
+	font-size:9pt;
+	width:20%;
+	left:17%;
+	bottom:5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	behavior:url(/css/border-radius.htc);
+	border-radius: 5px 5px 5px 5px;
+	background-color:#94d219;
+}
 
 
-
-
+.fanbutton a {
+	color:#fffdfd;
+}
 
 /* ==========================================================================
    Helper classes

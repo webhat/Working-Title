@@ -15,14 +15,15 @@
 			</div>
 		</div>
 		<div id="boxy">
-			<div id="fullwidth" class="box rounded-corners" style="height: 600px;top:30px;">
+			<div id="fullwidth" class="box rounded-corners" style="height:1300px;top:30px;">
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">Bedrag: &euro;</label>
+					<label style="display:inline">Amount: &euro;</label>
 					<input id="amount" type="text" value="" style="display:inline" disabled />
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;">PayPal</input><br />
+						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;">CreditCard</input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;">iDeal</input><br />
 						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;">Doorlopende Machtiging</input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;">Anders...</input><br />
@@ -45,17 +46,67 @@
 							<input type="hidden" name="custom" value="1" \>
 						</form>
 					</div>
+					<div id="creditcard" style="display:none;" class="makepayment">
+						<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
+							<input type="hidden" name="business" value="info@workingtitle365.com" \>
+							<input type="hidden" name="currency_code" value="EUR" \>
+							<input type="hidden" name="no_shipping" value="1" \>
+							<input type="image" src="http://www.paypal.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" \>
+							<input type="hidden" name="a3" value="5.00" \>
+							<input type="hidden" name="p3" value="1" \>
+							<input type="hidden" name="item_name" value="" \>
+							<input type="hidden" name="t3" value="Y" \>
+							<input type="hidden" name="src" value="1" \>
+							<input type="hidden" name="sra" value="1" \>
+							<input type="hidden" name="custom" value="1" \>
+						</form>
+					</div>
 					<div id="ideal" style="display:none;" class="makepayment errormsg">Betalen iDeal is helaas nog niet geactiveerd.</div>
-					<div id="incasso" style="display:none;" class="makepayment">Doorlopende Machtiging is nog niet mogelijk.</div>
+					<div id="incasso" style="display:none;" class="makepayment">
+						<h3>Doorlopende machtiging</h3>
+						<span>Ondergetekende verleent hierbij tot wederopzegging machtiging aan WorkingTitle365 om van zijn/haar rekening jaarlijks  af te schrijven ten behoeve van de Maker <strong>{$USER}</strong>.</span>
+						<br />
+						<br />
+						<form target="_blank" method="post" action="/incasso.php">
+							<label>Voornaam: *</label>
+							<input name="firstname" value="" /> 
+							<label>Tussenvoegsel:</label>
+							<input name="fnt" value="" /> 
+							<label>Achternaam: *</label>
+							<input name="lastname" value="" /> 
+							<label>Huisnummer: *</label>
+							<input name="house" value="" /> 
+							<label>Toevoeging:</label>
+							<input name="hnt" value="" /> 
+							<label>Straat: *</label>
+							<input name="street" value="" /> 
+							<label>Postcode: *</label>
+							<input name="postcode" value="" /> 
+							<label>Woonplaats: *</label>
+							<input name="city" value="" /> 
+							<label>Land: *</label>
+							<input name="country" value="" /> 
+							<label>Email: *</label>
+							<input name="mail" value="" /> 
+							<label>Bank/Girorekeningnr: *</label>
+							<input name="bank" value="" /> 
+							<br />
+							<span>De machtiging geldt tot wederopzegging. Hiervoor kan contact worden opgenomen met WorkingTitle365 via info@workingtitle365.com en binnenkort in je eigen account. Indien de begunstiger met de incasso niet akkoord is, kan deze bij de bank binnen 56 kalenderdagen (8 weken) om terugboeking verzoeken. De afschrijving van bovengenoemd rekeningnummer zal plaatsvinden in de maand van ontvangst en vervolgens jaarlijks. Ondergetekende wordt vooraf op de hoogte gesteld van het moment waarop de afschrijvingen bij benadering zullen plaatsvinden.</span> 
+						<br />
+						<br />
+							<input type="checkbox" name="agree" value="" /> 
+							<label>Ik ga akkoord.</label>
+						<br />
+							<button id="submiterror">Submit</button>
+						</form>
+
+					</div>
 					<div id="anders" style="display:none;" class="makepayment">Heeft u nog idee&euml;n voor betaalmogelijkheden? Laat ze <a href="https://workingtitle365.uservoice.com/forums/174950-jouw-idee%C3%ABn-zijn-essentieel-/suggestions/3396187-andere-betaalmogelijkheden">hier</a> achter.</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-		<div id="blackbar">
-	{include file="smarty/blackbar.tpl"}
-		</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">

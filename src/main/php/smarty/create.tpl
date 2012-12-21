@@ -115,7 +115,7 @@
 					$("#errormsg").append(JSON.parse(ret.responseText).error);
 			}).done(function(ret) {
 				console.log(ret);
-				top.location = "/makerrules.html?id="+ json["username"];
+				top.location = "/profile.php?firsttime=true&id="+ json["username"];
 			});
 		return false;
 	});

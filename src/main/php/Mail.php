@@ -7,6 +7,35 @@ if(file_exists("ext/php/lib/swift_required.php"))
 include_once "bootstrap.php";
 
 class Mail {
+	function concierge( $data) {
+		$c = new WTConfig();
+
+		$from = array( $c->service["mail"] => $c->service["name"]);
+		$to = array( $c->service["mail"] => $c->service["name"]);
+		$subject = "Automatisch Incasso";
+
+		$transport = Swift_SmtpTransport::newInstance(
+				$c->mandrill['host'],
+				$c->mandrill['port']
+			);
+		$transport->setUsername($c->mandrill['username']);
+		$transport->setPassword($c->mandrill['password']);
+		$swift = Swift_Mailer::newInstance($transport);
+
+		$message = new Swift_Message($subject);
+		$message->setFrom($from);
+		$message->setBody(var_export($data, true), 'text/plain');
+		$message->setTo($to);
+
+		if ($recipients = $swift->send($message, $failures)) {
+			return true;
+		} else {
+			return false;
+			print_r($failures);
+		}
+
+	}
+
 	function send( $u) {
 		$c = new WTConfig();
 

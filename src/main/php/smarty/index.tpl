@@ -15,7 +15,7 @@
         <!-- Add your site or application content here -->
 	<div>
 		<div id="profilename" class="box rounded-corners">
-			<div class="edit">edit</div>
+			<div class="edit"><br />edit</div>
 			<div class="boxmargin">{$WT}</div>
 			<div class="boxmargin">
 				<p class="category">FIXME: category here</p>
@@ -29,7 +29,7 @@
 		</div>
 		<div style="position:absolute">
 			<div id="profile" class="box rounded-corners">
-				<div class="edit">edit</div>
+				<div class="edit"><br />edit</div>
 				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">Mijn website</a></div>
 				<div class="boxmargin headline" style="clear:both;">{$PROFILE}</div>
@@ -40,15 +40,34 @@
 						</span>
 					</a>
 				</div>
-				<div id="social"></div>
+				<div id="social">
+					{literal}
+						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					{/literal}
+					<div class="fb-like" data-href="http://www.workingtitle365.com/profile.php?id={$USER}" data-layout="button_count" data-send="false" data-width="450" data-show-faces="false"></div>
+					<!-- Place this tag where you want the +1 button to render. -->
+					<div class="g-plusone" data-size="small" data-annotation="none" data-width="300"></div>
+					<!-- Place this tag after the last +1 button tag. -->
+					{literal}
+						<script type="text/javascript">
+							(function() {
+									 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+											 po.src = 'https://apis.google.com/js/plusone.js';
+													 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+														 })();
+						</script>
+					{/literal}
+					<br />
+				</div>
 			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
-				<div class="addinc"><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
+				<div class="addinc"><br /><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
 			</div>
 		</div>
 		<div id="boxy">
 			<div id="mywork" class="box rounded-corners">
-				<div class="upload">upload</div>
+				<div class="upload"><br />upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
 				<div style="clear:both;"></div>
 			</div>
