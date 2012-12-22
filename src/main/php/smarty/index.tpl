@@ -36,7 +36,7 @@
 				<div id="becomefan">
 					<a href="/payments.php?id={$USER}">
 						<span style="font-family:arial,helvetica,sans-serif;">
-							<strong><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;">Fan van deze Maker<br /></span></span></strong><span style="font-size:14px;line-height:22px;"><span style="color:#f0fff0;">From 1 cent per day</span</span>
+							<strong><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;">Fan van deze Maker<br /></span></span></strong>
 						</span>
 					</a>
 				</div>
