@@ -15,6 +15,8 @@
 			<div class="information" style="{$EDIT}">
 				<div>Hoe?</div>
 				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">Cre&euml;er je beloningen<br />voor je Fans</a></div>
+				<div>Zie ook:</div>
+				<div><a href="http://www.workingtitle365.com/profile.php?id=kama29">Voorbeelden beloningen</a></div>
 			</div>
 			</div>
 		</div>
