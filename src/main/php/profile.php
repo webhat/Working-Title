@@ -16,7 +16,7 @@ $p->reset();
 
 /** FIXME: creation hack */
 
-$fbcreation = $p->getProperty('creations')[0]['content'];
+$fbcreation = $p->getProperty('creations')[0]['content'] ."?". rand();
 $smarty->assign( 'FBCREA', $fbcreation);
 
 /** END: creation hack */
