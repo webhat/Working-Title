@@ -14,6 +14,13 @@ $smarty = new Smarty;
 $p = new MakerProfile( $maker);
 $p->reset();
 
+/** FIXME: creation hack */
+
+$fbcreation = $p->getProperty('creations')[0]['content'];
+$smarty->assign( 'FBCREA', $fbcreation);
+
+/** END: creation hack */
+
 $smarty->setConfigDir(getcwd() ."/../resources/smarty");
 $smarty->setCacheDir('/tmp/smarty/cache');
 $smarty->setCompileDir('/tmp/smarty/compile');
