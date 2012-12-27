@@ -13,6 +13,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+				<img style="display:none;visibility:none" src="{$FBCREA}" />
 	<div>
 		<div id="profilename" class="box rounded-corners">
 			<div class="edit"><br />edit</div>
