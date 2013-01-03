@@ -484,8 +484,10 @@ input, select {
 .overview {
 	border: solid 1px #e3e2e2;
 	width: 330px;
-	margin: 13px;
+	margin-left:11px;
+	margin-top:16px;
 	position:relative;
+	display:inline-block;
 }
 
 .artexample {

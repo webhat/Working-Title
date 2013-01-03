@@ -15,6 +15,8 @@
 			<div class="information" style="{$EDIT}">
 				<div>Hoe?</div>
 				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">Cre&euml;er je beloningen<br />voor je Fans</a></div>
+				<div>Zie ook:</div>
+				<div><a href="http://www.workingtitle365.com/profile.php?id=kama29">Voorbeelden beloningen</a></div>
 			</div>
 			</div>
 		</div>
@@ -45,7 +47,7 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
 	<script type="text/javascript">
 	    {literal}
 	$("button").click( function() {

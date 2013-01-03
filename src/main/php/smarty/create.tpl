@@ -17,8 +17,8 @@
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;width:1052px;">
 				<div style="margin-left:10%;">
-					<h2 style="top:30px;margin-top:50px;position:relative;display:inline;">Registreren</h2>
-					<h2 style="top:30px;left:450px;margin-top:50px;position:relative;display:inline;">Aanmelden</h2>
+					<h2 style="top:30px;margin-top:50px;position:relative;display:inline;color:#2A6999;">Registreren - Register</h2>
+					<h2 style="top:30px;left:450px;margin-top:50px;position:relative;display:inline;color:#2A6999;">Inloggen - Login</h2>
 				</div>
 				<div style="border:solid 1px #e3e2e2;float:right;z-index:9;width:300px;height:200px;margin-top:70px;margin-right:100px;">
 					<form id="login" action="login.php" style="margin:10px 10px 0px 0px;" method="POST" target="logincheck">
@@ -33,9 +33,9 @@
 							<br />
 							<div id="errormsg">&nbsp;</div>
 							<br />
-							<label>Gebruikersnaam:</label>
+							<label>Gebruikersnaam - Username:</label>
 							<input id="username" type="text" value="{$USER}" />
-							<label>Wachtwoord:</label>
+							<label>Wachtwoord - Password:</label>
 							<input id="passwd" type="password" value="" />
 							<label>Email:</label>
 							<input id="mail" type="text" value="{$MAIL}" />
@@ -70,9 +70,9 @@
 							<label>PayPal:</label>
 							<input id="pay_paypal" type="text" value="" />
 							-->
-							<label>Ik ga akkoord met de <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use">Gebruikersvoorwaarden</a> en <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy">Privacy Policy</a></label>
+							<label><span style="color: #2A6999; font-size: 13px;">Ik ga akkoord met de / I approved the <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use" style="color: #88BD17">Gebruikersvoorwaarden/User Policy</a> & <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy" style="color: #88BD17">Privacy Policy</a></span></label>
 							<input type="checkbox" id="terms"/>
-							<button style="float:right;">Create User</button>
+							<button style="float:right;">Create User - Maak Gebruiker aan</button>
 						</div>
 					</form>
 				</div>

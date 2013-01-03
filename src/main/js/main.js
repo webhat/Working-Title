@@ -41,7 +41,7 @@ function getUrlVars() {
 }
 
 $(document).ready( function() {
-	$("#loginbox").load('userbar.php', function() {
+	$("#loginbox").load('/userbar.php', function() {
 		$('#loginlink').click( function() {
 			$('#extloginbox').animate({
 				height: 120,

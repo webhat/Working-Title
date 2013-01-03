@@ -20,6 +20,7 @@ Some resources were used from:
 * http://www.clker.com/clipart-3584.html (red cross image)
 * http://www.ajaxload.info/ (loading image)
 * http://www.credit-card-logos.com/ (Credit Card Logo)
+* http://chrissilich.com/blog/load-more-content-as-the-user-reaches-the-bottom-of-your-page-with-jquery/ (load more)
 
 bootstrap.php taken from:
 * https://github.com/travis-ci/travis-ci-php-example/
