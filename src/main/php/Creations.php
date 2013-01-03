@@ -12,8 +12,8 @@ class Creations {
 			exit(-1);
 		}
 		$config = new WTConfig();
-		//$this->db = $this->mongo->selectDB($config->wtdatabase);
-		$this->db = $this->mongo->selectDB("wt365");
+		$this->db = $this->mongo->selectDB($config->wtdatabase);
+		//$this->db = $this->mongo->selectDB("wt365");
 	}
 
 	function getLatest( $index = 0) {
@@ -30,8 +30,14 @@ class Creations {
 		$makers = array();
 
 		foreach($arr as $elem) {
+			$upload = preg_replace( "/\/upload\//", "", $elem['creations'][$index]['content']);
 			if( sizeof($elem['creations']) > $index )
-			array_push( $makers, array( 'username' => $elem['username'], 'creation' => $elem['creations'][$index]['content']));
+				array_push( $makers, array(
+							'username' => $elem['username'],
+							'creation' => $upload,
+							'type' => $elem['creations'][$index]['type']
+							)
+						);
 		}
 		//var_export($makers);
 

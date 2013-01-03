@@ -25,7 +25,6 @@ $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->debugging = false;
 
-$smarty->assign( 'USER', "Frontpage");
 $smarty->assign( 'MAKERS', $crea->getLatest($page));
 
 $smarty->display( 'smarty/frontpageplus.tpl');

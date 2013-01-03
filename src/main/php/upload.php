@@ -8,6 +8,7 @@ if(array_key_exists( 'id', $_GET))
 	$maker = (string) $_GET['id'];
 
 if($maker != $loggedinas) {
+	echo $maker ."!=". $loggedinas;
 	print "You are not logged in as this user";
 	exit();
 }
