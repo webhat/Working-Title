@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
-				<div class="addinc"><br /><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
+				<div class="addinc"><br /><a href="/incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
 			</div>
 		</div>
 		<div id="boxy">
