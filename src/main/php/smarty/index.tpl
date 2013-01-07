@@ -145,6 +145,7 @@
 						{/literal}
 			});
 			$(".incentive .delete").click(function(event) {
+				event.stopPropagation();
 				console.log("Delete Incentive Fired");
 				var code = $($(event.target).parent()).attr("id");
 						{literal}
