@@ -13,8 +13,13 @@ $user = (string) $loggedinas;
 $ul = new MakerProfile($user);
 $ul->reset();
 
-if($json->creation)
-	$ul->removeCreation( $json->filename);
+
+if($json->creation) {
+	$filename = $json->filename;
+	$filename = preg_replace("/[sml]_/","",$filename);
+	error_log("\nDelete: ". $filename);
+	$ul->removeCreation( $filename);
+}
 
 if($json->incentive)
 	$ul->removeIncentive( $json->code);
