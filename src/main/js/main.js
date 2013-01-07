@@ -1,29 +1,28 @@
 function creations(json) {
 	$.each(json, function( i, item) {
 			var type = item.type;
-			$("#mywork").append($("<center><div class='delete'>delete</div><div id='work"+ i +"' class='work "+ type +"' ><h2>"+ item.title +"</h2></div></center>"));
-
+			$("#workbelow").after($("<center><div class='delete'>delete</div><div id='work"+ i +"' class='work "+ type +"' ><h2>"+ item.title +"</h2></div></center>"));
 				
 			var myelem;
 			switch( type) {
 				case 'text':
 					myelem = $('<div />');
-					$(myelem).html("<a href='"+ item.content +"' rel='nofollow'>download '"+ item.title +"'</a>");
+					$(myelem).html("<a href='/upload/"+ item.content +"' rel='nofollow'>download '"+ item.title +"'</a>");
 					break;
 				case 'image':
 					myelem = $('<img style="max-width:700px;margin: 0 auto;" />');
-					$(myelem).attr('src', item.content);
+					$(myelem).attr('src', "/upload/l_"+ item.content);
 					break;
 				case 'video':
 					myelem = $('<video controls="controls" style="max-width:700px;margin: 0 auto;" />');
 					var source = $('<source type="video/mp4"/>Your browser does not support the video tag.');
-					$(myelem).attr('src', item.content);
+					$(myelem).attr('src', "/upload/"+ item.content);
 					$(myelem).html(source);
 					break;
 				case 'audio':
 					myelem = $('<audio controls="controls" />');
 					var source = $('<source type="audio/mp3"/>Your browser does not support the audio tag.');
-					$(myelem).attr('src', item.content);
+					$(myelem).attr('src', "/upload/"+ item.content);
 					$(myelem).html(source);
 					break;
 				default:

@@ -63,14 +63,14 @@
 				</div>
 			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
-				<div class="addinc"><br /><a href="incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
+				<div class="addinc"><br /><a href="/incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
 			</div>
 		</div>
 		<div id="boxy">
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload"><br />upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
-				<div style="clear:both;"></div>
+				<div style="clear:both;" id="workbelow"></div>
 			</div>
 		</div>
 	</div>
@@ -145,6 +145,7 @@
 						{/literal}
 			});
 			$(".incentive .delete").click(function(event) {
+				event.stopPropagation();
 				console.log("Delete Incentive Fired");
 				var code = $($(event.target).parent()).attr("id");
 						{literal}

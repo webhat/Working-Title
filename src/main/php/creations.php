@@ -19,11 +19,25 @@ $smarty = new Smarty;
 $p = new MakerProfile( $maker);
 $p->reset();
 
-$creations = $p->getProperty('creations');
+//$crea = $p->getProperty('creations');
+
+$creations = new Creations();
+
+$crea = $creations->getCreations(array( "username" => $maker));
+$crea = array_values( $crea);
+$crea = array_shift( $crea)['creations'];
+
+$output = array();
+
+foreach( $crea as $elem) {
+	$elem['content'] = $creations->stripUpload( $elem['content']);
+	array_push( $output, $elem);
+}
 
 if( $callback == "")
-	print json_encode($creations);
+	print json_encode($output);
 else
-	print $callback ."( ". json_encode($creations) ." );";
+	print $callback ."( ". json_encode($output) ." );";
+
 
 ?>

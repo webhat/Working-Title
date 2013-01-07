@@ -22,6 +22,9 @@ switch( $size) {
 	case 'm':
 		$width = 300;
 		break;
+	case 'l':
+		$width = 700;
+		break;
 	default:
 		$width = 100;
 }

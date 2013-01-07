@@ -8,7 +8,7 @@ function resize($image,$opts=null){
 			'cacheDir' => "./cache/",
 			'uploadDir' => "./upload/",
 			'w' => 100,
-			'h' => 600
+			'h' => 1000
 			);
 
 	$opts = array_merge($defaults, $opts);    

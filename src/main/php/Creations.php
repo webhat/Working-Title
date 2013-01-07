@@ -17,21 +17,13 @@ class Creations {
 	}
 
 	function getLatest( $index = 0) {
-		$profiles = $this->db->profiles;
-
-		$needle = array( 'creations.content' => array('$exists' => true));
-		$results = array( "username", "creations");
-		$cursor = $profiles->find($needle, $results);
-
-		//var_export(iterator_to_array($cursor));
-
-		$arr = iterator_to_array($cursor);
+		$arr = $this->getCreations();
 
 		$makers = array();
 
 		foreach($arr as $elem) {
-			$upload = preg_replace( "/\/upload\//", "", $elem['creations'][$index]['content']);
-			if( sizeof($elem['creations']) > $index )
+			$upload = $this->stripUpload( $elem['creations'][$index]['content']);
+			if( sizeof($elem['creations']) > $index && array_key_exists( 'incentives', $elem))
 				array_push( $makers, array(
 							'username' => $elem['username'],
 							'creation' => $upload,
@@ -42,6 +34,23 @@ class Creations {
 		//var_export($makers);
 
 		return $makers;
+	}
+
+	function getCreations( $myneedle = array()) {
+		$profiles = $this->db->profiles;
+
+		$needle = array( 'creations.content' => array('$exists' => true));
+
+		$needle = array_merge($needle, $myneedle);    
+
+		$results = array( "username", "creations", "incentives");
+		$cursor = $profiles->find($needle, $results);
+
+		return iterator_to_array($cursor);
+	}
+
+	function stripUpload( $image) {
+		return preg_replace( "/\/upload\//", "", $image );
 	}
 }
 ?>
