@@ -70,7 +70,7 @@
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload"><br />upload</div>
 				<div class="boxmargin headline">{$WORK}</div>
-				<div style="clear:both;"></div>
+				<div style="clear:both;" id="workbelow"></div>
 			</div>
 		</div>
 	</div>
