@@ -38,7 +38,7 @@ $incentives = array_sort($p->getProperty('incentives'), 'amount');
 if( $callback == "")
 	print json_encode($incentives);
 else
-	print $callback ."( ". json_encode($incentives) ." );";
+	print $callback ."( '$maker', ". json_encode($incentives) ." );";
 
 
 ?>
