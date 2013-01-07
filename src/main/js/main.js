@@ -56,7 +56,7 @@ $(document).ready( function() {
 	});
 });
 
-function incentives( json) {
+function incentives( maker, json) {
 	$("#pincentives .incentive").remove();
 	$.each(json, function( i, item) {
 			var selected = "";
@@ -71,7 +71,7 @@ function incentives( json) {
 			$("#incentives").append(incen);
 			$("#pincentives").append(profile);
 			$(profile).click(function() {
-				top.location = "/payments.php?inc="+ item.code +"&id="+ getUrlVars()['id'];
+				top.location = "/payments.php?inc="+ item.code +"&id="+ maker;
 			});
 			$(".incentive:first").css("border-top-style","none");
 	});
