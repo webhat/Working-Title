@@ -16,8 +16,8 @@ function creations(json) {
 				case 'video':
 					myelem = $('<video controls="controls" style="max-width:700px;margin: 0 auto;" />');
 					var source = $('<source type="video/mp4"/>Your browser does not support the video tag.');
-					$(myelem).attr('src', "/upload/"+ item.content);
-					$(myelem).html(source);
+					$(source).attr('src', "/upload/"+ item.content);
+					$(myelem).append($(source));
 					break;
 				case 'audio':
 					myelem = $('<audio controls="controls" />');
