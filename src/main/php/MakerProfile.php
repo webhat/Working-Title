@@ -68,6 +68,7 @@ class MakerProfile extends ProfileMongo {
 		$size = count($creations);
 		for($i = 0; $i < $size; $i++) {
 			if($creations[$i]["content"] == $filename) {
+				error_log("\nDelete: ". $filename);
 				continue;
 			}
 			array_push($creations_out, $creations[$i]);
