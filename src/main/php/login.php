@@ -30,6 +30,10 @@ $ul = new UserLogin($user);
 
 if( $ul->passwordCheck( $pass)) {
 	$user = $ul->getUser();
+
+	$ul->setProperty( "lastlogin", time());
+	$ul->store();
+
 	$ul = new UserLogin($user);
 	$ul->reset();
 	setcookie("user", $user, time()+5184000);
