@@ -41,35 +41,6 @@
 							<input id="mail" type="text" value="{$MAIL}" />
 							<label>Website:</label>
 							<input id="site" type="text" value="{$SITE}" />
-							<!--
-							<label>Korte beschrijving:</label>
-							<input id="profile" style="position:static;width:210px;" type="text" value="" />
-							<br />
-							<label>Voornaam:</label>
-							<input id="fname" type="text" value="" />
-							<label>Achternaam:</label>
-							<input id="lname" type="text" value="" />
-							<label>Geslacht:</label>
-							<input id="sex" type="text" value="" />
-							<br />
-							<label>Straat:</label>
-							<input id="adr_street" type="text" value="" />
-							<label>Huisnummer:</label>
-							<input id="adr_nr" type="text" value="" />
-							<label>Toevoeging:</label>
-							<input id="adr_code" type="text" value="" />
-							<label>Woonplaats:</label>
-							<input id="adr_city" type="text" value="" />
-							<label>Postcode:</label>
-							<input id="adr_zip" type="text" value="" />
-							<label>Land:</label>
-							<input id="adr_country" type="text" value="" />
-							<br />
-							<label>Bankrekening:</label>
-							<input id="pay_bankaccount" type="text" value="" />
-							<label>PayPal:</label>
-							<input id="pay_paypal" type="text" value="" />
-							-->
 							<label><span style="color: #2A6999; font-size: 13px;">Ik ga akkoord met de / I approved the <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use" style="color: #88BD17">Gebruikersvoorwaarden/User Policy</a> & <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy" style="color: #88BD17">Privacy Policy</a></span></label>
 							<input type="checkbox" id="terms"/>
 							<button style="float:right;">Create User - Maak Gebruiker aan</button>
@@ -115,7 +86,7 @@
 					$("#errormsg").append(JSON.parse(ret.responseText).error);
 			}).done(function(ret) {
 				console.log(ret);
-				top.location = "/profile.php?firsttime=true&id="+ json["username"];
+				top.location = "/maker/"+ json["username"] +"?firsttime=true";
 			});
 		return false;
 	});
