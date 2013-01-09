@@ -1,20 +1,7 @@
 <?php
 
-class Creations {
+class Creations extends MongoConnection {
 	private $profile = array();
-	private $db = null;
-
-	public function __construct( $user = null) {
-		try {
-			$this->mongo = new Mongo(); // connect
-		} catch (Exception $e) {
-			print("ERROR: Database unreachable");
-			exit(-1);
-		}
-		$config = new WTConfig();
-		$this->db = $this->mongo->selectDB($config->wtdatabase);
-		//$this->db = $this->mongo->selectDB("wt365");
-	}
 
 	function getLatest( $index = 0) {
 		$arr = $this->getCreations();
@@ -23,7 +10,7 @@ class Creations {
 
 		foreach($arr as $elem) {
 			$upload = $this->stripUpload( $elem['creations'][$index]['content']);
-			if( sizeof($elem['creations']) > $index && array_key_exists( 'incentives', $elem))
+			if( sizeof($elem['creations']) > $index && array_key_exists( 'incentives', $elem) && sizeof($elem['incentives']) > 0)
 				array_push( $makers, array(
 							'username' => $elem['username'],
 							'creation' => $upload,

@@ -30,7 +30,8 @@ class Users implements Countable {
 		while($user = $this->results->getNext()) {
 			array_push($users, array(
 						"username" => $user['username'],
-						"mail" => $user['mail']
+						"lastlogin" => isset($user['lastlogin'])?$user['lastlogin']:null,
+						"mail" => isset($user['mail'])?$user['mail']:null
 						)
 					);
 		}

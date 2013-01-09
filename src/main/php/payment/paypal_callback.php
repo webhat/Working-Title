@@ -1,4 +1,6 @@
 <?php
+
+require_once('bootstrap.php');
  
 // STEP 1: Read POST data
  
@@ -11,8 +13,13 @@ $myPost = array();
 foreach ($raw_post_array as $keyval) {
   $keyval = explode ('=', $keyval);
   if (count($keyval) == 2)
-     $myPost[$keyval[0]] = urldecode($keyval[1]);
+     $myPost[(string)$keyval[0]] = urldecode((string)$keyval[1]);
 }
+
+error_log(var_export($myPost,true));
+error_log(var_export($raw_post_array,true));
+error_log(var_export($raw_post_data,true));
+
 // read the post from PayPal system and add 'cmd'
 $req = 'cmd=_notify-validate';
 if(function_exists('get_magic_quotes_gpc')) {
@@ -45,7 +52,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 // of the certificate as shown below.
 // curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
 if( !($res = curl_exec($ch)) ) {
-    // error_log("Got " . curl_error($ch) . " when processing IPN data");
+    error_log("Got " . curl_error($ch) . " when processing IPN data");
     curl_close($ch);
     exit;
 }

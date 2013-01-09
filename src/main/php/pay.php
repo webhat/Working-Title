@@ -15,6 +15,7 @@ if(array_key_exists( 'transaction', $_GET))
 
 $smarty = new Smarty;
 
+$c = new WTConfig();
 
 $p = new MakerProfile( $maker);
 $p->reset();
@@ -36,6 +37,8 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'PAYPAL', $c->paypal['user']);
+$smarty->assign( 'PAYPALSANDBOX', $c->paypal['sandbox']?"sandbox.":"");
 $smarty->assign( 'TRANSX', $transx);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));

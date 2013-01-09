@@ -31,9 +31,9 @@
 				</form>
 				<div>
 					<div id="paypal" class="makepayment">
-						<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<form name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
-							<input type="hidden" name="business" value="info@workingtitle365.com" \>
+							<input type="hidden" name="business" value="{$PAYPAL}" \>
 							<input type="hidden" name="currency_code" value="EUR" \>
 							<input type="hidden" name="no_shipping" value="1" \>
 							<input type="image" src="http://www.paypal.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" \>
@@ -44,12 +44,13 @@
 							<input type="hidden" name="src" value="1" \>
 							<input type="hidden" name="sra" value="1" \>
 							<input type="hidden" name="custom" value="1" \>
+							<input type="hidden" name="notify_url" value="http://demo.workingtitle365.com/payment/paypal_callback.php" \>
 						</form>
 					</div>
 					<div id="creditcard" style="display:none;" class="makepayment">
-						<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<form name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
-							<input type="hidden" name="business" value="info@workingtitle365.com" \>
+							<input type="hidden" name="business" value="{$PAYPAL}" \>
 							<input type="hidden" name="currency_code" value="EUR" \>
 							<input type="hidden" name="no_shipping" value="1" \>
 							<input type="image" src="http://www.paypal.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" \>
@@ -69,6 +70,8 @@
 						<br />
 						<br />
 						<form target="_blank" method="post" action="/incasso.php">
+							<input name="user" type="hidden" value="{$USER}" />
+							<input name="transx" type="hidden" value="{$USER}" />
 							<label>Voornaam: *</label>
 							<input name="firstname" value="" /> 
 							<label>Tussenvoegsel:</label>
@@ -112,6 +115,8 @@
 	<script type="text/javascript">
 			var maker = "{$USER}";
 			var transx = "{$TRANSX}";
+			$("input[name=transx]").val(transx);
+
 	    {literal}
 			$(document).ready(function() {
 				var json = {};
