@@ -4,6 +4,7 @@ date_default_timezone_set("UTC");
 
 require('bootstrap.php');
 require('loggedinas.php');
+require('gettext.php');
 
 $maker = $loggedinas;
 
@@ -22,6 +23,7 @@ $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->debugging = false;
 
+$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:none;');

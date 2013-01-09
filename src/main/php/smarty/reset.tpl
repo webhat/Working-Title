@@ -21,11 +21,11 @@
 						<br />
 						<div id="errormsg">&nbsp;</div>
 						<br />
-						<label>Gebruikersnaam:</label>
+						<label>{gettext gt='Gebruikersnaam'}:</label>
 						<input id="username" type="text" value="" />
-						<label>Mail:</label>
+						<label>{gettext gt='Email'}:</label>
 						<input id="mail" type="text" value="" />
-						<button style="float:right;">Reset</button>
+						<button style="float:right;">{gettext gt='Reset'}</button>
 					</div>
 				</form>
 			</div>
@@ -46,7 +46,7 @@
 			if($(val).is(':checked')) {
 			} else {
 				if(err)
-					$("#errormsg").append("Alles moet worden ingevuld.");
+					$("#errormsg").append("{gettext gt='Alles moet worden ingevuld.'}");
 				err = false;
 			}
 			json[val.id] = $(val).is(':checked');
@@ -54,7 +54,7 @@
 		$("#indentform input").each(function(i, val) {
 			if($("#"+ val.id).val() == "") {
 				if(err)
-					$("#errormsg").append("Alles moet worden ingevuld.");
+					$("#errormsg").append("{gettext gt='Alles moet worden ingevuld.'}");
 				err = false;
 			}
 			json[val.id] = $("#"+ val.id).val();

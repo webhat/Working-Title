@@ -23,10 +23,11 @@ $mail = $ul->getProperty("mail");
 if($mail == $json->mail) {
 	header("HTTP/1.1 201 Reset");
 	$ul->mailReset();
-	echo "{ \"success\": \"Gebruiker wordt reset, kijk in je mailbox for een link.\"}";
+	
+	echo "{ \"success\": \"". _("Gebruiker wordt reset, kijk in je mailbox for een link.")."\"}";
 	return;
 }
 
 header("HTTP/1.1 403 Can't Reset User");
-echo "{ \"error\": \"Gebruiker kan niet worden reset\"}";
+echo "{ \"error\": \""._("Gebruiker kan niet worden reset")."\"}";
 ?>

@@ -2,6 +2,7 @@
 
 require('bootstrap.php');
 require('loggedinas.php');
+require('gettext.php');
 
 $maker = 'Unknown';
 if(array_key_exists( 'id', $_GET))
@@ -69,7 +70,7 @@ if (
 	&& ($_FILES["file"]["size"] < 20971520)
 	&& in_array($extension, $allowedExts)) {
   if ($_FILES["file"]["error"] > 0) {
-			echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+			echo _("Return Code: ") . $_FILES["file"]["error"] . "<br />";
     } else {
 //			echo "Upload: " . $_FILES["file"]["name"] . "<br />";
 //			echo "Type: " . $_FILES["file"]["type"] . "<br />";
@@ -83,7 +84,7 @@ if (
 				$uploadType = (string) UploadHelper::UploadType($_FILES["file"]["type"]);
 				$p->addCreation(array( "type" => $uploadType, "content" => "/upload/" . $realfilename, "title" => $crTitle, "description" => $crDesc, "timestamp" => time()));
 				$p->store();
-				echo "Stored in: "  . getcwd() . "/upload/" . $realfilename;
+				echo sprintf(_("Stored in: %s/upload/%s"), getcwd(), $realfilename);
 ?>
 <script>
 	top.location = "/profile.php?id=<?php print $user; ?>";
@@ -93,7 +94,7 @@ if (
 			}
     }
   } else {
-		echo "Invalid file";
+		echo _("Invalid file");
 ?>
 <script>
 	location = "/upload.html?id=<?php print $user; ?>&msg=Invalid%20File";

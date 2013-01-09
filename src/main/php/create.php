@@ -6,6 +6,7 @@ setcookie("user", "", time()+5184000);
 setcookie("hash", "", time()+5184000);
 
 require('bootstrap.php');
+require('gettext.php');
 require('loggedinas.php');
 
 $maker = '';
@@ -26,6 +27,7 @@ $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->debugging = false;
 
+$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:none;');
@@ -38,7 +40,7 @@ $profilename = $p->getProperty('profilename');
 $site = $p->getProperty('site');
 
 $smarty->assign( 'USER', $p->getUser());
-$smarty->assign( 'WT', 'Profiel Naam Komt Hier');
+$smarty->assign( 'WT', _('Profile Name Here'));
 $smarty->assign( 'MAIL', ''. $mail);
 $smarty->assign( 'SITE', ''. $site);
 $smarty->assign( 'PROFILENAME', ''. $profilename);

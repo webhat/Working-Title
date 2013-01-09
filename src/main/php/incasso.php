@@ -1,6 +1,7 @@
 <?php
 
 require 'bootstrap.php';
+require 'gettext.php';
 
 $mail = new Mail();
 
@@ -12,6 +13,6 @@ $mail->concierge($_POST);
 	<meta http-equiv="refresh" content="5;URL='/'">
 	</head>
 	<body>
-		Opdracht ontvangen
+		<?=_("Opdracht ontvangen"); ?>
 	</body>
 </html>

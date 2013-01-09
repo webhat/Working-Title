@@ -1,6 +1,7 @@
 <?php
 
-require_once 'loggedinas.php';
+require_once 'loggedinas.php'r
+require_once 'gettext.php'r
 
 $json = "";
 if(array_key_exists( 'json', $_POST))
@@ -12,7 +13,7 @@ $ul = new UserLogin($json->username);
 $ul->reset();
 if($ul->getCookie() != "" && $ul->getCookie() != $json->hash) {
 	header("HTTP/1.1 403 User Exists");
-	echo "{ \"error\": \"Gebruiker bestaat al\"}";
+	echo "{ \"error\": \"". _("Gebruiker bestaat al") ."\"}";
 	return;
 }
 

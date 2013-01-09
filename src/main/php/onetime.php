@@ -22,7 +22,6 @@ if( $hash == $dbcookie && $huser != "") {
 		$ul->store();
 ?>
 <script>
-alert("X");
 	top.location = "/create.php?id=<?php print $huser; ?>";
 </script>
 <?php
