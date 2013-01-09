@@ -86,6 +86,8 @@ class ProfileMongo {
 			$this->profile[$key] = (string)$value;
 		else if(is_array($value))
 			$this->profile[$key] = (array)$value;
+		else if(is_int($value))
+			$this->profile[$key] = (int)$value;
 	}
 
 	public function getProperty( $key) {
