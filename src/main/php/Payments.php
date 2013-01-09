@@ -1,11 +1,17 @@
 <?php
 
 class Payments extends MongoConnection {
-	public function __construct() {
+
+	public function updatePayPal($pay) {
+		$this->db->payments->update(
+				array("custom" => $pay['custom']),
+				$pay,
+				array("upsert" => true)
+				);
 	}
 
-	public function hello($what = 'World') {
-		return "Hello $what";
+	public function getPayPal($id) {
+		return $this->db->payments->findOne( array( "custom" => $id));
 	}
 }
 ?>
