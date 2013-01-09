@@ -22,6 +22,14 @@ Some resources were used from:
 * http://www.credit-card-logos.com/ (Credit Card Logo)
 * http://chrissilich.com/blog/load-more-content-as-the-user-reaches-the-bottom-of-your-page-with-jquery/ (load more)
 
+Localization
+============
+For localization help and information I have depended on:
+* http://sourceforge.net/projects/smarty-gettext/
+* http://code.google.com/p/smarty-gettext/
+* https://launchpad.net/php-gettext
+
+
 bootstrap.php taken from:
 * https://github.com/travis-ci/travis-ci-php-example/
 

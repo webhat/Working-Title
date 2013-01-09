@@ -8,7 +8,7 @@ GAPISHA1=95109e0dd65443ea72496168d2ed95ead225f1b2
 
 GAPI_ARCHIVE=$GAPI-$GAPI_VERSION.tar.gz
 LIBS=ext/php
-LOCATION=https://google-api-php-client.googlecode.com/files/$GAPI_ARCHIVE
+LOCATION=https://$GAPI.googlecode.com/files/$GAPI_ARCHIVE
 
 wget -q $LOCATION
 sha1sum -c <<EOF
