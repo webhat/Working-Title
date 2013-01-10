@@ -4,6 +4,12 @@ require_once('bootstrap.php');
 
 define("LOCALE_DIR", "/home/ec2-user/beta/Working-Title/src/main/locale");
 $locale = Locale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+
+// FIXME: dirty hack
+if($locale['locale'] == 'nl') $locale['locale'] = "nl_NL";
+if($locale['locale'] == 'en') $locale['locale'] = "en_US";
+if($locale['locale'] == 'en_GB') $locale['locale'] = "en_US";
+
 define("LOCALE", $locale['locale'] .".utf8");
 ?><!-- <?= LOCALE ?> --><?php
 ?><!-- <?= $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?> --><?php
