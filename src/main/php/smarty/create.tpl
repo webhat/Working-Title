@@ -17,13 +17,13 @@
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;width:1052px;">
 				<div style="margin-left:10%;">
-					<h2 style="top:30px;margin-top:50px;position:relative;display:inline;color:#2A6999;">Registreren - Register</h2>
-					<h2 style="top:30px;left:450px;margin-top:50px;position:relative;display:inline;color:#2A6999;">Inloggen - Login</h2>
+					<h2 style="top:30px;margin-top:50px;position:relative;display:inline;color:#2A6999;">{gettext gt='Register'}</h2>
+					<h2 style="top:30px;left:450px;margin-top:50px;position:relative;display:inline;color:#2A6999;">{gettext gt='Login'}</h2>
 				</div>
 				<div style="border:solid 1px #e3e2e2;float:right;z-index:9;width:300px;height:200px;margin-top:70px;margin-right:100px;">
 					<form id="login" action="login.php" style="margin:10px 10px 0px 0px;" method="POST" target="logincheck">
-						<span><label style="color:#222;">Username/Email:</label><input type="text" name="user" style="width:150px" /></span>
-						<span><label style="color:#222;">Password:</label><input type="password" name="pass" style="width:150px" /></span>
+						<span><label style="color:#222;">{gettext gt='Username' nocache}/{gettext gt='Email' nocache}:</label><input type="text" name="user" style="width:150px" /></span>
+						<span><label style="color:#222;">{gettext gt='Password' nocache}:</label><input type="password" name="pass" style="width:150px" /></span>
 						<span><input type="submit" style="float:right;margin-top:4px;" value="Login" /></span>
 					</form>
 				</div>
@@ -33,17 +33,17 @@
 							<br />
 							<div id="errormsg">&nbsp;</div>
 							<br />
-							<label>Gebruikersnaam - Username:</label>
+							<label>{gettext gt='Username' nocache}:</label>
 							<input id="username" type="text" value="{$USER}" />
-							<label>Wachtwoord - Password:</label>
+							<label>{gettext gt='Password' nocache}:</label>
 							<input id="passwd" type="password" value="" />
-							<label>Email:</label>
+							<label>{gettext gt='Email' nocache}:</label>
 							<input id="mail" type="text" value="{$MAIL}" />
-							<label>Website:</label>
+							<label>{gettext gt='Website'}:</label>
 							<input id="site" type="text" value="{$SITE}" />
-							<label><span style="color: #2A6999; font-size: 13px;">Ik ga akkoord met de / I approved the <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use" style="color: #88BD17">Gebruikersvoorwaarden/User Policy</a> & <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy" style="color: #88BD17">Privacy Policy</a></span></label>
+							<label><span style="color: #2A6999; font-size: 13px;">{gettext gt='I approved the'} <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139753-terms-of-use" style="color: #88BD17">{gettext gt='User Policy'}</a> &amp; <a target="_blank" href="http://workingtitle365.uservoice.com/knowledgebase/articles/139755-privacy-policy" style="color: #88BD17">{gettext gt='Privacy Policy'}</a></span></label>
 							<input type="checkbox" id="terms"/>
-							<button style="float:right;">Create User - Maak Gebruiker aan</button>
+							<button style="float:right;">{gettext gt='Create User'}</button>
 						</div>
 					</form>
 				</div>

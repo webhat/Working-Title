@@ -25,4 +25,8 @@ class WTConfigTest extends PHPUnit_Framework_TestCase
     protected function tearDown()
     {
     }
+
+		public function testSkip() {
+			$this->markTestIncomplete( 'This test has not been implemented yet.');
+		}
 }

@@ -1,4 +1,8 @@
 <?php
+
+require_once('../bootstrap.php');
+
+$c = new WTConfig();
  
 // STEP 1: Read POST data
  
@@ -11,8 +15,10 @@ $myPost = array();
 foreach ($raw_post_array as $keyval) {
   $keyval = explode ('=', $keyval);
   if (count($keyval) == 2)
-     $myPost[$keyval[0]] = urldecode($keyval[1]);
+     $myPost[(string)$keyval[0]] = urldecode((string)$keyval[1]);
 }
+
+
 // read the post from PayPal system and add 'cmd'
 $req = 'cmd=_notify-validate';
 if(function_exists('get_magic_quotes_gpc')) {
@@ -30,13 +36,19 @@ foreach ($myPost as $key => $value) {
  
 // STEP 2: Post IPN data back to paypal to validate
  
-$ch = curl_init('https://www.paypal.com/cgi-bin/webscr');
+$ch = curl_init("https://www". ($c->paypal['sandbox']?".sandbox":"") .".paypal.com/cgi-bin/webscr");
 curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+// FIXWE: dirty hack
+if( $c->paypal['sandbox']) {
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+} else {
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+}
 curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
  
@@ -45,7 +57,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 // of the certificate as shown below.
 // curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
 if( !($res = curl_exec($ch)) ) {
-    // error_log("Got " . curl_error($ch) . " when processing IPN data");
+    error_log("Got " . curl_error($ch) . " when processing IPN data");
     curl_close($ch);
     exit;
 }
@@ -54,6 +66,7 @@ curl_close($ch);
  
 // STEP 3: Inspect IPN validation result and act accordingly
  
+		error_log(var_export($myPost,true));
 if (strcmp ($res, "VERIFIED") == 0) {
     // check whether the payment_status is Completed
     // check that txn_id has not been previously processed
@@ -62,6 +75,9 @@ if (strcmp ($res, "VERIFIED") == 0) {
     // process payment
  
     // assign posted variables to local variables
+		$payment = new Payments();
+		$payment->updatePayPal($myPost);
+
     $item_name = $_POST['item_name'];
     $item_number = $_POST['item_number'];
     $payment_status = $_POST['payment_status'];

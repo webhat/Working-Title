@@ -13,10 +13,10 @@
 				<h1>{$WT}</h1>
 				<p class="category">FIXME: category here</p>
 			<div class="information" style="{$EDIT}">
-				<div>Hoe?</div>
-				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">Cre&euml;er je beloningen<br />voor je Fans</a></div>
-				<div>Zie ook:</div>
-				<div><a href="http://www.workingtitle365.com/profile.php?id=kama29">Voorbeelden beloningen</a></div>
+				<div>{gettext gt='Hoe?'}</div>
+				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">{gettext gt='Cre&euml;er je beloningen<br />voor je Fans'}</a></div>
+				<div>{gettext gt='Zie ook:'}</div>
+				<div><a href="http://www.workingtitle365.com/profile.php?id=kama29">{gettext gt='Voorbeelden beloningen'}</a></div>
 			</div>
 			</div>
 		</div>
@@ -30,14 +30,14 @@
 						<br />
 						<div id="errormsg"></div>
 						<br />
-						<label>Bedrag: (cent per dag in cijfers)</label>
+						<label>{gettext gt='Bedrag: (cent per dag in cijfers)'}</label>
 						<input type="text" value="" id="amount" onkeypress="return isNumberKey(event)"/>
-						<label>Titel</label>
+						<label>{gettext gt='Titel'}</label>
 						<input type="text" value="" id="title" />
-						<label>Korte beschrijving</label>
+						<label>{gettext gt='Korte beschrijving'}</label>
 						<textarea id="desc" style="margin-left:10px;width:204px;"></textarea>
 						<br />
-						<button style="float:right">Voeg toe</button>
+						<button style="float:right">{gettext gt='Voeg toe'}</button>
 						<br />
 					</div>
 				</form>
@@ -89,7 +89,11 @@
 				var json = {};
 				json['code'] = code;
 				json['incentive'] = true;
-				if(confirm("Wil je het bestand echt verwijderen?"))
+				if(confirm(
+						{/literal}
+						"{gettext gt='Wil je de incentive echt verwijderen?'}"
+						{literal}
+						))
 				$.ajax( {
 					type:"POST",
 					url:'/delcreation.php',

@@ -4,6 +4,7 @@ date_default_timezone_set("UTC");
 
 require('bootstrap.php');
 require('loggedinas.php');
+require('gettext.php');
 
 $maker = 'Unknown';
 if(array_key_exists( 'id', $_GET))
@@ -15,6 +16,7 @@ if(array_key_exists( 'transaction', $_GET))
 
 $smarty = new Smarty;
 
+$c = new WTConfig();
 
 $p = new MakerProfile( $maker);
 $p->reset();
@@ -28,6 +30,7 @@ $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->debugging = false;
 
+$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:none;');
@@ -36,6 +39,8 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'PAYPAL', $c->paypal['user']);
+$smarty->assign( 'PAYPALSANDBOX', $c->paypal['sandbox']?"sandbox.":"");
 $smarty->assign( 'TRANSX', $transx);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));

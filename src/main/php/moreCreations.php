@@ -6,6 +6,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 header("Content-type: text/html");
 
 require('bootstrap.php');
+require('gettext.php');
 
 if(array_key_exists( 'page', $_GET))
 	$page = (int) $_GET['page'];
@@ -24,6 +25,8 @@ $smarty->caching = 0;
 $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->debugging = false;
+
+$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 $smarty->assign( 'MAKERS', $crea->getLatest($page));
 

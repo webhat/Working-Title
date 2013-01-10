@@ -6,12 +6,13 @@ header("Content-type: text/html");
 
 require_once('bootstrap.php');
 require_once('onetime.php');
+require_once('gettext.php');
 
 $user = "";
 $pass = "";
 
-$fail = "Login failed";
-$success = "Login successful";
+$fail = _("Login failed");
+$success = _("Login successful");
 
 if(array_key_exists( 'user', $_POST))
 	$user = (string) $_POST['user'];
@@ -30,6 +31,10 @@ $ul = new UserLogin($user);
 
 if( $ul->passwordCheck( $pass)) {
 	$user = $ul->getUser();
+
+	$ul->setProperty( "lastlogin", time());
+	$ul->store();
+
 	$ul = new UserLogin($user);
 	$ul->reset();
 	setcookie("user", $user, time()+5184000);

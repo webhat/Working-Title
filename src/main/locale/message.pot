@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-09 22:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main/php/incasso.php:15
+msgid "Opdracht ontvangen"
+msgstr ""
+
+#: src/main/php/create.php:42
+msgid "Profile Name Here"
+msgstr ""
+
+#: src/main/php/login.php:14
+msgid "Login failed"
+msgstr ""
+
+#: src/main/php/login.php:15
+msgid "Login successful"
+msgstr ""
+
+#: src/main/php/sendreset.php:27
+msgid "Gebruiker wordt reset, kijk in je mailbox for een link."
+msgstr ""
+
+#: src/main/php/sendreset.php:32
+msgid "Gebruiker kan niet worden reset"
+msgstr ""
+
+#: src/main/php/upload.php:73
+msgid "Return Code: "
+msgstr ""
+
+#: src/main/php/upload.php:87
+#, php-format
+msgid "Stored in: %s/upload/%s"
+msgstr ""
+
+#: src/main/php/upload.php:97
+msgid "Invalid file"
+msgstr ""
+
+#: src/main/php/adduser.php:15 src/main/php/adduser.php:16
+msgid "Gebruiker bestaat al"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:36
+msgid "Username"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:22
+msgid "Bedrag"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:26
+msgid "CreditCard"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:28
+msgid "Doorlopende Machtiging"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:29
+msgid "Anders..."
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:67
+msgid "Betalen iDeal is helaas nog niet geactiveerd."
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:70
+msgid ""
+"Ondergetekende verleent hierbij tot wederopzegging machtiging aan "
+"WorkingTitle365 om van zijn/haar rekening jaarlijks  af te schrijven ten "
+"behoeve van de Maker"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:76
+msgid "Voornaam"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:78
+msgid "Tussenvoegsels"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:80
+msgid "Achternaam"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:82
+msgid "Huisnummer"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:84
+msgid "Toevoeging"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:86
+msgid "Straat"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:88
+msgid "Postcode"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:90
+msgid "Woonplaats"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:92
+msgid "Land"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:94 src/main/php/smarty/create.tpl:25
+#: src/main/php/smarty/create.tpl:40
+msgid "Email"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:96
+msgid "Bank/Girorekeningnr"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:99
+msgid ""
+"De machtiging geldt tot wederopzegging. Hiervoor kan contact worden "
+"opgenomen met WorkingTitle365 via info@workingtitle365.com en binnenkort in "
+"je eigen account. Indien de begunstiger met de incasso niet akkoord is, kan "
+"deze bij de bank binnen 56 kalenderdagen (8 weken) om terugboeking "
+"verzoeken. De afschrijving van bovengenoemd rekeningnummer zal plaatsvinden "
+"in de maand van ontvangst en vervolgens jaarlijks. Ondergetekende wordt "
+"vooraf op de hoogte gesteld van het moment waarop de afschrijvingen bij "
+"benadering zullen plaatsvinden."
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:103
+msgid "Ik ga akkoord."
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:105
+msgid "Submit"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:139
+msgid "Subscription to Maker"
+msgstr ""
+
+#: src/main/php/smarty/payments.tpl:22
+msgid "My pledge is"
+msgstr ""
+
+#: src/main/php/smarty/payments.tpl:25
+msgid "Nothing in return"
+msgstr ""
+
+#: src/main/php/smarty/payments.tpl:27
+msgid "Pay"
+msgstr ""
+
+#: src/main/php/smarty/payments.tpl:50
+msgid "De gekozen incentive matched niet met je bedrag."
+msgstr ""
+
+#: src/main/php/smarty/reset.tpl:24
+msgid "Gebruikersnaam"
+msgstr ""
+
+#: src/main/php/smarty/reset.tpl:26
+msgid "Mail"
+msgstr ""
+
+#: src/main/php/smarty/reset.tpl:28
+msgid "Reset"
+msgstr ""
+
+#: src/main/php/smarty/reset.tpl:49 src/main/php/smarty/reset.tpl:57
+msgid "Alles moet worden ingevuld."
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:8
+msgid "Your browser does not support the video tag."
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:13
+msgid "Your browser does not support the audio tag."
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Fan This Maker"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
+msgid "Hoe?"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:17
+msgid "Cre&euml;er je beloningen<br />voor je Fans"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:18 src/main/php/smarty/index.tpl:27
+msgid "Zie ook:"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:19
+msgid "Voorbeelden beloningen"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:33
+msgid "Bedrag: (cent per dag in cijfers)"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:35
+msgid "Titel"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:37
+msgid "Korte beschrijving"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:40
+msgid "Voeg toe"
+msgstr ""
+
+#: src/main/php/smarty/incentive.tpl:94 src/main/php/smarty/index.tpl:156
+msgid "Wil je de incentive echt verwijderen?"
+msgstr ""
+
+#: src/main/php/smarty/index.tpl:35
+msgid "Mijn website"
+msgstr ""
+
+#: src/main/php/smarty/index.tpl:66
+msgid "beloningen toevoegen"
+msgstr ""
+
+#: src/main/php/smarty/index.tpl:130
+msgid "Wil je het bestand echt verwijderen?"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:20
+msgid "Register"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:21
+msgid "Login"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:26
+msgid "Pasword"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:38
+msgid "Password"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:42
+msgid "Website"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:44
+msgid "Privacy Policy"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:46
+msgid "Create User"
+msgstr ""

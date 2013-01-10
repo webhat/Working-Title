@@ -22,9 +22,9 @@
 				<p class="category">FIXME: category here</p>
 			</div>
 			<div class="information" style="{$EDIT}">
-				<div>Hoe?</div>
+				<div>{gettext gt='Hoe?'}</div>
 				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina">Maak je een mooie pagina</a></div>
-				<div>Zie ook:</div>
+				<div>{gettext gt='Zie ook:'}</div>
 				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139132-cre%C3%ABer-een-doel">Cre&euml;er een doel</a></div>
 			</div>
 		</div>
@@ -32,12 +32,12 @@
 			<div id="profile" class="box rounded-corners">
 				<div class="edit"><br />edit</div>
 				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
-				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">Mijn website</a></div>
+				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">{gettext gt='Mijn website'}</a></div>
 				<div class="boxmargin headline" style="clear:both;">{$PROFILE}</div>
 				<div id="becomefan">
 					<a href="/payments.php?id={$USER}">
 						<span style="font-family:arial,helvetica,sans-serif;">
-							<strong><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;">Fan This Maker<br /></span></span></strong>
+							<strong><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;">{gettext gt='Fan This Maker'}<br /></span></span></strong>
 						</span>
 					</a>
 				</div>
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div id="pincentives" class="box rounded-corners" style="">
-				<div class="addinc"><br /><a href="/incentive.php?id={$USER}" style="position:relative;color:red;">beloningen toevoegen</a></div>
+				<div class="addinc"><br /><a href="/incentive.php?id={$USER}" style="position:relative;color:red;">{gettext gt='beloningen toevoegen'}</a></div>
 			</div>
 		</div>
 		<div id="boxy">
@@ -127,7 +127,7 @@
 				var json = {};
 				json['filename'] = filename;
 				json['creation'] = true;
-				if(confirm("Wil je het bestand echt verwijderen?"))
+				if(confirm("{/literal}{gettext gt='Wil je het bestand echt verwijderen?'}{literal}"))
 				$.ajax( {
 					type:"POST",
 					url:'/delcreation.php',
@@ -153,7 +153,7 @@
 				var json = {};
 				json['code'] = code;
 				json['incentive'] = true;
-				if(confirm("Wil je het bestand echt verwijderen?"))
+				if(confirm("{/literal}{gettext gt='Wil je de incentive echt verwijderen?'}{literal}"))
 				$.ajax( {
 					type:"POST",
 					url:'/delcreation.php',

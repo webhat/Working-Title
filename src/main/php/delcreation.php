@@ -17,7 +17,6 @@ $ul->reset();
 if($json->creation) {
 	$filename = $json->filename;
 	$filename = preg_replace("/[sml]_/","",$filename);
-	error_log("\nDelete: ". $filename);
 	$ul->removeCreation( $filename);
 }
 

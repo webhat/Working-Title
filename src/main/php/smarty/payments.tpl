@@ -19,12 +19,12 @@
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">Mijn bedrag is/My pledge is: &euro;</label>
+					<label style="display:inline">{gettext gt='My pledge is'}: &euro;</label>
 					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event)" />
 					<div id="incentives">
-						<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">Ik wil niets terug / Nothing in return</input>
+						<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">{gettext gt='Nothing in return'}</input>
 					</div>
-					<button id="submit">Pay</button>
+					<button id="submit">{gettext gt='Pay'}</button>
 				</form>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 			json['amount'] = $("#amount").val();
 			console.log(json['price'] +"-"+json['amount']);
 			if( (+json['amount']) < (+json['price']) || json['amount'] == "") {
-				$("#errormsg").text("De gekozen incentive matched niet met je bedrag.");
+				$("#errormsg").text("{/literal}{gettext gt='De gekozen incentive matched niet met je bedrag.'}{literal}");
 				$(this).removeAttr("disabled");
 				return false;
 			}
