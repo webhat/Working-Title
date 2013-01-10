@@ -9,7 +9,7 @@ msgstr ""
 
 #: src/main/php/incasso.php:15
 msgid "Opdracht ontvangen"
-msgstr "Opdracht Ontvangen"
+msgstr "Opdracht ontvangen"
 
 #: src/main/php/create.php:42
 msgid "Profile Name Here"
@@ -17,11 +17,11 @@ msgstr "Profiel Naam Komt Hier"
 
 #: src/main/php/login.php:14
 msgid "Login failed"
-msgstr "Login Onsukcesvol"
+msgstr "Login mislukt"
 
 #: src/main/php/login.php:15
 msgid "Login successful"
-msgstr "Login suksesvol"
+msgstr "Login succesvol"
 
 #: src/main/php/sendreset.php:27
 msgid "Gebruiker wordt reset, kijk in je mailbox for een link."
@@ -43,11 +43,11 @@ msgstr "Opgeslagen in %s/upload/%s"
 
 #: src/main/php/upload.php:97
 msgid "Invalid file"
-msgstr "Bestand Ongeldig"
+msgstr "Bestand ongeldig"
 
 #: src/main/php/adduser.php:15 src/main/php/adduser.php:16
 msgid "Gebruiker bestaat al"
-msgstr "Gebruiker bestaat reeds"
+msgstr "Gebruiker bestaat al"
 
 #: src/main/php/smarty/create.tpl:36
 msgid "Username"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: src/main/php/smarty/pay.tpl:67
 msgid "Betalen iDeal is helaas nog niet geactiveerd."
-msgstr "Betalen dmv iDeal is helaas nog niet geactiveerd."
+msgstr "Betalen met iDeal is helaas nog niet geactiveerd."
 
 #: src/main/php/smarty/pay.tpl:70
 msgid ""
@@ -151,7 +151,7 @@ msgstr "Abbonement op Maker"
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
-msgstr "Mijn gifte"
+msgstr "Mijn gift is"
 
 #: src/main/php/smarty/payments.tpl:25
 msgid "Nothing in return"
@@ -163,7 +163,7 @@ msgstr "Betalen"
 
 #: src/main/php/smarty/payments.tpl:50
 msgid "De gekozen incentive matched niet met je bedrag."
-msgstr ""
+msgstr "De gekozen beloning matcht niet met het bedrag"
 
 #: src/main/php/smarty/reset.tpl:24
 msgid "Gebruikersnaam"
@@ -183,11 +183,11 @@ msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:8
 msgid "Your browser does not support the video tag."
-msgstr "Uw browser ondersteund deze funtionaliteit niet."
+msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 
 #: src/main/php/smarty/userbox.tpl:13
 msgid "Your browser does not support the audio tag."
-msgstr "Uw browser ondersteund deze funtionaliteit niet."
+msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
@@ -227,7 +227,7 @@ msgstr ""
 
 #: src/main/php/smarty/incentive.tpl:94 src/main/php/smarty/index.tpl:156
 msgid "Wil je de incentive echt verwijderen?"
-msgstr ""
+msgstr "Wil je deze beloning echt verwijderen?"
 
 #: src/main/php/smarty/index.tpl:35
 msgid "Mijn website"
@@ -243,7 +243,7 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:20
 msgid "Register"
-msgstr "Registreer"
+msgstr "Registreren"
 
 #: src/main/php/smarty/create.tpl:21
 msgid "Login"
@@ -264,7 +264,7 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:44
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privacybeleid"
 
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
