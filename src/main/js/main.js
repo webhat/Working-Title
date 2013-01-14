@@ -82,8 +82,11 @@ function incentives( maker, json) {
 	}
 }
 		
-function isNumberKey(evt) {
+function isNumberKey(evt, c) {
 	var charCode = (evt.which) ? evt.which : event.keyCode;
+	if( c && (charCode == 46)) {
+		return true;
+	}
 	if (charCode > 31 
 	&& (charCode < 48 || charCode > 57))
 		return false;
