@@ -75,7 +75,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
     // process payment
  
     // assign posted variables to local variables
-		$payment = new Payments();
+		$payment = new Payment();
 		$payment->updatePayPal($myPost);
 
     $item_name = $_POST['item_name'];
