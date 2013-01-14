@@ -31,7 +31,7 @@
 						<div id="errormsg"></div>
 						<br />
 						<label>{gettext gt='Bedrag: (cent per dag in cijfers)'}</label>
-						<input type="text" value="" id="amount" onkeypress="return isNumberKey(event)"/>
+						<input type="text" value="" id="amount" onkeypress="return isNumberKey(event,false)"/>
 						<label>{gettext gt='Titel'}</label>
 						<input type="text" value="" id="title" />
 						<label>{gettext gt='Korte beschrijving'}</label>
