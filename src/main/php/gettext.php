@@ -1,6 +1,7 @@
 <?php
 
 require_once('bootstrap.php');
+require_once('geoip.php');
 
 define("LOCALE_DIR", "/home/ec2-user/beta/Working-Title/src/main/locale");
 $locale = Locale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
@@ -25,7 +26,10 @@ bind_textdomain_codeset("messages", 'UTF8');
 textdomain("messages");
 
 function smarty_function_gettext($params, $template) {
-	return _($params['gt']);
+setlocale(LC_ALL, LOCALE);
+	$msg = _($params['gt']);
+//	error_log( LOCALE .": '". $params['gt'] ."': '". $msg ."'");
+	return $msg;
 }
 
 //$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);

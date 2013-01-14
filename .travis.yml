@@ -16,8 +16,8 @@ before_script:
   - ./src/main/sh/installmailchimp.sh
   - ./src/main/sh/installswift.sh
   - ./src/main/sh/installjasmine.sh
-  - ./src/main/sh/installgettext.sh
   - ./src/main/sh/installgoogleapi.sh
+  - ./src/main/sh/installmaxmind.sh
   - mv ./src/main/php/WTConfig.example.php ./src/main/php/WTConfig.php
 
 services: mongodb

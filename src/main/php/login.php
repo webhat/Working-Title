@@ -26,8 +26,6 @@ if( $user == "" || $pass == "") {
 }
 
 $ul = new UserLogin($user);
-#$ul->setPassword('redhat');
-#$ul->store();
 
 if( $ul->passwordCheck( $pass)) {
 	$user = $ul->getUser();
