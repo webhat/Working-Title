@@ -1,7 +1,7 @@
 <?php
 
-require_once 'loggedinas.php'r
-require_once 'gettext.php'r
+require_once 'loggedinas.php';
+require_once 'gettext.php';
 
 $json = "";
 if(array_key_exists( 'json', $_POST))
