@@ -216,6 +216,16 @@ a {
 	margin-top: 40px;
 }
 
+#highlight {
+	width: 330px;
+	max-height:400px;
+	background-color:white;
+	position:absolute;
+	right: 5%;
+	top:240px;
+	margin-top: 10px;
+}
+
 #header, #profilename {
 	text-align:center;
 	top: 74px;
