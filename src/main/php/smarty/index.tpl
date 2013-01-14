@@ -172,6 +172,6 @@
 			});
 		});
 	</script>
-	<script src="/creations.php?id={$USER}&callback=creations"> </script>
+	<script src="/creations_list.php?id={$USER}&callback=creations"> </script>
 	<script src="/incentive.json.php?id={$USER}&callback=incentives"></script>
 {include file="smarty/footer.tpl"}
