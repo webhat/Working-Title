@@ -1,6 +1,6 @@
 <?php
 
-class Payments extends MongoConnection {
+class Payment extends MongoConnection {
 
 	public function updatePayPal($pay) {
 		$this->db->payments->update(
