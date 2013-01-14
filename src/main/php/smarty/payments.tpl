@@ -20,7 +20,7 @@
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
 					<label style="display:inline">{gettext gt='My pledge is'}: &euro;</label>
-					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event)" />
+					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event,true)" />
 					<div id="incentives">
 						<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">{gettext gt='Nothing in return'}</input>
 					</div>
