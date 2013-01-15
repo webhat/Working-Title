@@ -18,12 +18,12 @@
 		</div>
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:200px;width:1052px;">
+				{include file='smarty/highlight.tpl' title=foo}
 				{include file='smarty/frontpageplus.tpl' title=foo}
 			</div>
 			<div id="visible"></div>
 		</div>
 	</div>
-	{include file='smarty/highlight.tpl' title=foo}
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
 	    {literal}

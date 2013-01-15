@@ -217,10 +217,9 @@ a {
 }
 
 #highlight {
-	width: 330px;
-	max-height:400px;
+	max-width: 660px;
+	max-height:700px;
 	background-color:white;
-	position:fixed;
 	right: 5%;
 	top:240px;
 	margin-top: 10px;
