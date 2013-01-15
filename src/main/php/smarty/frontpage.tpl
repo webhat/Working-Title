@@ -8,14 +8,16 @@
         <!-- Add your site or application content here -->
 
 	<div>
-		<div id="header" class="box rounded-corners">
-			<div class="boxmargin">
-				<h1>You Make Inspiration Happen</h1>
-				<p class="category" style="display:inline;">Support a Maker, Be Rewarded</p>
+		<div id="header" class="box rounded-corners" style="height:320px;">
+			<div class="boxmargin" style="background-image:url(/img/s_wt365-header.png);width:1032px;height:300px;top:-50px;">
+			<!--
+				<h1 style="color:white; background-color:grey; opacity:0.7;">You Make Inspiration Happen</h1>
+				<p class="category" style="display:inline;background-color:grey; opacity:0.7;width:200px;">Support a Maker, Be Rewarded</p>
+				-->
 			</div>
 		</div>
 		<div id="boxy">
-			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;width:1052px;">
+			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;width:1052px;display:none;">
 				{include file='smarty/frontpageplus.tpl' title=foo}
 			</div>
 			<div id="visible"></div>

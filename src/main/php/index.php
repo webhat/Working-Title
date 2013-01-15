@@ -56,7 +56,7 @@ function addhttp($url) {
 			    return $url;
 }
 
-$smarty->assign( 'USER', "Frontpage");
+$smarty->assign( 'USER', "You Make Inspiration Happen");
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'SITE', ''. addhttp($p->getProperty('site')));

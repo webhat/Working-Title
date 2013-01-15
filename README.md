@@ -21,6 +21,7 @@ Some resources were used from:
 * http://www.ajaxload.info/ (loading image)
 * http://www.credit-card-logos.com/ (Credit Card Logo)
 * http://chrissilich.com/blog/load-more-content-as-the-user-reaches-the-bottom-of-your-page-with-jquery/ (load more)
+* https://github.com/scottjehl/iOS-Orientationchange-Fix 
 
 Localization
 ============
