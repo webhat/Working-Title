@@ -25,7 +25,7 @@
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;">PayPal</input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;">{gettext gt='CreditCard'}</input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;">iDeal</input><br />
-						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;">{gettext gt='Doorlopende Machtiging'}</input><br />
+						<!--input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" disabled>{gettext gt='Doorlopende Machtiging'}</input><br /-->
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;">{gettext gt='Anders...'}</input><br />
 					</div>
 				</form>
