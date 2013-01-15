@@ -17,7 +17,7 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 	 * @dataProvider paymentProvider
 	*/
 	public function testAddPaymentPayPal($pay) {
-		$payment = new Payments();
+		$payment = new Payment();
 
 		$payment->updatePayPal($pay);
 		$actual = $payment->getPayPal($pay['custom']);
