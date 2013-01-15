@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-09 22:40+0000\n"
+"POT-Creation-Date: 2013-01-10 22:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Opdracht ontvangen"
 msgstr ""
 
-#: src/main/php/create.php:42
+#: src/main/php/create.php:42 src/main/php/create.php:43
 msgid "Profile Name Here"
 msgstr ""
 
@@ -271,7 +271,15 @@ msgid "Website"
 msgstr ""
 
 #: src/main/php/smarty/create.tpl:44
+msgid "I approved the"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:44
 msgid "Privacy Policy"
+msgstr ""
+
+#
+msgid "User Policy"
 msgstr ""
 
 #: src/main/php/smarty/create.tpl:46
