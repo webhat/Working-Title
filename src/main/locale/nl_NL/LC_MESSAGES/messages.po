@@ -191,7 +191,7 @@ msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr "Fan van Maker"
+msgstr "Fan deze Maker"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"

@@ -220,7 +220,7 @@ a {
 	width: 330px;
 	max-height:400px;
 	background-color:white;
-	position:absolute;
+	position:fixed;
 	right: 5%;
 	top:240px;
 	margin-top: 10px;
@@ -229,7 +229,7 @@ a {
 #header, #profilename {
 	text-align:center;
 	top: 74px;
-	left:190px;
+	left:90px;
 	width: 1052px;
 	height: 150px;
 	background-size:1000px 70px;
@@ -265,7 +265,7 @@ left: -60px;
 #profile {
 	position:relative;
 	top:210px;
-	left:960px;
+	left:860px;
 	width: 282px;
 	height: auto;
 	background-size:230px 400px;
@@ -325,7 +325,7 @@ left: -60px;
 #pincentives {
 	position:relative;
 	top:210px;
-	left:960px;
+	left:860px;
 	width: 282px;
 	height: auto;
 	background-size:230px 400px;
@@ -372,7 +372,7 @@ left:35px;
 #boxy {
 	position:absolute;
 	top: 210px;
-	left:190px;
+	left:90px;
 }
 
 .makepayment {
@@ -648,11 +648,17 @@ input, select {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+	body {
+width: 1500px;
+	}
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for high resolution devices */
+	body {
+width: 1500px;
+	}
 }
 
 /* ==========================================================================
