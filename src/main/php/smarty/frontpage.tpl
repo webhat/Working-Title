@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div id="boxy">
-			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;width:1052px;display:none;">
+			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:200px;width:1052px;">
 				{include file='smarty/frontpageplus.tpl' title=foo}
 			</div>
 			<div id="visible"></div>
