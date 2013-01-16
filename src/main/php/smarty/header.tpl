@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>WorkingTitle365 - {$USER}</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=1300, height=device-height, minimum-scale=0.6, maximum-scale=0.9">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -35,12 +35,6 @@
 	<!-- ClickTale end of Top part -->
 	<div id="fb-root"></div>
 {literal}
-	<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-					  js = d.createElement(s); js.id = id;
-						  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=75584493316";
-							  fjs.parentNode.insertBefore(js, fjs);
-								}(document, 'script', 'facebook-jssdk'));</script>
+	<script src="/js/fb.js"></script>
 {/literal}
 		<div id="loginbox" ></div>

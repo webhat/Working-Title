@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-09 22:40+0000\n"
+"POT-Creation-Date: 2013-01-10 22:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,7 +11,7 @@ msgstr ""
 msgid "Opdracht ontvangen"
 msgstr "Opdracht ontvangen"
 
-#: src/main/php/create.php:42
+#: src/main/php/create.php:42 src/main/php/create.php:43
 msgid "Profile Name Here"
 msgstr "Profiel Naam Komt Hier"
 
@@ -119,7 +119,7 @@ msgstr ""
 #: src/main/php/smarty/pay.tpl:94 src/main/php/smarty/create.tpl:25
 #: src/main/php/smarty/create.tpl:40
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: src/main/php/smarty/pay.tpl:96
 msgid "Bank/Girorekeningnr"
@@ -191,7 +191,7 @@ msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr "Fan van deze Maker"
+msgstr "Fan deze Maker"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"
@@ -263,8 +263,16 @@ msgid "Website"
 msgstr ""
 
 #: src/main/php/smarty/create.tpl:44
+#, fuzzy
+msgid "I approved the"
+msgstr "Ik ga akkoord met"
+
+#: src/main/php/smarty/create.tpl:44
 msgid "Privacy Policy"
-msgstr "Privacybeleid"
+msgstr "het Privacybeleid"
+
+msgid "User Policy"
+msgstr "de Gebruikersvoorwaarde"
 
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"

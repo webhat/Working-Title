@@ -1,20 +1,35 @@
 <?php
 
-define("LOCALE_DIR", "/home/ec2-user/beta/Working-Title/src/main/locale");
-define("LOCALE", "nl_NL.utf8");
+require_once('bootstrap.php');
+require_once('geoip.php');
 
-putenv('LC_ALL='. LOCALE);
-setlocale(LC_ALL, 0);
-setlocale(LC_CTYPE, 0);
+define("LOCALE_DIR", "/home/ec2-user/beta/Working-Title/src/main/locale");
+$locale = Locale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+
+// FIXME: dirty hack
+if($locale['locale'] == 'nl') $locale['locale'] = "nl_NL";
+if($locale['locale'] == 'en') $locale['locale'] = "en_US";
+if($locale['locale'] == 'en_GB') $locale['locale'] = "en_US";
+
+define("LOCALE", $locale['locale'] .".utf8");
+?><!-- <?= LOCALE ?> --><?php
+?><!-- <?= $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?> --><?php
+
+define("LANG",preg_replace("/_.*/","",LOCALE));
+
+//putenv('LC_ALL='. LOCALE);
 setlocale(LC_ALL, LOCALE);
 
 bindtextdomain("messages", LOCALE_DIR);
-bind_textdomain_codeset("messages", 'UTF-8');
+bind_textdomain_codeset("messages", 'UTF8');
 
 textdomain("messages");
 
 function smarty_function_gettext($params, $template) {
-	return _($params['gt']);
+setlocale(LC_ALL, LOCALE);
+	$msg = _($params['gt']);
+//	error_log( LOCALE .": '". $params['gt'] ."': '". $msg ."'");
+	return $msg;
 }
 
 //$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);

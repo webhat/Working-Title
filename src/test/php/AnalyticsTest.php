@@ -8,15 +8,37 @@ class AnalyticsTest extends PHPUnit_Framework_TestCase {
 	public function tearDown() {
 	}
 
-
 	/**
 	 * @dataProvider gaProvider
-	*/
+	 */
 	public function testUpdateAnalytics($ga) {
 		$analytics = new Analytics();
 		$analytics->updateAnalytics($ga);
 
-		$this->markTestIncomplete( 'This test has not been implemented yet.');
+	}
+
+	/**
+	 * @dataProvider gaProvider
+	 * @depends testUpdateAnalytics
+	 */
+	public function testGetAnalytics($ga) {
+		$analytics = new Analytics();
+		$analytics->updateAnalytics($ga);
+		$actual = $analytics->getAnalytics( $ga['query']['start-date']);
+
+		$this->assertEquals( $ga, $actual);
+	}
+
+	/**
+	 * @dataProvider gaProvider
+	 * @depends testUpdateAnalytics
+	 */
+	public function testGetAnalyticsFor($ga) {
+		$analytics = new Analytics();
+		$analytics->updateAnalytics($ga);
+		$actual = $analytics->getAnalyticsFor( $ga['query']['start-date'], "Sumadi");
+
+		$this->assertEquals( $ga, $actual);
 	}
 
 	public function gaprovider() {
