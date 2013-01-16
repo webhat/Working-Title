@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>WorkingTitle365 - {$USER}</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=1300, height=device-height, minimum-scale=0.6, maximum-scale=0.9">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 

@@ -3,9 +3,14 @@
 require 'bootstrap.php';
 require 'gettext.php';
 
-$mail = new Mail();
+$pay = $_POST;
 
-$mail->concierge($_POST);
+$mail = new Mail();
+$payment = new Payment();
+
+$payment->updateIncasso( $pay);
+
+$mail->concierge( $pay);
 	
 ?>
 <html>

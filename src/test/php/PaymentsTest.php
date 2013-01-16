@@ -14,20 +14,85 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @dataProvider paymentProvider
+	 * @dataProvider paymentProviderIncasso
+	*/
+	public function testAddPaymentIncasso($pay) {
+		$payment = new Payment();
+
+		$payment->updateIncasso($pay);
+
+		$actual = $payment->getPayment( $pay['transx']);
+		unset($actual['_id']);
+
+		$this->assertEquals($pay, $actual);
+	}
+
+	/**
+	 * @expectedException InvalidArgumentException
+	*/
+	public function testAddPaymentIncassoNoArray() {
+		$payment = new Payment();
+
+		$payment->updateIncasso(null);
+	}
+
+
+	/**
+	 * @expectedException InvalidArgumentException
+	*/
+	public function testAddPaymentIncassoEmptyArray() {
+		$payment = new Payment();
+
+		$payment->updateIncasso(array());
+	}
+	/**
+	 * @dataProvider paymentProviderIncasso
+	 * @expectedException InvalidArgumentException
+	*/
+	public function testAddPaymentIncassoException($pay) {
+		$payment = new Payment();
+		unset($pay['amount']);
+		unset($pay['transx']);
+
+		$payment->updateIncasso($pay);
+	}
+
+	/**
+	 * @dataProvider paymentProviderPayPal
 	*/
 	public function testAddPaymentPayPal($pay) {
-		$payment = new Payments();
+		$payment = new Payment();
+
+		$pay['transx'] = $pay['custom'];
 
 		$payment->updatePayPal($pay);
-		$actual = $payment->getPayPal($pay['custom']);
+		$actual = $payment->getPayment($pay['custom']);
 
 		unset($actual['_id']);
 
 		$this->assertEquals($pay, $actual);
 	}
 
-	public function paymentProvider() {
+	public function paymentProviderIncasso() {
+		return array(
+			array (
+				array (
+					"transx" => "incXXX",
+					"amount" => "10.00"
+					),
+				array (
+					"transx" => "incXXY",
+					"amount" => "10.00"
+					),
+				array (
+					"transx" => "incXXZ",
+					"amount" => "10.00"
+					)
+				)
+			);
+	}
+
+	public function paymentProviderPayPal() {
 		return array(
 			array (
 				array (

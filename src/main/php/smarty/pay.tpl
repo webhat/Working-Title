@@ -25,7 +25,7 @@
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;">PayPal</input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;">{gettext gt='CreditCard'}</input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;">iDeal</input><br />
-						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;">{gettext gt='Doorlopende Machtiging'}</input><br />
+						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" >{gettext gt='Doorlopende Machtiging'}</input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;">{gettext gt='Anders...'}</input><br />
 					</div>
 				</form>
@@ -73,6 +73,7 @@
 						<form target="_blank" method="post" action="/incasso.php">
 							<input name="user" type="hidden" value="{$USER}" />
 							<input name="transx" type="hidden" value="{$USER}" />
+							<input name="amount" type="hidden" value="{$USER}" />
 							<label>{gettext gt='Voornaam'}: *</label>
 							<input name="firstname" value="" /> 
 							<label>{gettext gt='Tussenvoegsels'}:</label>
@@ -117,6 +118,7 @@
 			var maker = "{$USER}";
 			var transx = "{$TRANSX}";
 			$("input[name=transx]").val(transx);
+			$("input[name=amount]").val($("#amount").val());
 
 	    {literal}
 			$(document).ready(function() {
