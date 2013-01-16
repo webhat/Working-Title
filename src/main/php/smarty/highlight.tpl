@@ -1,23 +1,26 @@
 <div id="highlight">
 	<div class="overview" style="text-align:left;width:1030px;">
-		<div style="margin:10px;">
-			<div class="category" style="display:block;text-align:left;">{gettext gt='Highlighted Maker'}</div>
-				<div style="float:right;display:inline;position:relative;margin-top:30px;margin-bottom:10px;">
+		<div style="margin:10px 10px 0 10px;">
+			<div class="category" style="display:block;text-align:left;margin-bottom:0px;">{gettext gt='Highlighted Maker'}</div>
+				<div style="float:right;display:inline;position:relative;margin-top:10px;">
 					<a href="/maker/Roos%20Blufpand">
 						<img width="520" src="http://www.workingtitle365.com/upload/m_goed%2014.jpg1355599214.jpg" />
 					</a>
 				</div>
 			<div class="artexample" style="text-align:left;margin:0 0 0 0;">
-				<div style="display:inline-block;max-width:460px;top:20px;position:relative;margin:10px;">
+				<div style="display:inline-block;max-width:460px;top:0px;position:relative;margin:10px;">
 					<div>
-						<div style="float:left;margin-bottom:10px;"><img src="http://www.gravatar.com/avatar/dfc0de8c4ba2db2d8344a1165265bc21"></div>
+						<div style="float:left;margin-bottom:10px;">
+						<a href="/maker/Roos%20Blufpand">
+							<img src="http://www.gravatar.com/avatar/dfc0de8c4ba2db2d8344a1165265bc21"></div>
+						</a>
 						<div style="text-align:center;margin-left:20px;font-size:large;font-weight:bold;">
 							<a href="/maker/Roos%20Blufpand">
 						Roos Blufpand - singer/songwriter - theatraal - theeliefhebber
 							</a>
 						</div>
 					</div>
-					<div style="clear:both;font-size:small;">Roos Blufpand is een beweeglijke jongedame die met een kop thee in haar hand liedjes schrijft over Hollen en over Stilstaan. Hieronder zie je onze 'beloningen' voor een dagelijkse bijdrage aan de band. Alle gelden die we <!-- hiermee ophalen, steken wij in de nieuwe theatershow en het nieuwe album waar we komende zomer mee gaan beginnen! --></div>
+					<div style="clear:both;font-size:small;">Roos Blufpand is een beweeglijke jongedame die met een kop thee in haar hand liedjes schrijft over Hollen en over Stilstaan. Bekijk onze 'beloningen' voor een bijdrage aan de band. Wat we ophalen, steken wij in de theatershow en het album waar we komende zomer mee beginnen!</div>
 					<hr />
 					<div style="width:450px;clear:both;margin-top:-10px;">
 						<div>
