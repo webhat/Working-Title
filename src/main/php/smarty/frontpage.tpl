@@ -25,48 +25,6 @@
 		</div>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script type="text/javascript">
-	    {literal}
-	$("button").click( function() {
-		var json = {};
-		if(getUrlVars()['hash'])
-			json['hash'] = getUrlVars()['hash'];
-		var err = true;
-		$("#indentform input[type=checkbox]").each(function(i, val) {
-			if($(val).is(':checked')) {
-			} else {
-				if(err)
-					$("#errormsg").append("Alles moet worden ingevuld.");
-				err = false;
-			}
-			json[val.id] = $(val).is(':checked');
-		});
-		$("#indentform input").each(function(i, val) {
-			if($("#"+ val.id).val() == "") {
-				if(err)
-					$("#errormsg").append("Alles moet worden ingevuld.");
-				err = false;
-			}
-			json[val.id] = $("#"+ val.id).val();
-		});
-		if(err)
-			$.ajax( {
-				type:"POST",
-				url:'/adduser.php',
-				async:false,
-				data: {"json":JSON.stringify(json)},
-				dataType: 'json'
-			}).fail(function(ret) { 
-					$("#errormsg").append(JSON.parse(ret.responseText).error);
-			}).done(function(ret) {
-				console.log(ret);
-				top.location = "/profile.php?firsttime=true&id="+ json["username"];
-			});
-		return false;
-	});
-	    {/literal}
-		
-	</script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.05/jquery.masonry.min.js"></script>
 	<script>
 
@@ -79,7 +37,8 @@
 			console.log('reset masonry');
 			$container.masonry({
 				itemSelector: '.overview',
-				animated: true
+				animated: true,
+				columnWidth: 10
 			});
 	}
 
@@ -97,12 +56,6 @@
 						$('#fullwidth').children().last().after(data)
 						$('#fullwidth').height( $('#fullwidth').height()*2);
 						$container.masonry( 'reload' );
-						/*
-						$container.imagesLoaded(function(){
-							console.log('append masonry');
-							$container.masonry('appended', $(data), true);
-						});
-						*/
 							alreadyloading = false;
 							nextpage++;
 				});
