@@ -25,7 +25,13 @@
 		</div>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="/js/vendor/jail.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.05/jquery.masonry.min.js"></script>
+	<script>
+	$(function(){
+			$('img.lazy').jail();
+	});
+	</script>
 	<script>
 
 	var $container = $('#fullwidth');
@@ -55,6 +61,7 @@
 						console.log("XXXXXX: more creations: ["+nextpage+"]");
 						$('#fullwidth').children().last().after(data)
 						$('#fullwidth').height( $('#fullwidth').height()*2);
+						$('img.lazy').jail();
 						$container.masonry( 'reload' );
 							alreadyloading = false;
 							nextpage++;
