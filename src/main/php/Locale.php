@@ -42,7 +42,7 @@ class Locale {
 					$locale[$i]['locale'] = $splits['primarytag'] . strtoupper("_". $splits['subtag']);
 				else
 					$locale[$i]['locale'] = $splits['primarytag'];
-				$locale[$i]['name'] = Locale::language($splits['primarytag']);
+				$locale[$i]['name'] = static::language($splits['primarytag']);
 			} else {
 				$locale["1.0"] = self::$default;
 			}
