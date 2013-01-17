@@ -7,6 +7,11 @@
 
         <!-- Add your site or application content here -->
 
+				<style>
+				li:nth-child(2) {
+					color: #94d219;
+				}
+				</style>
 	<div>
 		<div id="header" class="box rounded-corners">
 			<div class="boxmargin">
@@ -15,6 +20,9 @@
 			</div>
 		</div>
 		<div id="boxy">
+			<div style="position:absolute;">
+				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
+			</div>
 			<div id="fullwidth" class="box rounded-corners" style="height:1300px;top:30px;">
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">

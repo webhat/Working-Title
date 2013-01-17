@@ -150,6 +150,17 @@ msgstr ""
 msgid "Subscription to Maker"
 msgstr ""
 
+#: src/main/php/payments.php:38
+msgid "incentive text"
+msgstr ""
+"It takes only 3 steps to become %s's Fan, and support them in their creative "
+"efforts:<ol><li>Choose a Reward</li><li>Choose your method of payment</"
+"li><li>Pay &amp; Enjoy</li></ol>It's that easy."
+
+#: src/main/php/smarty/payments.tpl:22
+msgid "per year"
+msgstr "per year"
+
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
 msgstr ""
