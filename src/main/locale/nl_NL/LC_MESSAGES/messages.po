@@ -149,6 +149,17 @@ msgstr "Verzenden"
 msgid "Subscription to Maker"
 msgstr "Abbonement op Maker"
 
+#: src/main/php/payments.php:38
+msgid "incentive text"
+msgstr ""
+"Er zijn 3 stappen om de Fan van %s's te worden, en ze te steunen in hun "
+"creatief process:<ol><li>Kies een Beloning</li><li>Kies hoe je wilt betalen</"
+"li><li>Betaal</li></ol>Het is zo makkelijk."
+
+#: src/main/php/smarty/payments.tpl:22
+msgid "per year"
+msgstr "per jaar"
+
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
 msgstr "Mijn gift is"

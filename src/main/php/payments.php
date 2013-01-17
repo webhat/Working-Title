@@ -35,6 +35,7 @@ if( $loggedinas != $maker) {
 
 $smarty->assign( 'USER', $p->getUser());
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
+$smarty->assign( 'INCTEXT', ''. sprintf(_("incentive text"), $maker));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'MAIL', ''. $p->getProperty('mail'));
 

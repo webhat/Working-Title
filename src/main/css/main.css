@@ -225,6 +225,30 @@ a {
 	margin-top: 10px;
 }
 
+#help {
+	position: relative;
+	left: 770px;
+	top:25px;
+	background-color: #222;
+	color:white;
+	border: solid 1px #e3e2e2;
+	width:282px;
+	margin-right:5%;
+	margin-top:5%;
+}
+
+#help div {
+	width:80%;
+	margin-left:10%;
+}
+
+#whatiswt365 {
+	border: solid 5px #e3e2e2;
+	position: absolute;
+	left:250px;
+	top:100px;
+}
+
 #header, #profilename {
 	text-align:center;
 	top: 74px;

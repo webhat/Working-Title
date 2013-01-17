@@ -7,6 +7,11 @@
 
         <!-- Add your site or application content here -->
 
+				<style>
+				li:nth-child(1) {
+					color: #94d219;
+				}
+				</style>
 	<div>
 		<div id="header" class="box rounded-corners">
 			<div class="boxmargin">
@@ -15,12 +20,16 @@
 			</div>
 		</div>
 		<div id="boxy">
+			<div style="position:absolute;">
+				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
+			</div>
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;">
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
 					<label style="display:inline">{gettext gt='My pledge is'}: &euro;</label>
 					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event,true)" />
+					<span>{gettext gt='per year'}</span>
 					<div id="incentives">
 						<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">{gettext gt='Nothing in return'}</input>
 					</div>
