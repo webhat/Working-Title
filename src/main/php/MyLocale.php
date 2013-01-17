@@ -1,6 +1,6 @@
 <?php
 
-class Locale {
+class MyLocale {
 
 	public static $default = array( "locale"	=> "en_US", "lang"		=> "en", "name"		=> "English");
 
