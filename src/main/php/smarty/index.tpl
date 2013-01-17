@@ -38,8 +38,8 @@
 					</a>
 				</div>
 				<div id="social">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-via="wtitle365" data-text="I love this Maker {$USER} on WorkingTitle365, retweet to show your support.">Tweet</a>
 					{literal}
-						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					{/literal}
 					<div class="fb-like" data-href="http://www.workingtitle365.com/profile.php?id={$USER}" data-layout="button_count" data-send="false" data-width="450" data-show-faces="false"></div>

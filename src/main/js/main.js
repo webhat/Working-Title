@@ -49,6 +49,7 @@ $(document).ready( function() {
 				$("#user").focus();
 			}).toggle();
 		});
+		$("#loadHelp").click(loadHelp);
 		if(firsttime) {
 			// If firsttime user enable tips
 			firsttime();
@@ -122,4 +123,14 @@ function firsttime() {
 				$("#firsttime").hide();
 		});
 	});
+}
+
+function loadHelp() {
+	var img = $("#cartoon");
+	$("#whatiswt365").toggle();
+	var url ="/img/wt365-cartoon.gif";
+
+	img.attr("src", url+"?x="+Math.random());
+
+	return false;
 }
