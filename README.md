@@ -23,6 +23,7 @@ Some resources and insight was taken from:
 * http://chrissilich.com/blog/load-more-content-as-the-user-reaches-the-bottom-of-your-page-with-jquery/ (load more)
 * https://github.com/scottjehl/iOS-Orientationchange-Fix 
 * https://github.com/sebarmeli/JAIL
+* http://raphaeljs.com/analytics.html
 
 Localization
 ============
