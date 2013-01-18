@@ -11,6 +11,7 @@ class Analytics extends MongoConnection {
 				$ga,
 				array("upsert" => true)
 				);
+		$this->mapReduceAnalytics();
 	}
 
 	public function getAnalytics($sd, $myneedle = array()) {
@@ -23,14 +24,28 @@ class Analytics extends MongoConnection {
 	}
 
 	public function getAnalyticsFor( $sd, $user) {
-		// db.analytics.aggregate({$match:{"query.start-date":"2013-01-09"}},{$project:{"query.start-date":1,"rows":1}});
+		$daily = $this->db->analytics->findOne( array( "rows" => array( "\$exists" => true)), array( "query.start-date" => true, "rows" => true));
+		$monthly = $this->db->analyticsMR->findOne( array( "_id" => $user));
+
+		var_dump($daily);
+		var_dump($monthly);
 		/*
 		$this->db->analytics->aggregate(
 				array( "$match" => array( "query.start-date" => $sd, "query.start-end" => $sd)),
 				array( "$project" => array( "rows" => true))
 				);
 				*/
+	}
 
+	public function mapReduceAnalytics() {
+		$map = new MongoCode("function m () { this.rows.forEach(function(row) { var user = row[0].substr(row[0].lastIndexOf('/')+1,row[0].length).replace('+',' '); var real = user; if(user.indexOf('?') > 0) real = user.substr(0, user.indexOf('?')); emit(real, { username:real,new:row[1],visit:row[2]}); } )}");
+		$reduce = new MongoCode("function r(key, values) { print(key); var totals = { user: key, visits: 0, new: 0}; values.forEach(function(value) {  totals.visits += (+value.visit); totals.new += (+value.new); }); return totals;     }");
+
+		$col = $this->db->command(array(
+					    "mapreduce" => "analytics", 
+							"map" => $map,
+							"reduce" => $reduce,
+							"out" => array("merge" => "analyticsMR")));
 	}
 }
 ?>

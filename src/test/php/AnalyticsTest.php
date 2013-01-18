@@ -15,6 +15,7 @@ class AnalyticsTest extends PHPUnit_Framework_TestCase {
 		$analytics = new Analytics();
 		$analytics->updateAnalytics($ga);
 
+		$this->assertTrue(true);
 	}
 
 	/**
@@ -39,6 +40,11 @@ class AnalyticsTest extends PHPUnit_Framework_TestCase {
 		$actual = $analytics->getAnalyticsFor( $ga['query']['start-date'], "Sumadi");
 
 		$this->assertEquals( $ga, $actual);
+	}
+
+	public function testMapReduceAnalytics() {
+		$analytics = new Analytics();
+		$analytics->mapReduceAnalytics();
 	}
 
 	public function gaprovider() {
