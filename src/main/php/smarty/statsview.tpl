@@ -2,21 +2,28 @@
 <script src="/js/vendor/analytics.js"></script>
 <script src="/js/vendor/popup.js"></script>
 <style>
-#holder {
-	background-color: #222
-}
+	#holder {
+		background-color: #222
+	}
+	.loading {
+		position:absolute;
+		left:45%;
+	}
 </style>
 <div>
-<h2>{gettext gt='Visitors'}</h2>
+<h2 style="text-align:center;">{gettext gt='Visitors'}</h2>
 		<div>
 	</div>
-	<div id="holder"></div>
+	<div id="holder"><img class="loading" src="/img/loading.gif"/></div>
 	<script>
 	var mystats = {};
 	$.get('/js/stats.json', function(data) {
 				  console.log('Load Stats:'+ data);
 					mystats = JSON.parse(data);
+		$(document).ready(function() {
+				loadAnalytics();
+			$(".loading").hide();
+		});
 	});
-	$(document).ready(loadAnalytics);
 	</script>
 </div>

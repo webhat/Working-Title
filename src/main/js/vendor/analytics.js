@@ -52,14 +52,6 @@ function loadAnalytics() {
         data.push(obj.visits);
         newvisits.push(obj.new);
 		});
-		/*
-    $("#data tfoot th").each(function () {
-        labels.push($(this).html());
-    });
-    $("#data tbody td").each(function () {
-        data.push($(this).html());
-    });
-		*/
     
     // Draw
     var width = 750,
@@ -73,14 +65,15 @@ function loadAnalytics() {
         r = Raphael("holder", width, height),
         txt = {font: '12px Helvetica, Arial', fill: "#fff"},
         txt1 = {font: '10px Helvetica, Arial', fill: "#fff"},
-        txt2 = {font: '12px Helvetica, Arial', fill: "#000"},
+        txt2 = {font: '14px Helvetica, Arial', fill: "#fff"},
         X = (width - leftgutter) / labels.length,
         max = Math.max.apply(Math, data) +5,
         Y = (height - bottomgutter - topgutter) / max;
-    r.drawGrid(leftgutter + X * .5 + .5, topgutter + .5, width - leftgutter - X, height - topgutter - bottomgutter, 10, 10, "#000");
     var path = r.path().attr({stroke: color, "stroke-width": 4, "stroke-linejoin": "round"}),
     		pathn = r.path().attr({stroke: colorn, "stroke-width": 4, "stroke-linejoin": "round"}),
         bgp = r.path().attr({stroke: "none", opacity: .3, fill: color}),
+				t1 = r.text(40, 50, "Total\nVisitors").attr({font: '12px Helvetica, Arial', stroke:color}),
+				t2 = r.text(40, 80, mystats.total).attr(txt2),
         label = [r.set(), r.set()],
         lx = 0, ly = 0,
         is_label_visible = [false, false],
@@ -125,7 +118,7 @@ function loadAnalytics() {
         }
         var dot = [
 					r.circle(x, y, 4).attr({fill: "#333", stroke: color, "stroke-width": 2}),
-					r.circle(x, n, 4).attr({fill: "#444", stroke: color, "stroke-width": 2})
+					r.circle(x, n, 4).attr({fill: "#555", stroke: color, "stroke-width": 2})
 						];
         blanket.push(r.rect(leftgutter + X * i, 0, X, height - bottomgutter).attr({stroke: "none", fill: "#fff", opacity: 0}));
         var rect = blanket[blanket.length - 1];
@@ -191,3 +184,4 @@ function parseDate(input) {
 	var datestr = date.toString().substr(0, date.toString().indexOf("00:"));
 	return datestr;
 }
+

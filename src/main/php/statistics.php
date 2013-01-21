@@ -35,6 +35,9 @@ $smarty->assign( 'USER', $p->getUser());
 $smarty->assign( 'WT', ''. _("Statistics"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 
-$smarty->display( 'smarty/statistics.tpl');
+if( $maker != "")
+	$smarty->display( 'smarty/statistics.tpl');
+else
+	$smarty->display( 'smarty/404.tpl');
 
 ?>
