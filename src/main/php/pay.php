@@ -39,6 +39,7 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'STRIPE', $c->stripe['public']);
 $smarty->assign( 'LANG', $locale['lang']);
 $smarty->assign( 'INCTEXT', ''. sprintf(_("incentive text"), $maker));
 $smarty->assign( 'PAYPAL', $c->paypal['user']);

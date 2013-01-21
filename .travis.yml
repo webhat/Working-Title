@@ -18,6 +18,7 @@ before_script:
   - ./src/main/sh/installjasmine.sh
   - ./src/main/sh/installgoogleapi.sh
   - ./src/main/sh/installmaxmind.sh
+  - ./src/main/sh/installstripe.sh
   - mv ./src/main/php/WTConfig.example.php ./src/main/php/WTConfig.php
 
 services: mongodb

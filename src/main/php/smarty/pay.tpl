@@ -31,7 +31,8 @@
 					<input id="amount" type="text" value="" style="display:inline" disabled />
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
-						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
+						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>PayPal - {gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
+						<input type="radio" name="paymentmethod" value="stripe" style="display:inline;margin-right:10px;"><span>Stripe - {gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;"><span>{gettext gt='iDeal'}</span></input><br />
 						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" ><span>{gettext gt='Doorlopende Machtiging'}</span></input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;"><span>{gettext gt='Anders...'}</span></input><br />
@@ -70,6 +71,21 @@
 							<input type="hidden" name="sra" value="1" \>
 							<input type="hidden" name="custom" value="1" \>
 							<input type="hidden" name="notify_url" value="http://demo.workingtitle365.com/payment/paypal_callback.php" \>
+						</form>
+					</div>
+					<div id="stripe" style="display:none;" class="makepayment">
+						<form>
+							<label>{gettext gt='Email'}: *</label>
+							<input name="mail" value="" /> 
+							</br>
+							<script
+								src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+									data-key="{$STRIPE}"
+									data-amount="2000"
+									data-name="Demo Site"
+									data-description="2 widgets ($20.00)"
+									data-image="/128x128.png">
+							</script>
 						</form>
 					</div>
 					<div id="ideal" style="display:none;" class="makepayment errormsg">{gettext gt='Betalen iDeal is helaas nog niet geactiveerd.'}</div>
