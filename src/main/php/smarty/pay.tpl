@@ -30,11 +30,11 @@
 					<label style="display:inline">{gettext gt='Bedrag'}: &euro;</label>
 					<input id="amount" type="text" value="" style="display:inline" disabled />
 					<div id="payment">
-						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;">PayPal</input><br />
-						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;">{gettext gt='CreditCard'}</input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
-						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;">iDeal</input><br />
-						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" >{gettext gt='Doorlopende Machtiging'}</input><br />
-						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;">{gettext gt='Anders...'}</input><br />
+						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
+						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
+						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;"><span>{gettext gt='iDeal'}</span></input><br />
+						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" ><span>{gettext gt='Doorlopende Machtiging'}</span></input><br />
+						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;"><span>{gettext gt='Anders...'}</span></input><br />
 					</div>
 				</form>
 				<div>
@@ -124,11 +124,22 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
 			var maker = "{$USER}";
+			var lang = "{$LANG}";
 			var transx = "{$TRANSX}";
 			$("input[name=transx]").val(transx);
 			$("input[name=amount]").val($("#amount").val());
 
 	    {literal}
+			if(lang == 'en') {
+				$('input[value=ideal]').hide();
+				$('input[value=ideal]').next().hide();
+				$('input[value=ideal]').next().next().hide();
+				$('input[value=incasso]').hide();
+				$('input[value=incasso]').next().hide();
+				$('input[value=incasso]').next().next().hide();
+			}
+
+
 			$(document).ready(function() {
 				var json = {};
 				json['transx'] = transx;

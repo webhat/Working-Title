@@ -39,6 +39,7 @@ if( $loggedinas != $maker) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'LANG', $locale['lang']);
 $smarty->assign( 'INCTEXT', ''. sprintf(_("incentive text"), $maker));
 $smarty->assign( 'PAYPAL', $c->paypal['user']);
 $smarty->assign( 'PAYPALSANDBOX', $c->paypal['sandbox']?"sandbox.":"");

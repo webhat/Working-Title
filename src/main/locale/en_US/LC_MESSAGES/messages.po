@@ -153,9 +153,9 @@ msgstr ""
 #: src/main/php/payments.php:38
 msgid "incentive text"
 msgstr ""
-"It takes only 3 steps to become %s's Fan, and support them in their creative "
-"efforts:<ol><li>Choose a Reward</li><li>Choose your method of payment</"
-"li><li>Pay &amp; Enjoy</li></ol>It's that easy."
+"It takes only 3 steps to become %s's Fan, and support this Maker in the "
+"creative process:<ol><li>Choose a Reward</li><li>Choose your method of "
+"payment</li><li>Pay &amp; Enjoy</li></ol>It's that easy."
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "per year"
@@ -200,6 +200,39 @@ msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:13
 msgid "Your browser does not support the audio tag."
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "edit"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Create Profile Text"
+msgstr ""
+"<span style='$EDIT;'><strong>Short Description, 2 options:</strong><br/>A "
+"description in 133 characters, suitable for Twitter. You can also add a more "
+"extensive description (suggestion: max 150 words). Link to other sites with "
+"a ShortURL like <a href='http://bit.ly'>bit.ly</a>.</span>"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Create Work Text"
+msgstr ""
+"<span style='$EDIT;'><strong>Adding your work</strong><br/>There are other, "
+"better places for your complete portfolio. A limited amount of works makes "
+"people curious and entices to become your Fan. Your latest upload appears at "
+"the top, this should be a photo/video. Soon you will be able to sort your "
+"works.</span>"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Do you make a beautiful page?"
+msgstr "<a href='#'>Do you make a beautiful page?</a>"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Create a goal"
+msgstr "<a href='#'>Create a goal</a>"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "I love this Maker on WorkingTitle365, retweet to show your support."
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
@@ -260,6 +293,10 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:21
 msgid "Login"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:21
+msgid "Logout"
 msgstr ""
 
 #: src/main/php/smarty/create.tpl:26
