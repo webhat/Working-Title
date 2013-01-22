@@ -200,6 +200,10 @@ msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 msgid "Your browser does not support the audio tag."
 msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 
+#: src/main/php/smarty/highlight.tpl:13
+msgid "Support Maker for:"
+msgstr "Steun deze maker voor bijvoorbeeld:"
+
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
 msgstr "bewerken"

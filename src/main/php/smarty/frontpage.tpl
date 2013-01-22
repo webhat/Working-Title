@@ -18,7 +18,11 @@
 		</div>
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:100px;width:1052px;">
-				{include file='smarty/highlight.tpl' title=foo}
+				{if $LANG eq 'en'}
+					{include file='smarty/highlight_mm.tpl' title=foo}
+				{else}
+					{include file='smarty/highlight.tpl' title=foo}
+				{/if}
 				{include file='smarty/frontpageplus.tpl' title=foo}
 			</div>
 			<div id="visible"></div>

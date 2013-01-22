@@ -202,6 +202,10 @@ msgstr ""
 msgid "Your browser does not support the audio tag."
 msgstr ""
 
+#: src/main/php/smarty/highlight.tpl:13
+msgid "Support Maker for:"
+msgstr "Support Maker for example for:"
+
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
 msgstr ""
