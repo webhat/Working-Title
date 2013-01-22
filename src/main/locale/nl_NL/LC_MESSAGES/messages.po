@@ -276,6 +276,8 @@ msgstr ""
 #: src/main/php/smarty/incentive.tpl:17
 msgid "Cre&euml;er je beloningen<br />voor je Fans"
 msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/139130-"
+"cre%C3%ABren-van-beloningen'>Cre&euml;er je beloningen<br />voor je Fans</a>"
 
 #: src/main/php/smarty/incentive.tpl:18 src/main/php/smarty/index.tpl:27
 msgid "Zie ook:"
@@ -284,6 +286,8 @@ msgstr ""
 #: src/main/php/smarty/incentive.tpl:19
 msgid "Voorbeelden beloningen"
 msgstr ""
+"<a href='http://www.workingtitle365.com/profile.php?id=kama29'>Voorbeelden "
+"beloningen</a>"
 
 #: src/main/php/smarty/incentive.tpl:33
 msgid "Bedrag: (cent per dag in cijfers)"

@@ -14,9 +14,9 @@
 				<p class="category">FIXME: category here</p>
 			<div class="information" style="{$EDIT}">
 				<div>{gettext gt='Hoe?'}</div>
-				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">{gettext gt='Cre&euml;er je beloningen<br />voor je Fans'}</a></div>
+				<div>{gettext gt='Cre&euml;er je beloningen<br />voor je Fans'}</div>
 				<div>{gettext gt='Zie ook:'}</div>
-				<div><a href="http://www.workingtitle365.com/profile.php?id=kama29">{gettext gt='Voorbeelden beloningen'}</a></div>
+				<div>{gettext gt='Voorbeelden beloningen'}</div>
 			</div>
 			</div>
 		</div>
