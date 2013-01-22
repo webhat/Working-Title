@@ -1,6 +1,6 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
-{assign var='WT' value=$WT|default:"Geef een naam aan je profiel"}
+{assign var='WT' value=$WT|default:"Profile Name Here"}
 {assign var='PROFILE' value=$PROFILE|default:"Create Profile Text"}
 
         <!--[if lt IE 7]>
@@ -12,7 +12,7 @@
 	<div>
 		<div id="profilename" class="box rounded-corners">
 			<div class="edit"><br />{gettext gt='edit'}</div>
-			<div class="boxmargin">{$WT}</div>
+			<div class="boxmargin">{gettext gt=$WT}</div>
 			<div class="boxmargin">
 				<p class="category">FIXME: category here</p>
 			</div>
@@ -63,7 +63,7 @@
 		</div>
 		<div id="boxy">
 			<div id="mywork" class="box rounded-corners">
-				<div class="upload"><br />upload</div>
+				<div class="upload"><br />{gettext gt='upload'}</div>
 				<div class="boxmargin headline"><span style="{$EDIT}">{gettext gt='Create Work Text'}</span></div>
 				<div style="clear:both;" id="workbelow"></div>
 			</div>

@@ -115,7 +115,7 @@
 						</form>
 
 					</div>
-					<div id="anders" style="display:none;" class="makepayment"><!-- FIXME: gettext -->Heeft u nog idee&euml;n voor betaalmogelijkheden? Laat ze <a href="https://workingtitle365.uservoice.com/forums/174950-jouw-idee%C3%ABn-zijn-essentieel-/suggestions/3396187-andere-betaalmogelijkheden">hier</a> achter.</div>
+					<div id="anders" style="display:none;" class="makepayment">{gettext gt='Other Payments'}</div>
 				</div>
 			</div>
 		</div>

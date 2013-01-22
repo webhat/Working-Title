@@ -23,6 +23,10 @@ msgstr "Login Failed"
 msgid "Login successful"
 msgstr "Login Successful"
 
+#: src/main/html/login.html:15
+msgid "What is WorkingTitle365?"
+msgstr "What is<br />WorkingTitle365?"
+
 #: src/main/php/sendreset.php:27
 msgid "Gebruiker wordt reset, kijk in je mailbox for een link."
 msgstr "User is being reset, you will receive an email shortly."
@@ -53,6 +57,13 @@ msgstr "Username is in user, please try a different username"
 #: src/main/php/smarty/create.tpl:36
 msgid "Username"
 msgstr "User"
+
+#: src/main/php/smarty/pay.tpl:22
+msgid "Other Payments"
+msgstr ""
+"Are you missing a payment option? Let us know <a href='https://"
+"workingtitle365.uservoice.com/forums/174950-jouw-idee%C3%ABn-zijn-"
+"essentieel-/suggestions/3396187-andere-betaalmogelijkheden'>here</a>."
 
 #: src/main/php/smarty/pay.tpl:22
 msgid "Bedrag"
@@ -167,7 +178,7 @@ msgstr ""
 
 #: src/main/php/smarty/payments.tpl:25
 msgid "Nothing in return"
-msgstr ""
+msgstr "I'll pass on my reward"
 
 #: src/main/php/smarty/payments.tpl:27
 msgid "Pay"
@@ -211,6 +222,14 @@ msgid "edit"
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "upload"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "delete"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Create Profile Text"
 msgstr ""
 "<span style='$EDIT;'><strong>Short Description, 2 options:</strong><br/>A "
@@ -225,15 +244,21 @@ msgstr ""
 "better places for your complete portfolio. A limited amount of works makes "
 "people curious and entices to become your Fan. Your latest upload appears at "
 "the top, this should be a photo/video. Soon you will be able to sort your "
-"works.</span>"
+"works. See also: <a href='http://workingtitle365.uservoice.com/knowledgebase/"
+"articles/158495-creating-your-profile-page#addwork'>Adding your work.</a></"
+"span>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Do you make a beautiful page?"
-msgstr "<a href='#'>Do you make a beautiful page?</a>"
+msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/158495-"
+"creating-your-profile-page'>Do you make a beautiful page?</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Create a goal"
-msgstr "<a href='#'>Create a goal</a>"
+msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/158511-"
+"formulate-a-goal'>Create a goal</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "I love this Maker on WorkingTitle365, retweet to show your support."
@@ -253,7 +278,7 @@ msgstr "Create incentives for your Fans"
 
 #: src/main/php/smarty/incentive.tpl:18 src/main/php/smarty/index.tpl:27
 msgid "Zie ook:"
-msgstr "See:"
+msgstr "See also:"
 
 #: src/main/php/smarty/incentive.tpl:19
 msgid "Voorbeelden beloningen"
@@ -285,7 +310,7 @@ msgstr "My website"
 
 #: src/main/php/smarty/index.tpl:66
 msgid "beloningen toevoegen"
-msgstr "add incentive"
+msgstr "add rewards"
 
 #: src/main/php/smarty/index.tpl:130
 msgid "Wil je het bestand echt verwijderen?"
@@ -330,6 +355,14 @@ msgstr ""
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Name Profile"
+#~ msgstr ""
+#~ "<span style='$EDIT;'><strong>Short Description, 2 options:</strong><br/>A "
+#~ "description in 133 characters, suitable for Twitter. You can also add a "
+#~ "more extensive description (suggestion: max 150 words). Link to other "
+#~ "sites with a ShortURL like <a href='http://bit.ly'>bit.ly</a>.</span>"
 
 #~ msgid "test"
 #~ msgstr "Test"
