@@ -64,7 +64,7 @@
 		<div id="boxy">
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload"><br />upload</div>
-				<div class="boxmargin headline">{gettext gt='Create Work Text'}</div>
+				<div class="boxmargin headline"><span style="{$EDIT}">{gettext gt='Create Work Text'}</span></div>
 				<div style="clear:both;" id="workbelow"></div>
 			</div>
 		</div>
