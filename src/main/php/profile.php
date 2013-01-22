@@ -16,8 +16,10 @@ $p = new MakerProfile( $maker);
 $p->reset();
 
 /** FIXME: creation hack */
-
-$fbcreation = $p->getProperty('creations')[0]['content'] ."?". rand();
+$fbcreation = "";
+$crelist = $p->getProperty('creations');
+if(sizeof($crelist))
+	$fbcreation = $crelist[0]['content'] ."?". rand();
 $smarty->assign( 'FBCREA', $fbcreation);
 
 /** END: creation hack */
