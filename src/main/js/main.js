@@ -50,6 +50,10 @@ $(document).ready( function() {
 			}).toggle();
 		});
 		$("#loadHelp").click(loadHelp);
+		$(".killpopup").click(function() {
+			$(".killpopup").parent().parent().hide();
+			console.log("Hidden");
+		});
 		if(firsttime) {
 			// If firsttime user enable tips
 			firsttime();
@@ -134,3 +138,4 @@ function loadHelp() {
 
 	return false;
 }
+

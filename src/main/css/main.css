@@ -425,7 +425,7 @@ left:35px;
 }
 
 #upload {
-position: absolute;
+	position: absolute;
 	display: none;
 	top: 190px;
 	left:400px;
@@ -454,6 +454,12 @@ position: absolute;
 	margin-left: 40px;
 	position: relative;
 	right: 30px;
+}
+
+.lightbox {
+	background-color:#e3e2e2;
+	height:340px;
+	width:600px;
 }
 
 #pincentives .addinc {
