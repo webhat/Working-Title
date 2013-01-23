@@ -297,16 +297,24 @@ left: -60px;
 
 #profile #becomefan {
 	clear:both;
-	background: #FFF url(/img/fan.png) top repeat-x;
+	background-color:#94d219;
 	width:262px;
 	height:59px;
 	text-align:center;
 	margin:10px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	behavior:url(/css/border-radius.htc);
+	border-radius: 5px 5px 5px 5px;
+}
+
+#profile #becomefan:hover {
+	background-color:#94cd3e;
 }
 
 #profile #social {
 	clear:both;
-	//background: #FFF url(/img/social.png) no-repeat top center;
 	width:262px;
 	height:59px;
 	text-align:center;
@@ -394,8 +402,29 @@ left:35px;
 
 #boxy {
 	position:absolute;
-	top: 210px;
+	top: 240px;
 	left:90px;
+}
+
+#explain {
+	font-size:small;
+	background-color:#222;
+	z-index:10;
+	color:#fffdfd;
+	width:1052px;
+	height:100px;
+	position:absolute;
+	top: 310px;
+	left:90px;
+	margin:10px;
+}
+
+#explain span {
+	position:relative;
+	left:10px;
+	top:1px;
+width:700px;
+	vertical-align:middle;
 }
 
 .makepayment {
@@ -425,7 +454,7 @@ left:35px;
 }
 
 #upload {
-position: absolute;
+	position: absolute;
 	display: none;
 	top: 190px;
 	left:400px;
@@ -454,6 +483,22 @@ position: absolute;
 	margin-left: 40px;
 	position: relative;
 	right: 30px;
+}
+
+.lightbox {
+	background-color:#e3e2e2;
+	height:340px;
+	width:600px;
+}
+
+.loadHelp {
+	cursor:pointer;
+	position:relative;
+	top:0px;
+	left:600px;
+	color:#fff;
+	font-size:9pt;
+	line-height:4pt;
 }
 
 #pincentives .addinc {
@@ -556,6 +601,11 @@ input, select {
 	border-radius: 5px 5px 5px 5px;
 	background-color:#94d219;
 }
+
+.fanbutton:hover {
+	background-color:#94cd3e;
+}
+
 
 
 .fanbutton a {

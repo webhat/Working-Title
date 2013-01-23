@@ -1,10 +1,9 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
-{assign var='WT' value=$WT|default:"Geef een naam aan je profiel"}
-{assign var='PROFILE' value=$PROFILE|default:"<span style='$EDIT;'><strong>Korte omschrijving, 2 opties:</strong><br/>Beschrijving in 133 tekens, en dus voor Twitter geschikt. Uitgebreider mag ook (suggestie: max. 150 woorden). Naar andere sites linken kan met een ShortURL zoals <a href='http://bit.ly'>bit.ly</a>. Zie: <a href='http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina'>&quotHet maken van je pagina&quot</a>.</span>"}
-{assign var='WORK' value=$WORK|default:"<span style='$EDIT;'><strong>Jouw Werk uploaden</strong><br/>Plaats niet je complete portfolio, daar zijn andere plekken voor. Een beperkt aantal werken maakt nieuwsgierig en verleidt om je Fan te worden. Je werk komt in upload volgorde onder elkaar. Binnenkort kan je de volgorde sorteren. Wat je als eerste toevoegt is dus als eerste zichtbaar; dit kan het beste een foto/video zijn. Zie: <a href='http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina#upload'>Uploaden van je werk</a>.</span>"}
+{assign var='WT' value=$WT|default:"Profile Name Here"}
+{assign var='PROFILE' value=$PROFILE|default:"Create Profile Text"}
 
-        <!--[if lt IE 7]>
+        <!--[if lt IE 10]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
@@ -12,33 +11,34 @@
 				<img style="display:none;visibility:none" src="{$FBCREA}" />
 	<div>
 		<div id="profilename" class="box rounded-corners">
-			<div class="edit"><br />edit</div>
-			<div class="boxmargin">{$WT}</div>
+			<div class="edit"><br />{gettext gt='edit'}</div>
+			<div class="boxmargin">{gettext gt=$WT}</div>
 			<div class="boxmargin">
 				<p class="category">FIXME: category here</p>
 			</div>
 			<div class="information" style="{$EDIT}">
 				<div>{gettext gt='Hoe?'}</div>
-				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-pagina">Maak je een mooie pagina</a></div>
+				<div>{gettext gt='Do you make a beautiful page?'}</div>
 				<div>{gettext gt='Zie ook:'}</div>
-				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139132-cre%C3%ABer-een-doel">Cre&euml;er een doel</a></div>
+				<div>{gettext gt='Create a goal'}</div>
 			</div>
 		</div>
 		<div style="position:absolute">
 			<div id="profile" class="box rounded-corners">
-				<div class="edit"><br />edit</div>
+				<div class="edit"><br />{gettext gt='edit'}</div>
 				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">{gettext gt='Mijn website'}</a></div>
-				<div class="boxmargin headline" style="clear:both;">{$PROFILE}</div>
+				<div class="boxmargin headline" style="clear:both;">{gettext gt=$PROFILE}</div>
 				<div id="becomefan">
 					<a href="/payments.php?id={$USER}">
 						<span style="font-family:arial,helvetica,sans-serif;">
 							<strong><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;">{gettext gt='Fan This Maker'}<br /></span></span></strong>
+							<em><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;"><small>{gettext gt='from 1 cent a day'}</small></span></span></em>
 						</span>
 					</a>
 				</div>
 				<div id="social">
-						<a href="https://twitter.com/share" class="twitter-share-button" data-via="wtitle365" data-text="I love this Maker {$USER} on WorkingTitle365, retweet to show your support.">Tweet</a>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-via="wtitle365" data-text="{$USER} - {gettext gt='I love this Maker on WorkingTitle365, retweet to show your support.'}">Tweet</a>
 					{literal}
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					{/literal}
@@ -64,8 +64,8 @@
 		</div>
 		<div id="boxy">
 			<div id="mywork" class="box rounded-corners">
-				<div class="upload"><br />upload</div>
-				<div class="boxmargin headline">{$WORK}</div>
+				<div class="upload"><br />{gettext gt='upload'}</div>
+				<div class="boxmargin headline"><span style="{$EDIT}">{gettext gt='Create Work Text'}</span></div>
 				<div style="clear:both;" id="workbelow"></div>
 			</div>
 		</div>
