@@ -33,6 +33,7 @@
 					<a href="/payments.php?id={$USER}">
 						<span style="font-family:arial,helvetica,sans-serif;">
 							<strong><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;">{gettext gt='Fan This Maker'}<br /></span></span></strong>
+							<em><span style="font-size:18px;line-height:22px;"><span style="color:#f0fff0;"><small>{gettext gt='from 1 cent a day'}</small></span></span></em>
 						</span>
 					</a>
 				</div>

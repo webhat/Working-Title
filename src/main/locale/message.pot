@@ -219,6 +219,10 @@ msgid "Support Maker for:"
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "from 1 cent a day"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
 msgstr ""
 
