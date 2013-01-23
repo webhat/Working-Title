@@ -49,7 +49,7 @@ $(document).ready( function() {
 				$("#user").focus();
 			}).toggle();
 		});
-		$("#loadHelp").click(loadHelp);
+		$(".loadHelp").click(loadHelp);
 		$(".killpopup").click(function() {
 			$(".killpopup").parent().parent().hide();
 			console.log("Hidden");

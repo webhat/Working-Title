@@ -402,8 +402,29 @@ left:35px;
 
 #boxy {
 	position:absolute;
-	top: 210px;
+	top: 240px;
 	left:90px;
+}
+
+#explain {
+	font-size:small;
+	background-color:#222;
+	z-index:10;
+	color:#fffdfd;
+	width:1052px;
+	height:100px;
+	position:absolute;
+	top: 310px;
+	left:90px;
+	margin:10px;
+}
+
+#explain span {
+	position:relative;
+	left:10px;
+	top:1px;
+width:700px;
+	vertical-align:middle;
 }
 
 .makepayment {
@@ -470,7 +491,8 @@ left:35px;
 	width:600px;
 }
 
-#loadHelp {
+.loadHelp {
+	cursor:pointer;
 	position:relative;
 	top:0px;
 	left:600px;

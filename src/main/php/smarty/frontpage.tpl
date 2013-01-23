@@ -16,6 +16,15 @@
 				-->
 			</div>
 		</div>
+		<div id="explain">
+			<div class="long loadHelp"><img height="100" width="177" src="/img/wt365-playfan.png" style="float:right;left:-600px;position:relative;"></div>
+			<br class="long" />
+			<span class="long" style="font-size:medium;">{gettext gt='Become a part of the creative process that inspires us all.'}</span><br class="long" />
+			<span class="short">{gettext gt='By supporting Makers with yearly donations you fund creativity that inspires you and you help share that inspiration with the world.'}</span><br class="long"/>
+			<span class="long">{gettext gt='And the nicest part is: you get cool gifts and rewards from the Makers you support and from a whole lot of others too.'}</span>
+			<span class="short" style="display:none;">{gettext gt='And you get great rewards too.'}</span>
+			<span class="short loadHelp" style="color:#94d219;">{gettext gt='Learn more...'}</span>
+		</div>
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:100px;width:1052px;">
 				{if $LANG eq 'en'}
@@ -30,6 +39,7 @@
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<!--script src="/js/vendor/jail.js"></script-->
+	<script src="/js/vendor/w3cschool.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.05/jquery.masonry.min.js"></script>
 	<script>
 	$(function(){
@@ -75,5 +85,21 @@
 	});
 
 	</script>
-
+	<script>
+	function explain() {
+		var firsttime=getCookie("firsttime");
+		if (firsttime!=null && firsttime!="") {
+			$(".long").hide();
+			$(".short").show();
+			$("#explain").css("height","22px");
+		} else {
+			firsttime=true;
+			if (firsttime!=null && firsttime!="") {
+				setCookie("firsttime",firsttime,365);
+				$("#boxy").css("top","320px");
+			}
+		}
+	}
+	explain();
+	</script>
 {include file="smarty/footer.tpl"}
