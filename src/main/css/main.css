@@ -462,6 +462,15 @@ left:35px;
 	width:600px;
 }
 
+#loadHelp {
+	position:relative;
+	top:0px;
+	left:600px;
+	color:#fff;
+	font-size:9pt;
+	line-height:4pt;
+}
+
 #pincentives .addinc {
 	background: url(/img/wt365-count.png) 84px 0;
 	background-repeat:repeat-x;
