@@ -92,6 +92,7 @@
 			$(".long").hide();
 			$(".short").show();
 			$("#explain").css("height","22px");
+			$("#boxy").css("top","240px");
 		} else {
 			firsttime=true;
 			if (firsttime!=null && firsttime!="") {
