@@ -23,18 +23,40 @@ class Analytics extends MongoConnection {
 		return $ret;
 	}
 
-	public function getAnalyticsFor( $sd, $user) {
-		$daily = $this->db->analytics->findOne( array( "rows" => array( "\$exists" => true)), array( "query.start-date" => true, "rows" => true));
+	public function getAnalyticsTotalFor( $user) {
 		$monthly = $this->db->analyticsMR->findOne( array( "_id" => $user));
 
-		var_dump($daily);
-		var_dump($monthly);
+		return $monthly['value']['visits'];
+	}
+
+	public function getAnalyticsFor( $sd, $user) {
+		$daily = $this->db->analytics->findOne( array( "rows" => array( "\$exists" => true), "query.start-date" => $sd), array( "query.start-date" => true, "rows" => true));
+
+		$user_a = array();
+
+		if(!is_array($daily) || empty($daily))
+			throw new MongoException();
+		foreach($daily['rows'] as $row) {
+			if($row[0] == "/maker/". $user) {
+				$user_a = $row;
+				$user_a[0] = $user;
+				break;
+			}
+		}
+
+		if(!is_array($user_a) || empty($user_a))
+			throw new MongoException();
+		$user_a['date'] = $sd;
+		$user_a['new'] = $user_a[1];
+		$user_a['visits'] = $user_a[2];
+
 		/*
 		$this->db->analytics->aggregate(
 				array( "$match" => array( "query.start-date" => $sd, "query.start-end" => $sd)),
 				array( "$project" => array( "rows" => true))
 				);
 				*/
+		return $user_a;
 	}
 
 	public function mapReduceAnalytics() {

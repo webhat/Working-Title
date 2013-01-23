@@ -11,13 +11,13 @@
 	}
 </style>
 <div>
-<h2 style="text-align:center;">{gettext gt='Visitors'}</h2>
+<h2 style="text-align:center;margin-top:0px;">{gettext gt='Visitors'}</h2>
 		<div>
 	</div>
 	<div id="holder"><img class="loading" src="/img/loading.gif"/></div>
 	<script>
 	var mystats = {};
-	$.get('/js/stats.json', function(data) {
+	$.get('/stats.json.php', function(data) {
 				  console.log('Load Stats:'+ data);
 					mystats = JSON.parse(data);
 		$(document).ready(function() {
