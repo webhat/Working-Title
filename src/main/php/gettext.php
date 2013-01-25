@@ -28,8 +28,13 @@ textdomain("messages");
 function smarty_function_gettext($params, $template) {
 setlocale(LC_ALL, LOCALE);
 	$msg = _($params['gt']);
-//	error_log( LOCALE .": '". $params['gt'] ."': '". $msg ."'");
-	return $msg;
+
+	unset($params['gt']);
+
+	if(empty($params))
+		return $msg;
+	else
+		return vsprintf( $msg, $params);
 }
 
 //$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);

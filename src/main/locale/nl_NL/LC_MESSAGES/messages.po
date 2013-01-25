@@ -265,9 +265,8 @@ msgstr ""
 "cre%C3%ABer-een-doel'>Cre&euml;er een doel</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
-msgid "I love this Maker on WorkingTitle365, retweet to show your support."
-msgstr ""
-"Ik hou van deze Maker op WorkingTitle365, retweet als je het eens bent!"
+msgid "I love %s on WorkingTitle365, retweet to show your support."
+msgstr "Ik hou van %s op WorkingTitle365, retweet als je het eens bent!"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"

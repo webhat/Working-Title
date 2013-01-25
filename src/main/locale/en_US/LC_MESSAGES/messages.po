@@ -218,6 +218,10 @@ msgid "Support Maker for:"
 msgstr "Support Maker for example for:"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "from 1 cent a day"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
 msgstr ""
 
@@ -261,7 +265,7 @@ msgstr ""
 "formulate-a-goal'>Create a goal</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
-msgid "I love this Maker on WorkingTitle365, retweet to show your support."
+msgid "I love %s on WorkingTitle365, retweet to show your support."
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40

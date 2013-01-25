@@ -251,7 +251,7 @@ msgid "Create a goal"
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
-msgid "I love this Maker on WorkingTitle365, retweet to show your support."
+msgid "I love %s on WorkingTitle365, retweet to show your support."
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
