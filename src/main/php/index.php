@@ -56,6 +56,7 @@ function addhttp($url) {
 			    return $url;
 }
 
+$smarty->assign( 'LANG', $locale['lang']);
 $smarty->assign( 'USER', "You Make Inspiration Happen");
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));

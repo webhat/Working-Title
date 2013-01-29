@@ -22,6 +22,8 @@ Some resources and insight was taken from:
 * http://www.credit-card-logos.com/ (Credit Card Logo)
 * http://chrissilich.com/blog/load-more-content-as-the-user-reaches-the-bottom-of-your-page-with-jquery/ (load more)
 * https://github.com/scottjehl/iOS-Orientationchange-Fix 
+* https://github.com/sebarmeli/JAIL
+* _http://www.w3schools.com/js/js_cookies.asp
 
 Localization
 ============

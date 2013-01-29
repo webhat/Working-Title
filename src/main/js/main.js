@@ -49,7 +49,11 @@ $(document).ready( function() {
 				$("#user").focus();
 			}).toggle();
 		});
-		$("#loadHelp").click(loadHelp);
+		$(".loadHelp").click(loadHelp);
+		$(".killpopup").click(function() {
+			$(".killpopup").parent().parent().hide();
+			console.log("Hidden");
+		});
 		if(firsttime) {
 			// If firsttime user enable tips
 			firsttime();
@@ -68,7 +72,7 @@ function incentives( maker, json) {
 			}
 
 			var incen = $("<br /><input type='radio' "+ selected +" name='incentive' value='"+ amount +"' style='display:inline;margin-right:10px;' id='"+item.code+"'>"+ item.amount +" cents /day or &euro;"+ amount +" /year </input><div class='incentivedesc'><strong>"+ item.title +"</strong><br />"+ item.desc +"</div>");
-			var profile = $("<div class='incentive' id='"+ item.code +"'><div class='delete'>delete</div><span class='price'>"+ item.amount +" cent per dag</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");
+			var profile = $("<div class='incentive' id='"+ item.code +"'><div class='delete'>delete</div><span class='price'>"+ item.amount +" cent /day</span><span class='title'>"+ item.title +"</span><span class='desc'>"+ item.desc +"</span></div>");
 			$("#incentives").append(incen);
 			$("#pincentives").append(profile);
 			$(profile).click(function() {
@@ -134,3 +138,4 @@ function loadHelp() {
 
 	return false;
 }
+

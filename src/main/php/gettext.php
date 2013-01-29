@@ -3,8 +3,8 @@
 require_once('bootstrap.php');
 require_once('geoip.php');
 
-define("LOCALE_DIR", "/home/ec2-user/beta/Working-Title/src/main/locale");
-$locale = Locale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+define("LOCALE_DIR", getcwd() ."../locale");
+$locale = MyLocale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
 // FIXME: dirty hack
 if($locale['locale'] == 'nl') $locale['locale'] = "nl_NL";
@@ -26,17 +26,18 @@ bind_textdomain_codeset("messages", 'UTF8');
 textdomain("messages");
 
 function smarty_function_gettext($params, $template) {
-setlocale(LC_ALL, LOCALE);
+	setlocale(LC_ALL, LOCALE);
 	$msg = _($params['gt']);
 
-	$msg = _($params['gt']);
-
+	error_log($msg ." - ". $params['gt']);
 	unset($params['gt']);
 
-	if(empty($params))
+
+	if(empty($params)) {
 		return $msg;
-	else
+	} else {
 		return vsprintf( $msg, $params);
+	}
 }
 
 //$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
