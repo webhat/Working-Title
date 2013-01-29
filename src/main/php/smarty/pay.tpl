@@ -15,8 +15,11 @@
 	<div>
 		<div id="header" class="box rounded-corners">
 			<div class="boxmargin">
-				<h1>{$WT}</h1>
+				<h1>{gettext gt='Choose payment option for %s' arg1=$USER}</h1>
 				<p class="category">FIXME: category here</p>
+			</div>
+			<div class="information" style="{$EDIT} margin-top:25px;">
+				<div><a href="/maker/{$USER}">{gettext gt='Go to %s&#8217;s profile' arg1=$USER}</a></div>
 			</div>
 		</div>
 		<div id="boxy">
