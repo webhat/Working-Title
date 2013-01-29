@@ -247,6 +247,7 @@ a {
 	position: absolute;
 	left:250px;
 	top:100px;
+	z-index:20;
 }
 
 #header, #profilename {
