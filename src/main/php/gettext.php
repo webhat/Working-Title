@@ -4,7 +4,7 @@ require_once('bootstrap.php');
 require_once('geoip.php');
 
 define("LOCALE_DIR", "/home/ec2-user/beta/Working-Title/src/main/locale");
-$locale = Locale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+$locale = MyLocale::detectLanguage("0.0.0.0", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
 // FIXME: dirty hack
 if($locale['locale'] == 'nl') $locale['locale'] = "nl_NL";
@@ -27,8 +27,6 @@ textdomain("messages");
 
 function smarty_function_gettext($params, $template) {
 setlocale(LC_ALL, LOCALE);
-	$msg = _($params['gt']);
-
 	$msg = _($params['gt']);
 
 	unset($params['gt']);

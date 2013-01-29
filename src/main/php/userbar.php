@@ -3,6 +3,7 @@
 require_once('bootstrap.php');
 require_once('smartyload.php');
 require_once('loggedinas.php');
+require_once('gettext.php');
 
 if($loggedinas == "") {
 	$smarty->assign( 'LOGIN', 'display:block');

@@ -10,17 +10,23 @@
 	<div id="extloginpd" style="{$LOGIN};" class="rounded-corners">
 		<span><a href="/create.php" id="faq">SignUp</a></span> |
 		<span><a href="http://workingtitle365.uservoice.com/" id="faq">FAQ</a></span> |
-		<span><a href="#" id="loginlink" style="margin:5px 5px 5px 5px;">Login</a></span> 
-		<!--div id="fblogin" style="background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) no-repeat scroll left -188px #29447E;border-bottom: 1px solid #1A356E; border-top: 1px solid #879AC0; color: #FFFFFF;font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:right;display:none;width:65px;margin-right:1px;"> Login </div-->
+		<span><a href="#" id="loginlink" style="margin:5px 5px 5px 5px;">{gettext gt='Login'}</a></span> 
+		<!--div id="fblogin" style="background: url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) no-repeat scroll left -188px #29447E;border-bottom: 1px solid #1A356E; border-top: 1px solid #879AC0; color: #FFFFFF;font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;text-align:right;display:none;width:65px;margin-right:1px;"> {gettext gt='Login'} </div-->
 	</div>
 	<div style="{$LOGOUT};" id="logout" class="rounded-corners">
 		<span><a href="http://workingtitle365.uservoice.com/" target="_blank">FAQ</a></span> |
 		<span><a href="http://blog.workingtitle365.com/" id="blog" target="_blank">blog</a></span> |
 		<span><a href="/profile.php?id={$USER}" style="margin:5px 5px 5px 5px;">{$USER}</a></span> |
-		<span><a href="/logout.php" style="margin:5px 5px 5px 5px;">logout</a></span>
+		<span><a href="/logout.php" style="margin:5px 5px 5px 5px;">{gettext gt='Logout'}</a></span>
 	</div>
 	<iframe id="logincheck" style="display:none"></iframe>
 	<a href="/"><div id="logo"><div id="alpha">alpha</div></div></a>
-	<a id="loadHelp" href="http://workingtitle365.uservoice.com/knowledgebase" target="_blank" style="position:relative;top:15px;left:600px;color:#fff;font-size:9pt;line-height:4pt;">What is<br />WorkingTitle365?</a>
-	<div style="display:none;" class="lightbox" id="whatiswt365"><img width="700" height="582" id="cartoon" src=""></div>
+	<a class="loadHelp" href="http://workingtitle365.uservoice.com/knowledgebase" target="_blank" style="">{gettext gt='What is WorkingTitle365?'}</a>
+	<div style="display:none;" class="lightbox" id="whatiswt365">
+		<div style="height:0px;">
+			<img width="20" height="20" src="/img/redcross.png" class="upload killpopup" style="position:relative;left:20px;top:10px;display:block;" />
+		</div>
+		<iframe src="http://player.vimeo.com/video/57692022" width="600" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<a id="" href="http://workingtitle365.uservoice.com/knowledgebase" target="_blank" style="">Go to: Knowledgebase and FAQs</a>
+	</div>
 </div>

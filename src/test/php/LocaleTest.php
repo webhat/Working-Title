@@ -9,21 +9,21 @@ class LocaleTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function testLanguage() {
-		$this->assertEquals('English', Locale::language());
+		$this->assertEquals('English', MyLocale::language());
 	}
 
 	/**
 	 * @dataProvider provider
 	 */
 	public function testLanguages($locale, $lang, $name) {
-		$this->assertEquals($name, Locale::language($lang));
+		$this->assertEquals($name, MyLocale::language($lang));
 	}
 
 	/**
 	 * @dataProvider IPProvider
 	 */
 	public function testDetectLanguage($ip, $accept, $name, $locale) {
-		$l = Locale::detectLanguage($ip, $accept);
+		$l = MyLocale::detectLanguage($ip, $accept);
 		$this->assertEquals($name, $l['lang']);
 		$this->assertEquals($locale, $l['locale']);
 	}
@@ -32,7 +32,7 @@ class LocaleTest extends PHPUnit_Framework_TestCase {
 	 * @dataProvider provider
 	 */
 	public function testStripLanguageFromLocale($locale, $lang, $name) {
-		$this->assertEquals($lang, Locale::stripLanguageFromLocale($locale));
+		$this->assertEquals($lang, MyLocale::stripLanguageFromLocale($locale));
 	}
 
 	public function provider() {

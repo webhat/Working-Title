@@ -33,6 +33,10 @@ msgstr ""
 msgid "Login successful"
 msgstr ""
 
+#: src/main/html/login.html:15
+msgid "What is WorkingTitle365?"
+msgstr ""
+
 #: src/main/php/sendreset.php:27
 msgid "Gebruiker wordt reset, kijk in je mailbox for een link."
 msgstr ""
@@ -60,6 +64,10 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:36
 msgid "Username"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:22
+msgid "Other Payments"
 msgstr ""
 
 #: src/main/php/smarty/pay.tpl:22
@@ -206,6 +214,46 @@ msgstr ""
 msgid "Your browser does not support the audio tag."
 msgstr ""
 
+#: src/main/php/smarty/highlight.tpl:13
+msgid "Support Maker for:"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "from 1 cent a day"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "edit"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "upload"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "delete"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Create Profile Text"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Create Work Text"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Do you make a beautiful page?"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "Create a goal"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "I love %s on WorkingTitle365, retweet to show your support."
+msgstr ""
+
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
 msgstr ""
@@ -264,6 +312,10 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:21
 msgid "Login"
+msgstr ""
+
+#: src/main/php/smarty/create.tpl:21
+msgid "Logout"
 msgstr ""
 
 #: src/main/php/smarty/create.tpl:26

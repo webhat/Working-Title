@@ -2,7 +2,7 @@
 	<div class="artexample">
 		<a href="/maker/{$m.username}">
 	{if $m.type == 'image'}
-			<img src="/upload/m_{$m.creation}" />
+			<img class="lazy" src="/upload/m_{$m.creation}" />
 	{elseif $m.type == 'video'}
 			<video controls="controls" style="width:300px;margin: 0 auto;">
 				<source src="/upload/{$m.creation}" type="video/mp4">{gettext gt='Your browser does not support the video tag.'}</source>
