@@ -23,6 +23,7 @@
 			</div>
 		</div>
 		<div id="boxy">
+			<div style="display:none;background-color:#ebebeb;height:100px;width:500px;margin:10px;" class="lightbox" id="whatiswt365">{gettext gt='You will now be redirected to your chosen payment option'}</div>
 			<div style="position:absolute;">
 				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
 			</div>
