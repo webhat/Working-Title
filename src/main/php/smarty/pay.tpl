@@ -23,7 +23,12 @@
 			</div>
 		</div>
 		<div id="boxy">
-			<div style="display:none;background-color:#ebebeb;height:100px;width:500px;margin:10px;" class="lightbox" id="whatiswt365">{gettext gt='You will now be redirected to your chosen payment option'}</div>
+			<div style="height:0px;">
+				<div style="display:none;background-color:#ebebeb;height:100px;width:500px;margin:10px;" class="lightbox" id="paypopup">
+					<img width="20" height="20" src="/img/redcross.png" class="upload killpopup" style="position:relative;left:23px;top:-24px;display:block;" />
+					<div> {gettext gt='You will now be redirected to your chosen payment option'}</div>
+				</div>
+			</div>
 			<div style="position:absolute;">
 				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
 			</div>
@@ -43,7 +48,7 @@
 				</form>
 				<div>
 					<div id="paypal" class="makepayment">
-						<form name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
+						<form target="_new" name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
 							<input type="hidden" name="business" value="{$PAYPAL}" \>
 							<input type="hidden" name="currency_code" value="EUR" \>
@@ -60,7 +65,7 @@
 						</form>
 					</div>
 					<div id="creditcard" style="display:none;" class="makepayment">
-						<form name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
+						<form target="_new" name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
 							<input type="hidden" name="business" value="{$PAYPAL}" \>
 							<input type="hidden" name="currency_code" value="EUR" \>
@@ -82,7 +87,7 @@
 						<span>{gettext gt='Ondergetekende verleent hierbij tot wederopzegging machtiging aan WorkingTitle365 om van zijn/haar rekening jaarlijks  af te schrijven ten behoeve van de Maker'} <strong>{$USER}</strong>.</span>
 						<br />
 						<br />
-						<form target="_blank" method="post" action="/incasso.php">
+						<form target="_new" method="post" action="/incasso.php">
 							<input name="user" type="hidden" value="{$USER}" />
 							<input name="transx" type="hidden" value="{$USER}" />
 							<input name="amount" type="hidden" value="{$USER}" />
@@ -155,16 +160,23 @@
 			});
 
 			$("input:radio[name=paymentmethod]").click(function() {
-			var radio = $("input:radio[name=paymentmethod]:checked").val();	
+				var radio = $("input:radio[name=paymentmethod]:checked").val();	
 				$(".makepayment").hide();
 				console.log("#"+ radio);
 				$("#"+ radio).show();
 				_gaq.push(['_trackEvent', 'payment', 'select', radio ]);
 			});
 			$("input[name=submit]").click( function() {
+					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
 			});
 	    {/literal}
+			$("input[type=image]").click( function() {
+					$("#paypopup").toggle();
+			});
+			$("button").click( function() {
+					$("#paypopup").toggle();
+			});
 	</script>
 
 {include file="smarty/footer.tpl"}
