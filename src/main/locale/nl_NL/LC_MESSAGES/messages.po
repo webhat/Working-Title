@@ -8,6 +8,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/main/php/incasso.php:15
+msgid "Payment Successful"
+msgstr "Betaling succesvol"
+
+#: src/main/php/incasso.php:15
 msgid "Opdracht ontvangen"
 msgstr "Opdracht ontvangen"
 
