@@ -21,7 +21,7 @@ class Payment extends MongoConnection {
 				array("transx" => $transx),
 				$pay,
 				array("upsert" => true)
-				);
+		);
 	}
 }
 ?>
