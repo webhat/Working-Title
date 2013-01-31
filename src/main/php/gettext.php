@@ -26,18 +26,17 @@ bind_textdomain_codeset("messages", 'UTF8');
 textdomain("messages");
 
 function smarty_function_gettext($params, $template) {
-	//setlocale(LC_ALL, LOCALE);
-	setlocale(LC_ALL, "nl_NL");
+	setlocale(LC_ALL, LOCALE);
 	$msg = gettext($params['gt']);
 	error_log(LOCALE_DIR .": ". _($msg) ." - ". $params['gt']);
 	unset($params['gt']);
 
 
-//	if(empty($params)) {
+	if(empty($params)) {
 		return $msg;
-//	} else {
-//		return vsprintf( $msg, $params);
-//	}
+	} else {
+		return vsprintf( $msg, $params);
+	}
 }
 
 //$smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
