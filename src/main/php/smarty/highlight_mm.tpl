@@ -24,13 +24,13 @@
 					<hr />
 					<div style="width:450px;clear:both;margin-top:-10px;">
 						<div>
-							<div id="a1adadbf6caaeba45166c16eb22ea3a4" style="width:320px;float:right;"><span class="price" style="font-size:small">3 cent /day</span><span class="title" style="margin-top:-10px;font-size:small">High Rez Digital Print and a Thank You</span><span class="desc" style="font-size:small">3 cents per day you will receive High Rez Digital Print and a Huge Thank you via email</span></div>
-							<div id="a1adadbf6caaeba45166c16eb22ea3a4" style="width:320px;float:right;"><span class="price" style="font-size:small">10 cents /day</span><span class="title" style="margin-top:-10px;font-size:small">8 x 10 Fine Art Print</span><span class="desc" style="font-size:small">10 cents per day you will receive a 8 x 10 fine art print via mail and a Huge Thank You</span></div>
+							<div id="dad8c55d15001986443394df8164acc5" style="width:320px;float:right;"><span class="price" style="font-size:small">3 cent /day</span><span class="title" style="margin-top:-10px;font-size:small">High Rez Digital Print</span><span class="desc" style="font-size:small">3 cents per day you will receive High Rez Digital Print and a Huge Thank you via email</span></div>
+							<div id="b6e437bb8d20b99863111e4a47f5b537" style="width:320px;float:right;"><span class="price" style="font-size:small">10 cents /day</span><span class="title" style="margin-top:-10px;font-size:small">8 x 10 Fine Art Print</span><span class="desc" style="font-size:small">10 cents per day you will receive a 8 x 10 fine art print via mail and a Huge Thank You</span></div>
 							<div style="font-size:small;">{gettext gt='Support Maker for:'}</div>
 							<div class="fanbutton" style="width:100px;height:100px;font-size:large;display:block;left:-5px;top:10px;text-align:center;line-height:30px;">
 							<!-- FIXME: dirty hack -->
 								<div style="line-height:5px;">&nbsp;</div>
-								<span><a href="/payments.php?id=markmoore" style="text-align:center;">{gettext gt='Fan<br />this<br />Maker'}</a></span>
+								<span><a href="/payments.php?id=markmoore" style="text-align:center;word-spacing:50px;margin-top:30px;">{gettext gt='Fan This Maker'}</a></span>
 							</div>
 						</div>
 					</div>

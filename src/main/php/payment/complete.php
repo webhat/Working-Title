@@ -84,6 +84,13 @@ Your transaction has been completed, and a receipt for your purchase has been em
 	$(window.opener.document).ready(function() {
 			window.opener.document.getElementById('paytext').innerHTML = "<?= _("Payment Successful"); ?>" ;
 			window.opener.document.getElementById('paysuc').style.display = "inline" ;
-			window.close();
+			_gaq.push(['_trackEvent', 'payment', 'complete']);
+			setTimeout(window.close, 2000);
 	});
+</script>
+<script>
+		var _gaq=[['_setAccount','UA-34506988-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>

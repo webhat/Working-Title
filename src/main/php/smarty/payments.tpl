@@ -1,5 +1,6 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
+{assign var='PROFILE' value=$PROFILE|default:"  "}
 
         <!--[if lt IE 10]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -28,16 +29,25 @@
 			</div>
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;">
 				<div id="errormsg" > </div>
-				<form style="margin:10px;margin-left:10%;margin-right:33%;">
-					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">{gettext gt='My pledge is'}: &euro;</label>
-					<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event,true)" />
-					<span>{gettext gt='per year'}</span>
-					<div id="incentives">
-						<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">{gettext gt='Nothing in return'}</input>
+				<br />
+				<div id="personalize" style="margin:10px;margin-left:10%;margin-right:5%;display:none;">
+					<div style="float:left;margin:10px;"><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
+					<div>
+						{gettext gt=$PROFILE}
 					</div>
-					<button id="submit">{gettext gt='Pay'}</button>
-				</form>
+				</div>
+				<div style="clear:both;">
+					<form style="margin:10px;margin-left:10%;margin-right:33%;">
+						<input id="user" type="hidden" value="{$USER}" />
+						<label style="display:inline">{gettext gt='My pledge is'}: &euro;</label>
+						<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event,true)" />
+						<span>{gettext gt='per year'}</span>
+						<div id="incentives">
+							<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">{gettext gt='Nothing in return'}</input>
+						</div>
+						<button id="submit">{gettext gt='Pay'}</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

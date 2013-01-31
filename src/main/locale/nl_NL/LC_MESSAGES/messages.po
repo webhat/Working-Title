@@ -274,7 +274,7 @@ msgstr "Ik hou van %s op WorkingTitle365, retweet als je het eens bent!"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr "Fan deze Maker"
+msgstr "Word mijn Fan"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"
