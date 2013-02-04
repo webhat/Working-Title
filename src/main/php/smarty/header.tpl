@@ -26,6 +26,16 @@
 						z-index:99;
 					}
 				</style>
+				<script type="text/javascript">
+				var __lc = {};
+__lc.license = 2125611;
+
+(function() {
+   var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+	   lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+			 })();
+</script>
     </head>
     <body>
 	<!-- ClickTale Top part -->
