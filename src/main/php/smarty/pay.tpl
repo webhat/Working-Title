@@ -49,7 +49,9 @@
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
+						<!--
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;"><span>{gettext gt='iDeal'}</span></input><br />
+						-->
 						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" ><span>{gettext gt='Doorlopende Machtiging'}</span></input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;"><span>{gettext gt='Anders...'}</span></input><br />
 					</div>
