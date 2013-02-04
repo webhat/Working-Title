@@ -150,7 +150,6 @@
 			var lang = "{$LANG}";
 			var transx = "{$TRANSX}";
 			$("input[name=transx]").val(transx);
-			$("input[name=amount]").val($("#amount").val());
 
 	    {literal}
 			if(lang == 'en') {
@@ -176,6 +175,7 @@
 						console.log(data.amount)
 					$("input[name=a3]").val(data.amount);
 					$("input[id=amount]").val(data.amount);
+					$("input[name=amount]").val($("#amount").val());
 					});
 
 				// get amount here...
