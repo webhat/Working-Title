@@ -162,7 +162,7 @@ msgstr "Verzenden"
 
 #: src/main/php/smarty/pay.tpl:139
 msgid "Subscription to Maker"
-msgstr "Abbonement op Maker"
+msgstr "Abonnement op Maker"
 
 #: src/main/php/payments.php:38
 msgid "incentive text"
