@@ -195,8 +195,9 @@
 				_gaq.push(['_trackEvent', 'payment', 'select', radio ]);
 			});
 			$("input[name=submit]").click( function() {
-					window.open('/','payform','width=1000,height=800');
+					window.open('/','payform','width=1000,height=800,scrollbars=yes');
 					$("#paypopup").show();
+					$("body").scrollTop(0);
 					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
 			});
@@ -204,6 +205,7 @@
 			$("button").click( function() {
 					window.open('/','payform','width=1000,height=800');
 					$("#paypopup").show();
+					$("body").scrollTop(0);
 			});
 	</script>
 
