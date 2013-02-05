@@ -13,8 +13,14 @@ if( isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 }
 
 $admin = false;
-if($ip == "24.132.203.232") {
-	$admin = true;
+switch(md5($ip)) {
+	case 'd0eb42194ae647e10fe8fcebad5ed5cd':
+	case 'dbf1791f8606b86e314e437276c4f548':
+		$admin = true;
+		break;
+	default:
+		$admin = false;
+		break;
 }
 
 ?>
