@@ -4,7 +4,7 @@
 			<div class="category" style="display:block;text-align:left;margin-bottom:0px;">{gettext gt='Highlighted Maker'}</div>
 				<div style="float:right;display:inline;position:relative;margin-top:10px;">
 					<a href="/maker/Roos%20Blufpand">
-						<video controls="controls" width="520" style="margin: 0 auto;"><source type="video/mp4" src="/upload/Roos Promo workingtitle.mov1360075711.mov"><source type="video/webm" src="/upload/Roos Promo workingtitle.mov1360075711.webm"></video>
+						<video controls="controls" width="520" style="margin: 0 auto;" preload="metadata"><source type="video/mp4" src="/upload/Roos Promo workingtitle.mov1360075711.mov"><source type="video/webm" src="/upload/Roos Promo workingtitle.mov1360075711.webm"></video>
 					</a>
 				</div>
 			<div class="artexample" style="text-align:left;margin:0 0 0 0;">
