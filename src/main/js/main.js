@@ -14,7 +14,7 @@ function creations(json) {
 					$(myelem).attr('src', "/upload/l_"+ item.content);
 					break;
 				case 'video':
-					myelem = $('<video controls="controls" style="max-width:700px;margin: 0 auto;" />');
+					myelem = $('<video controls="controls" width="700" style="margin: 0 auto;" />');
 					$.each(item.types, function(i, t) {
 						var mime = t;
 						if(mime == 'mov') mime = 'mp4';
