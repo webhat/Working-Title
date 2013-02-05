@@ -30,7 +30,14 @@ $crea = array_shift( $crea)['creations'];
 $output = array();
 
 foreach( $crea as $elem) {
-	$elem['content'] = $creations->stripUpload( $elem['content']);
+	$file = $creations->stripUpload( $elem['content']);
+	$filename = explode(".", $file);
+	switch( $elem['type']) {
+		case 'video':
+			$elem['types'] = array( array_pop($filename), 'webm');
+			break;
+	}
+	$elem['content'] = implode(".", $filename);
 	array_push( $output, $elem);
 }
 

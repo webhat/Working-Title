@@ -15,9 +15,13 @@ function creations(json) {
 					break;
 				case 'video':
 					myelem = $('<video controls="controls" style="max-width:700px;margin: 0 auto;" />');
-					var source = $('<source type="video/mp4"/>Your browser does not support the video tag.');
-					$(source).attr('src', "/upload/"+ item.content);
-					$(myelem).append($(source));
+					$.each(item.types, function(i, t) {
+						var mime = t;
+						if(mime == 'mov') mime = 'mp4';
+						var source = $('<source type="video/'+ mime +'"/>Your browser does not support the video tag.');
+						$(source).attr('src', "/upload/"+ item.content +"."+ t);
+						$(myelem).append($(source));
+					});
 					break;
 				case 'audio':
 					myelem = $('<audio controls="controls" />');

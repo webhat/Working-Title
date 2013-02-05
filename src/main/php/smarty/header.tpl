@@ -36,6 +36,11 @@ __lc.license = 2125611;
 		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
 			 })();
 </script>
+<script type="text/javascript">
+{literal}
+    if (!console) console = {log: function() {}};
+{/literal}
+</script>
     </head>
     <body>
 	<!-- ClickTale Top part -->

@@ -368,6 +368,36 @@ msgstr "de Gebruikersvoorwaarde"
 msgid "Create User"
 msgstr "Gebruiker Aanmaken"
 
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Become a part of the creative process that inspires us all."
+msgstr ""
+"Word onderdeel van het creatief proces waar wij allen door geïnspireerd "
+"worden."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"By supporting Makers with yearly donations you fund creativity that inspires "
+"you and you help share that inspiration with the world."
+msgstr ""
+"Door het steunen van Makers met jaarlijkse giften maak je creativiteit en "
+"inspiratie mogelijk en helpt deze delen met de wereld."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"And the nicest part is: you get cool gifts and rewards from the Makers you "
+"support and from a whole lot of others too."
+msgstr ""
+"En het allerleukst is: je krijgt mooie cadeaus en beloningen van Makers die "
+"jij steunt en ook nog van een heleboel anderen."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And you get great rewards too."
+msgstr "En je krijgt nog mooie beloningen ook."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Learn more..."
+msgstr "Leer meer..."
+
 #, fuzzy
 #~ msgid "Name Profile"
 #~ msgstr ""
