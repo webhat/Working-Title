@@ -18,6 +18,7 @@ function creations(json) {
 					$.each(item.types, function(i, t) {
 						var mime = t;
 						if(mime == 'mov') mime = 'mp4';
+						if(mime == 'm4v') mime = 'mp4';
 						var source = $('<source type="video/'+ mime +'"/>Your browser does not support the video tag.');
 						$(source).attr('src', "/upload/"+ item.content +"."+ t);
 						$(myelem).append($(source));
