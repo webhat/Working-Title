@@ -173,7 +173,7 @@ msgstr ""
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "per year"
-msgstr "per jaar"
+msgstr "<span style='color:white'>per</span> jaar"
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"

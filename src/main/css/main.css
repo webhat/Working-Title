@@ -369,9 +369,26 @@ left: -60px;
 	z-index:-1;
 }
 
+.pledge {
+	background:#222;
+	height:80px;
+	width:600px;
+	font-size:148%;
+}
+.pledge span, .pledge label {
+	font-weight:bold;
+	color:#94d219;
+	margin-top:25px;
+}
+.pledge input {
+	margin-top:25px;
+	font-weight:bold;
+	text-align:center;
+}
+
 .incentivedesc {
-position:relative;
-left:35px;
+	position:relative;
+	left:35px;
 }
 
 #indentform {

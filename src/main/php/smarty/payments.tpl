@@ -39,9 +39,12 @@
 				<div style="clear:both;">
 					<form style="margin:10px;margin-left:10%;margin-right:33%;">
 						<input id="user" type="hidden" value="{$USER}" />
-						<label style="display:inline">{gettext gt='My pledge is'}: &euro;</label>
-						<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event,true)" />
-						<span>{gettext gt='per year'}</span>
+						<div class="pledge">
+							<label style="display:inline;">{gettext gt='My pledge is'}:&nbsp;&nbsp;<span style='color:white'>&euro;</span></label>
+							<input id="amount" type="text" value="" style="display:inline" onkeypress="return isNumberKey(event,true)" />
+							<span>{gettext gt='per year'}</span>
+						</div>
+						<br />
 						<div id="incentives">
 							<input type="radio" name="incentive" value="0" style="display:inline;margin-right:10px;">{gettext gt='Nothing in return'}</input>
 						</div>
