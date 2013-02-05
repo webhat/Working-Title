@@ -26,6 +26,12 @@
 						z-index:99;
 					}
 				</style>
+				<!--[if IE 8]>
+				<link rel="stylesheet" href="/css/ie8.css">
+				<![endif]-->
+				<!--[if IE 9]>
+				<link rel="stylesheet" href="/css/ie9.css">
+				<![endif]-->
 				<script type="text/javascript">
 				var __lc = {};
 __lc.license = 2125611;

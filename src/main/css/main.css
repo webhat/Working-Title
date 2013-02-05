@@ -293,7 +293,6 @@ left: -60px;
 	width: 282px;
 	height: auto;
 	background-size:230px 400px;
-	z-index:1;
 }
 
 #profile #becomefan {
@@ -403,7 +402,6 @@ left:35px;
 #mywork, #fullwidth {
 	position:relative;
 	width: 750px;
-	z-index: 1;
 	min-height:300px;
 }
 
