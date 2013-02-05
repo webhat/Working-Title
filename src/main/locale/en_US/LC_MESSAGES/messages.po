@@ -71,7 +71,7 @@ msgstr ""
 
 #: src/main/php/smarty/pay.tpl:22
 msgid "Bedrag"
-msgstr "Amount"
+msgstr "My pledge"
 
 #: src/main/php/smarty/pay.tpl:26
 msgid "CreditCard"

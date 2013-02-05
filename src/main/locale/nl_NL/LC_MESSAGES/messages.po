@@ -70,7 +70,7 @@ msgstr ""
 
 #: src/main/php/smarty/pay.tpl:22
 msgid "Bedrag"
-msgstr ""
+msgstr "Mijn donatie"
 
 #: src/main/php/smarty/pay.tpl:26
 msgid "CreditCard"

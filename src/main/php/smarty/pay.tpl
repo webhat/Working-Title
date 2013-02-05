@@ -44,8 +44,11 @@
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">{gettext gt='Bedrag'}: &euro;</label>
-					<input id="amount" type="text" value="" style="display:inline" disabled />
+					<div class="pledge">
+						<label style="display:inline">{gettext gt='Bedrag'}:&nbsp;&nbsp;<span style="color:white;">&euro;</span></label>
+						<input id="amount" type="text" value="" style="display:inline" disabled />
+					</div>
+					<br />
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
