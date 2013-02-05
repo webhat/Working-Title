@@ -11,8 +11,8 @@ class Users implements Countable {
 			exit(-1);
 		}
 		$config = new WTConfig();
-		//$this->db = $this->mongo->selectDB($config->wtdatabase);
-		$this->db = $this->mongo->selectDB("wt365");
+		$this->db = $this->mongo->selectDB($config->wtdatabase);
+//		$this->db = $this->mongo->selectDB("wt365");
 	}
 
 	public function getUserNames() {

@@ -12,4 +12,9 @@ if( isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 	$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 }
 
+$admin = false;
+if($ip == "24.132.203.232") {
+	$admin = true;
+}
+
 ?>

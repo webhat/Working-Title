@@ -4,16 +4,17 @@
 			<div class="category" style="display:block;text-align:left;margin-bottom:0px;">{gettext gt='Highlighted Maker'}</div>
 				<div style="float:right;display:inline;position:relative;margin-top:10px;">
 					<a href="/maker/Roos%20Blufpand">
-						<img width="520" src="http://www.workingtitle365.com/upload/m_goed%2014.jpg1355599214.jpg" />
+						<video controls="controls" width="520" style="margin: 0 auto;"><source type="video/mp4" src="/upload/Roos Promo workingtitle.mov1360075711.mov"><source type="video/webm" src="/upload/Roos Promo workingtitle.mov1360075711.webm"></video>
 					</a>
 				</div>
 			<div class="artexample" style="text-align:left;margin:0 0 0 0;">
 				<div style="display:inline-block;max-width:460px;top:0px;position:relative;margin:10px;">
 					<div>
 						<div style="float:left;margin-bottom:10px;">
-						<a href="/maker/Roos%20Blufpand">
-							<img src="http://www.gravatar.com/avatar/dfc0de8c4ba2db2d8344a1165265bc21"></div>
-						</a>
+							<a href="/maker/Roos%20Blufpand">
+								<img src="http://www.gravatar.com/avatar/dfc0de8c4ba2db2d8344a1165265bc21">
+							</a>
+						</div>
 						<div style="text-align:center;margin-left:20px;font-size:large;font-weight:bold;">
 							<a href="/maker/Roos%20Blufpand">
 						Roos Blufpand - singer/songwriter - theatraal - theeliefhebber
