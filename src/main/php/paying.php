@@ -8,16 +8,13 @@ if(array_key_exists( 'json', $_POST))
 
 if($json == "") return;
 
-$json->code = md5($_POST['json']);
-$json->pending = true;
-
 $user = (string) $loggedinas;
 
 $fp = new FanProfile($user);
 
-$fp->addPayment( $json);
+$hash = $fp->addPayment( $json);
 
 $fp->store();
 
-echo "{ \"transaction\":\"". $json->code ."\"}";
+echo "{ \"transaction\":\"". $hash ."\"}";
 ?>

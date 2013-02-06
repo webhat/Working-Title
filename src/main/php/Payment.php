@@ -24,13 +24,15 @@ class Payment extends MongoConnection {
 		);
 	}
 
-	public function setTransaction( $pay) {
-		throw new RuntimeException();
+	public function setTransaction( $user, $transx) {
+		$fp = new FanProfile($user);
+		$fp->addPayment( $transx);
+		$fp->store();
 	}
 
-	public function getTransactions() {
+	public function getTransactions($user = "") {
 		$t = $this->db->profiles->findOne( array(
-					"username" => "",
+					"username" => $user,
 					"payments.code" => array( "\$exists" => true)));
 
 		$t = $t['payments'];

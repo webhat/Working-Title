@@ -74,19 +74,19 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @dataProvider paymentProviderIncasso
+	 * @dataProvider transactions
 	*/
-	public function testSetTransactionIncasso($pay) {
+	public function testSetTransactionIncasso( $user, $transx) {
 		$p = new Payment();
-		$t = $p->setTransaction($pay);
+		$t = $p->setTransaction($user, $transx);
 	}
 
 	/**
-	 * @dataProvider paymentProviderPayPal
+	 * @dataProvider transactions
 	*/
-	public function testSetTransactionPayPal($pay) {
+	public function testSetTransactionPayPal( $user, $transx) {
 		$p = new Payment();
-		$t = $p->setTransaction($pay);
+		$t = $p->setTransaction($user, $transx);
 	}
 
 	public function testGetTransactions() {
@@ -96,6 +96,29 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 		$this->assertNotNull($t);
 
 		return $t;
+	}
+
+	public function transactions() {
+		return array(
+				array(
+					"",
+					array(
+						"maker" => "webhat",
+						"incentive" => md5(rand()),
+						"price" => "10.00",
+						"amount" => "10.00"
+					)
+				),
+				array(
+					"redhat",
+					array(
+						"maker" => "webhat",
+						"incentive" => md5(rand()),
+						"price" => "10.00",
+						"amount" => "30.00"
+					)
+				)
+			);
 	}
 
 	public function paymentProviderIncasso() {
