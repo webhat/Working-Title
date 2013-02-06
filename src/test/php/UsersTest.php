@@ -13,7 +13,6 @@ class UsersTest extends PHPUnit_Framework_TestCase {
 
 		$userlist = $users->getUserNames();
 		$this->assertNotNull($userlist);
-		$this->assertNotEmpty($userlist);
 	}
 }
  

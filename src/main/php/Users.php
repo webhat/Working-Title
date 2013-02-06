@@ -28,6 +28,7 @@ class Users implements Countable {
 		$this->results = $this->db->profiles->find();
 		$users = array();
 		while($user = $this->results->getNext()) {
+		if(array_key_exists('username', $user))
 			array_push($users, array(
 						"username" => $user['username'],
 						"lastlogin" => isset($user['lastlogin'])?$user['lastlogin']:null,

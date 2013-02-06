@@ -34,7 +34,6 @@ class WTConfig {
 				"sandbox"	=>	true,
 				"datareturn"	=> ""
 		);
-		);
 	}
 }
 ?>

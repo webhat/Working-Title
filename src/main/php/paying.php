@@ -8,7 +8,8 @@ if(array_key_exists( 'json', $_POST))
 
 if($json == "") return;
 
-$user = (string) $loggedinas;
+// FIXME: When fans are added
+$user = "";//(string) $loggedinas;
 
 $fp = new FanProfile($user);
 

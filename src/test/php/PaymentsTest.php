@@ -78,7 +78,9 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 	*/
 	public function testSetTransactionIncasso( $user, $transx) {
 		$p = new Payment();
-		$t = $p->setTransaction($user, $transx);
+		$t = $p->setPayment($user, $transx);
+
+//		$this->assertNotNull($t);
 	}
 
 	/**
@@ -86,12 +88,24 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 	*/
 	public function testSetTransactionPayPal( $user, $transx) {
 		$p = new Payment();
-		$t = $p->setTransaction($user, $transx);
+		$t = $p->setPayment($user, $transx);
+
+//		$this->assertNotNull($t);
 	}
 
-	public function testGetTransactions() {
+	/**
+	 * @dataProvider paymentProviderIncasso
+	*/
+	public function testGetTransaction($pay) {
 		$p = new Payment();
-		$t = $p->getTransactions();
+		$t = $p->getTransaction( $pay['transx']);
+
+		$this->assertNotNull($t);
+	}
+
+	public function testGetPayments() {
+		$p = new Payment();
+		$t = $p->getPayments();
 
 		$this->assertNotNull($t);
 
