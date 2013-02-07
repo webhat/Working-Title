@@ -8,7 +8,7 @@ if(array_key_exists( 'json', $_POST))
 
 if($json == "") return;
 
-$json->code = md5($_POST['json']);
+$json->code = md5($_POST['json'] . time());
 $json->pending = true;
 
 $user = (string) $loggedinas;
