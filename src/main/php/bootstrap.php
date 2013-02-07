@@ -1,5 +1,6 @@
 <?php
 
+if (!function_exists('loader'))
 function loader($class) {
 	$file = "". $class . '.php';
 	if (file_exists($file)) {
@@ -19,6 +20,7 @@ function loader($class) {
 
 }
 
+if (!function_exists('loadera'))
 function loadera($class) {
     $file = "src/main/php/". $class . '.php';
     if (file_exists($file)) {

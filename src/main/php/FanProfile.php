@@ -38,7 +38,7 @@ class FanProfile extends ProfileMongo {
 		$this->setProperty( 'payments', $payments);
 		$this->store();
 
-		return $hash;
+		return $uniq;
 	}
 }
  
