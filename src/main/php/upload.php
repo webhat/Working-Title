@@ -67,7 +67,7 @@ if (
 	|| ($_FILES["file"]["type"] == "application/pdf")
 	|| ($_FILES["file"]["type"] == "application/msword")
 	)
-	&& ($_FILES["file"]["size"] < 20971520)
+	&& ($_FILES["file"]["size"] < 62914560)
 	&& in_array($extension, $allowedExts)) {
   if ($_FILES["file"]["error"] > 0) {
 			echo _("Return Code: ") . $_FILES["file"]["error"] . "<br />";

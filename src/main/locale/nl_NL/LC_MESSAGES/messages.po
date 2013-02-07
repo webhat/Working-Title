@@ -70,7 +70,7 @@ msgstr ""
 
 #: src/main/php/smarty/pay.tpl:22
 msgid "Bedrag"
-msgstr ""
+msgstr "Mijn donatie"
 
 #: src/main/php/smarty/pay.tpl:26
 msgid "CreditCard"
@@ -162,7 +162,7 @@ msgstr "Verzenden"
 
 #: src/main/php/smarty/pay.tpl:139
 msgid "Subscription to Maker"
-msgstr "Abbonement op Maker"
+msgstr "Abonnement op Maker"
 
 #: src/main/php/payments.php:38
 msgid "incentive text"
@@ -173,7 +173,7 @@ msgstr ""
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "per year"
-msgstr "per jaar"
+msgstr "<span style='color:white'>per</span> jaar"
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
@@ -274,7 +274,7 @@ msgstr "Ik hou van %s op WorkingTitle365, retweet als je het eens bent!"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr "Fan deze Maker"
+msgstr "Word mijn Fan"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"
@@ -367,6 +367,36 @@ msgstr "de Gebruikersvoorwaarde"
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
 msgstr "Gebruiker Aanmaken"
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Become a part of the creative process that inspires us all."
+msgstr ""
+"Word onderdeel van het creatief proces waar wij allen door geïnspireerd "
+"worden."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"By supporting Makers with yearly donations you fund creativity that inspires "
+"you and you help share that inspiration with the world."
+msgstr ""
+"Door het steunen van Makers met jaarlijkse giften maak je creativiteit en "
+"inspiratie mogelijk en helpt deze delen met de wereld."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"And the nicest part is: you get cool gifts and rewards from the Makers you "
+"support and from a whole lot of others too."
+msgstr ""
+"En het allerleukst is: je krijgt mooie cadeaus en beloningen van Makers die "
+"jij steunt en ook nog van een heleboel anderen."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And you get great rewards too."
+msgstr "En je krijgt nog mooie beloningen ook."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Learn more..."
+msgstr "Leer meer..."
 
 #, fuzzy
 #~ msgid "Name Profile"

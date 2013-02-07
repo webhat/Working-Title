@@ -44,12 +44,17 @@
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">{gettext gt='Bedrag'}: &euro;</label>
-					<input id="amount" type="text" value="" style="display:inline" disabled />
+					<div class="pledge">
+						<label style="display:inline">{gettext gt='Bedrag'}:&nbsp;&nbsp;<span style="color:white;">&euro;</span></label>
+						<input id="amount" type="text" value="" style="display:inline" disabled />
+					</div>
+					<br />
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
+						<!--
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;"><span>{gettext gt='iDeal'}</span></input><br />
+						-->
 						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" ><span>{gettext gt='Doorlopende Machtiging'}</span></input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;"><span>{gettext gt='Anders...'}</span></input><br />
 					</div>
@@ -148,7 +153,6 @@
 			var lang = "{$LANG}";
 			var transx = "{$TRANSX}";
 			$("input[name=transx]").val(transx);
-			$("input[name=amount]").val($("#amount").val());
 
 	    {literal}
 			if(lang == 'en') {
@@ -174,6 +178,7 @@
 						console.log(data.amount)
 					$("input[name=a3]").val(data.amount);
 					$("input[id=amount]").val(data.amount);
+					$("input[name=amount]").val($("#amount").val());
 					});
 
 				// get amount here...
@@ -190,8 +195,9 @@
 				_gaq.push(['_trackEvent', 'payment', 'select', radio ]);
 			});
 			$("input[name=submit]").click( function() {
-					window.open('/','payform','width=1000,height=800');
+					window.open('/','payform','width=1000,height=800,scrollbars=yes');
 					$("#paypopup").show();
+					$("body").scrollTop(0);
 					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
 			});
@@ -199,6 +205,7 @@
 			$("button").click( function() {
 					window.open('/','payform','width=1000,height=800');
 					$("#paypopup").show();
+					$("body").scrollTop(0);
 			});
 	</script>
 

@@ -23,5 +23,20 @@ class Payment extends MongoConnection {
 				array("upsert" => true)
 		);
 	}
+
+	public function setTransaction( $pay) {
+		throw new RuntimeException();
+	}
+
+	public function getTransactions() {
+		$t = $this->db->profiles->findOne( array(
+					"username" => "",
+					"payments.code" => array( "\$exists" => true)));
+
+		$t = $t['payments'];
+		//var_export($t);
+
+		return $t;
+	}
 }
 ?>

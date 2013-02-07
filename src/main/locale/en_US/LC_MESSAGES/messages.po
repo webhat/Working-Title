@@ -71,7 +71,7 @@ msgstr ""
 
 #: src/main/php/smarty/pay.tpl:22
 msgid "Bedrag"
-msgstr "Amount"
+msgstr "My pledge"
 
 #: src/main/php/smarty/pay.tpl:26
 msgid "CreditCard"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "per year"
-msgstr "per year"
+msgstr "<span style='color:white'>per</span> year"
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
@@ -274,7 +274,7 @@ msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr ""
+msgstr "Become my Fan"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"
@@ -366,6 +366,30 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Become a part of the creative process that inspires us all."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"By supporting Makers with yearly donations you fund creativity that inspires "
+"you and you help share that inspiration with the world."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"And the nicest part is: you get cool gifts and rewards from the Makers you "
+"support and from a whole lot of others too."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And you get great rewards too."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Learn more..."
 msgstr ""
 
 #, fuzzy

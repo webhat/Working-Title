@@ -13,6 +13,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
 	    {/literal}
         </script>
+        <script src="/js/vendor/jquery.random.js"> </script>
         <script src="/js/vendor/jquery.ba-hashchange.min.js"> </script>
 				<div id="upload">
 					<div><img width="20" height="20" src="/img/redcross.png" class="upload" style="position:relative;left:20px;top:10px;" /></div>

@@ -1,0 +1,9 @@
+#profile {
+	z-index: -1;
+	width: 282px;
+}
+
+#mywork, #fullwidth {
+	top: 35px;
+	position:relative;
+}
