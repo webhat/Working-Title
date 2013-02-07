@@ -305,7 +305,6 @@ left: -60px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-khtml-border-radius: 5px 5px 5px 5px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 5px 5px 5px 5px;
 }
 
@@ -471,7 +470,6 @@ width:700px;
 	-moz-border-radius: 0px 0px 0px 0px;
 	-webkit-border-radius: 0px 0px 0px 0px;
 	-khtml-border-radius: 0px 0px 0px 0px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -625,7 +623,6 @@ input, select {
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-khtml-border-radius: 5px 5px 5px 5px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 5px 5px 5px 5px;
 	background-color:#94d219;
 }
