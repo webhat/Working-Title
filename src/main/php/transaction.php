@@ -24,7 +24,5 @@ foreach( $payments as $payment) {
 	}
 }
 
-$fp->store();
-
 echo "{ \"transaction\":\"". $json->code ."\", \"amount\":\"$amount\"}";
 ?>
