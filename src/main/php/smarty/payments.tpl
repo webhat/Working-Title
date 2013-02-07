@@ -61,7 +61,6 @@
 	<script src="/js/main.js"></script>
 	<script type="text/javascript">
 	    {literal}
-    if (!console) console = {log: function() {}};
 	$("button").click( function() {
 			$(this).attr("disabled", "disabled");
 			var json = {};

@@ -32,6 +32,13 @@
 				<!--[if IE 9]>
 				<link rel="stylesheet" href="/css/ie9.css">
 				<![endif]-->
+	    {literal}
+        <!--[if lt IE 10]>
+				<script type="text/javascript">
+    var console = {log: function() {}};
+        <![endif]-->
+				</script>
+	    {/literal}
 				<script type="text/javascript">
 				var __lc = {};
 __lc.license = 2125611;
@@ -41,11 +48,6 @@ __lc.license = 2125611;
 	   lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
 		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
 			 })();
-</script>
-<script type="text/javascript">
-{literal}
-    if (!console) console = {log: function() {}};
-{/literal}
 </script>
     </head>
     <body>
