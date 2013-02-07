@@ -74,28 +74,65 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @dataProvider paymentProviderIncasso
+	 * @dataProvider transactions
 	*/
-	public function testSetTransactionIncasso($pay) {
+	public function testSetTransactionIncasso( $user, $transx) {
 		$p = new Payment();
-		$t = $p->setTransaction($pay);
+		$t = $p->setPayment($user, $transx);
+
+//		$this->assertNotNull($t);
 	}
 
 	/**
-	 * @dataProvider paymentProviderPayPal
+	 * @dataProvider transactions
 	*/
-	public function testSetTransactionPayPal($pay) {
+	public function testSetTransactionPayPal( $user, $transx) {
 		$p = new Payment();
-		$t = $p->setTransaction($pay);
+		$t = $p->setPayment($user, $transx);
+
+//		$this->assertNotNull($t);
 	}
 
-	public function testGetTransactions() {
+	/**
+	 * @dataProvider paymentProviderIncasso
+	*/
+	public function testGetTransaction($pay) {
 		$p = new Payment();
-		$t = $p->getTransactions();
+		$t = $p->getTransaction( $pay['transx']);
+
+		$this->assertNotNull($t);
+	}
+
+	public function testGetPayments() {
+		$p = new Payment();
+		$t = $p->getPayments();
 
 		$this->assertNotNull($t);
 
 		return $t;
+	}
+
+	public function transactions() {
+		return array(
+				array(
+					"",
+					array(
+						"maker" => "webhat",
+						"incentive" => md5(rand()),
+						"price" => "10.00",
+						"amount" => "10.00"
+					)
+				),
+				array(
+					"redhat",
+					array(
+						"maker" => "webhat",
+						"incentive" => md5(rand()),
+						"price" => "10.00",
+						"amount" => "30.00"
+					)
+				)
+			);
 	}
 
 	public function paymentProviderIncasso() {

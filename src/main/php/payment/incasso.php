@@ -12,7 +12,6 @@ $mail = new Mail();
 $payment = new Payment();
 
 $payment->updateIncasso( $pay);
-
 $mail->concierge( $pay);
 	
 ?>

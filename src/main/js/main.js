@@ -83,6 +83,11 @@ function incentives( maker, json) {
 			$(profile).click(function() {
 				top.location = "/payments.php?inc="+ item.code +"&id="+ maker;
 			});
+	$(incen).click(function(e) {
+		var item = e.target;
+		console.log(item);
+		$('#amount').val(item.value);
+	});
 			$(".incentive:first").css("border-top-style","none");
 	});
 	if(json.length == 0) {
@@ -97,6 +102,9 @@ function isNumberKey(evt, c) {
 	if( c && (charCode == 46)) {
 		return true;
 	}
+	if (charCode == 44 )
+		$("#amount").val($("#amount").val() +".");
+
 	if (charCode > 31 
 	&& (charCode < 48 || charCode > 57))
 		return false;
