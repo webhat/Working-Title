@@ -60,7 +60,8 @@
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 	<script src="/js/main.js"></script>
 	<script type="text/javascript">
-	    {literal}
+{literal}
+
 	$("button").click( function() {
 			$(this).attr("disabled", "disabled");
 			var json = {};
@@ -73,6 +74,7 @@
 			console.log(json['price'] +"-"+json['amount']);
 			if( (+json['amount']) < (+json['price']) || json['amount'] == "") {
 				$("#errormsg").text("{/literal}{gettext gt='De gekozen incentive matched niet met je bedrag.'}{literal}");
+				$("body").scrollTop(0);
 				$(this).removeAttr("disabled");
 				return false;
 			}
