@@ -11,7 +11,7 @@ if($json == "") return;
 $json->code = md5($_POST['json']);
 $json->pending = true;
 
-$user = (string) $loggedinas;
+$user = "";//(string) $loggedinas;
 
 $fp = new FanProfile($user);
 

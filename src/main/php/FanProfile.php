@@ -24,11 +24,21 @@ class FanProfile extends ProfileMongo {
 		if( is_null($payments))
 			$payments = array();
 
-		$size = count($payments);
-		$payments[$size] = $payment;
+		$payment = (array) $payment;
+
+		$hash = md5(implode($payment));
+		$uniq = md5(implode($payment) ."". time());
+
+		$payment['code'] = $hash;
+		$payment['uniq'] = $uniq;
+		$payment['pending'] = true;
+
+		$payments[] = $payment;
 
 		$this->setProperty( 'payments', $payments);
 		$this->store();
+
+		return $hash;
 	}
 }
  
