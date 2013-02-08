@@ -96,7 +96,13 @@
 		$(document).ready(function() {
 			$("center .delete").click(function(event) {
 				console.log("Delete Creation Fired");
-				var filename = $($($(event.target).siblings()[0]).children()[0]).attr("src");
+				//var filename = $($($(event.target).siblings()[0]).children()[0]).attr("src");
+				var filename = "";
+				var vaobj = $("video,audio,img", $(event.target).parent());//.src;//).attr("src");
+				if(vaobj.children()[0] != undefined)
+					filename = $(vaobj.children()[0]).attr('src');
+					else
+					filename = $(vaobj).attr('src');
 				if(filename == "" || filename == undefined)
 					filename = $("a", $(event.target).parent()).attr("href");
 						{literal}
