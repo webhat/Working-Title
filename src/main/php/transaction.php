@@ -19,8 +19,9 @@ $payments = $fp->getProperty( "payments");
 
 $amount = 10000;
 foreach( $payments as $payment) {
-	if( $payment['uniq'] == $json->transx) {
+	if( array_key_exists('uniq', $payment) && $payment['uniq'] == $json->transx) {
 		$amount = $payment['amount'];
+		break;
 	}
 }
 
