@@ -86,16 +86,42 @@ class Payment extends MongoConnection {
 		return $t;
 	}
 
-	public function getPayments($user = "") {
+	public function getPaymentsCount($user = "") {
 		$t = $this->db->profiles->findOne(
 				array(
-					"username" => $user,
+					"payments.maker" => $user,
 					"payments.code" => array( "\$exists" => true)
 					)
 			);
 
-		$t = $t['payments'];
+		$cnt = 0;
+		if(!empty($t) && !empty($t['payments']))
+		foreach($t['payments'] as $p ) {
+			if(array_key_exists('maker',$p) && $p['maker'] == $user)
+				$cnt++;
+		}
 		//var_export($t);
+
+		return $cnt;
+	}
+
+	public function getPayments($user = "") {
+		$t = $this->db->profiles->findOne(
+				array(
+					"payments.code" => array( "\$exists" => true)
+					)
+			);
+
+		$t['new'] = array();
+		if($user != "") {
+			if(!empty($t) && !empty($t['payments']))
+			foreach($t['payments'] as $p ) {
+				if($p['maker'] == $user)
+					$t['new'][] = $p;
+			}
+			$t = $t['new'];
+		} else
+			$t = $t['payments'];
 
 		return $t;
 	}

@@ -104,7 +104,7 @@
 						<span>{gettext gt='Ondergetekende verleent hierbij tot wederopzegging machtiging aan WorkingTitle365 om van zijn/haar rekening jaarlijks  af te schrijven ten behoeve van de Maker'} <strong>{$USER}</strong>.</span>
 						<br />
 						<br />
-						<form target="payform" method="post" action="/payment/incasso.php">
+						<form target="payform" name="_xclick" action="http://{$PAYPALDEMO}workingtitle365.com/payment/incasso.php" method="post">
 							<input name="user" type="hidden" value="{$USER}" />
 							<input name="transx" type="hidden" value="{$USER}" />
 							<input name="amount" type="hidden" value="{$USER}" />
@@ -137,7 +137,8 @@
 							<input type="checkbox" name="agree" value="" /> 
 							<label>{gettext gt='Ik ga akkoord.'}</label>
 						<br />
-							<button id="submiterror">{gettext gt='Submit'}</button>
+							<!--button id="submiterror">{gettext gt='Submit'}</button-->
+							<input type="image" src="http://www.paypal.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" \>
 						</form>
 
 					</div>
@@ -194,19 +195,15 @@
 				$("#"+ radio).show();
 				_gaq.push(['_trackEvent', 'payment', 'select', radio ]);
 			});
-			$("input[name=submit]").click( function() {
-					window.open('/','payform','width=1000,height=800,scrollbars=yes');
+			$("input[name=submit]").click( function(e) {
+					var action = $(e.currentTarget).parent().attr('action');
+					window.open( action, 'payform','width=1000,height=800,scrollbars=yes');
 					$("#paypopup").show();
 					$("body").scrollTop(0);
 					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
 			});
 	    {/literal}
-			$("button").click( function() {
-					window.open('/','payform','width=1000,height=800');
-					$("#paypopup").show();
-					$("body").scrollTop(0);
-			});
 	</script>
 
 {include file="smarty/footer.tpl"}

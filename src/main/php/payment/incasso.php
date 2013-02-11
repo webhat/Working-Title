@@ -10,18 +10,26 @@ $pay = $_POST;
 
 $mail = new Mail();
 $payment = new Payment();
+$success = "Payment Successful";
+$gaevent = "complete";
 
+try {
 $payment->updateIncasso( $pay);
-$mail->concierge( $pay);
+} catch( InvalidArgumentException $e) {
+	$success = "Payment NOT Successful";
+	$gaevent = "failed";
+}
+//$mail->concierge( $pay);
 	
 ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 <script>
 	$(window.opener.document).ready(function() {
-			window.opener.document.getElementById('paytext').innerHTML = "<?= _("Payment Successful"); ?>" ;
-			window.opener.document.getElementById('paysuc').style.display = "inline" ;
-			_gaq.push(['_trackEvent', 'payment', 'complete']);
+			window.opener.document.getElementById('paytext').innerHTML = "<?= _($success); ?>" ;
+			if("<?= $gaevent ?>" == "complete")
+				window.opener.document.getElementById('paysuc').style.display = "inline" ;
+			_gaq.push(['_trackEvent', 'payment', '<?= $gaevent; ?>']);
 			setTimeout(window.close, 2000);
 	});
 </script>
