@@ -49,6 +49,7 @@ function addhttp($url) {
 }
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'FANS', 20);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'SITE', ''. addhttp($p->getProperty('site')));
@@ -59,6 +60,6 @@ $smarty->assign( 'WHY', ''. $p->getProperty('whydoidothis'));
 $smarty->assign( 'WANT', ''. $p->getProperty('whatdoiwant'));
 $smarty->assign( 'WORK', ''. $p->getProperty('work'));
 
-$smarty->display( 'smarty/index.tpl');
+$smarty->display( 'smarty/profile.tpl');
 
 ?>

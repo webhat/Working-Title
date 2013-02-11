@@ -286,9 +286,37 @@ left: -60px;
 	text-decoration:underline;
 }
 
-#profile {
+#fans {
 	position:relative;
 	top:210px;
+	left:860px;
+	width: 282px;
+	height: 262px;
+	background-size:230px 400px;
+	margin:40px 10px 10px 10px;
+}
+
+.fanstext {
+	font-size:150%;
+}
+
+#fans #fantotal {
+	clear:both;
+	font-size:1000%;
+	background-color:#94d219;
+	width:262px;
+	height:222px;
+	text-align:center;
+	margin:40px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#profile {
+	position:relative;
+	top:190px;
 	left:860px;
 	width: 282px;
 	height: auto;
@@ -360,7 +388,7 @@ left: -60px;
 
 #pincentives {
 	position:relative;
-	top:210px;
+	top:200px;
 	left:860px;
 	width: 282px;
 	height: auto;

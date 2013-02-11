@@ -24,6 +24,12 @@
 			</div>
 		</div>
 		<div style="position:absolute">
+			<div id="fans" class="box rounded-corners">
+				<span id="fantotal">
+					{$FANS}
+				</span>
+				<center><span class="fanstext">{gettext gt='Fans'}</span></center>
+			</div>
 			<div id="profile" class="box rounded-corners">
 				<div class="edit"><br />{gettext gt='edit'}</div>
 				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
