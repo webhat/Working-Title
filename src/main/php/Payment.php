@@ -37,7 +37,8 @@ class Payment extends MongoConnection {
 					"payments.code" => $transx,
 					"payments.pending" => true
 				)
-		)['payments'];
+		);
+		$record = $record['payments'];
 		//var_export( $record);
 		//var_export( $transx);
 
