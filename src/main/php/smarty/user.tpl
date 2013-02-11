@@ -6,6 +6,7 @@
 			<div style="margin:10px;"><a href="/maker/{$u.username}">{$u.username}</a></div>
 			<div><a href="mailto:{$u.mail}">{$u.mail}</a></div>
 			<div>Transactions: {$u.trans} (<em><a href="/getTransactions.php?id={$u.username}" target="transx">view</a></em>)</div>
+			<div>Fans: </div>
 			<div></div>
 		</div>
 	</div>

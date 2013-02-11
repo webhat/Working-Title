@@ -47,9 +47,12 @@ function addhttp($url) {
 								    }
 			    return $url;
 }
+$fans = $p->getFans();
+
+if($fans < 10) $fans = "&nbsp;". $fans ."&nbsp;";
 
 $smarty->assign( 'USER', $p->getUser());
-$smarty->assign( 'FANS', 20);
+$smarty->assign( 'FANS', $fans);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'SITE', ''. addhttp($p->getProperty('site')));

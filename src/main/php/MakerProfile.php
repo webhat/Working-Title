@@ -94,6 +94,15 @@ class MakerProfile extends ProfileMongo {
 		$this->setProperty( 'incentives', $incentives_out);
 		$this->store();
 	}
+
+	public function setFans( $fans) {
+		$this->setProperty( 'fans', $fans);
+		$this->store();
+	}
+
+	public function getFans() {
+		return $this->getProperty( 'fans');
+	}
 }
  
 ?>
