@@ -28,7 +28,7 @@ textdomain("messages");
 function smarty_function_gettext($params, $template) {
 	setlocale(LC_ALL, LOCALE);
 	$msg = gettext($params['gt']);
-	error_log(LOCALE_DIR .": ". _($msg) ." - ". $params['gt']);
+//	error_log(LOCALE_DIR .": ". _($msg) ." - ". $params['gt']);
 	unset($params['gt']);
 
 

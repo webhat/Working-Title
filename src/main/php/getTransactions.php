@@ -7,20 +7,29 @@ require_once('smartyload.php');
 if(!$admin) exit();
 
 
-$p = new Payment();
+$id = "";
+if(array_key_exists( 'id', $_GET))
+	$id = (string) $_GET['id'];
 
-$users = new Users();
-$userlist = $users->getUsers();
+
+$p = new Payment();
 
 $payments = array();
 
-foreach($userlist as $user) {
-	if(array_key_exists('username', $user)) {
-		$t =$p->getPayments($user['username']);
-		if(is_array($t))
-		$payments = array_merge( $payments, $t);
+if($id == "") {
+	$users = new Users();
+	$userlist = $users->getUsers();
+
+
+	foreach($userlist as $user) {
+		if(array_key_exists('username', $user)) {
+			$t =$p->getPayments($user['username']);
+			if(is_array($t))
+				$payments = array_merge( $payments, $t);
+		}
 	}
-}
+} else
+	$payments =$p->getPayments($id);
 
 $done = array();
 
