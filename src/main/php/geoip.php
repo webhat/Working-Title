@@ -2,7 +2,11 @@
 
 // Originally written for SNYPHER...
 
-$ip = $_SERVER['REMOTE_ADDR'];
+$ip = "0.0.0.0";
+
+if( isset($_SERVER['REMOTE_ADDR']))
+	$ip = $_SERVER['REMOTE_ADDR'];
+
 // XXX: redhat - 20100129 - This busts the cache when there is a query which goes first through the cache:global:80 then to apache:localhost:80
 if( isset($_SERVER['HTTP_X_FORWARD_FOR'])) {
 	$ip = $_SERVER['HTTP_X_FORWARD_FOR'];
