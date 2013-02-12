@@ -19,7 +19,7 @@ $payment->updateIncasso( $pay);
 	$success = "Payment NOT Successful";
 	$gaevent = "failed";
 }
-//$mail->concierge( $pay);
+$mail->concierge( $pay);
 	
 ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
