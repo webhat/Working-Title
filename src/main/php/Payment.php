@@ -73,7 +73,8 @@ class Payment extends MongoConnection {
 				array(),
 			array(
 				"transx" => true,
-				"custom" => true
+				"custom" => true,
+				"payment_status" => true
 				)
 		);
 		return $t;

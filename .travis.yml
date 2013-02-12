@@ -28,5 +28,5 @@ notifications:
 branches:
   only:
     - develop
-#    - master
+    - master
 

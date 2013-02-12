@@ -43,30 +43,48 @@ foreach($transactions as $transaction) {
 		if( array_key_exists($transaction['custom'], $done) && @$transaction['payment_status'] == "Completed")
 			$done[$transaction['custom']]++;
 		else
-			$done[$transaction['custom']] = 1;
-	} else if(array_key_exists( "transx", $transaction)) {
-		if( array_key_exists($transaction['transx'], $done))
-			$done[$transaction['transx']]++;
-		else
-			$done[$transaction['transx']] = 1;
+			if( @$transaction['payment_status'] == "Completed")
+				$done[$transaction['custom']] = 1;
+	} else {
+		if(array_key_exists( "transx", $transaction)) {
+			if( array_key_exists($transaction['transx'], $done))
+				$done[$transaction['transx']]++;
+			else
+				$done[$transaction['transx']] = 1;
+		}
 	}
 }
 
+//echo "Pay: ". count($payments) ."<br />";
+//echo "Tra: ". count($done) ."<br />";
+
 for($itt = 0; $itt < count($payments); $itt++) {
-	if($payments[$itt]['pending'] == true &&
-			array_key_exists( $payments[$itt]['code'], $done) &&
-			$done[$payments[$itt]['code']] > 0) {
-		$done[$payments[$itt]['code']]--;
-		$payments[$itt]['pending'] = false;
+	if($payments[$itt]['pending'] == true) {
+			if(array_key_exists( 'uniq', $payments[$itt]) && array_key_exists( $payments[$itt]['uniq'], $done) && $done[$payments[$itt]['uniq']] > 0 ) {
+				$done[$payments[$itt]['uniq']]--;
+				$payments[$itt]['pending'] = false;
+			} else {
+				if(array_key_exists( $payments[$itt]['code'], $done) && $done[$payments[$itt]['code']] > 0 ) {
+					$done[$payments[$itt]['code']]--;
+					$payments[$itt]['pending'] = false;
+				}
+			}
 	}
+
 	if($payments[$itt]['pending'] == false) {
 		$fans[$payments[$itt]['maker']]++;
 	}
 }
 
+//var_export($done);
+
 foreach( $fans as $u => $f) {
-	$m = new MakerProfile($u);
-	$m->setFans($f);
+	try {
+		$m = new MakerProfile($u);
+		$m->setFans($f);
+	} catch( Exception $e) {
+		error_log("'$u' not a username");
+	}
 }
 
 $smarty->assign( 'T', $payments);
