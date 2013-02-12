@@ -37,8 +37,10 @@ $smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:none;');
+	$smarty->assign( 'E', false);
 } else {
 	$smarty->assign( 'EDIT', 'display:inline;');
+	$smarty->assign( 'E', true);
 }
 
 function addhttp($url) {
@@ -47,8 +49,17 @@ function addhttp($url) {
 								    }
 			    return $url;
 }
+$fans = $p->getFans();
+
+if($fans > 0)
+	$smarty->assign( 'SHOWFANS', true);
+else
+	$smarty->assign( 'SHOWFANS', false);
+
+if($fans < 10) $fans = "&nbsp;". $fans ."&nbsp;";
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'FANS', $fans);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'SITE', ''. addhttp($p->getProperty('site')));
@@ -59,6 +70,6 @@ $smarty->assign( 'WHY', ''. $p->getProperty('whydoidothis'));
 $smarty->assign( 'WANT', ''. $p->getProperty('whatdoiwant'));
 $smarty->assign( 'WORK', ''. $p->getProperty('work'));
 
-$smarty->display( 'smarty/index.tpl');
+$smarty->display( 'smarty/profile.tpl');
 
 ?>

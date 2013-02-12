@@ -16,7 +16,7 @@ class FaceBookData extends SocialData {
 			$blob,
 			array("upsert" => true)
 		))
-			throw new MongoException();
+			throw new MyMongoException();
 
 		if( isset($blob['wtusername'])) {
 			$maker = new MakerProfile($blob['wtusername']);
