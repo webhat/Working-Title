@@ -30,8 +30,10 @@ if($id == "") {
 				$payments = array_merge( $payments, $t);
 		}
 	}
-} else
+} else {
+	$fans[$id] = 0;
 	$payments =$p->getPayments($id);
+}
 
 $done = array();
 
@@ -58,7 +60,6 @@ for($itt = 0; $itt < count($payments); $itt++) {
 		$payments[$itt]['pending'] = false;
 	}
 	if($payments[$itt]['pending'] == false) {
-		var_export($payments[$itt]['maker']);
 		$fans[$payments[$itt]['maker']]++;
 	}
 }

@@ -11,8 +11,10 @@
 			console.log("Fire");
 		$("div.info").hide();
 		$("div.info").css('z-index', "0");
-		$("div.info", $(e.target).parent().parent()).toggle();
+		$("div.info").parent().css('z-index', "0");
+		$("div.info", $(e.target).parent().parent()).show();
 		$("div.info", $(e.target).parent().parent()).css('z-index', "1");
+		$("div.info", $(e.target).parent().parent()).parent().css('z-index', "1");
 	});
 
 	var $container = $('#users');

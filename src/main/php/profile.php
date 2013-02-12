@@ -37,8 +37,10 @@ $smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:none;');
+	$smarty->assign( 'E', false);
 } else {
 	$smarty->assign( 'EDIT', 'display:inline;');
+	$smarty->assign( 'E', true);
 }
 
 function addhttp($url) {
@@ -48,6 +50,11 @@ function addhttp($url) {
 			    return $url;
 }
 $fans = $p->getFans();
+
+if($fans > 0)
+	$smarty->assign( 'SHOWFANS', true);
+else
+	$smarty->assign( 'SHOWFANS', false);
 
 if($fans < 10) $fans = "&nbsp;". $fans ."&nbsp;";
 

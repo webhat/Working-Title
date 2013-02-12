@@ -24,16 +24,37 @@
 			</div>
 		</div>
 		<div style="position:absolute">
-			<div id="fans" class="box rounded-corners">
-				<span id="fantotal">
-					{$FANS}
-				</span>
-				<center><span class="fanstext">{gettext gt='Fans'}</span></center>
+			<div id="fans" class="box rounded-corners" style="display:none;">
+				<div>
+						<span class="fantotal">
+							{$FANS}
+						</span>
+					<center><span class="fanstext">{gettext gt='Fans'}</span></center>
+				</div>
 			</div>
 			<div id="profile" class="box rounded-corners">
+				<div style="display:inline-block;margin-left:20px;">
+					<div style="display:block;">
+						<img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" />
+					</div>
+{if $E}
+					<div style="display:block;width:80px;margin-left:15px;">
+						<em><a href="http://gravatar.com/" style=font-size:small;" target="_new">{gettext gt='edit image'}</a></em>
+					</div>
+{else}
+<div>&nbsp;</div>
+{/if}
+				</div>
+{if $SHOWFANS}
+				<div id="fanssmall" style="display:inline-block;">
+					<span class="fantotal">
+						{$FANS}
+					</span>
+					<div><span class="fanstext" style="position:relative;left:20px;">{gettext gt='Fans'}</span></div>
+				</div>
+{/if}
+				<div class="site headline" style="margin-top:10px;margin-left:10px;"><a href="{$SITE}">{gettext gt='Mijn website'}</a></div>
 				<div class="edit"><br />{gettext gt='edit'}</div>
-				<div><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
-				<div class="site headline"><br /><br /><a href="{$SITE}" style="clear:both;">{gettext gt='Mijn website'}</a></div>
 				<div class="boxmargin headline" style="clear:both;">{gettext gt=$PROFILE}</div>
 				<div id="becomefan">
 					<a href="/payments.php?id={$USER}">
