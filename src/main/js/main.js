@@ -14,10 +14,15 @@ function creations(json) {
 					$(myelem).attr('src', "/upload/l_"+ item.content);
 					break;
 				case 'video':
-					myelem = $('<video controls="controls" style="max-width:700px;margin: 0 auto;" />');
-					var source = $('<source type="video/mp4"/>Your browser does not support the video tag.');
-					$(source).attr('src', "/upload/"+ item.content);
-					$(myelem).append($(source));
+					myelem = $('<video controls="controls" width="700" style="margin: 0 auto;" preload="metadata" />');
+					$.each(item.types, function(i, t) {
+						var mime = t;
+						if(mime == 'mov') mime = 'mp4';
+						if(mime == 'm4v') mime = 'mp4';
+						var source = $('<source type="video/'+ mime +'"/>Your browser does not support the video tag.');
+						$(source).attr('src', "/upload/"+ item.content +"."+ t);
+						$(myelem).append($(source));
+					});
 					break;
 				case 'audio':
 					myelem = $('<audio controls="controls" />');
@@ -78,6 +83,11 @@ function incentives( maker, json) {
 			$(profile).click(function() {
 				top.location = "/payments.php?inc="+ item.code +"&id="+ maker;
 			});
+	$(incen).click(function(e) {
+		var item = e.target;
+		console.log(item);
+		$('#amount').val(item.value);
+	});
 			$(".incentive:first").css("border-top-style","none");
 	});
 	if(json.length == 0) {
@@ -92,6 +102,9 @@ function isNumberKey(evt, c) {
 	if( c && (charCode == 46)) {
 		return true;
 	}
+	if (charCode == 44 )
+		$("#amount").val($("#amount").val() +".");
+
 	if (charCode > 31 
 	&& (charCode < 48 || charCode > 57))
 		return false;

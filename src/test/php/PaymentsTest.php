@@ -73,6 +73,68 @@ class PaymentsTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals($pay, $actual);
 	}
 
+	/**
+	 * @dataProvider transactions
+	*/
+	public function testSetTransactionIncasso( $user, $transx) {
+		$p = new Payment();
+		$t = $p->setPayment($user, $transx);
+
+//		$this->assertNotNull($t);
+	}
+
+	/**
+	 * @dataProvider transactions
+	*/
+	public function testSetTransactionPayPal( $user, $transx) {
+		$p = new Payment();
+		$t = $p->setPayment($user, $transx);
+
+//		$this->assertNotNull($t);
+	}
+
+	/**
+	 * @dataProvider paymentProviderIncasso
+	*/
+	public function testGetTransaction($pay) {
+		$p = new Payment();
+		$t = $p->getTransaction( $pay['transx']);
+
+		$this->assertNotNull($t);
+	}
+
+	public function testGetPayments() {
+		$p = new Payment();
+		$t = $p->getPayments();
+
+		$this->assertNotNull($t);
+
+		return $t;
+	}
+
+	public function transactions() {
+		return array(
+				array(
+					"",
+					array(
+						"maker" => "webhat",
+						"incentive" => md5(rand()),
+						"price" => "10.00",
+						"amount" => "10.00"
+					)
+				),
+				array(
+					"redhat",
+					array(
+						"maker" => "webhat",
+						"incentive" => md5(rand()),
+						"price" => "10.00",
+						"amount" => "30.00"
+					)
+				)
+			);
+	}
+
 	public function paymentProviderIncasso() {
 		return array(
 			array (

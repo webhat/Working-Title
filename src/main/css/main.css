@@ -242,11 +242,12 @@ a {
 	margin-left:10%;
 }
 
-#whatiswt365 {
+#whatiswt365, #paypopup {
 	border: solid 5px #e3e2e2;
 	position: absolute;
 	left:250px;
 	top:100px;
+	z-index:20;
 }
 
 #header, #profilename {
@@ -285,14 +286,55 @@ left: -60px;
 	text-decoration:underline;
 }
 
-#profile {
+#fans {
 	position:relative;
 	top:210px;
 	left:860px;
 	width: 282px;
+	height: 262px;
+	background-size:230px 400px;
+	margin:40px 10px 10px 10px;
+}
+
+.fanstext {
+	font-size:150%;
+}
+
+#fans .fantotal {
+	width:262px;
+	height:222px;
+	font-size:1000%;
+	margin:40px;
+}
+
+#fanssmall {
+	margin-left:30px;
+}
+
+#fanssmall .fantotal {
+	width:80px;
+	height:80px;
+	font-size:400%;
+	margin:5%;
+}
+
+.fantotal {
+	clear:both;
+	background-color:#94d219;
+	text-align:center;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#profile {
+	position:relative;
+	top:240px;
+	left:860px;
+	width: 282px;
 	height: auto;
 	background-size:230px 400px;
-	z-index:1;
 }
 
 #profile #becomefan {
@@ -305,7 +347,6 @@ left: -60px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-khtml-border-radius: 5px 5px 5px 5px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 5px 5px 5px 5px;
 }
 
@@ -318,7 +359,13 @@ left: -60px;
 	width:262px;
 	height:59px;
 	text-align:center;
+	vertical-align:top;
 	margin:10px;
+}
+
+#submit {
+	margin-left:270px;
+	margin-top:20px;
 }
 
 #profile #becomefan a {
@@ -329,7 +376,6 @@ left: -60px;
 }
 
 #profile img {
-	float:left;
 	margin:40px 10px 10px 10px;
 }
 
@@ -355,7 +401,7 @@ left: -60px;
 
 #pincentives {
 	position:relative;
-	top:210px;
+	top:250px;
 	left:860px;
 	width: 282px;
 	height: auto;
@@ -363,9 +409,26 @@ left: -60px;
 	z-index:-1;
 }
 
+.pledge {
+	background:#222;
+	height:80px;
+	width:600px;
+	font-size:130%;
+}
+.pledge span, .pledge label {
+	font-weight:bold;
+	color:#94d219;
+	margin-top:25px;
+}
+.pledge input {
+	margin-top:25px;
+	font-weight:bold;
+	text-align:center;
+}
+
 .incentivedesc {
-position:relative;
-left:35px;
+	position:relative;
+	left:35px;
 }
 
 #indentform {
@@ -396,7 +459,6 @@ left:35px;
 #mywork, #fullwidth {
 	position:relative;
 	width: 750px;
-	z-index: 1;
 	min-height:300px;
 }
 
@@ -449,7 +511,6 @@ width:700px;
 	-moz-border-radius: 0px 0px 0px 0px;
 	-webkit-border-radius: 0px 0px 0px 0px;
 	-khtml-border-radius: 0px 0px 0px 0px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 0px 0px 0px 0px;
 }
 
@@ -486,9 +547,15 @@ width:700px;
 }
 
 .lightbox {
-	background-color:#e3e2e2;
+	background-color:#ebebeb;
 	height:340px;
 	width:600px;
+}
+
+#paytext, #paysuc {
+	text-align:center;
+	font-size: large;
+	margin-top: 20px;
 }
 
 .loadHelp {
@@ -529,8 +596,8 @@ input, select {
 
 .price, .title, .desc {
 	margin:10px;
-	display:block;
 	font-size:medium;
+	display:block;
 }
 
 .price {
@@ -597,7 +664,6 @@ input, select {
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-khtml-border-radius: 5px 5px 5px 5px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 5px 5px 5px 5px;
 	background-color:#94d219;
 }

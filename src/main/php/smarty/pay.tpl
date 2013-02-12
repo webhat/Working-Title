@@ -8,18 +8,35 @@
         <!-- Add your site or application content here -->
 
 				<style>
-				li:nth-child(2) {
+				ol li:nth-child(2) {
 					color: #94d219;
 				}
 				</style>
 	<div>
 		<div id="header" class="box rounded-corners">
 			<div class="boxmargin">
-				<h1>{$WT}</h1>
+				<h1>{gettext gt='Choose payment option for %s' arg1=$USER}</h1>
 				<p class="category">FIXME: category here</p>
+			</div>
+			<div class="information" style="{$EDIT} margin-top:25px;">
+				<div><a href="/maker/{$USER}">{gettext gt='Go to %s&#8217;s profile' arg1=$USER}</a></div>
 			</div>
 		</div>
 		<div id="boxy">
+			<div style="height:0px;">
+				<div style="display:none;background-color:#ebebeb;height:180px;width:500px;margin:10px;" class="lightbox" id="paypopup">
+					<img width="20" height="20" src="/img/redcross.png" class="upload killpopup" style="position:relative;left:23px;top:-24px;display:block;" />
+					<div id="paytext"> {gettext gt='You will now be redirected to your chosen payment option'}</div>
+					<div id="paysuc" style="display:none;">
+						<ul style="list-style-type: none;">
+							<li><a href="/">{gettext gt='Go to the Home Page'}</a></li>
+							<li><a href="/maker/{$USER}">{gettext gt='Go to %s&#8217;s profile' arg1=$USER}</a></li>
+							<li>&nbsp;</li>
+							<li>{include file='smarty/social.tpl' title=social}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div style="position:absolute;">
 				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
 			</div>
@@ -27,19 +44,24 @@
 				<div id="errormsg" > </div>
 				<form style="margin:10px;margin-left:10%;margin-right:33%;">
 					<input id="user" type="hidden" value="{$USER}" />
-					<label style="display:inline">{gettext gt='Bedrag'}: &euro;</label>
-					<input id="amount" type="text" value="" style="display:inline" disabled />
+					<div class="pledge">
+						<label style="display:inline">{gettext gt='Bedrag'}:&nbsp;&nbsp;<span style="color:white;">&euro;</span></label>
+						<input id="amount" type="text" value="" style="display:inline" disabled />
+					</div>
+					<br />
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
+						<!--
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;"><span>{gettext gt='iDeal'}</span></input><br />
+						-->
 						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" ><span>{gettext gt='Doorlopende Machtiging'}</span></input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;"><span>{gettext gt='Anders...'}</span></input><br />
 					</div>
 				</form>
 				<div>
 					<div id="paypal" class="makepayment">
-						<form name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
+						<form target="payform" name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
 							<input type="hidden" name="business" value="{$PAYPAL}" \>
 							<input type="hidden" name="currency_code" value="EUR" \>
@@ -52,11 +74,13 @@
 							<input type="hidden" name="src" value="1" \>
 							<input type="hidden" name="sra" value="1" \>
 							<input type="hidden" name="custom" value="1" \>
-							<input type="hidden" name="notify_url" value="http://demo.workingtitle365.com/payment/paypal_callback.php" \>
+							<input type='hidden' name='charset' value='utf-8' \>
+							<input type="hidden" name="notify_url" value="http://{$PAYPALDEMO}workingtitle365.com/payment/paypal_callback.php" \>
+							<input type="hidden" name="return" value="http://{$PAYPALDEMO}workingtitle365.com/payment/complete.php" \>
 						</form>
 					</div>
 					<div id="creditcard" style="display:none;" class="makepayment">
-						<form name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
+						<form target="payform" name="_xclick" action="https://www.{$PAYPALSANDBOX}paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions" \>
 							<input type="hidden" name="business" value="{$PAYPAL}" \>
 							<input type="hidden" name="currency_code" value="EUR" \>
@@ -69,7 +93,9 @@
 							<input type="hidden" name="src" value="1" \>
 							<input type="hidden" name="sra" value="1" \>
 							<input type="hidden" name="custom" value="1" \>
-							<input type="hidden" name="notify_url" value="http://demo.workingtitle365.com/payment/paypal_callback.php" \>
+							<input type='hidden' name='charset' value='utf-8' \>
+							<input type="hidden" name="notify_url" value="http://{$PAYPALDEMO}workingtitle365.com/payment/paypal_callback.php" \>
+							<input type="hidden" name="return" value="http://{$PAYPALDEMO}workingtitle365.com/payment/complete.php" \>
 						</form>
 					</div>
 					<div id="ideal" style="display:none;" class="makepayment errormsg">{gettext gt='Betalen iDeal is helaas nog niet geactiveerd.'}</div>
@@ -78,7 +104,7 @@
 						<span>{gettext gt='Ondergetekende verleent hierbij tot wederopzegging machtiging aan WorkingTitle365 om van zijn/haar rekening jaarlijks  af te schrijven ten behoeve van de Maker'} <strong>{$USER}</strong>.</span>
 						<br />
 						<br />
-						<form target="_blank" method="post" action="/incasso.php">
+						<form target="payform" name="_xclick" action="http://{$PAYPALDEMO}workingtitle365.com/payment/incasso.php" method="post">
 							<input name="user" type="hidden" value="{$USER}" />
 							<input name="transx" type="hidden" value="{$USER}" />
 							<input name="amount" type="hidden" value="{$USER}" />
@@ -111,7 +137,8 @@
 							<input type="checkbox" name="agree" value="" /> 
 							<label>{gettext gt='Ik ga akkoord.'}</label>
 						<br />
-							<button id="submiterror">{gettext gt='Submit'}</button>
+							<!--button id="submiterror">{gettext gt='Submit'}</button-->
+							<input type="image" src="http://www.paypal.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" \>
 						</form>
 
 					</div>
@@ -127,7 +154,6 @@
 			var lang = "{$LANG}";
 			var transx = "{$TRANSX}";
 			$("input[name=transx]").val(transx);
-			$("input[name=amount]").val($("#amount").val());
 
 	    {literal}
 			if(lang == 'en') {
@@ -153,6 +179,7 @@
 						console.log(data.amount)
 					$("input[name=a3]").val(data.amount);
 					$("input[id=amount]").val(data.amount);
+					$("input[name=amount]").val($("#amount").val());
 					});
 
 				// get amount here...
@@ -162,13 +189,18 @@
 			});
 
 			$("input:radio[name=paymentmethod]").click(function() {
-			var radio = $("input:radio[name=paymentmethod]:checked").val();	
+				var radio = $("input:radio[name=paymentmethod]:checked").val();	
 				$(".makepayment").hide();
 				console.log("#"+ radio);
 				$("#"+ radio).show();
 				_gaq.push(['_trackEvent', 'payment', 'select', radio ]);
 			});
-			$("input[name=submit]").click( function() {
+			$("input[name=submit]").click( function(e) {
+					var action = $(e.currentTarget).parent().attr('action');
+					window.open( action, 'payform','width=1000,height=800,scrollbars=yes');
+					$("#paypopup").show();
+					$("body").scrollTop(0);
+					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
 			});
 	    {/literal}

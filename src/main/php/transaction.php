@@ -11,7 +11,7 @@ if($json == "") return;
 $json->code = md5($_POST['json']);
 $json->pending = true;
 
-$user = (string) $loggedinas;
+$user = "";//(string) $loggedinas;
 
 $fp = new FanProfile($user);
 
@@ -19,12 +19,11 @@ $payments = $fp->getProperty( "payments");
 
 $amount = 10000;
 foreach( $payments as $payment) {
-	if( $payment['code'] == $json->transx) {
+	if( array_key_exists('uniq', $payment) && $payment['uniq'] == $json->transx) {
 		$amount = $payment['amount'];
+		break;
 	}
 }
-
-$fp->store();
 
 echo "{ \"transaction\":\"". $json->code ."\", \"amount\":\"$amount\"}";
 ?>

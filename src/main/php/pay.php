@@ -43,6 +43,7 @@ $smarty->assign( 'LANG', $locale['lang']);
 $smarty->assign( 'INCTEXT', ''. sprintf(_("incentive text"), $maker));
 $smarty->assign( 'PAYPAL', $c->paypal['user']);
 $smarty->assign( 'PAYPALSANDBOX', $c->paypal['sandbox']?"sandbox.":"");
+$smarty->assign( 'PAYPALDEMO', $c->paypal['sandbox']?"demo.":"");
 $smarty->assign( 'TRANSX', $transx);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
