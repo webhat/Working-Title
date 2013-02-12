@@ -34,7 +34,7 @@ class Payment extends MongoConnection {
 
 		$record =$this->db->profiles->findOne(
 				array(
-					"payments.code" => $transx,
+					"payments.uniq" => $transx,
 					"payments.pending" => true
 				)
 		);
@@ -44,18 +44,17 @@ class Payment extends MongoConnection {
 
 		/* FIXME: exponetital growth */
 		for( $it = 0; $it < count($record); $it++) {
-			if($record[$it]['code'] == $transx) {
+			if($record[$it]['uniq'] == $transx) {
 				$this->db->profiles->update(
 						array(
-							"payments.code" => $transx,
+							"payments.uniq" => $transx,
 							"payments.pending" => true
 						),
 						array( "\$set" =>
 							array( "payments.". $it .".pending" => false )
 						),
 						array(
-							"upsert" => true,
-							"multiple" => true
+							"upsert" => true
 						)
 				);
 				break;
@@ -107,24 +106,25 @@ class Payment extends MongoConnection {
 	}
 
 	public function getPayments($user = "") {
-		$t = $this->db->profiles->findOne(
+		$tr = $this->db->profiles->find(
 				array(
 					"payments.code" => array( "\$exists" => true)
 					)
 			);
 
-		$t['new'] = array();
-		if($user != "") {
-			if(!empty($t) && !empty($t['payments']))
-			foreach($t['payments'] as $p ) {
-				if($p['maker'] == $user)
-					$t['new'][] = $p;
-			}
-			$t = $t['new'];
-		} else
-			$t = $t['payments'];
+		$tx = array();
+		foreach($tr as $t)
+			if($user != "") {
+				if(!empty($t) && !empty($t['payments'])) {
+					foreach($t['payments'] as $p ) {
+						if(array_key_exists( 'maker', $p) && $p['maker'] == $user)
+							$tx[] = $p;
+					}
+				}
+			} else
+				$tx = $t['payments'];
 
-		return $t;
+		return $tx;
 	}
 }
 ?>

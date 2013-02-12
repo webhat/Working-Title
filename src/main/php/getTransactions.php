@@ -15,21 +15,25 @@ if(array_key_exists( 'id', $_GET))
 $p = new Payment();
 
 $payments = array();
+$fans = array();
 
 if($id == "") {
 	$users = new Users();
 	$userlist = $users->getUsers();
 
-
 	foreach($userlist as $user) {
 		if(array_key_exists('username', $user)) {
+			if($user['username'] == "") continue;
+			$fans[$user['username']] = 0;
 			$t =$p->getPayments($user['username']);
 			if(is_array($t))
 				$payments = array_merge( $payments, $t);
 		}
 	}
-} else
+} else {
+	$fans[$id] = 0;
 	$payments =$p->getPayments($id);
+}
 
 $done = array();
 
@@ -48,7 +52,6 @@ foreach($transactions as $transaction) {
 	}
 }
 
-
 for($itt = 0; $itt < count($payments); $itt++) {
 	if($payments[$itt]['pending'] == true &&
 			array_key_exists( $payments[$itt]['code'], $done) &&
@@ -56,6 +59,14 @@ for($itt = 0; $itt < count($payments); $itt++) {
 		$done[$payments[$itt]['code']]--;
 		$payments[$itt]['pending'] = false;
 	}
+	if($payments[$itt]['pending'] == false) {
+		$fans[$payments[$itt]['maker']]++;
+	}
+}
+
+foreach( $fans as $u => $f) {
+	$m = new MakerProfile($u);
+	$m->setFans($f);
 }
 
 $smarty->assign( 'T', $payments);

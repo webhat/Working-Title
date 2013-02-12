@@ -32,7 +32,8 @@ class Users implements Countable {
 			array_push($users, array(
 						"username" => $user['username'],
 						"lastlogin" => isset($user['lastlogin'])?$user['lastlogin']:null,
-						"mail" => isset($user['mail'])?$user['mail']:null
+						"mail" => isset($user['mail'])?$user['mail']:null,
+						"fans" => isset($user['fans'])?$user['fans']:null
 						)
 					);
 		}
