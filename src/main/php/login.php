@@ -25,6 +25,9 @@ if( $user == "" || $pass == "") {
 	exit();
 }
 
+preg_match('/[^.]+\.[^.]+$/', $_SERVER['HTTP_HOST'], $matches);
+$domain = ".". $matches[0];
+
 $ul = new UserLogin($user);
 
 if( $ul->passwordCheck( $pass)) {
@@ -35,8 +38,8 @@ if( $ul->passwordCheck( $pass)) {
 
 	$ul = new UserLogin($user);
 	$ul->reset();
-	setcookie("user", $user, time()+5184000);
-	setcookie("hash", $ul->generateCookie(), time()+2592000);
+	setcookie("user", $user, time()+5184000, "/", $domain);
+	setcookie("hash", $ul->generateCookie(), time()+2592000, "/", $domain);
 
 	error_log("SUCCESS");
 	print $success;
