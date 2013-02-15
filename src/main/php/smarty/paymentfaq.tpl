@@ -12,7 +12,7 @@ Ja. Je kan altijd meer geven dan het bedrag bij de beloning.
 <br />
 <br />
 <strong>Wanneer ontvang ik mijn beloning?</strong>
-Binnenkort kan jij in je eigen Fanbox je beloningen ophalen of je krijgt een bericht van de Maker wanneer en hoe je ze kan ontvangen.
+Je krijgt een bericht van de Maker als je beloning voor je klaarstaat en/of hoe deze toegezonden wordt.
 <br />
 <br />
 <strong>Ik hoef geen beloning. </strong>
