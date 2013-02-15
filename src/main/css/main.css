@@ -225,7 +225,7 @@ a {
 	margin-top: 10px;
 }
 
-#help {
+#help, #faq {
 	position: relative;
 	left: 770px;
 	top:25px;
@@ -237,9 +237,15 @@ a {
 	margin-top:5%;
 }
 
-#help div {
+#help div, #faq div {
 	width:80%;
 	margin-left:10%;
+}
+
+#faq div ul {
+	list-style-type:none;
+	-webkit-padding-start: 0px;
+	padding: 0px;
 }
 
 #whatiswt365, #paypopup {
