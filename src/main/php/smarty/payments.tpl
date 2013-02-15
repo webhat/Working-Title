@@ -26,6 +26,7 @@
 		<div id="boxy">
 			<div style="position:absolute;">
 				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
+				<div id="faq" class="box"><br />{include file='smarty/paymentfaq.tpl' title=faq}<br /></div>
 			</div>
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;">
 				<div id="errormsg" > </div>
