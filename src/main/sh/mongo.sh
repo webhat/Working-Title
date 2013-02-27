@@ -12,4 +12,4 @@ COLLECTION=$(basename $FILE)
 
 cat $FILE.json | tr -d '\n' > $FILE.import.json
 
-mongoimport --collection $COLLECTION --db wt365test --file $FILE.import.json --jsonArray --upsert
+mongoimport --collection $COLLECTION --db wt365 --file $FILE.import.json --jsonArray --upsert
