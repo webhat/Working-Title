@@ -16,6 +16,11 @@ $smarty = new Smarty;
 $p = new MakerProfile( $maker);
 $p->reset();
 
+$wG = new WelcomeGift();
+$gift = "";
+if(($gift = $wG->getGift($maker)) == null ) $gift = "";
+$smarty->assign( 'WELCOMEGIFT', $gift);
+
 $smarty->setConfigDir(getcwd() ."/../resources/smarty");
 $smarty->setCacheDir('/tmp/smarty/cache');
 $smarty->setCompileDir('/tmp/smarty/compile');

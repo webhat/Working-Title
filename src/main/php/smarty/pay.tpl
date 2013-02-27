@@ -24,7 +24,7 @@
 		</div>
 		<div id="boxy">
 			<div style="height:0px;">
-				<div style="display:none;background-color:#ebebeb;height:180px;width:500px;margin:10px;" class="lightbox" id="paypopup">
+				<div style="display:none;height:180px;width:500px;margin:10px;" class="lightbox" id="paypopup">
 					<img width="20" height="20" src="/img/redcross.png" class="upload killpopup" style="position:relative;left:23px;top:-24px;display:block;" />
 					<div id="paytext"> {gettext gt='You will now be redirected to your chosen payment option'}</div>
 					<div id="paysuc" style="display:none;">
@@ -39,6 +39,7 @@
 			</div>
 			<div style="position:absolute;">
 				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
+				<div id="faq" class="box"><br />{include file='smarty/payfaq.tpl' title=faq}<br /></div>
 			</div>
 			<div id="fullwidth" class="box rounded-corners" style="height:1300px;top:30px;">
 				<div id="errormsg" > </div>
@@ -153,6 +154,8 @@
 			var maker = "{$USER}";
 			var lang = "{$LANG}";
 			var transx = "{$TRANSX}";
+			var amount = 10;
+			var sku = "unknown incentive";
 			$("input[name=transx]").val(transx);
 
 	    {literal}
@@ -176,7 +179,8 @@
 					data: {"json":JSON.stringify(json)},
 					dataType: 'json'
 					}).always(function(data) { 
-						console.log(data.amount)
+						amount = data.amount;
+						sku = data.sku;
 					$("input[name=a3]").val(data.amount);
 					$("input[id=amount]").val(data.amount);
 					$("input[name=amount]").val($("#amount").val());
@@ -202,6 +206,19 @@
 					$("body").scrollTop(0);
 					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
+					_gaq.push(['_addItem',
+						transx,         // transaction ID - necessary to associate item with transaction
+						sku,         // SKU/code - required
+						maker,      // product name - necessary to associate revenue with product
+						amount,        // unit price - required
+						'1'             // quantity - required
+					]);
+					_gaq.push(['_addTrans',
+						transx,           // transaction ID - required
+						maker, // affiliation or store name
+						amount,          // total - required; Shown as "Revenue" in the
+					]);
+					_gaq.push(['_trackTrans']);
 			});
 	    {/literal}
 	</script>

@@ -24,13 +24,22 @@
 			</div>
 		</div>
 		<div id="boxy">
+{if $WELCOMEGIFT ne ""}
+			<div style="height:0px;">
+				<div style="display:none;height:180px;width:500px;margin:10px;" class="lightbox" id="wgabC">
+					<img width="20" height="20" src="/img/redcross.png" class="killpopup" style="position:relative;left:495px;top:-14px;display:block;" />
+					<div id="paytext">{$WELCOMEGIFT}</div>
+				</div>
+			</div>
+{/if}
 			<div style="position:absolute;">
 				<div id="help" class="box"><br /><div>{$INCTEXT}</div><br /></div>
+				<div id="faq" class="box"><br />{include file='smarty/paymentfaq.tpl' title=faq}<br /></div>
 			</div>
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;">
 				<div id="errormsg" > </div>
 				<br />
-				<div id="personalize" style="margin:10px;margin-left:10%;margin-right:5%;display:none;">
+				<div id="personalize" style="margin:10px;margin-left:10%;margin-right:5%;">
 					<div style="float:left;margin:10px;"><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 					<div>
 						{gettext gt=$PROFILE}

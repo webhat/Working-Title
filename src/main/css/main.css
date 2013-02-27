@@ -225,7 +225,7 @@ a {
 	margin-top: 10px;
 }
 
-#help {
+#help, #faq {
 	position: relative;
 	left: 770px;
 	top:25px;
@@ -237,13 +237,19 @@ a {
 	margin-top:5%;
 }
 
-#help div {
+#help div, #faq div {
 	width:80%;
 	margin-left:10%;
 }
 
-#whatiswt365, #paypopup {
-	border: solid 5px #e3e2e2;
+#faq div ul {
+	list-style-type:none;
+	-webkit-padding-start: 0px;
+	padding: 0px;
+}
+
+#whatiswt365, #paypopup, #wgaBc, #wgabC {
+	border: solid 5px #88bd17;
 	position: absolute;
 	left:250px;
 	top:100px;
@@ -547,7 +553,7 @@ width:700px;
 }
 
 .lightbox {
-	background-color:#ebebeb;
+	background-color:white;
 	height:340px;
 	width:600px;
 }
