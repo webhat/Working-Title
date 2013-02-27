@@ -119,7 +119,6 @@
 									});
 									// upload
 									$(".upload").bind( 'click', function(o) {
-											if(o.hasClass("");
 											$("#upload").toggle();
 	    {/literal}
 											$("#uploadwin").attr('src',"/upload.html?id={$USER}");
