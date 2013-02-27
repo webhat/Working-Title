@@ -18,12 +18,15 @@ $fp = new FanProfile($user);
 $payments = $fp->getProperty( "payments");
 
 $amount = 10000;
+$sku = "no incentive";
 foreach( $payments as $payment) {
 	if( array_key_exists('uniq', $payment) && $payment['uniq'] == $json->transx) {
+		if( array_key_exists('incentive', $payment) && $payment['incentive'] != "")
+			$sku = $payment['incentive'];
 		$amount = $payment['amount'];
 		break;
 	}
 }
 
-echo "{ \"transaction\":\"". $json->code ."\", \"amount\":\"$amount\"}";
+echo "{ \"transaction\":\"". $json->code ."\", \"amount\":\"$amount\", \"sku\":\"$sku\"}";
 ?>

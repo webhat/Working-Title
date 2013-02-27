@@ -154,6 +154,8 @@
 			var maker = "{$USER}";
 			var lang = "{$LANG}";
 			var transx = "{$TRANSX}";
+			var amount = 10;
+			var sku = "unknown incentive";
 			$("input[name=transx]").val(transx);
 
 	    {literal}
@@ -178,6 +180,8 @@
 					dataType: 'json'
 					}).always(function(data) { 
 						console.log(data.amount)
+						amount = data.amount;
+						sku = data.sku;
 					$("input[name=a3]").val(data.amount);
 					$("input[id=amount]").val(data.amount);
 					$("input[name=amount]").val($("#amount").val());
@@ -203,6 +207,19 @@
 					$("body").scrollTop(0);
 					var radio = $("input:radio[name=paymentmethod]:checked").val();	
 					_gaq.push(['_trackEvent', 'payment', 'betaling', radio ]);
+					_gaq.push(['_addItem',
+						transx,         // transaction ID - necessary to associate item with transaction
+						sku,         // SKU/code - required
+						maker,      // product name - necessary to associate revenue with product
+						amount,        // unit price - required
+						'1'             // quantity - required
+					]);
+					_gaq.push(['_addTrans',
+						transx,           // transaction ID - required
+						maker, // affiliation or store name
+						amount,          // total - required; Shown as "Revenue" in the
+					]);
+					_gaq.push(['_trackTrans']);
 			});
 	    {/literal}
 	</script>
