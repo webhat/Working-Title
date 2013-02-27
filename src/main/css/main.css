@@ -248,8 +248,8 @@ a {
 	padding: 0px;
 }
 
-#whatiswt365, #paypopup {
-	border: solid 5px #e3e2e2;
+#whatiswt365, #paypopup, #wgaBc, #wgabC {
+	border: solid 5px #88bd17;
 	position: absolute;
 	left:250px;
 	top:100px;
@@ -553,7 +553,7 @@ width:700px;
 }
 
 .lightbox {
-	background-color:#ebebeb;
+	background-color:white;
 	height:340px;
 	width:600px;
 }
