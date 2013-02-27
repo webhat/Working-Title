@@ -10,7 +10,13 @@ $(document).ready(function() {
 						console.log("Click fblogin");
 					});
 			}, 2000);
-		var wgabc = $.randomBetween(0, 4);
+		var wgabc = 0;
+		if( (wgabc = getCookie("wgabc")) == undefined) {
+			wgabc = $.randomBetween(0, 4);
+			setCookie("wgabc",wgabc,365);
+		}
+
+		console.log("wgabc: test"+ wgabc);
 		if(wgabc == 0) {
 			_gaq.push(['_trackEvent', 'welcomegift', 'baseline']); // 20%
 		}	else {

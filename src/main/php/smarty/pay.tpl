@@ -24,7 +24,7 @@
 		</div>
 		<div id="boxy">
 			<div style="height:0px;">
-				<div style="display:none;background-color:#ebebeb;height:180px;width:500px;margin:10px;" class="lightbox" id="paypopup">
+				<div style="display:none;height:180px;width:500px;margin:10px;" class="lightbox" id="paypopup">
 					<img width="20" height="20" src="/img/redcross.png" class="upload killpopup" style="position:relative;left:23px;top:-24px;display:block;" />
 					<div id="paytext"> {gettext gt='You will now be redirected to your chosen payment option'}</div>
 					<div id="paysuc" style="display:none;">
@@ -179,7 +179,6 @@
 					data: {"json":JSON.stringify(json)},
 					dataType: 'json'
 					}).always(function(data) { 
-						console.log(data.amount)
 						amount = data.amount;
 						sku = data.sku;
 					$("input[name=a3]").val(data.amount);

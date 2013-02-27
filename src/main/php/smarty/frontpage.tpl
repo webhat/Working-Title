@@ -39,7 +39,6 @@
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<!--script src="/js/vendor/jail.js"></script-->
-	<script src="/js/vendor/w3cschool.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.05/jquery.masonry.min.js"></script>
 	<script>
 	$(function(){

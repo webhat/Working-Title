@@ -71,6 +71,14 @@
 			</div>
 		</div>
 		<div id="boxy">
+{if $WELCOMEGIFT ne ""}
+			<div style="height:0px;">
+				<div style="display:none;height:180px;width:500px;margin:10px;" class="lightbox" id="wgaBc">
+					<img width="20" height="20" src="/img/redcross.png" class="killpopup" style="position:relative;left:495px;top:-14px;display:block;" />
+					<div id="paytext">{$WELCOMEGIFT}</div>
+				</div>
+			</div>
+{/if}
 			<div id="mywork" class="box rounded-corners">
 				<div class="upload"><br />{gettext gt='upload'}</div>
 				<div class="boxmargin headline"><span style="{$EDIT}">{gettext gt='Create Work Text'}</span></div>
@@ -111,6 +119,7 @@
 									});
 									// upload
 									$(".upload").bind( 'click', function(o) {
+											if(o.hasClass("");
 											$("#upload").toggle();
 	    {/literal}
 											$("#uploadwin").attr('src',"/upload.html?id={$USER}");
