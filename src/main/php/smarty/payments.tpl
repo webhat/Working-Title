@@ -31,7 +31,7 @@
 			<div id="fullwidth" class="box rounded-corners" style="height:1000px;top:30px;">
 				<div id="errormsg" > </div>
 				<br />
-				<div id="personalize" style="margin:10px;margin-left:10%;margin-right:5%;display:none;">
+				<div id="personalize" style="margin:10px;margin-left:10%;margin-right:5%;">
 					<div style="float:left;margin:10px;"><img width="80" height="80" src="http://www.gravatar.com/avatar/{$PIMG}" /></div>
 					<div>
 						{gettext gt=$PROFILE}
