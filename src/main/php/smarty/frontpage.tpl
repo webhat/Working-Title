@@ -84,6 +84,8 @@
 	});
 
 	</script>
+	<script src="/js/vendor/w3cschool.js">
+	</script>
 	<script>
 	function explain() {
 		var firsttime=getCookie("firsttime");
