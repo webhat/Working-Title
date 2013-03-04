@@ -52,5 +52,5 @@ if( $ul->passwordCheck( $pass)) {
 
 ?>
 <script>
-	top.location = "/profile.php?id=<?php print $user; ?>";
+	top.location = "/<?= $ismaker?"fan":"maker" ?>/<?php print $user; ?>";
 </script>

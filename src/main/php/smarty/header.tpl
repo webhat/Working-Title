@@ -15,6 +15,10 @@
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="http://www.google.com/jsapi"></script>
+        <script>
+					google.load("jquery", "1.7.1");
+				</script>
 				<style type="text/css">
 					.edit, .upload, .addinc, .delete {
 						{$EDIT};
