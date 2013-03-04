@@ -10,11 +10,23 @@ $(document).ready(function() {
 						console.log("Click fblogin");
 					});
 			}, 2000);
-		if($.randomBetween(0, 1) == 0) {
-			$("#personalize").show();
-			_gaq.push(['_trackEvent', 'Personalize', 'on']);
+		var wgabc = 0;
+		if( (wgabc = getCookie("wgabc")) == undefined) {
+			wgabc = $.randomBetween(0, 4);
+			setCookie("wgabc",wgabc,365);
+		}
+
+		console.log("wgabc: test"+ wgabc);
+		if(wgabc == 0) {
+			_gaq.push(['_trackEvent', 'welcomegift', 'baseline']); // 20%
 		}	else {
-			_gaq.push(['_trackEvent', 'Personalize', 'off']);
+			if(wgabc == 1 || wgabc == 3) {
+				$("#wgaBc").show();
+				_gaq.push(['_trackEvent', 'welcomegift', 'prepay']); // 40%
+			}	else {
+				$("#wgabC").show();
+				_gaq.push(['_trackEvent', 'welcomegift', 'postpay']); // 40%
+			}
 		}
 });
 console.log("Tests Loaded");
