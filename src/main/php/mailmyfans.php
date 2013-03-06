@@ -2,6 +2,7 @@
 
 require_once("bootstrap.php");
 require_once("loggedinas.php");
+require_once("gettext.php");
 require_once("smartyload.php");
 
 $maker = $loggedinas;
@@ -36,7 +37,7 @@ $smarty->assign('INC3', array(
 			));
 
 $mailmessage = array();
-$mailmessage['body'] = $smarty->fetch('smarty/mail/maker_nl.tpl.html');
+$mailmessage['body'] = $smarty->fetch('smarty/mail/maker_'. $locale['lang'] .'.tpl.html');
 $mailmessage['SUBJECT'] = "WT365 Fan Mail - Remember to change the subject";
 $mailmessage['USER'] = $maker;
 

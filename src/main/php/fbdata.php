@@ -30,16 +30,14 @@ echo "XXX". (time()+5184000) . "-". time() ."-". $domain;
 ?>
 <script>
 	//	top.location = "/maker/<?php print $user; ?>";
+location.reload();
 </script>
 <?php
 	} else {
 		$fbdata->add( $json, $user);
 ?>
 <script>
-	var create = "/create.php";
-	console.log(top.location.pathname);
-	if(top.location.pathname != create)
-		top.location = create;
+location.reload();
 </script>
 <?php
 	}
