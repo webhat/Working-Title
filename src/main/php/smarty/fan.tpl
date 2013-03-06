@@ -10,7 +10,7 @@
 	<div>
 		<div id="header" class="box rounded-corners">
 			<div class="boxmargin">
-				<h1>404</h1>
+				<h1>{gettext gt='Your Fanbox is Empty'}</h1>
 				<p class="category">FIXME: category here</p>
 			<div class="information" style="{$EDIT}">
 				<div>{gettext gt='What does this mean?'}</div>
@@ -20,10 +20,10 @@
 		</div>
 		<div style="position:absolute">
 		</div>
-	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="top:30px;height:300px;">
-				<h2 style="text-align:center;">{gettext gt='This is not the page you\'re looking for'}</h2>
+				<div style="text-align:center;">{gettext gt='By clicking on the logo you can find cool Makers and fill up your FanBox with goodies.'}</div>
+				<div style="text-align:center;">{gettext gt='Or become a Maker by clicking'} <a href="/create.php?id={$USER}&hash={$HASH}">{gettext gt="SignUp"}</a></div>
 			</div>
 		</div>
 	</div>

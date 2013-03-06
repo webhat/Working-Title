@@ -16,5 +16,8 @@
 														 })();
 						</script>
 					{/literal}
+{if $E}
+					<a id="mandrill" href="/mailmyfans.php"><img height="32" src="/img/mandrill.png" /></a>
+{/if}
 					<br />
 				</div>

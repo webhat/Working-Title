@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="http://www.google.com/jsapi"></script>
+        <script>
+					google.load("jquery", "1.7.1");
+				</script>
 				<style type="text/css">
 					.edit, .upload, .addinc, .delete {
 						{$EDIT};
@@ -41,18 +45,29 @@
         <![endif]-->
 				</script>
 	    {/literal}
-				<script type="text/javascript">
-				var __lc = {};
-__lc.license = 2125611;
+	    {literal}
+			<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+			<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/cneyk8FGopWt8TTXSZzufQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
 
-(function() {
-   var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-	   lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-			 })();
-</script>
+			<!-- A tab to launch the Classic Widget -->
+			<script>
+			UserVoice = window.UserVoice || [];
+			UserVoice.push(['showTab', 'classic_widget', {
+					mode: 'full',
+					primary_color: '#cc6d00',
+					link_color: '#007dbf',
+					default_mode: 'support',
+					forum_id: 174950,
+					tab_label: 'Feedback & Support',
+					tab_color: '#cc6d00',
+					tab_position: 'middle-right',
+					tab_inverted: false
+			}]);
+			</script>
+	    {/literal}
     </head>
     <body>
+
 	<!-- ClickTale Top part -->
 	<script type="text/javascript">
 	var WRInitTime=(new Date()).getTime();
