@@ -24,6 +24,7 @@ Some resources and insight was taken from:
 * https://github.com/scottjehl/iOS-Orientationchange-Fix 
 * https://github.com/sebarmeli/JAIL
 * _http://www.w3schools.com/js/js_cookies.asp
+* http://www.facebook.com/
 
 Localization
 ============
