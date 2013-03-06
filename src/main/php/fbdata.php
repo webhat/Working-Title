@@ -37,7 +37,7 @@ location.reload();
 		$fbdata->add( $json, $user);
 ?>
 <script>
-location.reload();
+//location.reload();
 </script>
 <?php
 	}
