@@ -12,8 +12,10 @@ if($locale['locale'] == 'en') $locale['locale'] = "en_US";
 if($locale['locale'] == 'en_GB') $locale['locale'] = "en_US";
 
 define("LOCALE", $locale['locale'] .".utf8");
+/*
 ?><!-- <?= LOCALE ?> --><?php
 ?><!-- <?= isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])?$_SERVER['HTTP_ACCEPT_LANGUAGE']:"Language NOT set" ?> --><?php
+*/
 
 define("LANG",preg_replace("/_.*/","",LOCALE));
 

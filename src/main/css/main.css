@@ -360,6 +360,21 @@ left: -60px;
 	background-color:#94cd3e;
 }
 
+#profile #social #mandrill {
+top:-60px;
+right:-100px;
+}
+
+#profile #social a ,
+#profile #social iframe ,
+#___plusone_0 {
+	vertical-align: middle !important;
+	display: inline-block;
+	border: 0px;
+	width: 80px !important;
+	position:relative !important;
+}
+
 #profile #social {
 	clear:both;
 	width:262px;
