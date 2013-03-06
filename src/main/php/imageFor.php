@@ -21,7 +21,7 @@ foreach($creations as $creation) {
 }
 
 try {
-	@$filename = basename( $creations[$id]['content'] );
+	@$filename = basename( $creations[sizeof($creations)-1-$id]['content'] );
 	$image = resize("upload/". $filename, array( 'w' => 300));
 } catch( Exception $e) {
 	// FIXME: hack

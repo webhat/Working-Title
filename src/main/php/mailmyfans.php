@@ -1,0 +1,51 @@
+<?php
+
+require_once("bootstrap.php");
+require_once("loggedinas.php");
+require_once("smartyload.php");
+
+$maker = $loggedinas;
+
+if($maker == '') exit;
+
+$p = new MakerProfile( $maker);
+$p->reset();
+
+$mailaddr = $p->getProperty('mail');
+$inc = $p->getProperty('incentives');
+
+$smarty->assign('USER', $maker);
+$smarty->assign('WELCOMEGIFT', "Welcome!");
+$smarty->assign('INC1', array(
+			"url" => "http://demo.workingtitle365.com/payments.php?id=". $maker ."&inc=". $inc[0]['code'],
+			"title" => $inc[0]['title'],
+			"value" => $inc[0]['amount'] . " cent/day",
+			"desc" => $inc[0]['desc'],
+			));
+$smarty->assign('INC2', array(
+			"url" => "http://demo.workingtitle365.com/payments.php?id=". $maker ."&inc=". $inc[1]['code'],
+			"title" => $inc[1]['title'],
+			"value" => $inc[1]['amount'] . " cent/day",
+			"desc" => $inc[1]['desc'],
+			));
+$smarty->assign('INC3', array(
+			"url" => "http://demo.workingtitle365.com/payments.php?id=". $maker ."&inc=". $inc[2]['code'],
+			"title" => $inc[2]['title'],
+			"value" => $inc[2]['amount'] . " cent/day",
+			"desc" => $inc[2]['desc'],
+			));
+
+$mailmessage = array();
+$mailmessage['body'] = $smarty->fetch('smarty/mail/maker_nl.tpl.html');
+$mailmessage['SUBJECT'] = "WT365 Fan Mail - Remember to change the subject";
+$mailmessage['USER'] = $maker;
+
+$to = array( "name" => $maker, "mail" => $mailaddr);
+
+$mail = new Mail();
+
+$mail->send($to, $mailmessage);
+
+echo $mailmessage['body'];
+
+?>

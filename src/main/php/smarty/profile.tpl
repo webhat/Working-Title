@@ -84,6 +84,7 @@
 				<div class="boxmargin headline"><span style="{$EDIT}">{gettext gt='Create Work Text'}</span></div>
 				<div style="clear:both;" id="workbelow"></div>
 			</div>
+{include file="smarty/lifefyre.tpl.html"}
 		</div>
 	</div>
 

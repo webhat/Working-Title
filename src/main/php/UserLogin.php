@@ -67,7 +67,7 @@ class UserLogin extends ProfileMongo {
 	}
 
 	public function mailReset() {
-		$m = new Mail();
+		$m = new MailOld();
 		return $m->send($this);
 	}
 }
