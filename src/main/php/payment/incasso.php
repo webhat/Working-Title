@@ -8,7 +8,7 @@ chdir("../");
 
 $pay = $_POST;
 
-$mail = new Mail();
+$mail = new MailOld();
 $payment = new Payment();
 $success = "Payment Successful";
 $gaevent = "complete";

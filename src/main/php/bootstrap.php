@@ -16,6 +16,9 @@ if (!function_exists('loader')) {
 		} else if(file_exists("../../../../ext/php/lib/classes/" . $class .".class.php")) {
 			$file = "../../../../ext/php/lib/classes/" . $class .".class.php";
 			require $file;
+		} else if(file_exists("../../../mail/src/php/" . $class .".class.php")) {
+			$file = "../../../mail/src/php/" . $class .".class.php";
+			require $file;
 		}
 	}
 }
