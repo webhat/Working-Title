@@ -9,8 +9,10 @@
         <title>WorkingTitle365 - {$USER}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=1300, height=device-height, minimum-scale=0.6, maximum-scale=0.9">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+{assign var='HIDE' value=$HIDE|default:false}
+{if $HIDE eq 1 }
+				<meta name="robots" content="none">
+{/if}
 
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">

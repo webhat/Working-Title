@@ -15,6 +15,8 @@ $smarty = new Smarty;
 $p = new MakerProfile( $maker);
 $p->reset();
 
+$smarty->assign( 'HIDE', $p->getProperty('hidden'));
+
 $wG = new WelcomeGift();
 $gift = "";
 if(($gift = $wG->getGift($maker)) == null ) $gift = "";
