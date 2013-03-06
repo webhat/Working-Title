@@ -9,6 +9,7 @@ class Creations extends MongoConnection {
 		$makers = array();
 
 		foreach($arr as $elem) {
+			if(array_key_exists( 'hidden', $elem) && $elem['hidden'] == true) continue;
 			$upload = $this->stripUpload( $elem['creations'][$index]['content']);
 			if( sizeof($elem['creations']) > $index && array_key_exists( 'incentives', $elem) && sizeof($elem['incentives']) > 0) {
 				$file = explode(".", $upload);
@@ -35,7 +36,7 @@ class Creations extends MongoConnection {
 
 		$needle = array_merge($needle, $myneedle);    
 
-		$results = array( "username", "creations", "incentives");
+		$results = array( "username", "creations", "incentives", "hidden");
 		$cursor = $profiles->find($needle, $results);
 
 		return iterator_to_array($cursor);
