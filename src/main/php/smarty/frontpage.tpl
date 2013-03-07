@@ -37,7 +37,6 @@
 			<div id="visible"></div>
 		</div>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<!--script src="/js/vendor/jail.js"></script-->
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.05/jquery.masonry.min.js"></script>
 	<script>
@@ -83,23 +82,5 @@
 		}
 	});
 
-	</script>
-	<script>
-	function explain() {
-		var firsttime=getCookie("firsttime");
-		if (firsttime!=null && firsttime!="") {
-			$(".long").hide();
-			$(".short").show();
-			$("#explain").css("height","22px");
-			$("#boxy").css("top","240px");
-		} else {
-			firsttime=true;
-			if (firsttime!=null && firsttime!="") {
-				setCookie("firsttime",firsttime,365);
-				$("#boxy").css("top","320px");
-			}
-		}
-	}
-	explain();
 	</script>
 {include file="smarty/footer.tpl"}

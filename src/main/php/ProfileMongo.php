@@ -20,6 +20,12 @@ class ProfileMongo {
 			$this->setUser( $user);
 	}
 	
+	public function isMaker() {
+		if( $this->profile == null || !array_key_exists( 'terms', $this->profile))
+				return false;
+		return true;
+	}
+
 	public function getUser() {
 		if( $this->profile == null || !array_key_exists( 'username', $this->profile))
 				return null;

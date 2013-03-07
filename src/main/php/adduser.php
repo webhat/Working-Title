@@ -40,4 +40,5 @@ foreach( $json as $prop => $val) {
 $ul->store();
 
 header("HTTP/1.1 201 Created");
+echo "{ \"error\": \"". _("User Created") ."\"}";
 ?>
