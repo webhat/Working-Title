@@ -30,7 +30,7 @@ echo "XXX". (time()+5184000) . "-". time() ."-". $domain;
 ?>
 <script>
 	//	top.location = "/maker/<?php print $user; ?>";
-location.reload();
+//location.reload();
 </script>
 <?php
 	} else {
