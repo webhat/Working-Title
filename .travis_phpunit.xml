@@ -14,11 +14,15 @@
     </testsuites>
 
     <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+        <whitelist processUncoveredFilesFromWhitelist="false">
             <directory suffix=".php">./src/main/php/</directory>
             <exclude>
                 <directory>./src/test/</directory>
                 <directory>./src/main/smarty/</directory>
+                <directory>./ext/php/</directory>
+                <directory>./ext/php/libs/sysplugins/</directory>
+								<file>./src/main/php/WTConfig.example.php</file>
+								<file>./ext/php/libs/sysplugins/smarty_internal_templatebase.php</file>
             </exclude>
         </whitelist>
     </filter>

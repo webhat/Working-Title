@@ -6,7 +6,7 @@ if(file_exists("ext/php/lib/swift_required.php"))
 	include_once "ext/php/lib/swift_required.php";
 include_once "bootstrap.php";
 
-class Mail {
+class MailOld {
 	function concierge( $data) {
 		$c = new WTConfig();
 

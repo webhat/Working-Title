@@ -16,6 +16,11 @@ $smarty = new Smarty;
 $p = new MakerProfile( $maker);
 $p->reset();
 
+$wG = new WelcomeGift();
+$gift = "";
+if(($gift = $wG->getGift($maker)) == null ) $gift = "";
+$smarty->assign( 'WELCOMEGIFT', $gift);
+
 $smarty->setConfigDir(getcwd() ."/../resources/smarty");
 $smarty->setCacheDir('/tmp/smarty/cache');
 $smarty->setCompileDir('/tmp/smarty/compile');
@@ -35,6 +40,7 @@ if( $loggedinas != $maker) {
 
 $smarty->assign( 'USER', $p->getUser());
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
+$smarty->assign( 'PIMG', ''. md5(strtolower(trim($p->getProperty('mail')))));
 $smarty->assign( 'INCTEXT', ''. sprintf(_("incentive text"), $maker));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'MAIL', ''. $p->getProperty('mail'));

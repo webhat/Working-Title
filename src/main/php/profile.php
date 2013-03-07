@@ -15,9 +15,18 @@ $smarty = new Smarty;
 $p = new MakerProfile( $maker);
 $p->reset();
 
-/** FIXME: creation hack */
+$smarty->assign( 'HIDE', $p->getProperty('hidden'));
 
-$fbcreation = $p->getProperty('creations')[0]['content'] ."?". rand();
+$wG = new WelcomeGift();
+$gift = "";
+if(($gift = $wG->getGift($maker)) == null ) $gift = "";
+$smarty->assign( 'WELCOMEGIFT', $gift);
+
+/** FIXME: creation hack */
+$fbcreation = "";
+$crelist = $p->getProperty('creations');
+if(sizeof($crelist))
+	$fbcreation = $crelist[0]['content'] ."?". rand();
 $smarty->assign( 'FBCREA', $fbcreation);
 
 /** END: creation hack */
@@ -35,8 +44,10 @@ $smarty->registerPlugin("function","gettext", "smarty_function_gettext", false);
 
 if( $loggedinas != $maker) {
 	$smarty->assign( 'EDIT', 'display:none;');
+	$smarty->assign( 'E', false);
 } else {
 	$smarty->assign( 'EDIT', 'display:inline;');
+	$smarty->assign( 'E', true);
 }
 
 function addhttp($url) {
@@ -45,8 +56,17 @@ function addhttp($url) {
 								    }
 			    return $url;
 }
+$fans = $p->getFans();
+
+if($fans > 0)
+	$smarty->assign( 'SHOWFANS', true);
+else
+	$smarty->assign( 'SHOWFANS', false);
+
+if($fans < 10) $fans = "&nbsp;". $fans ."&nbsp;";
 
 $smarty->assign( 'USER', $p->getUser());
+$smarty->assign( 'FANS', $fans);
 $smarty->assign( 'WT', ''. $p->getProperty("profilename"));
 $smarty->assign( 'PROFILE', ''. $p->getProperty('profile'));
 $smarty->assign( 'SITE', ''. addhttp($p->getProperty('site')));
@@ -57,6 +77,6 @@ $smarty->assign( 'WHY', ''. $p->getProperty('whydoidothis'));
 $smarty->assign( 'WANT', ''. $p->getProperty('whatdoiwant'));
 $smarty->assign( 'WORK', ''. $p->getProperty('work'));
 
-$smarty->display( 'smarty/index.tpl');
+$smarty->display( 'smarty/profile.tpl');
 
 ?>

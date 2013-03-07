@@ -1,7 +1,7 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
 
-        <!--[if lt IE 7]>
+        <!--[if lt IE 10]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
@@ -34,7 +34,11 @@
 							<div id="errormsg">&nbsp;</div>
 							<br />
 							<label>{gettext gt='Username' nocache}:</label>
+{if $USER != ""}
+							<input id="username" type="text" disabled value="{$USER}" />
+{else}
 							<input id="username" type="text" value="{$USER}" />
+{/if}
 							<label>{gettext gt='Password' nocache}:</label>
 							<input id="passwd" type="password" value="" />
 							<label>{gettext gt='Email' nocache}:</label>
@@ -50,7 +54,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
 	    {literal}
 	$("button").click( function() {

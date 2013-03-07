@@ -1,7 +1,7 @@
 # see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 php:
-  - 5.2
+#  - 5.2
   - 5.3
   - 5.4
 
@@ -12,6 +12,8 @@ before_script:
   - sudo touch /usr/local/bin/cap
   - sudo chmod +x /usr/local/bin/cap
   - sudo chmod +x src/main/sh/install*.sh
+  - sudo chmod +x src/main/sh/mongo.sh
+  - ./src/main/sh/mongo.sh ext/data/welcomegift.json
   - ./src/main/sh/installsmarty.sh
   - ./src/main/sh/installmailchimp.sh
   - ./src/main/sh/installswift.sh
@@ -29,5 +31,5 @@ notifications:
 branches:
   only:
     - develop
-#    - master
+    - master
 

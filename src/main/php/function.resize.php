@@ -1,7 +1,7 @@
 <?php
 
 # Inspired by https://github.com/wes/phpimageresize/blob/master/function.resize.php
-function resize($image,$opts=null){
+function resize($image,$opts=null,$cache=true){
 	$imagePath = urldecode($image);
 
 	$defaults = array(
@@ -17,13 +17,14 @@ function resize($image,$opts=null){
 
 	$target = $image ."-". $opts['w'] ."x". $opts['h'] .".png";
 	if(file_exists($target)) {
-		error_log("\nCache Hit:  ". $target);
+//		error_log("\nCache Hit:  ". $target);
 		$thumb->readImage( $target);
 	} else {
 		error_log("\nCache Miss: ". $target);
 		$thumb->readImage( $image);
 		$thumb->thumbnailImage($opts['w'],$opts['h'],true);
-		$thumb->writeImage($target);
+		if($cache)
+			$thumb->writeImage($target);
 	}
 
 	$output = $thumb->getimageblob();

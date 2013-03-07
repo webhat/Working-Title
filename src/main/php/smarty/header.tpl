@@ -9,12 +9,18 @@
         <title>WorkingTitle365 - {$USER}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=1300, height=device-height, minimum-scale=0.6, maximum-scale=0.9">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+{assign var='HIDE' value=$HIDE|default:false}
+{if $HIDE eq 1 }
+				<meta name="robots" content="none">
+{/if}
 
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="http://www.google.com/jsapi"></script>
+        <script>
+					google.load("jquery", "1.7.1");
+				</script>
 				<style type="text/css">
 					.edit, .upload, .addinc, .delete {
 						{$EDIT};
@@ -26,8 +32,42 @@
 						z-index:99;
 					}
 				</style>
+				<!--[if IE 8]>
+				<link rel="stylesheet" href="/css/ie8.css">
+				<![endif]-->
+				<!--[if IE 9]>
+				<link rel="stylesheet" href="/css/ie9.css">
+				<![endif]-->
+	    {literal}
+        <!--[if lt IE 10]>
+				<script type="text/javascript">
+    var console = {log: function() {}};
+        <![endif]-->
+				</script>
+	    {/literal}
+	    {literal}
+			<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+			<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/cneyk8FGopWt8TTXSZzufQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+
+			<!-- A tab to launch the Classic Widget -->
+			<script>
+			UserVoice = window.UserVoice || [];
+			UserVoice.push(['showTab', 'classic_widget', {
+					mode: 'full',
+					primary_color: '#cc6d00',
+					link_color: '#007dbf',
+					default_mode: 'support',
+					forum_id: 174950,
+					tab_label: 'Feedback & Support',
+					tab_color: '#cc6d00',
+					tab_position: 'middle-right',
+					tab_inverted: false
+			}]);
+			</script>
+	    {/literal}
     </head>
     <body>
+
 	<!-- ClickTale Top part -->
 	<script type="text/javascript">
 	var WRInitTime=(new Date()).getTime();

@@ -14,5 +14,14 @@ class MongoConnection {
 		$this->db = $this->mongo->selectDB($config->wtdatabase);
 		//$this->db = $this->mongo->selectDB("wt365");
 	}
+
+	public function setDB( $db) {
+		$this->db = $this->mongo->selectDB($config->wtdatabase);
+	}
+
+	public function getDB( $db = "") {
+		if( $db == "") return $this->db;
+		return $this->mongo->selectDB($config->wtdatabase);
+	}
 }
 ?>

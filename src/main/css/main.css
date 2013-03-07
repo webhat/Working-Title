@@ -225,7 +225,7 @@ a {
 	margin-top: 10px;
 }
 
-#help {
+#help, #faq {
 	position: relative;
 	left: 770px;
 	top:25px;
@@ -237,16 +237,48 @@ a {
 	margin-top:5%;
 }
 
-#help div {
+#help div, #faq div {
 	width:80%;
 	margin-left:10%;
 }
 
-#whatiswt365 {
-	border: solid 5px #e3e2e2;
+#faq div ul {
+	list-style-type:none;
+	-webkit-padding-start: 0px;
+	padding: 0px;
+}
+
+.stripe-button-el span {
+	display: block;
+	position: relative;
+	padding: 0 12px;
+	height: 30px;
+	line-height: 30px;
+	background: #1275ff;
+	background-image: -webkit-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+	background-image: -moz-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+	background-image: -ms-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+	background-image: -o-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+	background-image: linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+	font-size: 14px;
+	color: #fff;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#whatiswt365, #paypopup, #wgaBc, #wgabC {
+	border: solid 5px #88bd17;
 	position: absolute;
 	left:250px;
 	top:100px;
+	z-index:20;
 }
 
 #header, #profilename {
@@ -285,32 +317,101 @@ left: -60px;
 	text-decoration:underline;
 }
 
-#profile {
+#fans {
 	position:relative;
 	top:210px;
 	left:860px;
 	width: 282px;
+	height: 262px;
+	background-size:230px 400px;
+	margin:40px 10px 10px 10px;
+}
+
+.fanstext {
+	font-size:150%;
+}
+
+#fans .fantotal {
+	width:262px;
+	height:222px;
+	font-size:1000%;
+	margin:40px;
+}
+
+#fanssmall {
+	margin-left:30px;
+}
+
+#fanssmall .fantotal {
+	width:80px;
+	height:80px;
+	font-size:400%;
+	margin:5%;
+}
+
+.fantotal {
+	clear:both;
+	background-color:#94d219;
+	text-align:center;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#profile {
+	position:relative;
+	top:240px;
+	left:860px;
+	width: 282px;
 	height: auto;
 	background-size:230px 400px;
-	z-index:1;
 }
 
 #profile #becomefan {
 	clear:both;
-	background: #FFF url(/img/fan.png) top repeat-x;
+	background-color:#94d219;
 	width:262px;
 	height:59px;
 	text-align:center;
 	margin:10px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#profile #becomefan:hover {
+	background-color:#94cd3e;
+}
+
+#profile #social #mandrill {
+top:-60px;
+right:-100px;
+}
+
+#profile #social a ,
+#profile #social iframe ,
+#___plusone_0 {
+	vertical-align: middle !important;
+	display: inline-block;
+	border: 0px;
+	width: 80px !important;
+	position:relative !important;
 }
 
 #profile #social {
 	clear:both;
-	//background: #FFF url(/img/social.png) no-repeat top center;
 	width:262px;
 	height:59px;
 	text-align:center;
+	vertical-align:top;
 	margin:10px;
+}
+
+#submit {
+	margin-left:270px;
+	margin-top:20px;
 }
 
 #profile #becomefan a {
@@ -321,7 +422,6 @@ left: -60px;
 }
 
 #profile img {
-	float:left;
 	margin:40px 10px 10px 10px;
 }
 
@@ -347,7 +447,7 @@ left: -60px;
 
 #pincentives {
 	position:relative;
-	top:210px;
+	top:250px;
 	left:860px;
 	width: 282px;
 	height: auto;
@@ -355,9 +455,26 @@ left: -60px;
 	z-index:-1;
 }
 
+.pledge {
+	background:#222;
+	height:80px;
+	width:600px;
+	font-size:130%;
+}
+.pledge span, .pledge label {
+	font-weight:bold;
+	color:#94d219;
+	margin-top:25px;
+}
+.pledge input {
+	margin-top:25px;
+	font-weight:bold;
+	text-align:center;
+}
+
 .incentivedesc {
-position:relative;
-left:35px;
+	position:relative;
+	left:35px;
 }
 
 #indentform {
@@ -388,7 +505,6 @@ left:35px;
 #mywork, #fullwidth {
 	position:relative;
 	width: 750px;
-	z-index: 1;
 	min-height:300px;
 }
 
@@ -396,6 +512,27 @@ left:35px;
 	position:absolute;
 	top: 210px;
 	left:90px;
+}
+
+#explain {
+	font-size:small;
+	background-color:#222;
+	z-index:10;
+	color:#fffdfd;
+	width:1052px;
+	height:100px;
+	position:absolute;
+	top: 310px;
+	left:90px;
+	margin:10px;
+}
+
+#explain span {
+	position:relative;
+	left:10px;
+	top:1px;
+width:700px;
+	vertical-align:middle;
 }
 
 .makepayment {
@@ -420,12 +557,11 @@ left:35px;
 	-moz-border-radius: 0px 0px 0px 0px;
 	-webkit-border-radius: 0px 0px 0px 0px;
 	-khtml-border-radius: 0px 0px 0px 0px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 0px 0px 0px 0px;
 }
 
 #upload {
-position: absolute;
+	position: absolute;
 	display: none;
 	top: 190px;
 	left:400px;
@@ -456,6 +592,28 @@ position: absolute;
 	right: 30px;
 }
 
+.lightbox {
+	background-color:white;
+	height:340px;
+	width:600px;
+}
+
+#paytext, #paysuc {
+	text-align:center;
+	font-size: large;
+	margin-top: 20px;
+}
+
+.loadHelp {
+	cursor:pointer;
+	position:relative;
+	top:0px;
+	left:600px;
+	color:#fff;
+	font-size:9pt;
+	line-height:4pt;
+}
+
 #pincentives .addinc {
 	background: url(/img/wt365-count.png) 84px 0;
 	background-repeat:repeat-x;
@@ -484,8 +642,8 @@ input, select {
 
 .price, .title, .desc {
 	margin:10px;
-	display:block;
 	font-size:medium;
+	display:block;
 }
 
 .price {
@@ -552,10 +710,14 @@ input, select {
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-khtml-border-radius: 5px 5px 5px 5px;
-	behavior:url(/css/border-radius.htc);
 	border-radius: 5px 5px 5px 5px;
 	background-color:#94d219;
 }
+
+.fanbutton:hover {
+	background-color:#94cd3e;
+}
+
 
 
 .fanbutton a {

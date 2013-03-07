@@ -10,12 +10,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-01-10 22:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dani√l W. Crompton <info@workingtitle365.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/main/php/incasso.php:15
+msgid "Payment Successful"
+msgstr ""
 
 #: src/main/php/incasso.php:15
 msgid "Opdracht ontvangen"
@@ -31,6 +35,10 @@ msgstr ""
 
 #: src/main/php/login.php:15
 msgid "Login successful"
+msgstr ""
+
+#: src/main/html/login.html:15
+msgid "What is WorkingTitle365?"
 msgstr ""
 
 #: src/main/php/sendreset.php:27
@@ -60,6 +68,10 @@ msgstr ""
 
 #: src/main/php/smarty/create.tpl:36
 msgid "Username"
+msgstr ""
+
+#: src/main/php/smarty/pay.tpl:22
+msgid "Other Payments"
 msgstr ""
 
 #: src/main/php/smarty/pay.tpl:22
@@ -206,8 +218,24 @@ msgstr ""
 msgid "Your browser does not support the audio tag."
 msgstr ""
 
+#: src/main/php/smarty/highlight.tpl:13
+msgid "Support Maker for:"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "from 1 cent a day"
+msgstr ""
+
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "upload"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "delete"
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
@@ -227,7 +255,7 @@ msgid "Create a goal"
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
-msgid "I love this Maker on WorkingTitle365, retweet to show your support."
+msgid "I love %s on WorkingTitle365, retweet to show your support."
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
@@ -321,3 +349,26 @@ msgstr ""
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
 msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Become a part of the creative process that inspires us all."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "By supporting Makers with yearly donations you fund creativity that inspires you and you help share that inspiration with the world."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And the nicest part is: you get cool gifts and rewards from the Makers you support and from a whole lot of others too."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And you get great rewards too."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Learn more..."
+msgstr ""
+
+#
+

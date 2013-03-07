@@ -8,12 +8,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/main/php/incasso.php:15
+msgid "Payment Successful"
+msgstr "Betaling succesvol"
+
+#: src/main/php/incasso.php:15
 msgid "Opdracht ontvangen"
 msgstr "Opdracht ontvangen"
 
 #: src/main/php/create.php:42 src/main/php/create.php:43
 msgid "Profile Name Here"
-msgstr "Profiel Naam Komt Hier"
+msgstr "Geef een naam aan je profiel"
 
 #: src/main/php/login.php:14
 msgid "Login failed"
@@ -22,6 +26,10 @@ msgstr "Login mislukt"
 #: src/main/php/login.php:15
 msgid "Login successful"
 msgstr "Login succesvol"
+
+#: src/main/html/login.html:15
+msgid "What is WorkingTitle365?"
+msgstr "Wat is<br />WorkingTitle365?"
 
 #: src/main/php/sendreset.php:27
 msgid "Gebruiker wordt reset, kijk in je mailbox for een link."
@@ -54,8 +62,15 @@ msgid "Username"
 msgstr "Gebruikersnaam"
 
 #: src/main/php/smarty/pay.tpl:22
-msgid "Bedrag"
+msgid "Other Payments"
 msgstr ""
+"Heeft u nog idee&euml;n voor betaalmogelijkheden? Laat ze <a href='https://"
+"workingtitle365.uservoice.com/forums/174950-jouw-idee%C3%ABn-zijn-"
+"essentieel-/suggestions/3396187-andere-betaalmogelijkheden'>hier</a> achter."
+
+#: src/main/php/smarty/pay.tpl:22
+msgid "Bedrag"
+msgstr "Mijn donatie"
 
 #: src/main/php/smarty/pay.tpl:26
 msgid "CreditCard"
@@ -152,13 +167,13 @@ msgstr "Abbonement op Maker"
 #: src/main/php/payments.php:38
 msgid "incentive text"
 msgstr ""
-"Er zijn 3 stappen om de Fan van %s te worden, en deze Maker te steunen in "
-"het creatief process:<ol><li>Kies een Beloning</li><li>Kies hoe je wil "
-"betalen</li><li>Betaal &amp; geniet</li></ol>Het is zo makkelijk."
+"Er zijn 3 stappen om Fan van %s te worden en deze Maker te steunen in het "
+"creatief process:<ol><li>Kies een Beloning</li><li>Kies hoe je wil betalen</"
+"li><li>Betaal &amp; geniet</li></ol>Het is zo makkelijk."
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "per year"
-msgstr "per jaar"
+msgstr "<span style='color:white'>per</span> jaar"
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
@@ -166,7 +181,7 @@ msgstr "Mijn gift is"
 
 #: src/main/php/smarty/payments.tpl:25
 msgid "Nothing in return"
-msgstr "Niets terug"
+msgstr "Ik hoef geen beloning"
 
 #: src/main/php/smarty/payments.tpl:27
 msgid "Pay"
@@ -200,30 +215,46 @@ msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 msgid "Your browser does not support the audio tag."
 msgstr "Uw browser ondersteunt dit bestandsformaat niet."
 
+#: src/main/php/smarty/highlight.tpl:13
+msgid "Support Maker for:"
+msgstr "Steun deze maker voor bijvoorbeeld:"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "from 1 cent a day"
+msgstr "vanaf 1 cent per dag"
+
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
 msgstr "bewerken"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "upload"
+msgstr "toevoegen"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "delete"
+msgstr "verwijderen"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Create Profile Text"
 msgstr ""
-"<span style='$EDIT;'><strong>Korte omschrijving, 2 opties:</strong><br/"
-">Beschrijving in 133 tekens, en dus voor Twitter geschikt. Uitgebreider mag "
-"ook (suggestie: max. 150 woorden). Naar andere sites linken kan met een "
-"ShortURL zoals <a href='http://bit.ly'>bit.ly</a>. Zie: <a href='http://"
-"workingtitle365.uservoice.com/knowledgebase/articles/141261-het-maken-van-je-"
-"pagina'>&quotHet maken van je pagina&quot</a>.</span>"
+"<strong>Korte omschrijving, 2 opties:</strong><br/>Beschrijving in 133 "
+"tekens, en dus voor Twitter geschikt. Uitgebreider mag ook (suggestie: max. "
+"150 woorden). Naar andere sites linken kan met een ShortURL zoals <a "
+"href='http://bit.ly'>bit.ly</a>. Zie: <a href='http://workingtitle365."
+"uservoice.com/knowledgebase/articles/141261-het-maken-van-je-"
+"pagina'>&quotHet maken van je pagina&quot</a>."
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Create Work Text"
 msgstr ""
-"<span style='$EDIT;'><strong>Jouw Werk uploaden</strong><br/>Plaats niet je "
-"complete portfolio, daar zijn andere plekken voor. Een beperkt aantal werken "
-"maakt nieuwsgierig en verleidt om je Fan te worden. Wat je als laatste "
-"toevoegt is als eerste zichtbaar; dit kan het beste een foto/video zijn. "
-"Binnenkort kan je de volgorde sorteren.  <a href='http://workingtitle365."
-"uservoice.com/knowledgebase/articles/141261-het-maken-van-je-"
-"pagina#upload'>Uploaden van je werk</a>.</span>"
+"<strong>Jouw werk toevoegen</strong><br/>Plaats niet je complete portfolio, "
+"daar zijn andere plekken voor. Een beperkt aantal werken maakt nieuwsgierig "
+"en verleidt om je Fan te worden. Wat je als laatste toevoegt is als eerste "
+"zichtbaar; dit kan het beste een foto/video zijn. Binnenkort kan je de "
+"volgorde sorteren.  <a href='http://workingtitle365.uservoice.com/"
+"knowledgebase/articles/141261-het-maken-van-je-pagina#upload'>Uploaden van "
+"je werk</a>."
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Do you make a beautiful page?"
@@ -238,13 +269,12 @@ msgstr ""
 "cre%C3%ABer-een-doel'>Cre&euml;er een doel</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
-msgid "I love this Maker on WorkingTitle365, retweet to show your support."
-msgstr ""
-"Ik hou van deze Maker op WorkingTitle365, retweet als je het eens bent!"
+msgid "I love %s on WorkingTitle365, retweet to show your support."
+msgstr "Ik hou van %s op WorkingTitle365, retweet als je het eens bent!"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr "Fan deze Maker"
+msgstr "Word mijn Fan"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"
@@ -253,6 +283,8 @@ msgstr ""
 #: src/main/php/smarty/incentive.tpl:17
 msgid "Cre&euml;er je beloningen<br />voor je Fans"
 msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/139130-"
+"cre%C3%ABren-van-beloningen'>Cre&euml;er je beloningen<br />voor je Fans</a>"
 
 #: src/main/php/smarty/incentive.tpl:18 src/main/php/smarty/index.tpl:27
 msgid "Zie ook:"
@@ -261,6 +293,8 @@ msgstr ""
 #: src/main/php/smarty/incentive.tpl:19
 msgid "Voorbeelden beloningen"
 msgstr ""
+"<a href='http://www.workingtitle365.com/profile.php?id=kama29'>Voorbeelden "
+"beloningen</a>"
 
 #: src/main/php/smarty/incentive.tpl:33
 msgid "Bedrag: (cent per dag in cijfers)"
@@ -333,6 +367,46 @@ msgstr "de Gebruikersvoorwaarde"
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
 msgstr "Gebruiker Aanmaken"
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Become a part of the creative process that inspires us all."
+msgstr ""
+"Word onderdeel van het creatief proces waar wij allen door geïnspireerd "
+"worden."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"By supporting Makers with yearly donations you fund creativity that inspires "
+"you and you help share that inspiration with the world."
+msgstr ""
+"Door het steunen van Makers met jaarlijkse giften maak je creativiteit en "
+"inspiratie mogelijk en helpt deze delen met de wereld."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"And the nicest part is: you get cool gifts and rewards from the Makers you "
+"support and from a whole lot of others too."
+msgstr ""
+"En het allerleukst is: je krijgt mooie cadeaus en beloningen van Makers die "
+"jij steunt en ook nog van een heleboel anderen."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And you get great rewards too."
+msgstr "En je krijgt nog mooie beloningen ook."
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Learn more..."
+msgstr "Leer meer..."
+
+#, fuzzy
+#~ msgid "Name Profile"
+#~ msgstr ""
+#~ "<strong>Korte omschrijving, 2 opties:</strong><br/>Beschrijving in 133 "
+#~ "tekens, en dus voor Twitter geschikt. Uitgebreider mag ook (suggestie: "
+#~ "max. 150 woorden). Naar andere sites linken kan met een ShortURL zoals <a "
+#~ "href='http://bit.ly'>bit.ly</a>. Zie: <a href='http://workingtitle365."
+#~ "uservoice.com/knowledgebase/articles/141261-het-maken-van-je-"
+#~ "pagina'>&quotHet maken van je pagina&quot</a>."
 
 #~ msgid "test"
 #~ msgstr "Test"

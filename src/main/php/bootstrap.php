@@ -1,28 +1,37 @@
 <?php
 
-function loader($class) {
-	$file = "". $class . '.php';
-	if (file_exists($file)) {
-		require $file;
-	}	else if (file_exists("../". $file)) {
-		require "../". $file;
-	} else if(file_exists("../../../ext/php/libs/" . $class .".class.php")) {
-		$file = "../../../ext/php/libs/" . $class .".class.php";
-		require $file;
-	} else if(file_exists("../../../ext/php/lib/classes/" . $class .".class.php")) {
-		$file = "../../../ext/php/lib/classes/" . $class .".class.php";
-		require $file;
+if (!function_exists('loader')) {
+	function loader($class) {
+		$file = "". $class . '.php';
+		if (file_exists($file)) {
+			require $file;
+		}	else if (file_exists("../". $file)) {
+			require "../". $file;
+		} else if(file_exists("../../../ext/php/libs/" . $class .".class.php")) {
+			$file = "../../../ext/php/libs/" . $class .".class.php";
+			require $file;
+		} else if(file_exists("../../../ext/php/lib/classes/" . $class .".class.php")) {
+			$file = "../../../ext/php/lib/classes/" . $class .".class.php";
+			require $file;
+		} else if(file_exists("../../../../ext/php/lib/classes/" . $class .".class.php")) {
+			$file = "../../../../ext/php/lib/classes/" . $class .".class.php";
+			require $file;
+		} else if(file_exists("../../../mail/src/php/" . $class .".class.php")) {
+			$file = "../../../mail/src/php/" . $class .".class.php";
+			require $file;
+		}
 	}
-
 }
 
-function loadera($class) {
-    $file = "src/main/php/". $class . '.php';
-    if (file_exists($file)) {
-        require $file;
-	} else if(file_exists("ext/php/libs/" . $class .".class.php")) {
-		$file = "ext/php/libs/" . $class .".class.php";
-		require $file;
+if (!function_exists('loadera')) {
+	function loadera($class) {
+			$file = "src/main/php/". $class . '.php';
+			if (file_exists($file)) {
+					require $file;
+		} else if(file_exists("ext/php/libs/" . $class .".class.php")) {
+			$file = "ext/php/libs/" . $class .".class.php";
+			require $file;
+		}
 	}
 }
 

@@ -1,7 +1,7 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
 
-        <!--[if lt IE 7]>
+        <!--[if lt IE 10]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
@@ -14,9 +14,9 @@
 				<p class="category">FIXME: category here</p>
 			<div class="information" style="{$EDIT}">
 				<div>{gettext gt='Hoe?'}</div>
-				<div><a href="http://workingtitle365.uservoice.com/knowledgebase/articles/139130-cre%C3%ABren-van-beloningen">{gettext gt='Cre&euml;er je beloningen<br />voor je Fans'}</a></div>
+				<div>{gettext gt='Cre&euml;er je beloningen<br />voor je Fans'}</div>
 				<div>{gettext gt='Zie ook:'}</div>
-				<div><a href="http://www.workingtitle365.com/profile.php?id=kama29">{gettext gt='Voorbeelden beloningen'}</a></div>
+				<div>{gettext gt='Voorbeelden beloningen'}</div>
 			</div>
 			</div>
 		</div>
@@ -45,7 +45,6 @@
 		</div>
 	</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 	<script src="/js/main.js"></script>
 	<script type="text/javascript">

@@ -8,6 +8,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/main/php/incasso.php:15
+msgid "Payment Successful"
+msgstr ""
+
+#: src/main/php/incasso.php:15
 msgid "Opdracht ontvangen"
 msgstr "Payment Received"
 
@@ -22,6 +26,10 @@ msgstr "Login Failed"
 #: src/main/php/login.php:15
 msgid "Login successful"
 msgstr "Login Successful"
+
+#: src/main/html/login.html:15
+msgid "What is WorkingTitle365?"
+msgstr "What is<br />WorkingTitle365?"
 
 #: src/main/php/sendreset.php:27
 msgid "Gebruiker wordt reset, kijk in je mailbox for een link."
@@ -55,8 +63,15 @@ msgid "Username"
 msgstr "User"
 
 #: src/main/php/smarty/pay.tpl:22
+msgid "Other Payments"
+msgstr ""
+"Are you missing a payment option? Let us know <a href='https://"
+"workingtitle365.uservoice.com/forums/174950-jouw-idee%C3%ABn-zijn-"
+"essentieel-/suggestions/3396187-andere-betaalmogelijkheden'>here</a>."
+
+#: src/main/php/smarty/pay.tpl:22
 msgid "Bedrag"
-msgstr "Amount"
+msgstr "My pledge"
 
 #: src/main/php/smarty/pay.tpl:26
 msgid "CreditCard"
@@ -159,7 +174,7 @@ msgstr ""
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "per year"
-msgstr "per year"
+msgstr "<span style='color:white'>per</span> year"
 
 #: src/main/php/smarty/payments.tpl:22
 msgid "My pledge is"
@@ -167,7 +182,7 @@ msgstr ""
 
 #: src/main/php/smarty/payments.tpl:25
 msgid "Nothing in return"
-msgstr ""
+msgstr "I'll pass on my reward"
 
 #: src/main/php/smarty/payments.tpl:27
 msgid "Pay"
@@ -202,8 +217,24 @@ msgstr ""
 msgid "Your browser does not support the audio tag."
 msgstr ""
 
+#: src/main/php/smarty/highlight.tpl:13
+msgid "Support Maker for:"
+msgstr "Support Maker for example for:"
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "from 1 cent a day"
+msgstr ""
+
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "edit"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "upload"
+msgstr ""
+
+#: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
+msgid "delete"
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
@@ -221,23 +252,29 @@ msgstr ""
 "better places for your complete portfolio. A limited amount of works makes "
 "people curious and entices to become your Fan. Your latest upload appears at "
 "the top, this should be a photo/video. Soon you will be able to sort your "
-"works.</span>"
+"works. See also: <a href='http://workingtitle365.uservoice.com/knowledgebase/"
+"articles/158495-creating-your-profile-page#addwork'>Adding your work.</a></"
+"span>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Do you make a beautiful page?"
-msgstr "<a href='#'>Do you make a beautiful page?</a>"
+msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/158495-"
+"creating-your-profile-page'>Do you make a beautiful page?</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Create a goal"
-msgstr "<a href='#'>Create a goal</a>"
+msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/158511-"
+"formulate-a-goal'>Create a goal</a>"
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
-msgid "I love this Maker on WorkingTitle365, retweet to show your support."
+msgid "I love %s on WorkingTitle365, retweet to show your support."
 msgstr ""
 
 #: src/main/php/smarty/userbox.tpl:22 src/main/php/smarty/index.tpl:40
 msgid "Fan This Maker"
-msgstr ""
+msgstr "Become my Fan"
 
 #: src/main/php/smarty/incentive.tpl:16 src/main/php/smarty/index.tpl:25
 msgid "Hoe?"
@@ -245,15 +282,19 @@ msgstr "How?"
 
 #: src/main/php/smarty/incentive.tpl:17
 msgid "Cre&euml;er je beloningen<br />voor je Fans"
-msgstr "Create incentives for your Fans"
+msgstr ""
+"<a href='http://workingtitle365.uservoice.com/knowledgebase/articles/158497-"
+"creating-rewards-for-fans'>Create rewards for your Fans</a>"
 
 #: src/main/php/smarty/incentive.tpl:18 src/main/php/smarty/index.tpl:27
 msgid "Zie ook:"
-msgstr "See:"
+msgstr "See also:"
 
 #: src/main/php/smarty/incentive.tpl:19
 msgid "Voorbeelden beloningen"
-msgstr "Example Incentives"
+msgstr ""
+"<a href='http://www.workingtitle365.com/profile.php?id=kama30'>Example "
+"Incentives</a>"
 
 #: src/main/php/smarty/incentive.tpl:33
 msgid "Bedrag: (cent per dag in cijfers)"
@@ -281,7 +322,7 @@ msgstr "My website"
 
 #: src/main/php/smarty/index.tpl:66
 msgid "beloningen toevoegen"
-msgstr "add incentive"
+msgstr "add rewards"
 
 #: src/main/php/smarty/index.tpl:130
 msgid "Wil je het bestand echt verwijderen?"
@@ -326,6 +367,38 @@ msgstr ""
 #: src/main/php/smarty/create.tpl:46
 msgid "Create User"
 msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Become a part of the creative process that inspires us all."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"By supporting Makers with yearly donations you fund creativity that inspires "
+"you and you help share that inspiration with the world."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid ""
+"And the nicest part is: you get cool gifts and rewards from the Makers you "
+"support and from a whole lot of others too."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "And you get great rewards too."
+msgstr ""
+
+#: src/main/php/smarty/frontpage.tpl:18
+msgid "Learn more..."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Name Profile"
+#~ msgstr ""
+#~ "<span style='$EDIT;'><strong>Short Description, 2 options:</strong><br/>A "
+#~ "description in 133 characters, suitable for Twitter. You can also add a "
+#~ "more extensive description (suggestion: max 150 words). Link to other "
+#~ "sites with a ShortURL like <a href='http://bit.ly'>bit.ly</a>.</span>"
 
 #~ msgid "test"
 #~ msgstr "Test"

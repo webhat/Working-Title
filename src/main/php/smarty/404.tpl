@@ -1,7 +1,7 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
 
-        <!--[if lt IE 7]>
+        <!--[if lt IE 10]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
@@ -20,7 +20,6 @@
 		</div>
 		<div style="position:absolute">
 		</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 		<div id="boxy">
 			<div id="fullwidth" class="box rounded-corners" style="top:30px;height:300px;">

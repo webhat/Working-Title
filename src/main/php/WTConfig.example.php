@@ -22,6 +22,18 @@ class WTConfig {
 				"name"	=> "WorkingTitle365",
 				"mail"	=> "info@workingtitle365.com"
 		);
+		$this->google = array(
+				"client"	 => "",
+				"account"	 => "",
+				"public"	 => "",
+				"gacode"	 => "UA-XXXXX-1"
+		);
+		$this->paypal = array(
+				"user"		=> "",
+				"pass"		=> "",
+				"sandbox"	=>	true,
+				"datareturn"	=> ""
+		);
 	}
 }
 ?>
