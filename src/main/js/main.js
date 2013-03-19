@@ -66,7 +66,7 @@ $(document).ready( function() {
 	});
 });
 
-function incentives( maker, json) {
+function incentives(json, maker) {
 	$("#pincentives .incentive").remove();
 	$.each(json, function( i, item) {
 			var selected = "";

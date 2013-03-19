@@ -7,6 +7,7 @@ header("Content-type: text/html");
 require_once('bootstrap.php');
 require_once('onetime.php');
 require_once('gettext.php');
+require_once('loggedinas.php');
 
 $user = "";
 $pass = "";

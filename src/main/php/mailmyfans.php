@@ -39,6 +39,7 @@ try {
 				"desc" => $inc[2]['desc'],
 				));
 } catch( Exception $e) {
+	echo "Error: not enough incentives";
 }
 
 $mailmessage = array();
