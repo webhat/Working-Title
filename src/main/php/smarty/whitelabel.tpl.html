@@ -45,19 +45,44 @@
 		<small><em>Hosted by <a href="http://crowdfund.specialbrands.net/">Crowdfund SpecialBrands</a></em></small>
 	</div>
 </div>
-<div id="payment">
-</div>
+<div id="payment" style="display:none;">
+    <div class="pledge">
+        <label>Amount:&nbsp;&nbsp;<span>$</span></label>
+        <input id="amount" type="text" value="" style="display:inline" />
+    </div>
+    <div id="paypal" class="makepayment">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_donations">
+            <input type="hidden" name="business" value="info@workingtitle365.com">
+            <input type="hidden" name="lc" value="US">
+            <input type="hidden" name="item_name" value="{$BUSINESS}">
+            <input type="hidden" name="amount" value="100.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
 
+    </div>
+</div>
+<script src="http://www.google.com/jsapi"></script>
+<script>
+    google.load("jquery", "1.7.1");
+</script>
 <script>
 	$(document).ready(function() {
 			$('#supportme').click(function() {
+                    $("body").show();
+
+                    $("input[name=submit]").click(function() { $("input[name=amount]").val($("#amount").val()) });
 					$("#payment").show();
 				});
 			});
 </script>
 <script>
 	complete( {$COMPLETED}, {$GOAL}, "gcomplete");
-	countdown( "{$DAYS} 11:1 AM", "countdown");
+	countdown( "{$DAYS} 12:00 AM", "countdown");
 </script>
 
 {include file="smarty/whitelabel_footer.tpl.html"}
