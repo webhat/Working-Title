@@ -1,0 +1,63 @@
+{include file="smarty/whitelabel_header.tpl.html"}
+<h1>{$BUSINESS}</h1>
+
+<div id="container">
+	<div id="longdesc">
+		<img src="{$IMAGE}" alt="{$IMAGEALT}" />
+		<div>{$LONGDESC}</div>
+	</div>
+	<div id="goal">
+		<div id="targetgoal">
+			<div>Completed</div>
+			<div id="completed">
+				&#36; {$COMPLETED}
+			</div>
+			<div>Total</div>
+			<div id="total">
+				&#36; {$GOAL}
+			</div>
+			<div>Days left</div>
+			<div id="countdown">
+			</div>
+		</div>
+		<div id="gtotal"><div id="gcomplete"></div></div>
+		<div id="days"></div>
+		<div id="supportme"><div>Support Me</div></div>
+	</div>
+	<div></div>
+	<div></div>
+
+	<div id='footer'>
+		<div>{include file="smarty/social.tpl.html"}</div>
+		<div itemscope itemtype="http://schema.org/Organization">
+			<a itemprop="url" href="mailto:{$EMAIL}"><div itemprop="name"><strong>{$BUSINESS}</strong></div>
+			</a>
+			<span itemprop="telephone">{$PHONE}</span><br>
+			<div itemprop="description">{$DESCRIPTION}</div>
+			<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				<span itemprop="streetAddress">{$ADDRESS}</span><br>
+				<span itemprop="postalCode">{$POSTCODE}</span>
+				<span itemprop="addressLocality">{$CITY}</span><br>
+				<span itemprop="addressRegion">{$STATE}</span><br>
+				<span itemprop="addressCountry">{$COUNTRY}</span><br>
+			</div>
+		</div>
+		<small><em>Hosted by <a href="http://crowdfund.specialbrands.net/">Crowdfund SpecialBrands</a></em></small>
+	</div>
+</div>
+<div id="payment">
+</div>
+
+<script>
+	$(document).ready(function() {
+			$('#supportme').click(function() {
+					$("#payment").show();
+				});
+			});
+</script>
+<script>
+	complete( {$COMPLETED}, {$GOAL}, "gcomplete");
+	countdown( "{$DAYS} 11:1 AM", "countdown");
+</script>
+
+{include file="smarty/whitelabel_footer.tpl.html"}

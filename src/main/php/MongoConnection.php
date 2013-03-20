@@ -16,7 +16,7 @@ class MongoConnection {
 	}
 
 	public function setDB( $db) {
-		$this->db = $this->mongo->selectDB($config->wtdatabase);
+		$this->db = $this->mongo->selectDB($db);
 	}
 
 	public function getDB( $db = "") {

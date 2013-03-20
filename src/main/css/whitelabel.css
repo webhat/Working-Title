@@ -1,0 +1,97 @@
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+h1 {
+	text-align: center;
+}
+
+#social a ,
+#social iframe ,
+#___plusone_0 {
+	vertical-align: middle !important;
+	display: inline-block;
+	border: 0px;
+	width: 80px !important;
+	position:relative !important;
+}
+
+#social {
+	clear:both;
+	width:262px;
+	height:59px;
+	text-align:center;
+	vertical-align:top;
+	margin:10px;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+	position: absolute;
+	bottom:0;
+	left:60%;
+	width: 20%;
+}
+
+#supportme:hover {
+	background-color:#A4d219;
+}
+
+#supportme {
+	clear:both;
+	background-color:#94d219;
+	width:84%;
+	height:40px;
+	text-align:center;
+	font-size:xx-large;
+	color:#f0fff0;
+	margin:7%;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#completed, #total, #countdown {
+	font-size:xx-large;
+	text-align:right;
+}
+
+#supportme div {
+	margin-top:10px;
+}
+
+#longdesc {
+	position: absolute;
+	left:20%;
+	width: 30%;
+	padding-bottom: 3em;
+}
+
+#targetgoal {
+	margin-right: 20%;
+width:70%;
+}
+
+#goal {
+	text-align: center;
+	position: absolute;
+	left:60%;
+	width: 20%;
+	margin:5px;
+	border:1px solid #000;
+}
+
+#gtotal {
+	width:84%;
+	background-color:white;
+	height:30px;
+	margin:7%;
+	border:1px solid #000;
+}
+
+#gcomplete {
+	background-color:red;
+	height:30px;
+}
