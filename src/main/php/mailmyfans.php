@@ -7,6 +7,7 @@ require_once("smartyload.php");
 
 $maker = $loggedinas;
 
+
 if($maker == '') exit;
 
 error_reporting(0);
@@ -48,7 +49,6 @@ $mailmessage['SUBJECT'] = "WT365 Fan Mail - Remember to change the subject";
 $mailmessage['USER'] = $maker;
 
 $to = array( "name" => $maker, "mail" => $mailaddr);
-
 $mail = new Mail();
 
 $mail->send($to, $mailmessage);

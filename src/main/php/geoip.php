@@ -18,6 +18,7 @@ if( isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 
 $admin = false;
 switch(md5($ip)) {
+	case '6e187a2cf2aece595fde9244c7457a8e':
 	case 'd0eb42194ae647e10fe8fcebad5ed5cd':
 	case 'dbf1791f8606b86e314e437276c4f548':
 	case '6a334b9cb0b8b0f29d409463db131309':

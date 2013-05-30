@@ -22,6 +22,7 @@ class UploadHelper {
 				// Audio mime types
 				case  "audio/midi":
 				case  "audio/mpeg":
+				case  "audio/mp3":
 				case  "audio/ogg":
 				case  "audio/x-m4a":
 					return "audio";
