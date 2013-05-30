@@ -46,10 +46,14 @@
 	</div>
 </div>
 <div id="payment" style="display:none;">
+		<br />
+		<div class="pledge">Pledge your amount to {$BUSINESS}</div>
+		<br />
     <div class="pledge">
         <label>Amount:&nbsp;&nbsp;<span>$</span></label>
         <input id="amount" type="text" value="" style="display:inline" />
     </div>
+		<br />
     <div id="paypal" class="makepayment">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_donations">
@@ -66,10 +70,6 @@
 
     </div>
 </div>
-<script src="http://www.google.com/jsapi"></script>
-<script>
-    google.load("jquery", "1.7.1");
-</script>
 <script>
 	$(document).ready(function() {
 			$('#supportme').click(function() {

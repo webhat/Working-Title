@@ -96,7 +96,9 @@ width:70%;
 	height:30px;
 }
 
-#payments {
+#payment {
+		text-align: center;
+		background-color: white;
     border:1px solid #000;
     width:50%;
     height:300px;
@@ -104,3 +106,8 @@ width:70%;
     top:25%;
     left:25%;
 }
+
+.pledge {
+	font-size:xx-large;
+}
+

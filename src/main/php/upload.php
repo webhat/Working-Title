@@ -59,6 +59,7 @@ if (
 	// Audio mime types
 	|| ($_FILES["file"]["type"] == "audio/midi")
 	|| ($_FILES["file"]["type"] == "audio/mpeg")
+	|| ($_FILES["file"]["type"] == "audio/mp3")
 	|| ($_FILES["file"]["type"] == "audio/ogg")
 	|| ($_FILES["file"]["type"] == "audio/x-m4a")
 

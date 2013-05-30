@@ -1,6 +1,7 @@
 {config_load file="test.conf" section="setup"}
 {include file="smarty/header.tpl" title=foo}
 
+<script src="https://www.targetpay.com/send/include.js"> </script>
         <!--[if lt IE 10]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -53,9 +54,7 @@
 					<div id="payment">
 						<input type="radio" name="paymentmethod" checked value="paypal" style="display:inline;margin-right:10px;"><span>PayPal</span></input><br />
 						<input type="radio" name="paymentmethod" value="creditcard" style="display:inline;margin-right:10px;"><span>{gettext gt='CreditCard'}</span></input>&nbsp;&nbsp;<img src="/img/cc.gif" /><br />
-						<!--
 						<input type="radio" name="paymentmethod" value="ideal" style="display:inline;margin-right:10px;"><span>{gettext gt='iDeal'}</span></input><br />
-						-->
 						<input type="radio" name="paymentmethod" value="incasso" style="display:inline;margin-right:10px;" ><span>{gettext gt='Doorlopende Machtiging'}</span></input><br />
 						<input type="radio" name="paymentmethod" value="anders" style="display:inline;margin-right:10px;"><span>{gettext gt='Anders...'}</span></input><br />
 					</div>
@@ -99,7 +98,9 @@
 							<input type="hidden" name="return" value="http://{$PAYPALDEMO}workingtitle365.com/payment/complete.php" \>
 						</form>
 					</div>
-					<div id="ideal" style="display:none;" class="makepayment errormsg">{gettext gt='Betalen iDeal is helaas nog niet geactiveerd.'}</div>
+					<div id="ideal" style="display:none;" class="makepayment errormsg">
+						<a href="javascript: targetpay(48636, 93885, 'auto', 'auto', '');"><img src="http://www.paypal.com/en_US/i/btn/btn_subscribe_LG.gif" /></a>
+					</div>
 					<div id="incasso" style="display:none;" class="makepayment">
 						<h3>Doorlopende machtiging</h3>
 						<span>{gettext gt='Ondergetekende verleent hierbij tot wederopzegging machtiging aan WorkingTitle365 om van zijn/haar rekening jaarlijks  af te schrijven ten behoeve van de Maker'} <strong>{$USER}</strong>.</span>

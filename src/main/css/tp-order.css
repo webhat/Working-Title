@@ -1,0 +1,201 @@
+body {
+	background-color:#ffffff;
+	color:#000000;
+}
+body, td, p, ol, ul, li {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:smaller;
+}
+
+b, strong {
+	color:#ff0000;	
+	font-size:normal;
+}
+
+H1{	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+#bestelscherm {
+	padding: 5px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: dashed;
+	border-right-style: dashed;
+	border-bottom-style: dashed;
+	border-left-style: dashed;
+	position: relative;
+	background-color: #fff;
+}
+
+.hdr {
+	background-image: url(/gfx/bg_hdr.gif);
+	height: 60px;
+}
+
+.vermelding {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.naamdienst {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.verder {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.frequentie {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.product {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.help {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.terug {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.naamprovider {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.dienstnaam {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.akkoord {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.bevestiging {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.gaVerder {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.mobieleBetalingen {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.nieuwsbrief {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.voorwaarden {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.uitleg {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.nav {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.legenda {
+	padding: 5px;	
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 9px;
+}
+
+.contentaanbieder {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.url {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+
+.helpdesk {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+.email {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+.error {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
+.infotp {
+	padding: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	background-color: #efefef;
+}
