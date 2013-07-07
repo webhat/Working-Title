@@ -2,6 +2,7 @@
 
 package {'nginx':
 	ensure => '1.4.1-1.el6.ngx',
+	before => Service['nginx'],
 }
 
 file {'nginx.repo':
@@ -16,3 +17,16 @@ enabled=1",
       before => Package['nginx'],
 }
 
+service{'nginx':
+	ensure => running,
+}
+
+
+file {'nginx.conf':
+      notify  => Service["nginx"],
+      path => '/etc/nginx/nginx.conf',
+      ensure  => present,
+      mode    => 0644,
+      content => template('nginx/nginx.erb'),
+      before => Service['nginx'],
+}
