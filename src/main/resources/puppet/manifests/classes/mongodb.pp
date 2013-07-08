@@ -27,11 +27,12 @@ service{'mongod':
 }
 
 file{'mongod.conf':
-      path => '/etc/mongod.conf',
-      ensure  => present,
-      mode    => 0644,
-      content => template('mongod/mongod.erb'),
-      before => File['mongod.key'],
+	notify  => Service["mongod"],
+	path => '/etc/mongod.conf',
+	ensure  => present,
+	mode    => 0644,
+	content => template('mongod/mongod.erb'),
+	before => Service['mongod'],
 }
 
 file{'mongod.key':

@@ -5,6 +5,11 @@ package {'nginx':
 	before => Service['nginx'],
 }
 
+package{'php-fpm':
+	ensure => latest,
+	before => Service['nginx'],
+}
+
 file {'nginx.repo':
       path => '/etc/yum.repos.d/nginx.repo',
       ensure  => present,
@@ -21,6 +26,10 @@ service{'nginx':
 	ensure => running,
 }
 
+service{'php-fpm':
+	ensure => running,
+}
+
 
 file {'nginx.conf':
       notify  => Service["nginx"],
@@ -29,4 +38,8 @@ file {'nginx.conf':
       mode    => 0644,
       content => template('nginx/nginx.erb'),
       before => Service['nginx'],
+}
+
+file { "/var/www/vhosts/wt365":
+  ensure => 'directory',
 }

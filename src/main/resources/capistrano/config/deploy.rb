@@ -2,6 +2,8 @@ set :application, "set your application name here"
 set :repository,  "set your repository location here"
 
 #ssh_options[:keys] = ["/etc/keys/id_rsa-capistrano"]
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "deploy")]
+ssh_options[:keys] = ["/root/.ssh/deploy"]
 #
 require 'mcollective'
 

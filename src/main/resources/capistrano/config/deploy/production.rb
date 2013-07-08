@@ -1,1 +1,1 @@
-role :app, "prod-app-01", "prod-app-02" 
+role :app, "wt365-mongo-001", "wt365-web-001" 
