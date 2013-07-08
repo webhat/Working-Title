@@ -5,7 +5,7 @@ class Users implements Countable {
 	private $results;
 	public function __construct() {
 		try {
-			$this->mongo = new Mongo(); // connect
+			$this->mongo = new MongoClient("mongodb://".$config->mongo["user"].":".$config->mongo["pass"]."@".$config->mongo["host"].":".$config->mongo["port"].""); // connect
 		} catch (Exception $e) {
 			print("ERROR: Database unreachable");
 			exit(-1);

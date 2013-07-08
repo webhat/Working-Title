@@ -8,7 +8,7 @@ class ProfileMongo {
 
 	public function __construct( $user = null) {
 		try {
-			$this->mongo = new Mongo(); // connect
+			$this->mongo = new MongoClient("mongodb://".$config->mongo["user"].":".$config->mongo["pass"]."@".$config->mongo["host"].":".$config->mongo["port"].""); // connect
 		} catch (Exception $e) {
 			print("ERROR: Database unreachable");
 			exit(-1);
