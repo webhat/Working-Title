@@ -1,12 +1,13 @@
 #!/bin/bash
 
+. libs.sh
+
 JASMINE_VERSION=1.3.1
 JASMINE=jasmine-standalone-$JASMINE_VERSION
 
 # DON'T EDIT UNDER THIS LINE
 
 JASMINE_ARCHIVE=$JASMINE.zip
-LIBS=ext/php
 LOCATION=https://github.com/downloads/pivotal/jasmine/$JASMINE_ARCHIVE
 
 mkdir -p $JASMINE

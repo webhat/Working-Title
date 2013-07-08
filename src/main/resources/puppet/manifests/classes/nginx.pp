@@ -40,6 +40,10 @@ file {'nginx.conf':
       before => Service['nginx'],
 }
 
-file { "/var/www/vhosts/wt365":
+file {'/var/data':
+  ensure => 'directory',
+}
+
+file {'/var/data/ext':
   ensure => 'directory',
 }

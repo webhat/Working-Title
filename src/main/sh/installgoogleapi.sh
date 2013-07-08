@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. libs.sh
+
 GAPI=google-api-php-client
 GAPI_VERSION=0.6.0
 GAPISHA1=95109e0dd65443ea72496168d2ed95ead225f1b2
@@ -7,7 +9,6 @@ GAPISHA1=95109e0dd65443ea72496168d2ed95ead225f1b2
 # DON'T EDIT UNDER THIS LINE
 
 GAPI_ARCHIVE=$GAPI-$GAPI_VERSION.tar.gz
-LIBS=ext/php
 LOCATION=https://$GAPI.googlecode.com/files/$GAPI_ARCHIVE
 
 wget -q $LOCATION

@@ -1,11 +1,12 @@
 #!/bin/bash
 
+. libs.sh
+
 SMARTY=Smarty-3.1.11
 
 # DON'T EDIT UNDER THIS LINE
 
 SMARTY_ARCHIVE=$SMARTY.tar.gz
-LIBS=ext/php
 LOCATION=http://www.smarty.net/files/$SMARTY_ARCHIVE
 
 wget -q $LOCATION

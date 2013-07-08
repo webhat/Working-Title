@@ -30,3 +30,12 @@ namespace :puppet do
         puppet.runaction("runonce",:concurrency => '2')
     end
 end
+
+namespace :webinit do
+	desc <<-DESC
+	Run Website Initializer
+	DESC
+	task :run do
+		run "cd #{release_path} && sh/libs.sh production"
+	end
+end
