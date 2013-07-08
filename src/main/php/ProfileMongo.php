@@ -14,7 +14,6 @@ class ProfileMongo {
 			print("ERROR: Database unreachable");
 			exit(-1);
 		}
-		$this->mongo->authenticate($config->mongo["user"], $config->mongo["pass"]);
 		$this->db = $this->mongo->selectDB($config->wtdatabase);
 
 		if( is_string( $user))
