@@ -4,13 +4,13 @@ class MongoConnection {
 	protected $db = null;
 
 	public function __construct( $user = null) {
+		$config = new WTConfig();
 		try {
 			$this->mongo = new MongoClient("mongodb://".$config->mongo["user"].":".$config->mongo["pass"]."@".$config->mongo["host"].":".$config->mongo["port"].""); // connect
 		} catch (Exception $e) {
 			print("ERROR: Database unreachable");
 			exit(-1);
 		}
-		$config = new WTConfig();
 		$this->db = $this->mongo->selectDB($config->wtdatabase);
 		//$this->db = $this->mongo->selectDB("wt365");
 	}

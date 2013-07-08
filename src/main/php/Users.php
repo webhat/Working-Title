@@ -4,13 +4,13 @@ class Users implements Countable {
 	private $db;
 	private $results;
 	public function __construct() {
+		$config = new WTConfig();
 		try {
 			$this->mongo = new MongoClient("mongodb://".$config->mongo["user"].":".$config->mongo["pass"]."@".$config->mongo["host"].":".$config->mongo["port"].""); // connect
 		} catch (Exception $e) {
 			print("ERROR: Database unreachable");
 			exit(-1);
 		}
-		$config = new WTConfig();
 		$this->mongo->authenticate($config->mongo["user"], $config->mongo["pass"]);
 		$this->db = $this->mongo->selectDB($config->wtdatabase);
 //		$this->db = $this->mongo->selectDB("wt365");
