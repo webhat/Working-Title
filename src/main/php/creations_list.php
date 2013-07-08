@@ -25,7 +25,7 @@ $creations = new Creations();
 
 $crea = $creations->getCreations(array( "username" => $maker));
 $crea = array_values( $crea);
-$crea = array_shift( $crea)['creations'];
+$crea = $crea[0]['creations'];
 
 $output = array();
 
