@@ -11,6 +11,7 @@ package {'mongo-10gen':
 }
 
 package{'php-pecl-mongo':
+	notify  => Service["spawn-fcgi"],
 	ensure => present,
 }
 

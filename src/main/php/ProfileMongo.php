@@ -14,6 +14,7 @@ class ProfileMongo {
 			exit(-1);
 		}
 		$config = new WTConfig();
+		$this->mongo->authenticate($config->mongo["user"], $config->mongo["pass"]);
 		$this->db = $this->mongo->selectDB($config->wtdatabase);
 
 		if( is_string( $user))
