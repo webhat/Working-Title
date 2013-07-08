@@ -10,11 +10,13 @@ set :deploy_to,		"/usr/share/puppet/configuration"
 set :deploy_via,	:export
 set :application,	"Puppet Manifests"
 set :repository,	"https://github.com/webhat/Working-Title.git"
+set :branch,		fetch(:branch, "develop")
 #set :repository,	"git@github.com:webhat/Working-Title.git"
 set :scm,		:git
 set :default_stage,	"staging"
 set :use_sudo,		false
-set(:latest_release)	{ File.join( release_path, "src/main/resources/puppet/") }
+set(:latest_release)	{ File.join( release_path, "src/main/") }
+#set(:latest_release)	{ File.join( release_path, "src/main/resources/puppet/") }
 
 require 'capistrano/ext/multistage'
 
