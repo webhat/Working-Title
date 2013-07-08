@@ -86,3 +86,12 @@ file {'/var/data':
 file {'/var/data/ext':
   ensure => 'directory',
 }
+
+file {'/var/data/ext/libs':
+  ensure => 'directory',
+}
+
+file{'WTConfig.class.php':
+	path	=> "/var/data/ext/libs/WTConfig.class.php",
+	content	=> template('nginx/WTConfig.php'),
+}
