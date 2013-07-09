@@ -8,10 +8,16 @@ node default {
 
 node 'wt365-mongo' {
 	include mongodb_master
+	include nginx
 }
 
 node 'wt365-web' {
 	include mongodb_slave
+	include nginx
+}
+
+node 'wt365-pm' {
+	include nginx_files
 }
 
 filebucket { 'main':
