@@ -106,7 +106,8 @@ http {
 		}
 
 		location /upload/ {
-			root /var/data/ext;
+#			root /var/data/ext;
+			rewrite  ^/(.*)$  http://files.workingtitle365.com/$1 permanent;
 		}
 
 		# FIXME: nice hack
@@ -115,10 +116,10 @@ http {
 		rewrite ^/profile.php$ /maker/$arg_id? permanent;
 		rewrite  ^/maker/(.*)$  /profile.php?id=$1  last;
 
-		rewrite  ^/upload/s_(.*)$  /resize_passthrough.php?id=$1&size=s  last;
-		rewrite  ^/upload/m_(.*)$  /resize_passthrough.php?id=$1&size=m  last;
-		rewrite  ^/upload/l_(.*)$  /resize_passthrough.php?id=$1&size=l  last;
-		rewrite  ^/upload/o_(.*)$  /resize_passthrough.php?id=$1&size=o  last;
+#		rewrite  ^/upload/s_(.*)$  /resize_passthrough.php?id=$1&size=s  last;
+#		rewrite  ^/upload/m_(.*)$  /resize_passthrough.php?id=$1&size=m  last;
+#		rewrite  ^/upload/l_(.*)$  /resize_passthrough.php?id=$1&size=l  last;
+#		rewrite  ^/upload/o_(.*)$  /resize_passthrough.php?id=$1&size=o  last;
 
 
 	autoindex off;

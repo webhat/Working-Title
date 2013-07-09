@@ -8,7 +8,7 @@ php:
 script: phpunit --configuration .travis_phpunit.xml --coverage-text
 
 before_script:
-  - pecl -q install mongo && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+#  - pecl -q install mongo && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
   - sudo touch /usr/local/bin/cap
   - sudo chmod +x /usr/local/bin/cap
   - sudo chmod +x src/main/sh/install*.sh

@@ -1,4 +1,4 @@
-: mongo.conf
+# mongo.conf
 
 #where to log
 logpath=/var/log/mongo/mongod.log
@@ -23,7 +23,8 @@ pidfilepath = /var/run/mongodb/mongod.pid
 
 # Turn on/off security.  Off is currently the default
 #noauth = true
-#auth = true
+auth = true
+#keyFile = /etc/mongod.key
 
 # Verbose logging output.
 #verbose = true
@@ -76,8 +77,10 @@ pidfilepath = /var/run/mongodb/mongod.pid
 # in replicated mongo databases, specify here whether this is a slave or master
 #slave = true
 #source = master.example.com
+#source = 10.32.19.86
 # Slave only: specify a single database to replicate
-#only = master.example.com
+#only = 10.32.19.86
 # or
-#master = true
-#source = slave.example.com
+master = true
+source = wt365-web-001
+
