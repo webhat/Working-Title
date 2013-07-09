@@ -87,6 +87,10 @@ file {'/var/data/ext':
   ensure => 'directory',
 }
 
+file {'/var/data/ext/upload/':
+  ensure => 'directory',
+}
+
 file {'/var/data/ext/libs':
   ensure => 'directory',
 }

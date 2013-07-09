@@ -78,10 +78,10 @@ if (
 //			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 //			echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
 
-			if (file_exists("upload/" . $realfilename)) {
+			if (file_exists("/var/data/ext/upload/" . $realfilename)) {
 				echo $filename . " already exists. ";
 			} else {
-				move_uploaded_file($_FILES["file"]["tmp_name"], "../../../ext/upload/" . $realfilename);
+				move_uploaded_file($_FILES["file"]["tmp_name"], "/var/data/ext/upload/" . $realfilename);
 				$uploadType = (string) UploadHelper::UploadType($_FILES["file"]["type"]);
 				$p->addCreation(array( "type" => $uploadType, "content" => "/upload/" . $realfilename, "title" => $crTitle, "description" => $crDesc, "timestamp" => time()));
 				$p->store();
