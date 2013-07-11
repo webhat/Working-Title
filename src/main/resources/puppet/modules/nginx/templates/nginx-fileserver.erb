@@ -62,14 +62,14 @@ http {
 		client_max_body_size 60M;
 
 		location / {
-			rewrite  ^/(.*)$  http://Workingtitle365.com/$1 permanent;
+			rewrite  ^/(.*)$  http://workingtitle365.com/$1 permanent;
 		}
 		# FIXME: nice hack
 		#rewrite  ^/$ /index.php  permanent;
 
 		location ~ \.php$ {
-			try_files $uri =404;
-			fastcgi_split_path_info ^(.+\.php)(/.+)$;
+			#try_files $uri =404;
+			#fastcgi_split_path_info ^(.+\.php)(/.+)$;
 			root /usr/share/puppet/configuration/current;
 			include /etc/nginx/fastcgi_params;
 			fastcgi_pass  127.0.0.1:9000;
@@ -100,13 +100,13 @@ http {
 		}
 
 
-		rewrite ^/profile.php$ /maker/$arg_id? permanent;
-		rewrite  ^/maker/(.*)$  /profile.php?id=$1  last;
+		#rewrite ^/profile.php$ /maker/$arg_id? permanent;
+		#rewrite  ^/maker/(.*)$  /profile.php?id=$1  last;
 
-		rewrite  ^/upload/s_(.*)$  /resize_passthrough.php?id=$1&size=s  last;
-		rewrite  ^/upload/m_(.*)$  /resize_passthrough.php?id=$1&size=m  last;
-		rewrite  ^/upload/l_(.*)$  /resize_passthrough.php?id=$1&size=l  last;
-		rewrite  ^/upload/o_(.*)$  /resize_passthrough.php?id=$1&size=o  last;
+		rewrite  ^/upload/s_(.*)$  /php/resize_passthrough.php?id=$1&size=s  last;
+		rewrite  ^/upload/m_(.*)$  /php/resize_passthrough.php?id=$1&size=m  last;
+		rewrite  ^/upload/l_(.*)$  /php/resize_passthrough.php?id=$1&size=l  last;
+		rewrite  ^/upload/o_(.*)$  /php/resize_passthrough.php?id=$1&size=o  last;
 
 
 	autoindex off;

@@ -11,11 +11,6 @@ class mongodb {
 		before => Package['mongo-10gen-server'],
 	}
 
-	package{'php-pecl-mongo':
-		notify  => Service["spawn-fcgi"],
-		ensure => present,
-	}
-
 	file {'10gen.repo':
 		path => '/etc/yum.repos.d/10gen.repo',
 		ensure  => present,

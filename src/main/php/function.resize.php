@@ -33,14 +33,6 @@ function resize($image,$opts=null,$cache=true){
 	$thumb->clear();
 	$thumb->destroy();
 
-
-	/*
-	$thumb = PhpThumbFactory::create($image);
-	$thumb->resize( $opts['w'], $opts['h']);
-	$thumb->show();
-	*/
-
-
 	return array(
 			'image' => $output,
 			'type' => $outputtype

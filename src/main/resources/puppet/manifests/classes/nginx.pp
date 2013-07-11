@@ -19,6 +19,16 @@ class nginx_base {
 		before => Package['php'],
 	}
 
+	package{'php-pecl-mongo':
+		notify  => Service["spawn-fcgi"],
+		ensure => latest,
+	}
+
+	package{'php-pecl-imagick':
+		notify  => Service["spawn-fcgi"],
+		ensure => latest,
+	}
+
 	file {'nginx.repo':
 	      path => '/etc/yum.repos.d/nginx.repo',
 	      ensure  => present,
