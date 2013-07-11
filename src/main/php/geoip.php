@@ -23,6 +23,8 @@ switch(md5($ip)) {
 	case 'dbf1791f8606b86e314e437276c4f548':
 	case '6a334b9cb0b8b0f29d409463db131309':
 	case '56ce5048e4a85cbb3d409aa48aae20e2':
+	case '6e187a2cf2aece595fde9244c7457a8e':
+	case 'eee2c3d602701c9f552c5aa48629b8d9':
 		$admin = true;
 		break;
 	default:
