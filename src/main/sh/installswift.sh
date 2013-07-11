@@ -1,11 +1,12 @@
 #!/bin/bash
 
+. libs.sh
+
 SWIFT=Swift-4.2.2
 
 # DON'T EDIT UNDER THIS LINE
 
 SWIFT_ARCHIVE=$SWIFT.tar.gz
-LIBS=ext/php
 LOCATION=http://swiftmailer.org/download_file/$SWIFT_ARCHIVE
 
 wget -q $LOCATION

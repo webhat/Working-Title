@@ -1,11 +1,12 @@
 #!/bin/bash
 
+. libs.sh
+
 MAXMIND=GeoIPCountryCSV
 
 # DON'T EDIT UNDER THIS LINE
 
 MAXMIND_ARCHIVE=$MAXMIND.zip
-LIBS=ext
 LOCATION=http://geolite.maxmind.com/download/geoip/database/$MAXMIND_ARCHIVE
 
 mkdir -p $MAXMIND

@@ -4,7 +4,10 @@
 	{include file="smarty/user.tpl" title=foo}
 {/foreach}
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://www.google.com/jsapi"></script>
+<script>
+	google.load("jquery", "1.7.1");
+</script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.05/jquery.masonry.min.js"></script>
 <script>
 	$(".user").click(function(e) {

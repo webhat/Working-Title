@@ -4,16 +4,21 @@ require 'rubygems'
 require 'railsless-deploy'
 load    'config/deploy'
 
-set :user,		"ec2-user"
+default_run_options[:shell] = '/bin/bash'
+
+set :user,		"deploy"
 set :stages,		%w[staging production]
 set :deploy_to,		"/usr/share/puppet/configuration"
 set :deploy_via,	:export
 set :application,	"Puppet Manifests"
-set :repository,	"git@github.com:webhat/Working-Title.git"
+set :repository,	"https://github.com/webhat/Working-Title.git"
+set :branch,		fetch(:branch, "develop")
+#set :repository,	"git@github.com:webhat/Working-Title.git"
 set :scm,		:git
 set :default_stage,	"staging"
 set :use_sudo,		false
-set(:latest_release)	{ File.join( release_path, "src/main/resources/puppet/") }
+set(:latest_release)	{ File.join( release_path, "src/main/") }
+#set(:latest_release)	{ File.join( release_path, "src/main/resources/puppet/") }
 
 require 'capistrano/ext/multistage'
 

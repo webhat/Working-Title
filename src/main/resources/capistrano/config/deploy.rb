@@ -2,6 +2,8 @@ set :application, "set your application name here"
 set :repository,  "set your repository location here"
 
 #ssh_options[:keys] = ["/etc/keys/id_rsa-capistrano"]
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "deploy")]
+ssh_options[:keys] = ["/root/.ssh/deploy"]
 #
 require 'mcollective'
 
@@ -27,4 +29,13 @@ namespace :puppet do
         puppet = MCProxy.new("puppetd")
         puppet.runaction("runonce",:concurrency => '2')
     end
+end
+
+namespace :webinit do
+	desc <<-DESC
+	Run Website Initializer
+	DESC
+	task :run do
+		run "cd #{release_path} && sh/libs.sh production"
+	end
 end

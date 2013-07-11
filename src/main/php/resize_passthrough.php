@@ -27,7 +27,7 @@ switch( $size) {
 		$width = 100;
 }
 
-$image = resize("upload/". $id, array( 'w' => $width));
+$image = resize("/var/data/ext/upload/". $id, array( 'w' => $width));
 
 header("Content-type: ". $image['type']);
 echo $image['image'];
