@@ -88,7 +88,7 @@ if (
 				echo sprintf(_("Stored in: %s/upload/%s"), getcwd(), $realfilename);
 ?>
 <script>
-	top.location = "/profile.php?id=<?php print $user; ?>";
+	top.location = "http://workingtitle365.com/profile.php?id=<?php print $user; ?>";
 </script>
 <?php
 
@@ -98,7 +98,7 @@ if (
 		echo _("Invalid file");
 ?>
 <script>
-	location = "/upload.html?id=<?php print $user; ?>&msg=Invalid%20File";
+	location = "http://workingtitle365.com/upload.html?id=<?php print $user; ?>&msg=Invalid%20File";
 </script>
 <?php
   }
