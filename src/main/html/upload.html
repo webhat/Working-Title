@@ -29,7 +29,7 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#uploadfile").attr('action',"http://workingtitle365.com/php/upload.php?id="+ getUrlVars()['id']);
+		$("#uploadfile").attr('action',"http://files.workingtitle365.com/php/upload.php?id="+ getUrlVars()['id']);
 		$("#errormsg").text(getUrlVars()['msg']);
 	});
 </script>
@@ -55,7 +55,7 @@ margin-left:10px;
 	<body style="background-image:url(http://static.tumblr.com/ro5gmuq/ZSSkkujk0/ko3lqkpvh62h949njlofkumx_400.jpg)">
 		<div style="width:350px;left:30px;top:50px;" id="formup">
 			<span id="errormsg"></span>
-			<form id="uploadfile" action="http://workingtitle365.com/php/upload.php" method="post" enctype="multipart/form-data">
+			<form id="uploadfile" action="http://files.workingtitle365.com/php/upload.php" method="post" enctype="multipart/form-data">
 			<div>
 				<label>Title:</label>
 				<input type="text" name="title" />
